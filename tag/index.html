@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>디제이맥스 리스펙트 장르 태그</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/common.css' title="common">
+    <style type="text/css">
+        body {
+            background-image: url('../img/cover.jpg');
+        }
+
+        .cloud {
+            background-color: skyblue;
+            border-radius: 0.75em;
+            margin: 0.25em;
+            padding: 0.25em;
+            display: inline-block;
+        }
+        .cloud:hover, .cloud[data-checked] {
+            background-color: darkcyan;
+        }
+        .title {
+            font-size: larger;
+        }
+        /* .genre {
+            font-size: small;
+        } */
+
+        #tag {
+            width: 50%;
+            margin: 0 auto;
+        }
+        #unselect {
+            border-radius: 1em;
+        }
+        #result {
+            padding: 0.5em;
+            width: 50%;
+            margin: auto;
+        }
+
+        @media ( max-width: 768px ) {
+            .cloud {
+                font-size: 0.75em;
+            }
+            #tag, #result {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href=".."><img src="../img/djmax-64.png" id="home"></a>
+    <div class="center">
+        <h2 class="shadow-white">장르 태그</h2>
+        <div id="tag"></div>
+        <div id="result">
+            <div id="combine">
+                <label><input type="radio" name="tag" value="or" checked>OR 조건</label>
+                <label><input type="radio" name="tag" value="and">AND 조건</label>
+                <button type="button" id="unselect">모두 해제</button>
+            </div>
+            <ul id="tagResult"></ul>
+        </div>
+    </div>
+    <template id="songTemplate">
+        <li class="left">
+            <span class="title"></span>
+            <span class="genre"></span>
+        </li>
+    </template>
+    <script type="text/javascript">
+        tagSelect = new Set();
+        fetch("../list.json").then(response => response.json())
+        .then(json => {
+            songs = Object.values(json["songs"]).reduce((a,b) => [...a, ...b]);
+            tags = songs.map(song => song["genre"]).filter(genre => genre !== undefined);
+            tags = [...new Set(tags.join(" ").split(" "))].sort();
+
+            tagDiv = document.querySelector("#tag");
+            for (let tag of tags) {
+                let cloud = document.createElement("div");
+                cloud.className = "cloud click";
+                cloud.textContent = tag;
+                tagDiv.append(cloud);
+            }
+            tagDiv.addEventListener("click", event => {
+                if (event.target.matches(".cloud")) {
+                    if (event.target.hasAttribute("data-checked")) {
+                        tagSelect.delete(event.target.textContent);
+                    }
+                    else {
+                        tagSelect.add(event.target.textContent);
+                    }
+                    event.target.toggleAttribute("data-checked");
+                    getTagResult();
+                }
+            })
+
+            document.querySelector("#combine").addEventListener("change", event => {
+                condition = event.target.value;
+                getTagResult();
+            });
+            document.querySelector("input[checked]").dispatchEvent(new InputEvent("change",{bubbles: true}));
+            document.querySelector("#unselect").addEventListener("click", event => {
+                document.querySelectorAll(".cloud").forEach(cloud => {
+                    if (cloud.hasAttribute("data-checked")) {
+                        cloud.click();
+                    }
+                })
+            });
+        });
+
+        function getTagResult() {
+            let result = songs.filter(song => song["genre"] && tagSelect.size > 0);
+            if (condition == "and") {
+                result = result.filter(song => [...tagSelect].every(t => song["genre"].includes(t)));
+            }
+            else if (condition == "or") {
+                result = result.filter(song => [...tagSelect].some(t => song["genre"].includes(t)));
+            }
+            result = result.sort((a,b) => (a["title"].toLowerCase()>b["title"].toLowerCase())? 1:-1);
+
+            let list = document.querySelector("#tagResult");
+            list.replaceChildren();
+            for (let song of result) {
+                let template = document.querySelector("#songTemplate").content.cloneNode(true);
+
+                let [title, genre] = template.querySelectorAll("span");
+                title.textContent = song["title"];
+                genre.textContent = ` (${song["genre"]})`;
+                list.append(template.firstElementChild);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+*.cmd
+debug.log
+temp.csv
+ignore

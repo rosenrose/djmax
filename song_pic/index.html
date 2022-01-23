@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>디제이맥스 리스펙트 곡 썸네일</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/common.css' title="common">
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: gray;
+        }
+
+        .item {
+            display: inline-block;
+            margin: 1em 0.5em;
+            max-width: 32%;
+        }
+        .item .up {
+            display: flex;
+            margin-bottom: 0.5em;
+        }
+        .item .up img:nth-child(1) {
+            flex-grow: 1;
+            margin-right: 0.5em;
+        }
+        .item .up img:nth-child(2) {
+            flex-grow: 1.78;
+            margin-left: 0.5em;
+        }
+        .item .down img {
+            width: 25%;
+        }
+        .item figcaption {
+            color: #fff;
+        }
+        .selected {
+            /* filter: grayscale(1);
+            border: 2px green dashed; */
+            box-shadow: 0 0 1em 1em mediumseagreen;
+            background-color: mediumseagreen;
+        }
+
+        #menu {
+            text-align: center;
+        }
+        #menu img {
+            width: 12%;
+            margin: 1%;
+        }
+
+        @media ( max-width: 768px ) {
+            .item {
+                max-width: 100%;
+            }
+            #menu img {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href=".."><img src="../img/djmax-64.png" id="home"></a>
+    <div id="menu">
+        <a href="./?category=all"><img src="../img/category_all.png"></a>
+        <a href="./?category=respect"><img src="../img/category_respect.png"></a>
+        <a href="./?category=portable1"><img src="../img/category_portable1.png"></a>
+        <a href="./?category=portable2"><img src="../img/category_portable2.png"></a>
+        <a href="./?category=portable3"><img src="../img/category_portable3.png"></a>
+        <a href="./?category=trilogy"><img src="../img/category_trilogy.png"></a>
+        <a href="./?category=clazziquai"><img src="../img/category_clazziquai.png"></a>
+        <a href="./?category=blacksquare"><img src="../img/category_blacksquare.png"></a>
+        <a href="./?category=vextension"><img src="../img/category_vextension.png"></a>
+        <a href="./?category=emotionalsense"><img src="../img/category_emotionalsense.png"></a>
+        <a href="./?category=technika1"><img src="../img/category_technika1.png"></a>
+        <a href="./?category=technika2"><img src="../img/category_technika2.png"></a>
+        <a href="./?category=technika3"><img src="../img/category_technika3.png"></a>
+        <a href="./?category=collaboration"><img src="../img/category_collaboration.png"></a>
+    </div>
+    <div class="grid"></div>
+    <template id="itemTemplate">
+        <figure class="item">
+            <div class="up">
+                <img src=""><img src="">
+            </div>
+            <div class="down">
+                <img src=""><img src=""><img src=""><img src="">
+            </div>
+            <figcaption></figcaption>
+        </figure>
+    </template>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript">
+        grid = document.querySelector(".grid");
+        url = new URL(document.URL);
+        category = url.searchParams.get("category");
+
+        fetch("../list.json")
+        .then(response => response.json())
+        .then(json => {
+            list = json["songs"];
+            for (let category in list) {
+                list[category] = list[category].map(song => new Song(song));
+            }
+            songs = Object.values(list).reduce((a, b) => [...a, ...b]).sort((a,b) => a.title.toLowerCase()>b.title.toLowerCase()? 1:-1);
+
+            if (category) {
+                switch (category) {
+                    case "all":
+                        iter = songs;
+                        break;
+                    case "collaboration":
+                        iter = json["collaboration"].filter(c => c in list).map(c => list[c]).reduce((a,b) => [...a, ...b]);
+                        break;
+                    default:
+                        iter = list[category];
+                        break;
+                }
+                iter.forEach(song => {
+                    let template = document.querySelector("#itemTemplate").content.cloneNode(true);
+                    let images = template.querySelectorAll("img");
+                    for (let i=0; i<6; i++) {
+                        images[i].src = `${song["urlTitle"]}_${i+1}.png`;
+                    }
+                    template.querySelector("figcaption").textContent = song.title;
+                    grid.append(template.firstElementChild);
+                });
+                let current = document.querySelector(`a[href='./?category=${category}']`);
+                current.href = "./";
+                current.querySelector("img").className = "selected";
+            }
+            else {
+                grid.remove();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+body {
+    background-image: url('../img/cover.jpg');
+}
+
+#artistUl, .songUl, #titleUl {
+    list-style-type: none;
+}
+
+.artistLi {
+    margin: 1em;
+}
+.songLi img {
+    margin-right: 1em;
+}
+.songLi div {
+    display: inline-block;
+}
+
+.cat {
+    color: gray;
+    margin-right: 0.5em;
+}
+
+#result {
+    width: 50%;
+}
+#result > div {
+    margin: 1em auto;
+}
+#selectMode {
+    text-align: center;
+}
+#spread, #collapse {
+    border-radius: 1em;
+}
+
+#artistUl {
+    margin-left: 4em;
+}
+#artistUl img {
+    width: 10%;
+}
+#artistUl .songLi {
+    margin: 0.5em;
+}
+#artistUl .songLi > * {
+    vertical-align: middle;
+}
+#artistUl .songLi div {
+    width: 80%;
+}
+
+#titleUl .songLi {
+    margin: 1em;
+    border-bottom: 2px dotted #777;
+}
+#titleUl .songLi img {
+    margin-bottom: 0.5em;
+}
+#titleUl .songLi div {
+    vertical-align: top;
+    width: 75%;
+}
+#titleUl .songLi h3 {
+    margin: 0;
+}
+
+@media ( max-width: 768px ) {
+    #result {
+        width: 100%;
+    }
+    ul, #artistUl {
+        margin-left: -1.5em;
+    }
+    #artistUl img {
+        width: 20%;
+    }
+    #artistUl .songLi div{
+        width: 70%;
+    }
+    #titleUl img {
+        width: 25%;
+    }
+    #titleUl .songLi div{
+        width: 65%;
+    }
+}

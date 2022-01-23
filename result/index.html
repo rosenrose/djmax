@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>성과 스샷 생성기</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/common.css' title="common">
+    <style type="text/css">
+        body {
+            background-image: url('../img/cover.jpg');
+        }
+        /* input[type='file'] {
+            border: 1px dotted seagreen;
+        } */
+        label {
+            margin-right: 1em;
+        }
+        kbd {
+            background-color: #eee;
+            border-radius: 3px;
+            border: 1px solid #b4b4b4;
+            box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 0 0 rgb(255 255 255 / 70%) inset;
+            color: #333;
+            display: inline-block;
+            font-size: .85em;
+            font-weight: 700;
+            line-height: 1;
+            padding: 2px 4px;
+            white-space: nowrap;
+        }
+
+        #result {
+            width: 95%;
+            text-align: center;
+        }
+        #result > * {
+            margin: 1em auto;
+        }
+        #result > div {
+            border-bottom: 1px dashed skyblue;
+            padding-bottom: 1em;
+        }
+        #coverNum {
+            width: 2em;
+        }
+        #output {
+            border: 1px solid orangered;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <a href=".."><img src="../img/djmax-64.png" id="home"></a>
+    <div>
+        <h2 class="shadow-white center">성과 스샷 생성기</h2>
+        <div id="result">
+            <div id="single">
+                <label>
+                    <input type="radio" name="select" value="inputSingle" checked>싱글
+                </label>
+                <label>
+                    <input type="checkbox" id="merge">여러 개 합치기 (최대 4개)
+                </label>
+                <label>
+                    <input type="checkbox" id="details">상세 결과
+                </label>
+            </div>
+            <div id="multi">
+                <label>
+                    <input type="radio" name="select" value="inputMulti2">공방(2인)
+                </label>
+                <label>
+                    <input type="radio" name="select" value="inputMulti3">공방(3인 이상)
+                </label>
+            </div>
+            <div id="input">
+                <input type="file" id="inputFile" accept=".jpg,.png">
+                <span>※ <kbd>Ctrl</kbd> + <kbd>V</kbd> 를 눌러도 됩니다.</span>
+            </div>
+            <label>
+                <input type="checkbox" id="hide">닉네임 가리기
+                <input type="number" id="coverNum" hidden min="1" max="3" value="1" placeholder="1">
+            </label>
+            <canvas id="output" class="click"></canvas>
+        </div>
+    </div>
+    <canvas id="resize" hidden></canvas>
+    <!-- <img src="cover.png" id="cover"> -->
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/result.js"></script>
+</body>
+</html>

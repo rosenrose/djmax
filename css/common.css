@@ -1,0 +1,128 @@
+.center {
+    text-align: center;
+}
+.left {
+    text-align: left;
+}
+.inline {
+    display: inline;
+}
+.block {
+    display: block;
+}
+.color-white {
+    color: #fff;
+}
+.shadow-white {
+    text-shadow: 1px 1px 0px #fff, -1px 1px 0px #fff, 1px -1px 0px #fff, -1px -1px 0px #fff,
+                2px 2px 5px #fff, -2px 2px 5px #fff, 2px -2px 5px #fff, -2px -2px 5px #fff;
+}
+.bold {
+    font-weight: 600;
+}
+.click {
+    cursor: pointer;
+}
+
+.NM-color {
+    color: rgb(255,186,0);
+}
+.HD-color {
+    color: rgb(255,126,49);
+}
+.MX-color {
+    color: rgb(255,30,30);
+}
+.SC-color {
+    color: rgb(242,28,199);
+}
+.NM-background {
+    /* border-radius: 0.3em; */
+    background-color: rgb(255, 186, 0);
+}
+.HD-background {
+    background-color: rgb(255, 126,49);
+}
+.MX-background {
+    background-color: rgb(255, 30, 30);
+}
+.SC-background {
+    background-color: rgb(242, 28, 199);
+}
+.NM-svg {
+    fill: rgb(255, 186, 0);
+}
+.HD-svg {
+    fill: rgb(255, 126,49);
+}
+.MX-svg {
+    fill: rgb(255, 30, 30);
+}
+.SC-svg {
+    fill: rgb(242, 28, 199);
+}
+
+.\34 B-color {
+    color: rgb(0, 154, 75);
+}
+.\35 B-color {
+    color: rgb(43, 145, 175);
+}
+.\36 B-color {
+    color: rgb(193, 115, 17);
+}
+.\38 B-color {
+    color: rgb(68, 73, 172);
+}
+.전체-background {
+    background: linear-gradient(135deg, rgb(0, 154, 75), rgb(43, 145, 175), rgb(193, 115, 17), rgb(68, 73, 172));
+}
+.\34 B-background {
+    background-color: rgb(0, 154, 75);
+}
+.\35 B-background {
+    background-color: rgb(43, 145, 175);
+}
+.\36 B-background {
+    background-color: rgb(193, 115, 17);
+}
+.\38 B-background {
+    background-color: rgb(68, 73, 172);
+}
+
+.btn-rank {
+    color: #fff;
+}
+.category-background {
+    background-size: 100% 100%;
+}
+
+body {
+    background-size: cover;
+    background-size: 100%;
+}
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+#home {
+    background-color: mediumspringgreen;
+    border-radius: 4em;
+}
+
+#result {
+    padding: 1%;
+    background-color: #fff;
+    border-radius: 2em;
+    width: 35%;
+    margin: auto;
+}
+
+@media ( max-width: 768px ) {
+    body {
+        background-size: contain;
+    }
+    #result {
+        width: 100%;
+    }
+}

@@ -1,0 +1,77 @@
+body {
+    background-image: url('../img/cover.jpg');
+}
+div {
+    margin: 0px 0px 5px 0px;
+}
+td {
+    width: 25%;
+}
+
+.song_pic {
+    width: 5em;
+}
+.title_artist {
+    height: 100%;
+    padding-left: 0.5em;
+    flex-grow: 1;
+}
+.title {
+    font-size: 1.25em;
+    margin: 0;
+    /* height: 50%; */
+}
+.artist {
+    margin-top: 0.4em;
+    /* height: 50%; */
+}
+.pattern {
+    padding: 0;
+    font-size: 0.7em;
+}
+
+#spread, #collapse {
+    border-radius: 1em;
+}
+#result {
+    padding: 1%;
+    background-color: #fff;
+    border-radius: 2em;
+    width: 35%;
+    margin: auto;
+}
+#run {
+    font-size: 1.5em;
+    border-radius: 2em;
+}
+#levelInput, #levelInput2 {
+    width: 3.5em;
+}
+#resultCountInput {
+    width: 2.5em;
+}
+#randomResult > li {
+    margin: 2%;
+    height: 5em;
+    color: #000;
+    display: flex;
+}
+
+@media ( max-width: 768px ) {
+    #result {
+        width: 100%;
+    }
+    #randomResult {
+        margin-left: -5%;
+    }
+    #randomResult .title {
+        font-size: 1.1em;
+    }
+    #randomResult .artist {
+        font-size: 0.8em;
+        padding-top: 3%;
+    }
+    #randomResult .pattern {
+        font-size: 0.6em;
+    }
+}
