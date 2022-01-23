@@ -25,10 +25,15 @@ tr.levels-notes:nth-child(5n), td[rowspan] {
 tbody img {
     width: 30%;
     margin-right: 1em;
-    float: left;
+    vertical-align: middle;
 }
 tr th:first-child {
-    max-width: 20em;
+    max-width: 22em;
+}
+tr th:first-child p {
+    display: inline-block;
+    margin: 0;
+    width: 65%;
 }
 
 span.sortArrow {

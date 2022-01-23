@@ -532,7 +532,8 @@ function Title({ mode, bpmMode, dateMode }) {
                 <th className="title"
                     rowSpan={["levels","notes"].includes(mode)? 5 : 1}
                 >
-                    <img src={`${song["urlTitle"]}_1.png`} hidden={!["levels","notes"].includes(mode)} loading="lazy"/>{song["uniqueTitle"]}
+                    <img src={`${song["urlTitle"]}_1.png`} hidden={!["levels","notes"].includes(mode)} loading="lazy"/>
+                    <p>{song["uniqueTitle"]}</p>
                 </th>
                 {tds}
             </tr>
