@@ -658,9 +658,8 @@ function Level({ rank, level, condition }) {
                 ★
             </span> */}
             {condition &&
-                <svg className={`${(rank == "SC")? "SC" : (level <= 5)? "NM" : (level <=10)? "HD" : "MX"}-svg`}
-                    width="1em" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 28">
-                    <polygon points="27 0, 18 13, 24 24, 13 19, 0 28, 9 14, 3 4, 14 9"/>
+                <svg className={`${(rank == "SC")? "SC" : (level <= 5)? "NM" : (level <=10)? "HD" : "MX"}-svg`} width="1em" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 28">
+                    <use href="#star"/>
                 </svg>
             }
             {condition? level : "　"}
