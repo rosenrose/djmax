@@ -26971,7 +26971,12 @@
       "title": "FALLING IN LOVE",
       "artist": {
         "compose": "NieN",
-        "visualize": ""
+        "lyrics": "NieN",
+        "vocal": "이지애",
+        "visualize": {
+            "illust": "31",
+            "motion": "SumGyeol"
+        }
       },
       "level": {
         "4B": {
@@ -26999,7 +27004,7 @@
           "SC": 0
         }
       },
-      "length": 0,
+      "length": 141,
       "bpm": "",
       "date": {
         "PC": "2022-01-25"

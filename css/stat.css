@@ -31,8 +31,11 @@ tr th:first-child {
     max-width: 22em;
 }
 tr th:first-child p {
-    display: inline-block;
     margin: 0;
+    width: 100%;
+}
+tr th:first-child p.narrow {
+    display: inline-block;
     width: 65%;
 }
 

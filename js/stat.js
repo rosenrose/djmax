@@ -471,6 +471,9 @@ function Title({ mode, bpmMode, dateMode }) {
     else if (mode == "date" && dateMode != "early") {
         filteredSongs = songs.filter(song => song["date"][dateMode] > 0);
     }
+    else if (mode == "notes") {
+        filteredSongs = songs.filter(song => Object.values(song["note"]).reduce((a,b) => [...Object.values(a), ...Object.values(b)]).every(note => note > 0));
+    }
 
     (filteredSongs || songs).forEach(song => {
         let tds = [];
@@ -533,7 +536,7 @@ function Title({ mode, bpmMode, dateMode }) {
                     rowSpan={["levels","notes"].includes(mode)? 5 : 1}
                 >
                     <img src={`${song["urlTitle"]}_1.png`} hidden={!["levels","notes"].includes(mode)} loading="lazy"/>
-                    <p>{song["uniqueTitle"]}</p>
+                    <p className={["levels","notes"].includes(mode)? "narrow" : ""}>{song["uniqueTitle"]}</p>
                 </th>
                 {tds}
             </tr>
