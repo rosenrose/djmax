@@ -42,7 +42,7 @@ for (let i=0; i<maxCount; i++) {
 
 document.querySelector("#modeSelect").addEventListener("change", event => {
     mode = event.target.value;
-    toggleAttribute("hidden", mode != "PC", document.querySelector("input[value='SC']").parentNode, document.querySelector("input[value='nexon']").parentNode);
+    toggleAttribute("hidden", mode != "PC", document.querySelector("input[value='SC']").parentNode, document.querySelector("input[value='nexon']").parentNode, document.querySelector("input[value='vextension2']").parentNode);
 
     if (mode == "PC") {
         if (document.querySelector("input[value='SC']").checked) {
@@ -51,10 +51,14 @@ document.querySelector("#modeSelect").addEventListener("change", event => {
         if (document.querySelector("input[value='nexon']").checked) {
             dlcSelect.add("nexon");
         }
+        if (document.querySelector("input[value='vextension2']").checked) {
+            dlcSelect.add("vextension2");
+        }
     }
     else if (mode == "PS4") {
         rankSelect.delete("SC");
         dlcSelect.delete("nexon");
+        dlcSelect.delete("vextension2");
     }
 });
 

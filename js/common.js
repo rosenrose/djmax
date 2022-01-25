@@ -77,8 +77,7 @@ function Song(song, isStat) {
     }
 
     let title = this["title"];
-    if (["Alone","Urban Night"].includes(title)) {
-    // if (["Alone", "Urban Night", "Voyage"].includes(title)) {
+    if (["Alone", "Urban Night", "Voyage"].includes(title)) {
         title += ` (${this["artist"]["compose"]})`;
     };
     this["uniqueTitle"] = title;
@@ -175,4 +174,19 @@ function Song(song, isStat) {
             this["noteAvg"][head] = this["noteSum"][head] / this["patternCount"][head];
         });
     }
+}
+
+function noteRange(note) {
+    if (note == 0) {
+        return {lower: 0, upper: 0, key: "0"}
+    }
+
+    let lower = (parseInt((note - 1) / 100) * 100) + 1;
+    let upper = (parseInt((note - 1) / 100) + 1) * 100;
+
+    return {
+        lower,
+        upper,
+        "key": `${lower} ~ ${upper}`
+    };
 }

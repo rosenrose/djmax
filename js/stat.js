@@ -471,8 +471,8 @@ function Title({ mode, bpmMode, dateMode }) {
     else if (mode == "date" && dateMode != "early") {
         filteredSongs = songs.filter(song => song["date"][dateMode] > 0);
     }
-    else if (mode == "notes") {
-        filteredSongs = songs.filter(song => Object.values(song["note"]).reduce((a,b) => [...Object.values(a), ...Object.values(b)]).every(note => note > 0));
+    else if (["noteAvg","notes"].includes(mode)) {
+        filteredSongs = songs.filter(song => Object.values(song["noteSum"]).every(noteSum => noteSum > 0));
     }
 
     (filteredSongs || songs).forEach(song => {
@@ -563,7 +563,7 @@ function Title({ mode, bpmMode, dateMode }) {
 }
 
 function Category({ mode }) {
-    return categoryData.map(catDat => {
+    return categoryData.filter(catDat => Object.values(catDat["noteSum"]).every(note => note > 0)).map(catDat => {
         let category = catDat["category"];
 
         return (
@@ -622,7 +622,7 @@ function Histogram({ mode }) {
             );
         case "noteHistogram":
             return (
-                noteCountList.map(nc =>
+                noteCountList.filter(nc => nc["note"] != "0").map(nc =>
                     <tr key={nc["note"]}>
                         <th>{nc["note"]}</th>
                         {commonHeads.map(head =>
@@ -636,7 +636,7 @@ function Histogram({ mode }) {
 
 function LevelsNotesSort({ mode, btnSelect, rankSelect }) {
     return (
-        levelNoteList.filter(levelNote => btnSelect.has(levelNote["btn"]) && rankSelect.has(levelNote["rank"])).map(levelNote =>
+        levelNoteList.filter(levelNote => btnSelect.has(levelNote["btn"]) && rankSelect.has(levelNote["rank"]) && levelNote["note"] > 0).map(levelNote =>
             <tr key={levelNote["title"] + levelNote["btn"] + levelNote["rank"]}>
                 <th>{levelNote["title"]}</th>
                 <th className={`${levelNote["btn"]}-color`}>{levelNote["btn"]}</th>
@@ -1090,8 +1090,8 @@ function Graph({ mode, tbodyMode }) {
     let x, y, heads, text, orientation, height, xrange, yrange, margin;
     let levelCountSorted = [...levelCountList].sort((a,b) => a["level"] - b["level"]);
     let patternCountSorted = [...patternCountList].sort((a,b) => a["patternCount"] - b["patternCount"]);
-    let noteCountSorted = [...noteCountList].sort((a,b) => parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0]));
-    let categoryDataSorted = [...categoryData].sort((a,b) => categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]));
+    let noteCountSorted = [...noteCountList.filter(nc => nc["note"] != "0")].sort((a,b) => parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0]));
+    let categoryDataSorted = [...categoryData.filter(catDat => Object.values(catDat["noteSum"]).every(note => note > 0))].sort((a,b) => categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]));
 
     if (mode == "levelHistogram") {
         heads = tableHeads[mode];
@@ -1228,17 +1228,6 @@ function bpmToNumber(bpm, mode) {
         }
     }
     return Number(bpm);
-}
-
-function noteRange(note) {
-    let lower = (parseInt((note - 1) / 100) * 100) + 1;
-    let upper = (parseInt((note - 1) / 100) + 1) * 100;
-
-    return {
-        lower,
-        upper,
-        "key": `${lower} ~ ${upper}`
-    };
 }
 
 ReactDOM.render(<App/>, document.querySelector("#root"));

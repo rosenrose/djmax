@@ -10,7 +10,8 @@ let categoryKorMap = {
     "title": "제목",
     "illust": "원화",
     "motion": "모션",
-    "background": "배경"
+    "background": "배경",
+    "story": "스토리"
 };
 let list = {};
 let songs = [];
