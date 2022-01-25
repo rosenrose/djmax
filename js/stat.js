@@ -21,7 +21,7 @@ const MAX_LEVEL = 15;
 const ASC = "▲";
 const DES = "▼";
 let [songs, categoryList, categoryData, levelCountList, patternCountList, noteCountList, levelNoteList] = [[],[],[],[],[],[],[]];
-let [list, totalLevelSum, totalPatternCount, totalLevelAvg, totalMinLevelAvg, totalMaxLevelAvg, totalNoteSum, totalNoteAvg] = [{},{},{},{},{},{},{},{}];
+let [list, totalLevelSum, totalPatternCount, totalLevelAvg, totalMinLevelAvg, totalMaxLevelAvg, totalNoteSum, totalNoteCount, totalNoteAvg] = [{},{},{},{},{},{},{},{},{}];
 let [totalLengthSum, totalLengthAvg, totalBpmMin, totalBpmMid, totalBpmMax] = [0,0,0,0,0];
 let timeStart;  //시간 측정할 때
 let dateFormat = new Intl.DateTimeFormat("ko", {year: "numeric", month: "2-digit", day: "2-digit"});
@@ -38,7 +38,7 @@ function App() {
             categoryList = Object.keys(list["songs"]);  //인덱스 비교용
 
             commonHeads.forEach(head => {
-                totalLevelSum[head] = totalPatternCount[head] = totalLevelAvg[head] = totalMinLevelAvg[head] = totalMaxLevelAvg[head] = totalNoteSum[head] = totalNoteAvg[head] = 0;
+                totalLevelSum[head] = totalPatternCount[head] = totalLevelAvg[head] = totalMinLevelAvg[head] = totalMaxLevelAvg[head] = totalNoteSum[head] = totalNoteCount[head] = totalNoteAvg[head] = 0;
             });
             totalPatternCount["SC"] = 0;
 
@@ -75,6 +75,10 @@ function App() {
                                 "note": song["note"][btn][rank],
                                 category
                             });
+                            if (song["note"][btn][rank] > 0) {
+                                totalNoteCount[btn] += 1;
+                                totalNoteCount["전체"] += 1;
+                            }
                         }
                     }
 
@@ -131,15 +135,15 @@ function App() {
 
             commonHeads.forEach(head => {
                 totalLevelAvg[head] = totalLevelSum[head] / totalPatternCount[head];
-                totalNoteAvg[head] = totalNoteSum[head] / totalPatternCount[head];
+                totalNoteAvg[head] = totalNoteSum[head] / totalNoteCount[head];
                 totalMinLevelAvg[head] = totalMinLevelAvg[head] / songs.length;
                 totalMaxLevelAvg[head] = totalMaxLevelAvg[head] / songs.length;
             });
-            totalLengthAvg = parseInt(totalLengthSum / songs.length);
+            totalLengthAvg = Math.round(totalLengthSum / songs.length);
 
             patternCountList.sort((a,b) => a["patternCount"] - b["patternCount"]);
 
-            noteCountList.sort((a,b) => parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0]));
+            noteCountList = noteCountList.filter(nc => nc["note"] != "0").sort((a,b) => parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0]));
 
             categoryData.forEach(catDat => {
                 catDat["patternCountAvg"] = {};
@@ -501,7 +505,7 @@ function Title({ mode, bpmMode, dateMode }) {
                             data = song["patternCount"][head];
                             break;
                         case "length":
-                            data = `${parseInt(song["length"] / 60)}분 ${song["length"] % 60}초`;
+                            data = `${Math.floor(song["length"] / 60)}분 ${song["length"] % 60}초`;
                             break;
                         case "bpm":
                             data = song["bpm"];
@@ -563,7 +567,13 @@ function Title({ mode, bpmMode, dateMode }) {
 }
 
 function Category({ mode }) {
-    return categoryData.filter(catDat => Object.values(catDat["noteSum"]).every(note => note > 0)).map(catDat => {
+    let filteredCategoryData;
+
+    if (mode == "noteAvg") {
+        filteredCategoryData = categoryData.filter(catDat => Object.values(catDat["noteSum"]).every(note => note > 0));
+    }
+
+    return (filteredCategoryData || categoryData).map(catDat => {
         let category = catDat["category"];
 
         return (
@@ -622,7 +632,7 @@ function Histogram({ mode }) {
             );
         case "noteHistogram":
             return (
-                noteCountList.filter(nc => nc["note"] != "0").map(nc =>
+                noteCountList.map(nc =>
                     <tr key={nc["note"]}>
                         <th>{nc["note"]}</th>
                         {commonHeads.map(head =>
@@ -635,8 +645,14 @@ function Histogram({ mode }) {
 }
 
 function LevelsNotesSort({ mode, btnSelect, rankSelect }) {
+    let filteredLevelNoteList;
+
+    if (mode == "notes") {
+        filteredLevelNoteList = levelNoteList.filter(levelNote => levelNote["note"] > 0);
+    }
+
     return (
-        levelNoteList.filter(levelNote => btnSelect.has(levelNote["btn"]) && rankSelect.has(levelNote["rank"]) && levelNote["note"] > 0).map(levelNote =>
+        (filteredLevelNoteList || levelNoteList).filter(levelNote => btnSelect.has(levelNote["btn"]) && rankSelect.has(levelNote["rank"])).map(levelNote =>
             <tr key={levelNote["title"] + levelNote["btn"] + levelNote["rank"]}>
                 <th>{levelNote["title"]}</th>
                 <th className={`${levelNote["btn"]}-color`}>{levelNote["btn"]}</th>
@@ -699,7 +715,7 @@ function Tfoot({ mode, titleMode, bpmMode }) {
                                         : (totalPatternCount[head] / categoryData.length).toFixed(1);
                             break;
                         case "length":
-                            data = `${parseInt(totalLengthAvg / 60)}분 ${totalLengthAvg % 60}초`;
+                            data = `${Math.floor(totalLengthAvg / 60)}분 ${totalLengthAvg % 60}초`;
                             break;
                         case "bpm":
                             data = (((bpmMode == "min")
@@ -747,7 +763,7 @@ function Tfoot({ mode, titleMode, bpmMode }) {
                             break;
                         case "length":
                             let minutes = totalLengthSum % 3600;
-                            data = `${parseInt(totalLengthSum / 3600)}시간 ${parseInt(minutes / 60)}분 ${minutes % 60}초`;
+                            data = `${Math.floor(totalLengthSum / 3600)}시간 ${Math.floor(minutes / 60)}분 ${minutes % 60}초`;
                             break;
                     }
 
@@ -1090,8 +1106,8 @@ function Graph({ mode, tbodyMode }) {
     let x, y, heads, text, orientation, height, xrange, yrange, margin;
     let levelCountSorted = [...levelCountList].sort((a,b) => a["level"] - b["level"]);
     let patternCountSorted = [...patternCountList].sort((a,b) => a["patternCount"] - b["patternCount"]);
-    let noteCountSorted = [...noteCountList.filter(nc => nc["note"] != "0")].sort((a,b) => parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0]));
-    let categoryDataSorted = [...categoryData.filter(catDat => Object.values(catDat["noteSum"]).every(note => note > 0))].sort((a,b) => categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]));
+    let noteCountSorted = [...noteCountList].sort((a,b) => parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0]));
+    let categoryDataSorted = [...categoryData].sort((a,b) => categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]));
 
     if (mode == "levelHistogram") {
         heads = tableHeads[mode];
@@ -1112,6 +1128,11 @@ function Graph({ mode, tbodyMode }) {
     else if (["levelAvg","patternCountAvg","noteAvg"].includes(mode) && tbodyMode == "category") {
         heads = commonHeads;
         x = categoryList.map(category => list["dlcKor"][category]);
+        
+        if (mode == "noteAvg") {
+            categoryDataSorted = categoryDataSorted.filter(catDat => Object.values(catDat["noteSum"]).every(note => note > 0));
+            x = categoryDataSorted.map(catDat => list["dlcKor"][catDat["category"]]);
+        }
         y = heads.map(head => categoryDataSorted.map(catDat => catDat[mode][head]));
 
         if (mode == "levelAvg") {
