@@ -44,17 +44,17 @@ function App() {
                                 if (category == "feat") {
                                     let result = featRegex.exec(a);
                                     if (result[2]) {
-                                        addArtist(result[1], category, song["title"], result[2], dlc);
+                                        addArtist(result[1], category, song, result[2], dlc);
                                     }
                                     else {
-                                        addArtist(result[1], category, song["title"], category, dlc);
+                                        addArtist(result[1], category, song, category, dlc);
                                     }
                                 }
                                 else if (category == "visualize") {
-                                    addArtist(a, category, song["title"], category, dlc);
+                                    addArtist(a, category, song, category, dlc);
                                 }
                                 else {
-                                    addArtist(a, category, song["title"], null, dlc);
+                                    addArtist(a, category, song, null, dlc);
                                 }
                             });
                         }
@@ -62,17 +62,17 @@ function App() {
                             if ("nominal" in artist) {
                                 let extra = artist["alias"] || artist["ambiguous"];
                                 if (["feat","visualize"].includes(category)) {
-                                    addArtist(`${artist["nominal"]} (${extra})`, category, song["title"], category, dlc);
+                                    addArtist(`${artist["nominal"]} (${extra})`, category, song, category, dlc);
                                 }
                                 else {
-                                    addArtist(`${artist["nominal"]} (${extra})`, category, song["title"], null, dlc);
+                                    addArtist(`${artist["nominal"]} (${extra})`, category, song, null, dlc);
                                 }
                                 if ("alias" in artist) {
                                     if (["feat","visualize"].includes(category)) {
-                                        addArtist(extra, category, song["title"], category, dlc);
+                                        addArtist(extra, category, song, category, dlc);
                                     }
                                     else {
-                                        addArtist(extra, category, song["title"], null, dlc);
+                                        addArtist(extra, category, song, null, dlc);
                                     }
                                 }
                             }
@@ -83,7 +83,7 @@ function App() {
                                         subArtist = [subArtist];
                                     }
                                     subArtist.forEach(s => {
-                                        addArtist(s, category, song["title"], subCat, dlc);
+                                        addArtist(s, category, song, subCat, dlc);
                                     });
                                 }
                             }
@@ -200,6 +200,13 @@ function Artist({ mode, dlcSelect }) {
 
     if (mode != "all") {
         artistList = artistList.filter(artist => mode in artists[artist]);
+
+        if (["feat","visualize"].includes(mode)) {
+            artistList = artistList.filter(artist => Object.values(artists[artist][mode]).some(song => dlcSelect.has(song["dlc"])));
+        }
+        else {
+            artistList = artistList.filter(artist => artists[artist][mode].some(song => dlcSelect.has(song["dlc"])));
+        }
     }
 
     return (
@@ -230,7 +237,7 @@ function Category({ mode, artist, dlcSelect }) {
             let subCats = [];
 
             for (let subCat in artists[artist][category]) {
-                songList = artists[artist][category][subCat].filter(sl => dlcSelect.has(songs.find(s => s["title"] == sl)["dlc"]));
+                songList = artists[artist][category][subCat].filter(song => dlcSelect.has(song["dlc"]));
 
                 if (songList.length) {
                     if (["feat","visualize"].includes(subCat)) {
@@ -255,7 +262,7 @@ function Category({ mode, artist, dlcSelect }) {
             subCatOrSong = subCats;
         }
         else {
-            songList = artists[artist][category].filter(sl => dlcSelect.has(songs.find(s => s["title"] == sl)["dlc"]));
+            songList = artists[artist][category].filter(song => dlcSelect.has(song["dlc"]));
 
             if (songList.length) {
                 subCatOrSong = <SongUl key={category} songList={songList} artist={artist}/>;
@@ -284,7 +291,7 @@ function SongUl({ songList, artist, style }) {
         // <ul className="songUl" style={style || {"listStyleType": "none"}}>
         <ul className="songUl">
             {songList.map(song =>
-                <SongLi key={song} title={song} artist={artist}/>
+                <SongLi key={song["uniqueTitle"]} title={song["title"]} artist={artist}/>
             )}
         </ul>
     );
@@ -313,8 +320,8 @@ function SongLi({ title, artist, credit }) {
 function Title({ dlcSelect }) {
     return (
         <ul id="titleUl">
-            {songs.filter(song => dlcSelect.has(song["dlc"])).map((song, i) =>
-                <SongLi key={song["title"]+song["artist"]["compose"]} title={song["title"]} artist={song["artist"]["compose"]} credit={song}/>
+            {songs.filter(song => dlcSelect.has(song["dlc"])).map(song =>
+                <SongLi key={song["uniqueTitle"]} title={song["title"]} artist={song["artist"]["compose"]} credit={song}/>
             )}
         </ul>
     );
@@ -366,7 +373,7 @@ function Credit({ song }) {
     );
 }
 
-function addArtist(artist, category, title, subCat, dlc) {
+function addArtist(artist, category, song, subCat, dlc) {
     if (!(artist in artists)) {
         artists[artist] = {}
     }
@@ -388,12 +395,12 @@ function addArtist(artist, category, title, subCat, dlc) {
     }
 
     if (["feat","visualize"].includes(category)) {
-        artists[artist][category][subCat].push(title);
-        artists[artist][category][subCat].sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+        artists[artist][category][subCat].push(song);
+        artists[artist][category][subCat].sort((a,b) => a["title"].toLowerCase().localeCompare(b["title"].toLowerCase()));
     }
     else {
-        artists[artist][category].push(title);
-        artists[artist][category].sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+        artists[artist][category].push(song);
+        artists[artist][category].sort((a,b) => a["title"].toLowerCase().localeCompare(b["title"].toLowerCase()));
     }
 
     artists[artist]["dlc"].add(dlc);
@@ -401,6 +408,7 @@ function addArtist(artist, category, title, subCat, dlc) {
 
 function listArtists(song) {
     let artists = new Set();
+
     for (let category in song["artist"]) {
         let artist = song["artist"][category];
         if (typeof artist == "string" || Array.isArray(artist)) {
@@ -429,7 +437,31 @@ function listArtists(song) {
             }
         }
     }
+
     return [...artists];
+}
+
+function listSongs(artist) {
+    let songs = new Set();
+
+    for (let category in artist) {
+        if (category == "dic") continue;
+
+        if (Array.isArray(artist[category])) {
+            artist[category].forEach(song => {
+                songs.add(song);
+            });
+        }
+        else {
+            for (let subCat in artist[category]) {
+                artist[category][subCat].forEach(song => {
+                    songs.add(song);
+                });
+            }
+        }
+    }
+
+    return [...songs];
 }
 
 ReactDOM.render(<App/>, document.querySelector("#root"));
