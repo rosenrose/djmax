@@ -19,101 +19,151 @@ let artists = {};
 let featRegex = /([^()]+)(?:\((.+)\))?/;
 
 function App() {
-    const [loading, setLoading] = React.useState(true);
-    const [mode, setMode] = React.useState("compose");
     React.useEffect(() => {
         fetch("../list.json")
         .then(response => response.json())
         .then(json => {
             list = json;
-            for (let category in list["songs"]) {
-                list["songs"][category] = list["songs"][category].map(song => new Song(song));
+            for (let dlc in list["songs"]) {
+                list["songs"][dlc] = list["songs"][dlc].map(song => new Song(song));
             }
+
             songs = Object.values(json["songs"]).reduce((a,b) => [...a, ...b]).sort((a,b) => a["title"].toLowerCase().localeCompare(b["title"].toLowerCase()));
-            songs.forEach(song => {
-                for (let category in song["artist"]) {
-                    let artist = song["artist"][category];
-                    if (typeof artist == "string" || Array.isArray(artist)) {
-                        if (typeof artist == "string") {
-                            artist = [artist];
-                        }
-                        artist.forEach(a => {
-                            if (category == "feat") {
-                                let result = featRegex.exec(a);
-                                if (result[2]) {
-                                    addArtist(result[1], category, song["title"], result[2]);
+
+            for (let dlc in list["songs"]) {
+                list["songs"][dlc].forEach(song => {
+                    song["dlc"] = dlc;
+
+                    for (let category in song["artist"]) {
+                        let artist = song["artist"][category];
+                        if (typeof artist == "string" || Array.isArray(artist)) {
+                            if (typeof artist == "string") {
+                                artist = [artist];
+                            }
+                            artist.forEach(a => {
+                                if (category == "feat") {
+                                    let result = featRegex.exec(a);
+                                    if (result[2]) {
+                                        addArtist(result[1], category, song["title"], result[2], dlc);
+                                    }
+                                    else {
+                                        addArtist(result[1], category, song["title"], category, dlc);
+                                    }
+                                }
+                                else if (category == "visualize") {
+                                    addArtist(a, category, song["title"], category, dlc);
                                 }
                                 else {
-                                    addArtist(result[1], category, song["title"], category);
+                                    addArtist(a, category, song["title"], null, dlc);
                                 }
-                            }
-                            else if (category == "visualize") {
-                                addArtist(a, category, song["title"], category);
-                            }
-                            else {
-                                addArtist(a, category, song["title"]);
-                            }
-                        });
-                    }
-                    else if (typeof artist == "object") {
-                        if ("nominal" in artist) {
-                            let extra = artist["alias"] || artist["ambiguous"];
-                            if (["feat","visualize"].includes(category)) {
-                                addArtist(`${artist["nominal"]} (${extra})`, category, song["title"], category);
-                            }
-                            else {
-                                addArtist(`${artist["nominal"]} (${extra})`, category, song["title"]);
-                            }
-                            if ("alias" in artist) {
+                            });
+                        }
+                        else if (typeof artist == "object") {
+                            if ("nominal" in artist) {
+                                let extra = artist["alias"] || artist["ambiguous"];
                                 if (["feat","visualize"].includes(category)) {
-                                    addArtist(extra, category, song["title"], category);
+                                    addArtist(`${artist["nominal"]} (${extra})`, category, song["title"], category, dlc);
                                 }
                                 else {
-                                    addArtist(extra, category, song["title"]);
+                                    addArtist(`${artist["nominal"]} (${extra})`, category, song["title"], null, dlc);
+                                }
+                                if ("alias" in artist) {
+                                    if (["feat","visualize"].includes(category)) {
+                                        addArtist(extra, category, song["title"], category, dlc);
+                                    }
+                                    else {
+                                        addArtist(extra, category, song["title"], null, dlc);
+                                    }
+                                }
+                            }
+                            else {  //visualize
+                                for (let subCat in artist) {
+                                    let subArtist = artist[subCat];
+                                    if (typeof subArtist == "string") {
+                                        subArtist = [subArtist];
+                                    }
+                                    subArtist.forEach(s => {
+                                        addArtist(s, category, song["title"], subCat, dlc);
+                                    });
                                 }
                             }
                         }
-                        else {  //visualize
-                            for (let subCat in artist) {
-                                let subArtist = artist[subCat];
-                                if (typeof subArtist == "string") {
-                                    subArtist = [subArtist];
-                                }
-                                subArtist.forEach(s => {
-                                    addArtist(s, category, song["title"], subCat);
-                                });
-                            }
+                        else {
+                            throw "error!";
                         }
                     }
-                    else {
-                        throw "error!";
-                    }
-                }
-            });
+                });
+            }
             artists = Object.fromEntries(Object.entries(artists).sort((a,b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase())));
+            setDlcSelect(new Set(Object.keys(list["songs"])));
             setLoading(false);
         });
     }, []);
 
+    const [loading, setLoading] = React.useState(true);
+    const [mode, setMode] = React.useState("compose");
+    const [dlcSelect, setDlcSelect] = React.useState(new Set());
+
     const onChange = (event) => {
         setMode(event.target.value);
+    };
+    const onCheck = () => {
+        setDlcSelect(new Set(Object.keys(list["songs"])));
+    };
+    const onUncheck = () => {
+        setDlcSelect(new Set());
+    };
+    const onDlcSelect = (event) => {
+        if (event.target.checked) {
+            dlcSelect.add(event.target.value);
+        }
+        else {
+            dlcSelect.delete(event.target.value);
+        }
+        setDlcSelect(new Set(dlcSelect));
     };
 
     return (
         loading ? (
             <h1 className="center">로딩...</h1>
         ) : (
-            <div id="result">
-                <Select onChange={onChange}/>
-                {mode != "title" && <Buttons/>}
-                {(mode == "title")? <Title/> : <Artist mode={mode}/>}
+            <div>
+                <div className="center">
+                    <button type="button" onClick={onCheck}>모두 선택</button>
+                    <button type="button" onClick={onUncheck}>모두 해제</button>
+                </div>
+                <DlcSelect dlcSelect={dlcSelect} onDlcSelect={onDlcSelect}/>
+                <div id="result">
+                    <Select onChange={onChange}/>
+                    {mode != "title" && <Buttons/>}
+                    {(mode == "title")? <Title dlcSelect={dlcSelect}/> : <Artist mode={mode} dlcSelect={dlcSelect}/>}
+                </div>
             </div>
         )
     );
 }
 
+function DlcSelect({ dlcSelect, onDlcSelect }) {
+    React.useEffect(() => {
+        document.querySelectorAll("#dlcSelect input").forEach(input => {
+            input.checked = dlcSelect.has(input.value);
+        });
+    }, [dlcSelect]);
+
+    return (
+        <div id="dlcSelect" onChange={onDlcSelect}>
+            {Object.keys(list["songs"]).map(category =>
+                <label key={category} className="shadow-white">
+                    <input type="checkbox" value={category} defaultChecked={dlcSelect.has(category)}/>
+                    {list["dlcKor"][category]}
+                </label>
+            )}
+        </div>
+    );
+}
+
 function Select({ onChange }) {
-    let labels = Object.entries(categoryKorMap).slice(0,-3).map(([eng, kor], i) =>
+    let labels = Object.entries(categoryKorMap).slice(0, -4).map(([eng, kor], i) =>
         <label key={eng}>
             <input type="radio" name="mode" value={eng} defaultChecked={i == 1}/>{kor}
         </label>
@@ -145,8 +195,12 @@ function Buttons() {
     );
 }
 
-function Artist({ mode }) {
-    let artistList = (mode == "all")? Object.keys(artists) : Object.keys(artists).filter(artist => mode in artists[artist]);
+function Artist({ mode, dlcSelect }) {
+    let artistList = Object.keys(artists).filter(artist => [...artists[artist]["dlc"]].some(dlc => dlcSelect.has(dlc)));
+
+    if (mode != "all") {
+        artistList = artistList.filter(artist => mode in artists[artist]);
+    }
 
     return (
         <ul id="artistUl">
@@ -154,7 +208,7 @@ function Artist({ mode }) {
                 <li key={artist} className="artistLi left">
                     <details>
                         <summary>{artist}</summary>
-                        <Category mode={mode} artist={artist}/>
+                        <Category mode={mode} artist={artist} dlcSelect={dlcSelect}/>
                     </details>
                 </li>
             )}
@@ -162,47 +216,60 @@ function Artist({ mode }) {
     );
 }
 
-function Category({ mode, artist }) {
+function Category({ mode, artist, dlcSelect }) {
     let categoryLi = [];
 
     for (let category in artists[artist]) {
-        if (mode != "all" && category != mode) {
+        if ((mode != "all" && category != mode) || category == "dlc") {
             continue;
         }
 
-        let subCatOrSong;
+        let subCatOrSong = null, songList = [];
 
         if (["feat","visualize"].includes(category)) {
             let subCats = [];
+
             for (let subCat in artists[artist][category]) {
-                if (["feat","visualize"].includes(subCat)) {
-                    subCats.unshift(
-                        <SongUl key={subCat} songList={artists[artist][category][subCat]} artist={artist}/>
-                    );
-                }
-                else {
-                    subCats.push(
-                        <ul key={subCat} className="subCatUl">
-                            <li className="subCatLi">
-                                <p>{(category == "visualize")? categoryKorMap[subCat] : subCat}</p>
-                                <SongUl songList={artists[artist][category][subCat]} artist={artist}/>
-                            </li>
-                        </ul>
-                    );
+                songList = artists[artist][category][subCat].filter(sl => dlcSelect.has(songs.find(s => s["title"] == sl)["dlc"]));
+
+                if (songList.length) {
+                    if (["feat","visualize"].includes(subCat)) {
+                        subCats.unshift(
+                            // <SongUl key={subCat} songList={songList} artist={artist} style={{"listStyleType": (mode == "all")? "none" : ""}}/>
+                            <SongUl key={subCat} songList={songList} artist={artist}/>
+                        );
+                    }
+                    else {
+                        subCats.push(
+                            <ul key={subCat} className="subCatUl">
+                                <li className="subCatLi">
+                                    <p>{(category == "visualize")? categoryKorMap[subCat] : subCat}</p>
+                                    <SongUl songList={songList} artist={artist}/>
+                                </li>
+                            </ul>
+                        );
+                    }
                 }
             }
+
             subCatOrSong = subCats;
         }
         else {
-            subCatOrSong = <SongUl key={category} songList={artists[artist][category]} artist={artist}/>;
+            songList = artists[artist][category].filter(sl => dlcSelect.has(songs.find(s => s["title"] == sl)["dlc"]));
+
+            if (songList.length) {
+                subCatOrSong = <SongUl key={category} songList={songList} artist={artist}/>;
+            }
         }
 
-        categoryLi.push(
-            <li key={category} className="categoryLi" style={{"list-style-type": (mode == "all")? "" : "none"}}>
-                {(mode == "all") && <p>{categoryKorMap[category]}</p>}
-                {subCatOrSong}
-            </li>
-        );
+        if (subCatOrSong && (Array.isArray(subCatOrSong)? subCatOrSong.length : true)) {
+            categoryLi.push(
+                <li key={category} className="categoryLi" style={{"listStyleType": (mode == "all")? "" : "none"}}>
+                    <p hidden={mode != "all"}>{categoryKorMap[category]}</p>
+                    {subCatOrSong}
+                </li>
+            );
+        }
     }
 
     return (
@@ -212,8 +279,9 @@ function Category({ mode, artist }) {
     );
 }
 
-function SongUl({ songList, artist }) {
+function SongUl({ songList, artist, style }) {
     return (
+        // <ul className="songUl" style={style || {"listStyleType": "none"}}>
         <ul className="songUl">
             {songList.map(song =>
                 <SongLi key={song} title={song} artist={artist}/>
@@ -242,10 +310,10 @@ function SongLi({ title, artist, credit }) {
     );
 }
 
-function Title() {
+function Title({ dlcSelect }) {
     return (
         <ul id="titleUl">
-            {songs.map((song, i) =>
+            {songs.filter(song => dlcSelect.has(song["dlc"])).map((song, i) =>
                 <SongLi key={song["title"]+song["artist"]["compose"]} title={song["title"]} artist={song["artist"]["compose"]} credit={song}/>
             )}
         </ul>
@@ -298,7 +366,7 @@ function Credit({ song }) {
     );
 }
 
-function addArtist(artist, category, title, subCat) {
+function addArtist(artist, category, title, subCat, dlc) {
     if (!(artist in artists)) {
         artists[artist] = {}
     }
@@ -315,6 +383,9 @@ function addArtist(artist, category, title, subCat) {
             artists[artist][category][subCat] = [];
         }
     }
+    if (!("dlc" in artists[artist])) {
+        artists[artist]["dlc"] = new Set();
+    }
 
     if (["feat","visualize"].includes(category)) {
         artists[artist][category][subCat].push(title);
@@ -324,6 +395,8 @@ function addArtist(artist, category, title, subCat) {
         artists[artist][category].push(title);
         artists[artist][category].sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()));
     }
+
+    artists[artist]["dlc"].add(dlc);
 }
 
 function listArtists(song) {

@@ -72,16 +72,16 @@ document.querySelector("#dlcSelect").addEventListener("change", event => {
 });
 
 document.querySelector("#spread").addEventListener("click", () => {
-    document.querySelectorAll("#dlcCheckbox label").forEach(label => {
-        if (!label.querySelector("input").checked) {
-            label.click();
+    document.querySelectorAll("#dlcCheckbox input").forEach(input => {
+        if (!input.checked) {
+            input.click();
         }
     });
 });
 document.querySelector("#collapse").addEventListener("click", () => {
-    document.querySelectorAll("#dlcCheckbox label").forEach(label => {
-        if (label.querySelector("input").checked) {
-            label.click();
+    document.querySelectorAll("#dlcCheckbox input").forEach(input => {
+        if (input.checked) {
+            input.click();
         }
     });
 });

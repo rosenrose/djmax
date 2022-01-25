@@ -1128,7 +1128,7 @@ function Graph({ mode, tbodyMode }) {
     else if (["levelAvg","patternCountAvg","noteAvg"].includes(mode) && tbodyMode == "category") {
         heads = commonHeads;
         x = categoryList.map(category => list["dlcKor"][category]);
-        
+
         if (mode == "noteAvg") {
             categoryDataSorted = categoryDataSorted.filter(catDat => Object.values(catDat["noteSum"]).every(note => note > 0));
             x = categoryDataSorted.map(catDat => list["dlcKor"][catDat["category"]]);

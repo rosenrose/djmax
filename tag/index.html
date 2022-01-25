@@ -116,10 +116,10 @@
         function getTagResult() {
             let result = songs.filter(song => song["genre"] && tagSelect.size > 0);
             if (condition == "and") {
-                result = result.filter(song => [...tagSelect].every(t => song["genre"].includes(t)));
+                result = result.filter(song => [...tagSelect].every(t => song["genre"].toLowerCase().includes(t.toLowerCase())));
             }
             else if (condition == "or") {
-                result = result.filter(song => [...tagSelect].some(t => song["genre"].includes(t)));
+                result = result.filter(song => [...tagSelect].some(t => song["genre"].toLowerCase().includes(t.toLowerCase())));
             }
             result = result.sort((a,b) => (a["title"].toLowerCase()>b["title"].toLowerCase())? 1:-1);
 

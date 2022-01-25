@@ -1,7 +1,11 @@
 body {
     background-image: url('../img/cover.jpg');
 }
+button {
+    border-radius: 1em;
+}
 
+/* #artistUl, #titleUl { */
 #artistUl, .songUl, #titleUl {
     list-style-type: none;
 }
@@ -15,12 +19,20 @@ body {
 .songLi div {
     display: inline-block;
 }
-
 .cat {
     color: gray;
     margin-right: 0.5em;
 }
 
+#dlcSelect {
+    width: 35%;
+    margin: auto;
+}
+#dlcSelect label {
+    display: inline-block;
+    width: 23%;
+    margin: 0.3em;
+}
 #result {
     width: 50%;
 }
@@ -29,9 +41,6 @@ body {
 }
 #selectMode {
     text-align: center;
-}
-#spread, #collapse {
-    border-radius: 1em;
 }
 
 #artistUl {
@@ -48,6 +57,9 @@ body {
 }
 #artistUl .songLi div {
     width: 80%;
+}
+#artistUl .subCatUl {
+    margin-left: 1em;
 }
 
 #titleUl .songLi {
@@ -66,8 +78,15 @@ body {
 }
 
 @media ( max-width: 768px ) {
+    #dlcSelect {
+        width: 105%;
+    }
     #result {
         width: 100%;
+    }
+    #dlcSelect label {
+        margin: 0.1em;
+        width: 32%;
     }
     ul, #artistUl {
         margin-left: -1.5em;
