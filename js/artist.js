@@ -202,7 +202,7 @@ function Artist({ mode, dlcSelect }) {
         artistList = artistList.filter(artist => mode in artists[artist]);
 
         if (["feat","visualize"].includes(mode)) {
-            artistList = artistList.filter(artist => Object.values(artists[artist][mode]).some(song => dlcSelect.has(song["dlc"])));
+            artistList = artistList.filter(artist => Object.values(artists[artist][mode]).reduce((a,b) => [...a, ...b]).some(song => dlcSelect.has(song["dlc"])));
         }
         else {
             artistList = artistList.filter(artist => artists[artist][mode].some(song => dlcSelect.has(song["dlc"])));
