@@ -310,7 +310,11 @@ function SongLi({ song, artist, credit }) {
     return (
         <li className="songLi" style={credit? null : getCategoryStyle(song["dlc"], list["collaboration"])}>
             <img src={`${song["urlTitle"]}_1.png`}/>
-            {credit? <Credit song={credit}/> : <div><p>{song["title"]}</p></div>}
+            {credit
+                ? <Credit song={credit}/>
+                : <div>
+                    <p>{song["title"]}</p>
+                  </div>}
         </li>
     );
 }

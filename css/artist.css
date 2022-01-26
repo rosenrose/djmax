@@ -13,8 +13,8 @@ button {
 .artistLi {
     margin: 1em;
 }
-.songLi img {
-    margin-right: 0.5em;
+.songLi :is(p, h3) {
+    margin-left: 0.5em;
 }
 .songLi div {
     display: inline-block;
@@ -48,12 +48,10 @@ button {
 }
 #artistUl img {
     width: 10%;
+    vertical-align: middle;
 }
 #artistUl .songLi {
     margin: 0.5em;
-}
-#artistUl .songLi > * {
-    vertical-align: middle;
 }
 #artistUl .songLi div {
     width: 80%;
@@ -74,7 +72,7 @@ button {
     width: 75%;
 }
 #titleUl .songLi h3 {
-    margin: 0;
+    margin-top: 0;
 }
 
 @media ( max-width: 1280px ) {
