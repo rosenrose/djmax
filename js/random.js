@@ -17,17 +17,18 @@ fetch("../list.json").then(response => response.json())
     document.querySelector("#run").textContent = "뽑기";
     document.querySelector("#run").disabled = false;
 
-    let dlcCheck = document.querySelectorAll("#dlcCheckbox td");
-    for (let i=0; i<dlcCheck.length; i++) {
-        let dlc = Object.keys(list["songs"])[i];
-        let template = document.querySelector("#dlcCheckboxTemplate").content.cloneNode(true);
+    let dlcCheck = document.querySelector("#dlcCheckbox");
 
+    Object.keys(list["songs"]).forEach(dlc => {
+        let template = document.querySelector("#dlcCheckboxTemplate").content.cloneNode(true);
         let label = template.firstElementChild;
         let input = template.querySelector("input");
+
         input.value = dlc;
         input.nextSibling.textContent = list["dlcKor"][dlc];
-        dlcCheck[i].append(label);
-    }
+        dlcCheck.append(label);
+    });
+
     document.querySelectorAll("input[checked], select").forEach(input => {input.dispatchEvent(new InputEvent("change",{bubbles: true}));});
     document.querySelectorAll("#dlcSelect input, #buttonSelect input, #rankSelect input").forEach(check => {
         check.click();
@@ -42,7 +43,7 @@ for (let i=0; i<maxCount; i++) {
 
 document.querySelector("#modeSelect").addEventListener("change", event => {
     mode = event.target.value;
-    toggleAttribute("hidden", mode != "PC", document.querySelector("input[value='SC']").parentNode, document.querySelector("input[value='nexon']").parentNode, document.querySelector("input[value='vextension2']").parentNode);
+    toggleAttribute("style.display", (mode == "PC")? "" : "none", document.querySelector("input[value='SC']").parentNode, document.querySelector("input[value='nexon']").parentNode, document.querySelector("input[value='vextension2']").parentNode);
 
     if (mode == "PC") {
         if (document.querySelector("input[value='SC']").checked) {

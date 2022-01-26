@@ -30,6 +30,15 @@ td {
     font-size: 0.7em;
 }
 
+#dlcCheckbox {
+    width: 40%;
+    margin: auto;
+}
+#dlcCheckbox label {
+    display: inline-block;
+    width: 23%;
+    margin: 0.3em;
+}
 #spread, #collapse {
     border-radius: 1em;
 }
@@ -57,7 +66,20 @@ td {
     display: flex;
 }
 
+@media ( max-width: 1280px ) {
+    #dlcCheckbox {
+        width: 50%;
+    }
+}
+
 @media ( max-width: 768px ) {
+    #dlcCheckbox {
+        width: 105%;
+    }
+    #dlcCheckbox label {
+        margin: 0.1em;
+        width: 32%;
+    }
     #result {
         width: 100%;
     }
