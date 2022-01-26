@@ -214,8 +214,10 @@ document.querySelector("#run").addEventListener("click", () => {
         }
 
         p[1].textContent = artist;
-        li[i].querySelector(".title_artist").style.color = getCategoryStyle(category, list["collaboration"]).color;
-        li[i].querySelector(".title_artist").style.backgroundImage = getCategoryStyle(category, list["collaboration"]).backgroundImage;
+        let categoryStyle = getCategoryStyle(category, list["collaboration"]);
+        li[i].querySelector(".title_artist").style.color = categoryStyle.color;
+        li[i].querySelector(".title_artist").style.backgroundImage = categoryStyle.backgroundImage;
+        li[i].querySelector(".title_artist").style.backgroundSize = categoryStyle.backgroundSize;
     }
 });
 

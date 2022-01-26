@@ -521,8 +521,7 @@ function Title({ mode, bpmMode, dateMode }) {
 
                 tds.push(
                     <td key={tableHeads[mode][i]}
-                        style={(mode == "date" && head == "카테고리")? getCategoryStyle(category, list["collaboration"]) : {}}
-                        className={(mode == "date" && head == "카테고리")? "category-background" : ""}
+                        style={(mode == "date" && head == "카테고리")? getCategoryStyle(category, list["collaboration"]) : null}
                     >
                         {data}
                         {(mode == "bpm" && head == "BPM" && bpmMode == "mid" && isNaN(song["bpm"])) &&
@@ -578,9 +577,7 @@ function Category({ mode }) {
 
         return (
             <tr key={category}>
-                <th className="category-background"
-                    style={getCategoryStyle(category, list["collaboration"])}
-                >
+                <th style={getCategoryStyle(category, list["collaboration"])}>
                     {list["dlcKor"][category]}
                 </th>
                 {tableHeads[mode].filter(head => head != "카테고리").map(head => {

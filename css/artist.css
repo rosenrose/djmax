@@ -14,7 +14,7 @@ button {
     margin: 1em;
 }
 .songLi img {
-    margin-right: 1em;
+    margin-right: 0.5em;
 }
 .songLi div {
     display: inline-block;

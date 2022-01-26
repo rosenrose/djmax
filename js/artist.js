@@ -291,13 +291,13 @@ function SongUl({ songList, artist, style }) {
         // <ul className="songUl" style={style || {"listStyleType": "none"}}>
         <ul className="songUl">
             {songList.map(song =>
-                <SongLi key={song["uniqueTitle"]} title={song["title"]} artist={artist}/>
+                <SongLi key={song["uniqueTitle"]} song={song} artist={artist}/>
             )}
         </ul>
     );
 }
 
-function SongLi({ title, artist, credit }) {
+function SongLi({ song, artist, credit }) {
     if (typeof artist == "object") {
         if (Array.isArray(artist)) {
             artist = artist[0];
@@ -307,12 +307,10 @@ function SongLi({ title, artist, credit }) {
         }
     }
 
-    let urlTitle = songs.find(s => s["title"] == title && listArtists(s).some(a => a.includes(artist)))["urlTitle"];
-
     return (
-        <li className="songLi">
-            <img src={`${urlTitle}_1.png`}/>
-            {credit ? <Credit song={credit}/> : <div><p>{title}</p></div>}
+        <li className="songLi" style={credit? null : getCategoryStyle(song["dlc"], list["collaboration"])}>
+            <img src={`${song["urlTitle"]}_1.png`}/>
+            {credit? <Credit song={credit}/> : <div><p>{song["title"]}</p></div>}
         </li>
     );
 }
@@ -321,7 +319,7 @@ function Title({ dlcSelect }) {
     return (
         <ul id="titleUl">
             {songs.filter(song => dlcSelect.has(song["dlc"])).map(song =>
-                <SongLi key={song["uniqueTitle"]} title={song["title"]} artist={song["artist"]["compose"]} credit={song}/>
+                <SongLi key={song["uniqueTitle"]} song={song} artist={song["artist"]["compose"]} credit={song}/>
             )}
         </ul>
     );

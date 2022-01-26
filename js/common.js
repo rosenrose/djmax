@@ -66,8 +66,8 @@ function toggleInput(input, condition) {
 function getCategoryStyle(category, collab) {
     return {
         color: (category == "clazziquai")? "" : "#fff",
-        backgroundImage: `url(/djmax/img/color_${(collab.includes(category))? "collaboration" : category}.png)`
-        // backgroundSize: "100% 100%"
+        backgroundImage: `url(/djmax/img/color_${(collab.includes(category))? "collaboration" : category}.png)`,
+        backgroundSize: "100% 100%"
     };
 }
 
