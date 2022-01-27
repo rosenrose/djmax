@@ -94,7 +94,33 @@ function App() {
                     }
                 });
             }
+
             artists = Object.fromEntries(Object.entries(artists).sort((a,b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase())));
+            for (let artist in artists) {
+                for (let category in artists[artist]) {
+                    if (category == "dlc") continue;
+
+                    if (Array.isArray(artists[artist][category])) {
+                        artists[artist][category].sort((a,b) => {
+                            if (a["dlc"] == b["dlc"]) {
+                                return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
+                            }
+                            return Object.keys(list["songs"]).indexOf(a["dlc"]) - Object.keys(list["songs"]).indexOf(b["dlc"]);
+                        });
+                    }
+                    else {
+                        for (let subCat in artists[artist][category]) {
+                            artists[artist][category][subCat].sort((a,b) => {
+                                if (a["dlc"] == b["dlc"]) {
+                                    return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
+                                }
+                                return Object.keys(list["songs"]).indexOf(a["dlc"]) - Object.keys(list["songs"]).indexOf(b["dlc"]);
+                            });
+                        }
+                    }
+                }
+            }
+
             setDlcSelect(new Set(Object.keys(list["songs"])));
             setLoading(false);
         });
@@ -398,11 +424,9 @@ function addArtist(artist, category, song, subCat, dlc) {
 
     if (["feat","visualize"].includes(category)) {
         artists[artist][category][subCat].push(song);
-        artists[artist][category][subCat].sort((a,b) => a["title"].toLowerCase().localeCompare(b["title"].toLowerCase()));
     }
     else {
         artists[artist][category].push(song);
-        artists[artist][category].sort((a,b) => a["title"].toLowerCase().localeCompare(b["title"].toLowerCase()));
     }
 
     artists[artist]["dlc"].add(dlc);

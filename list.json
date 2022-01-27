@@ -25758,7 +25758,10 @@
         "title": "Les Parfums de L'Amour",
         "artist": {
           "compose": "naotyu-",
-          "vocal": "Miyu"
+          "vocal": {
+            "nominal": "Miyu",
+            "ambiguous": "보컬"
+          }
         },
         "level": {
           "4B": {
