@@ -1397,7 +1397,10 @@
           "compose": "Paul Bazooka",
           "visualize": {
             "illust": "S.in",
-            "motion": "RK"
+            "motion": {
+              "nominal": "RK",
+              "alias": "Lepusnette"
+            }
           }
         },
         "genre": "DnB",
@@ -1526,7 +1529,10 @@
         "title": "Enter The Universe",
         "artist": {
           "compose": "GOTH",
-          "visualize": "RK"
+          "visualize": {
+            "nominal": "RK",
+            "alias": "Lepusnette"
+          }
         },
         "genre": "Hard Trance",
         "level": {
@@ -4223,7 +4229,10 @@
           "compose": "Croove",
           "vocal": "Nina Park",
           "visualize": [
-            "RK",
+            {
+              "nominal": "RK",
+              "alias": "Lepusnette"
+            },
             "SMIN"
           ]
         },
@@ -4394,7 +4403,10 @@
         "title": "We're All Gonna Die",
         "artist": {
           "compose": "Paul Bazooka",
-          "visualize": "RK"
+          "visualize": {
+            "nominal": "RK",
+            "alias": "Lepusnette"
+          }
         },
         "genre": "Neuro Funk",
         "level": {
@@ -8003,10 +8015,7 @@
           "compose": "Planetboom",
           "lyrics": "Planetboom",
           "vocal": "Planetboom",
-          "visualize": {
-            "nominal": "Lucy",
-            "ambiguous": "비주얼"
-          }
+          "visualize": "Lucy"
         },
         "genre": "Pop Rock",
         "level": {
@@ -17093,7 +17102,10 @@
           "compose": "Paul Bazooka",
           "visualize": {
             "illust": "S.in",
-            "motion": "RK"
+            "motion": {
+              "nominal": "RK",
+              "alias": "Lepusnette"
+            }
           }
         },
         "genre": "DnB",
@@ -25872,7 +25884,10 @@
           "compose": "M2U",
           "vocal": [
             "Guriri",
-            "Lucy"
+            {
+              "nominal": "Lucy",
+              "ambiguous": "보컬"
+            }
           ]
         },
         "level": {
