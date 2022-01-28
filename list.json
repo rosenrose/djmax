@@ -17627,13 +17627,13 @@
           "compose": [
             {
               "nominal": "Newton",
-              "alias": "Mr.Funky"
+              "include": "Mr.Funky"
             },
             "KNVWN"
           ],
           "arrange": {
             "nominal": "Newton",
-            "alias": "Mr.Funky"
+            "include": "Mr.Funky"
           },
           "lyrics": "KNVWN",
           "feat": "KNVWN",
