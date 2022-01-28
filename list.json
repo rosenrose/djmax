@@ -2202,7 +2202,14 @@
         "title": "I want You ~반짝★반짝 Sunshine~",
         "artist": {
           "compose": "Lin-G",
-          "remix": "Studio LAY-BACK",
+          "remix": {
+            "nominal": "Studio LAY-BACK",
+            "include": [
+              "Mycin.T",
+              "GOTH",
+              "jam-jam"
+            ]
+          },
           "lyrics": [
             "Lin-G",
             "yuuto"

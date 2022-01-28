@@ -463,7 +463,11 @@ function addArtistNominal(artist, category, song, subCat) {
         extra = `(${artist["ambiguous"]})`;
     }
     else if ("include" in artist) {
-        extra = `(⊃${artist["include"]})`;
+        let include = artist["include"];
+        if (typeof include == "string") {
+            include = [include];
+        }
+        extra = `(⊃${include.join(" / ")})`;
     }
 
     if (["feat","visualize"].includes(category)) {
@@ -473,15 +477,27 @@ function addArtistNominal(artist, category, song, subCat) {
         addArtist(`${artist["nominal"]} ${extra}`, category, song, null);
     }
 
-    let additional = artist["alias"] || artist["include"];
-
-    if (additional) {
+    if ("alias" in artist) {
         if (["feat","visualize"].includes(category)) {
-            addArtist(additional, category, song, subCat || category);
+            addArtist(artist["alias"], category, song, subCat || category);
         }
         else {
-            addArtist(additional, category, song, null);
+            addArtist(artist["alias"], category, song, null);
         }
+    }
+    if ("include" in artist) {
+        let include = artist["include"];
+        if (typeof include == "string") {
+            include = [include];
+        }
+        include.forEach(i => {
+            if (["feat","visualize"].includes(category)) {
+                addArtist(i, category, song, subCat || category);
+            }
+            else {
+                addArtist(i, category, song, null);
+            }
+        });
     }
 }
 
