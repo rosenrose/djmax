@@ -387,7 +387,7 @@ function Credit({ song }) {
         }
         credits.push(
             <p key={category}>
-                <span className="cat">{category[0].toUpperCase()}{category.slice(1)}</span>
+                <span className="cat">{category[0].toUpperCase() + category.slice(1)}</span>
                 <span className="art">{art}</span>
             </p>
         );
