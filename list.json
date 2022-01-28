@@ -17625,10 +17625,16 @@
         "title": "Arcade Love (feat. KNVWN)",
         "artist": {
           "compose": [
-            "Newton",
+            {
+              "nominal": "Newton",
+              "alias": "Mr.Funky"
+            },
             "KNVWN"
           ],
-          "arrange": "Newton",
+          "arrange": {
+            "nominal": "Newton",
+            "alias": "Mr.Funky"
+          },
           "lyrics": "KNVWN",
           "feat": "KNVWN",
           "visualize": "sai"
