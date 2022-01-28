@@ -387,6 +387,7 @@ function Credit({ song }) {
             if (typeof artist == "string") {
                 artist = [artist];
             }
+            artist = artist.map(a => (typeof a == "object" && "nominal" in a)? a["nominal"] : a);
             art += artist.join(" / ");
         }
         else if (typeof artist == "object") {
@@ -396,12 +397,17 @@ function Credit({ song }) {
             else {
                 let subArtist = [];
                 for (let subCat in artist) {
-                    if (typeof artist[subCat] == "string") {
-                        artist[subCat] = [artist[subCat]];
+                    if (typeof artist[subCat] == "string" || Array.isArray(artist[subCat])) {
+                        if (typeof artist[subCat] == "string") {
+                            artist[subCat] = [artist[subCat]];
+                        }
+                        artist[subCat].forEach(s => {
+                            subArtist.push((typeof s == "object" && "nominal" in s)? s["nominal"] : s);
+                        })
                     }
-                    artist[subCat].forEach(s => {
-                        subArtist.push(s);
-                    })
+                    else if (typeof artist[subCat] == "object" && "nominal" in artist[subCat]) {
+                        subArtist.push(artist[subCat]["nominal"]);
+                    }
                 }
                 art += subArtist.join(" / ");
             }
