@@ -454,21 +454,28 @@ function addArtist(artist, category, song, subCat) {
 }
 
 function addArtistNominal(artist, category, song, subCat) {
-    let extra = artist["alias"] || artist["ambiguous"];
+    let extra;
+
+    if ("alias" in artist) {
+        extra = `(=${artist["alias"]})`;
+    }
+    else if ("ambiguous" in artist) {
+        extra = `(${artist["ambiguous"]})`;
+    }
 
     if (["feat","visualize"].includes(category)) {
-        addArtist(`${artist["nominal"]} (${extra})`, category, song, subCat || category);
+        addArtist(`${artist["nominal"]} ${extra}`, category, song, subCat || category);
     }
     else {
-        addArtist(`${artist["nominal"]} (${extra})`, category, song, null);
+        addArtist(`${artist["nominal"]} ${extra}`, category, song, null);
     }
 
     if ("alias" in artist) {
         if (["feat","visualize"].includes(category)) {
-            addArtist(extra, category, song, subCat || category);
+            addArtist(artist["alias"], category, song, subCat || category);
         }
         else {
-            addArtist(extra, category, song, null);
+            addArtist(artist["alias"], category, song, null);
         }
     }
 }
