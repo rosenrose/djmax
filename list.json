@@ -3284,7 +3284,10 @@
           "compose": "Mr.Funky",
           "lyrics": [
             "Mr.Funky",
-            "Michael Blunck"
+            {
+              "nominal": "Mike.B",
+              "alias": "Michael Blunck"
+            }
           ],
           "vocal": "Mr.Funky",
           "feat": "Michael Blunck(on Rap)",
@@ -19954,7 +19957,10 @@
           "compose": "bermei.inazawa",
           "arrange": [
             "bermei.inazawa",
-            "UC"
+            {
+              "nominal": "UC",
+              "alias": "Urbatronic Chopsticks"
+            }
           ],
           "vocal": "Esprit Lee",
           "visualize": {
