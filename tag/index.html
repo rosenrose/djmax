@@ -71,11 +71,12 @@
             <span class="genre"></span>
         </li>
     </template>
+    <script type="text/javascript" src="../js/common.js"></script>
     <script type="text/javascript">
         tagSelect = new Set();
         fetch("../list.json").then(response => response.json())
         .then(json => {
-            songs = Object.values(json["songs"]).reduce((a,b) => [...a, ...b]);
+            songs = Object.values(json["songs"]).reduce((a,b) => [...a, ...b]).map(song => new Song(song));
             tags = songs.map(song => song["genre"]).filter(genre => genre !== undefined);
             tags = [...new Set(tags.join(" ").split(" "))].sort();
 
@@ -129,7 +130,7 @@
                 let template = document.querySelector("#songTemplate").content.cloneNode(true);
 
                 let [title, genre] = template.querySelectorAll("span");
-                title.textContent = song["title"];
+                title.textContent = song["uniqueTitle"];
                 genre.textContent = ` (${song["genre"]})`;
                 list.append(template.firstElementChild);
             }
