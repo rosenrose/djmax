@@ -113,7 +113,7 @@ function Song(song, isStat) {
         }
         if (!("early" in this["date"])) throw "err!";
 
-        [this["levelSum"], this["patternCount"], this["levelAvg"], this["minLevel"], this["maxLevel"], this["levelCount"], this["noteSum"], this["noteAvg"], this["noteCount"]] = [{},{},{},{},{},{},{},{},{}];
+        [this["levelSum"], this["patternCount"], this["levelAvg"], this["minLevel"], this["maxLevel"], this["levelCount"], this["noteSum"], this["noteAvg"], this["noteCount"], this["noteDensity"]] = [{},{},{},{},{},{},{},{},{},{}];
 
         commonHeads.forEach(head => {
             this["levelSum"][head] = this["patternCount"][head] = this["levelAvg"][head] = this["noteSum"][head] = this["noteAvg"][head] = 0;
@@ -125,6 +125,7 @@ function Song(song, isStat) {
 
             this["minLevel"][btn] = Math.min(...levels);
             this["maxLevel"][btn] = Math.max(...levels);
+            this["noteDensity"][btn] = {};
 
             for (let rank in this["level"][btn]) {
                 let level = this["level"][btn][rank];
@@ -163,6 +164,7 @@ function Song(song, isStat) {
                 }
                 this["noteCount"][noteCountKey][btn] += 1;
                 this["noteCount"][noteCountKey]["전체"] += 1;
+                this["noteDensity"][btn][rank] = note / this["length"];
             }
         }
 

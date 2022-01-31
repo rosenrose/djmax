@@ -14,6 +14,7 @@ let tableHeads = {
     "date": ["수록 날짜","카테고리"],
     "noteAvg": [...commonHeads, "카테고리"],
     "notes": ["버튼","노트 수","카테고리"],
+    "noteDensity": ["버튼","노트 밀도(개수/초)","카테고리"],
     "noteHistogram": commonHeads
 };
 const MIN_LEVEL = 1;
@@ -73,6 +74,7 @@ function App() {
                                 rank,
                                 "level": song["level"][btn][rank],
                                 "note": song["note"][btn][rank],
+                                "noteDensity": song["noteDensity"][btn][rank],
                                 category
                             });
                             if (song["note"][btn][rank] > 0) {
@@ -295,6 +297,7 @@ function Select({ onChange }) {
             <div>
                 <label><input type="radio" name="mode" value="noteAvg"/>노트 수 평균</label>
                 <label><input type="radio" name="mode" value="notes"/>노트 수 목록</label>
+                <label><input type="radio" name="mode" value="noteDensity"/>노트 밀도</label>
                 <label><input type="radio" name="mode" value="noteHistogram"/>노트 수 분포</label>
             </div>
         </div>
@@ -344,7 +347,7 @@ function Thead({ mode, titleMode, bpmMode, dateMode, isLevelsNotesSort, btnSelec
             break;
         default:
             leftTopTh = <th onChange={onTitleChange}
-                            rowSpan={["levels","notes"].includes(mode)? 3 : 1}
+                            rowSpan={["levels","notes","noteDensity"].includes(mode)? 3 : 1}
                         >
                             {(mode != "patternCountAvg") && titleLabel}
                             {isSeperator && seperator}
@@ -362,8 +365,8 @@ function Thead({ mode, titleMode, bpmMode, dateMode, isLevelsNotesSort, btnSelec
         }
 
         let classList = new Set();
-        let isSortClick = !["levels","notes"].includes(mode) ||
-                          (["levels","notes"].includes(mode) && (head == "카테고리" || (["레벨","노트 수"].includes(head) && isLevelsNotesSort)));
+        let isSortClick = !["levels","notes","noteDensity"].includes(mode) ||
+                          (["levels","notes","noteDensity"].includes(mode) && (head == "카테고리" || (["레벨","노트 수","노트 밀도(개수/초)"].includes(head) && isLevelsNotesSort)));
 
         if (isSortClick) {
             classList.add("click");
@@ -384,8 +387,8 @@ function Thead({ mode, titleMode, bpmMode, dateMode, isLevelsNotesSort, btnSelec
             <th key={head}
                 className={[...classList].join(" ")}
                 id={id}
-                rowSpan={(["levels","notes"].includes(mode) && ["버튼","카테고리"].includes(head))? 3 : 1}
-                colSpan={(["levels","notes"].includes(mode) && ["레벨","노트 수"].includes(head))? 4 : 1}
+                rowSpan={(["levels","notes","noteDensity"].includes(mode) && ["버튼","카테고리"].includes(head))? 3 : 1}
+                colSpan={(["levels","notes","noteDensity"].includes(mode) && ["레벨","노트 수","노트 밀도(개수/초)"].includes(head))? 4 : 1}
             >
                 {head}
                 {isSortClick && <span className="sortArrow">{ASC}</span>}
@@ -403,7 +406,7 @@ function Thead({ mode, titleMode, bpmMode, dateMode, isLevelsNotesSort, btnSelec
                         <label><input type="radio" name="dateMode" value="PC" defaultChecked={dateMode == "PC"}/>PC</label>
                     </div>
                 }
-                {(["levels","notes"].includes(mode) && ["레벨","노트 수"].includes(head)) &&
+                {(["levels","notes","noteDensity"].includes(mode) && ["레벨","노트 수","노트 밀도(개수/초)"].includes(head)) &&
                     <label id="levelsNotesSort" onChange={onIsLevelsNotesSort}><input type="checkbox" defaultChecked={isLevelsNotesSort}/>정렬</label>
                 }
             </th>
@@ -416,7 +419,7 @@ function Thead({ mode, titleMode, bpmMode, dateMode, isLevelsNotesSort, btnSelec
                 {leftTopTh}
                 {ths}
             </tr>
-            {["levels","notes"].includes(mode) && isLevelsNotesSort &&
+            {["levels","notes","noteDensity"].includes(mode) && isLevelsNotesSort &&
                 <tr className="subSelectMode btnSelect" onChange={onBtnSelectChange}>
                     {commonHeads.slice(1).map(btn =>
                         <th key={btn} className={btnSelect.has(btn)? `${btn}-background btn-rank` : `${btn}-color`}>
@@ -428,7 +431,7 @@ function Thead({ mode, titleMode, bpmMode, dateMode, isLevelsNotesSort, btnSelec
                     )}
                 </tr>
             }
-            {["levels","notes"].includes(mode) &&
+            {["levels","notes","noteDensity"].includes(mode) &&
                 <tr className="subSelectMode rankSelect" onChange={onRankSelectChange}>
                     {ranks.map(rank =>
                         <th key={rank} className={(!isLevelsNotesSort || rankSelect.has(rank))? `${rank}-background btn-rank` : `${rank}-color`}>
@@ -475,7 +478,7 @@ function Title({ mode, bpmMode, dateMode }) {
     else if (mode == "date" && dateMode != "early") {
         filteredSongs = songs.filter(song => song["date"][dateMode] > 0);
     }
-    else if (["noteAvg","notes"].includes(mode)) {
+    else if (["noteAvg","notes","noteDensity"].includes(mode)) {
         filteredSongs = songs.filter(song => Object.values(song["noteSum"]).every(noteSum => noteSum > 0));
     }
 
@@ -483,7 +486,7 @@ function Title({ mode, bpmMode, dateMode }) {
         let tds = [];
         let category = song["category"];
 
-        if (!["levels","notes"].includes(mode)) {
+        if (!["levels","notes","noteDensity"].includes(mode)) {
               ((mode == "patternCount")? tableHeads[mode].slice(0, -1) : tableHeads[mode]).forEach((head, i) => {
                 let data;
 
@@ -536,16 +539,16 @@ function Title({ mode, bpmMode, dateMode }) {
         trs.push(
             <tr key={song["uniqueTitle"]}>
                 <th className="title"
-                    rowSpan={["levels","notes"].includes(mode)? 5 : 1}
+                    rowSpan={["levels","notes","noteDensity"].includes(mode)? 5 : 1}
                 >
-                    <img src={`${song["urlTitle"]}_1.png`} hidden={!["levels","notes"].includes(mode)} loading="lazy"/>
-                    <p className={["levels","notes"].includes(mode)? "narrow" : ""}>{song["uniqueTitle"]}</p>
+                    <img src={`${song["urlTitle"]}_1.png`} hidden={!["levels","notes","noteDensity"].includes(mode)} loading="lazy"/>
+                    <p className={["levels","notes","noteDensity"].includes(mode)? "narrow" : ""}>{song["uniqueTitle"]}</p>
                 </th>
                 {tds}
             </tr>
         );
 
-        if (["levels","notes"].includes(mode)) {
+        if (["levels","notes","noteDensity"].includes(mode)) {
             commonHeads.slice(1).forEach((btn, i) => {
                 trs.push(
                     <tr className="levels-notes" key={song["uniqueTitle"] + btn}>
@@ -553,7 +556,9 @@ function Title({ mode, bpmMode, dateMode }) {
                         {ranks.map(rank =>
                             (mode == "levels")
                                 ? <Level key={rank} rank={rank} level={song["level"][btn][rank]} condition={rank in song["level"][btn]}/>
-                                : <td key={rank}>{(rank in song["note"][btn])? song["note"][btn][rank] : "　"}</td>
+                                : (mode == "notes")
+                                    ? <td key={rank}>{(rank in song["note"][btn])? song["note"][btn][rank] : "　"}</td>
+                                    : <td key={rank}>{(rank in song["noteDensity"][btn])? song["noteDensity"][btn][rank].toFixed(2) : "　"}</td>
                         )}
                         {(i == 0) && <td rowSpan="5">{list["dlcKor"][song["category"]]}</td>}
                     </tr>
@@ -644,7 +649,7 @@ function Histogram({ mode }) {
 function LevelsNotesSort({ mode, btnSelect, rankSelect }) {
     let filteredLevelNoteList;
 
-    if (mode == "notes") {
+    if (["notes","noteDensity"].includes(mode)) {
         filteredLevelNoteList = levelNoteList.filter(levelNote => levelNote["note"] > 0);
     }
 
@@ -656,7 +661,9 @@ function LevelsNotesSort({ mode, btnSelect, rankSelect }) {
                 {ranks.map(rank =>
                     (mode == "levels")
                         ? <Level key={rank} rank={rank} level={levelNote["level"]} condition={levelNote["rank"] == rank}/>
-                        : <td key={rank}>{(levelNote["rank"] == rank)? levelNote["note"] : "　"}</td>
+                        : (mode == "notes")
+                            ? <td key={rank}>{(levelNote["rank"] == rank)? levelNote["note"] : "　"}</td>
+                            : <td key={rank}>{(levelNote["rank"] == rank)? levelNote["noteDensity"].toFixed(2) : "　"}</td>
                 )}
                 <td>{list["dlcKor"][levelNote["category"]]}</td>
             </tr>
@@ -683,7 +690,7 @@ function Level({ rank, level, condition }) {
 function Tfoot({ mode, titleMode, bpmMode }) {
     let trs = [];
 
-    if (["patternCountAvg","date","levels","notes"].includes(mode) ||
+    if (["patternCountAvg","date","levels","notes","noteDensity"].includes(mode) ||
         (["levelAvg","noteAvg"].includes(mode) && titleMode == "category")
         ) {
         return trs;
@@ -1074,7 +1081,7 @@ function sortLevelsNotes({ mode, head, order }) {
         });
     }
     else {
-        let key = (mode == "levels")? "level" : "note";
+        let key = (mode == "levels")? "level" : (mode == "notes")? "note" : "noteDensity";
 
         levelNoteList.sort((a,b) => {
             if (a[key] == b[key]) {
@@ -1222,7 +1229,7 @@ function getTbodyMode(mode, titleMode, isLevelsNotesSort) {
     if (mode.includes("Histogram")) {
         return "histogram";
     }
-    else if (["levels","notes"].includes(mode) && isLevelsNotesSort) {
+    else if (["levels","notes","noteDensity"].includes(mode) && isLevelsNotesSort) {
         return "levelsNotesSort";
     }
     else if ((["levelAvg","patternCount","noteAvg"].includes(mode) && titleMode == "category") || mode == "patternCountAvg") {
