@@ -232,45 +232,43 @@ function App() {
     return (
         loading ? (
             <h1>로딩...</h1>
-        ) : (
-            <div id="result">
-                <Select onChange={onModeChange}/>
-                <table id="stat">
-                    <Thead mode={mode}
-                           titleMode={titleMode}
-                           bpmMode={bpmMode}
-                           dateMode={dateMode}
-                           isLevelsNotesSort={isLevelsNotesSort}
-                           btnSelect={btnSelect}
-                           rankSelect={rankSelect}
-                           onTitleChange={onTitleChange}
-                           onBpmChange={onBpmChange}
-                           onDateChange={onDateChange}
-                           onIsLevelsNotesSort={onIsLevelsNotesSort}
-                           onBtnSelectChange={onBtnSelectChange}
-                           onRankSelectChange={onRankSelectChange}
-                           onThClick={onThClick}
-                    />
-                    <Tbody mode={mode}
-                           titleMode={titleMode}
-                           bpmMode={bpmMode}
-                           dateMode={dateMode}
-                           isLevelsNotesSort={isLevelsNotesSort}
-                           btnSelect={btnSelect}
-                           rankSelect={rankSelect}
-                    />
-                    <Tfoot mode={mode}
-                           titleMode={titleMode}
-                           bpmMode={bpmMode}
-                    />
-                </table>
-                {((["levelAvg","patternCount","noteAvg"].includes(mode) && titleMode == "category") ||
-                  (mode == "patternCountAvg") ||
-                  mode.includes("Histogram") ||
-                  (mode == "levelAvg" && titleMode == "title")) &&
-                    <Graph mode={mode} tbodyMode={getTbodyMode(mode, titleMode, isLevelsNotesSort)}/>}
-            </div>
-        )
+        ) : <>
+            <Select onChange={onModeChange}/>
+            <table id="stat">
+                <Thead mode={mode}
+                        titleMode={titleMode}
+                        bpmMode={bpmMode}
+                        dateMode={dateMode}
+                        isLevelsNotesSort={isLevelsNotesSort}
+                        btnSelect={btnSelect}
+                        rankSelect={rankSelect}
+                        onTitleChange={onTitleChange}
+                        onBpmChange={onBpmChange}
+                        onDateChange={onDateChange}
+                        onIsLevelsNotesSort={onIsLevelsNotesSort}
+                        onBtnSelectChange={onBtnSelectChange}
+                        onRankSelectChange={onRankSelectChange}
+                        onThClick={onThClick}
+                />
+                <Tbody mode={mode}
+                        titleMode={titleMode}
+                        bpmMode={bpmMode}
+                        dateMode={dateMode}
+                        isLevelsNotesSort={isLevelsNotesSort}
+                        btnSelect={btnSelect}
+                        rankSelect={rankSelect}
+                />
+                <Tfoot mode={mode}
+                        titleMode={titleMode}
+                        bpmMode={bpmMode}
+                />
+            </table>
+            {((["levelAvg","patternCount","noteAvg"].includes(mode) && titleMode == "category") ||
+                (mode == "patternCountAvg") ||
+                mode.includes("Histogram") ||
+                (mode == "levelAvg" && titleMode == "title")) &&
+                <Graph mode={mode} tbodyMode={getTbodyMode(mode, titleMode, isLevelsNotesSort)}/>}
+        </>
     );
 }
 
@@ -1255,4 +1253,4 @@ function bpmToNumber(bpm, mode) {
     return Number(bpm);
 }
 
-ReactDOM.render(<App/>, document.querySelector("#root"));
+ReactDOM.render(<App/>, document.querySelector("#result"));
