@@ -126,7 +126,7 @@
                 let img = template.querySelector("img");
                 let caption = template.querySelector("figcaption");
 
-                img.src = `https://d2l1b145ht03q6.cloudfront.net/djmax/emoticon/${season}_${(i+1).toString().padStart(2,0)}_${fileName}.webp`;
+                img.src = `webp/${season}_${(i+1).toString().padStart(2,0)}_${fileName}.webp`;
 
                 if (typeof displayName == "string") {
                     caption.textContent = displayName;
@@ -134,7 +134,7 @@
                 else {
                     caption.textContent = displayName["displayName"];
                     template2 = document.querySelector("#itemTemplate").content.cloneNode(true);
-                    template2.querySelector("img").src = `https://d2l1b145ht03q6.cloudfront.net/djmax/emoticon/${season}_${(i+1).toString().padStart(2,0)}_${displayName["anotherFileName"]}.webp`;
+                    template2.querySelector("img").src = `webp/${season}_${(i+1).toString().padStart(2,0)}_${displayName["anotherFileName"]}.webp`;
                     template2.querySelector("figcaption").textContent = displayName["anotherDisplayName"];
                 }
 
