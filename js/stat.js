@@ -230,10 +230,10 @@ function App() {
     };
 
     return (
-        loading ? (
-            <h1>로딩...</h1>
-        ) : <>
-            <Select onChange={onModeChange}/>
+        <>
+        <Select onChange={onModeChange}/>
+        {loading ? <h1>로딩...</h1> :
+            <>
             <table id="stat">
                 <Thead mode={mode}
                         titleMode={titleMode}
@@ -268,6 +268,8 @@ function App() {
                 mode.includes("Histogram") ||
                 (mode == "levelAvg" && titleMode == "title")) &&
                 <Graph mode={mode} tbodyMode={getTbodyMode(mode, titleMode, isLevelsNotesSort)}/>}
+            </>
+        }
         </>
     );
 }
