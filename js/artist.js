@@ -170,23 +170,25 @@ function App() {
         setDlcSelect(new Set(dlcSelect));
     };
 
-    return <>
-        <div className="center">
-            <button type="button" onClick={onCheck}>모두 선택</button>
-            <button type="button" onClick={onUncheck}>모두 해제</button>
-        </div>
-        {loading
-            ? <h1 className="center">로딩...</h1>
-            : <>
-                <DlcSelect dlcSelect={dlcSelect} onDlcSelect={onDlcSelect}/>
-                <div id="result">
-                    <Select onChange={onChange}/>
-                    {mode != "title" && <Buttons/>}
-                    {(mode == "title")? <Title dlcSelect={dlcSelect}/> : <Artist mode={mode} dlcSelect={dlcSelect}/>}
-                </div>
-            </>
-        }
-    </>;
+    return (
+        <>
+            <div className="center">
+                <button type="button" onClick={onCheck}>모두 선택</button>
+                <button type="button" onClick={onUncheck}>모두 해제</button>
+            </div>
+            {loading
+                ? <h1 className="center">로딩...</h1>
+                : <>
+                    <DlcSelect dlcSelect={dlcSelect} onDlcSelect={onDlcSelect}/>
+                    <div id="result">
+                        <Select onChange={onChange}/>
+                        {mode != "title" && <Buttons/>}
+                        {(mode == "title")? <Title dlcSelect={dlcSelect}/> : <Artist mode={mode} dlcSelect={dlcSelect}/>}
+                    </div>
+                </>
+            }
+        </>
+    );
 }
 
 function DlcSelect({ dlcSelect, onDlcSelect }) {

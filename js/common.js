@@ -192,3 +192,19 @@ function noteRange(note) {
         "key": `${lower} ~ ${upper}`
     };
 }
+
+if (!Array.prototype.at) {
+    Array.prototype.at = function (index) {
+        if (isNaN(index)) {
+            return undefined;
+        }
+
+        index = parseInt(index);
+
+        if (index < 0) {
+            index += this.length;
+        }
+
+        return this[index];
+    };
+}
