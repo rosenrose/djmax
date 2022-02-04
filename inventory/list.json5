@@ -507,7 +507,10 @@
         "PLATE_VERTICALFLO": "Vertical Floating",
         "PLATE_VOYAGE2": "Voyage",
         "PLATE_WONTBACKDOWN": "Won't Back Down",
-        "PLATE_ZTTH": "Zero to the hunnit"
+        "PLATE_ZTTH": "Zero to the hunnit",
+        "UNKNOWN_00": "Unknown",
+        "UNKNOWN_01": "Unknown (2)",
+        "UNKNOWN_02": "Unknown (3)",
     },
     "COMMENT": {
         "COMMENT_TEXT_00": "안녕하세요",
@@ -689,7 +692,9 @@
         "GEARSKIN_NAME_110": "DMO-MK2",
         "GEARSKIN_NAME_111": "SUMMER",
         "GEARSKIN_NAME_112": "ORIENTAL",
-        "GEARSKIN_NAME_113": "X-MAS"
+        "GEARSKIN_NAME_113": "X-MAS",
+        "UNKNOWN_00": "Unknown",
+        "UNKNOWN_01": "Unknown (2)",
     },
     "NOTE": {
         "NOTESKIN_NAME_00": "DEFAULT",
@@ -737,7 +742,9 @@
         "NOTESKIN_NAME_110": "DMO-MK2",
         "NOTESKIN_NAME_111": "SUMMER",
         "NOTESKIN_NAME_112": "ORIENTAL",
-        "NOTESKIN_NAME_113": "X-MAS"
+        "NOTESKIN_NAME_113": "X-MAS",
+        "UNKNOWN_00": "Unknown",
+        "UNKNOWN_01": "Unknown (2)",
     },
     "COMBO": {
         "COMBO_SKIN_DEFAULT": "RESPECT",
