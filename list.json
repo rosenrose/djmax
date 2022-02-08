@@ -950,11 +950,7 @@
         "title": "Bleed",
         "artist": {
           "compose": ["Axol", "The Tech Thieves"],
-          "lyrics": [
-            "Victor Louis Andre Anfray",
-            "Mark Emmanuel",
-            "Alia May Plesa-Topham"
-          ],
+          "lyrics": ["Victor Louis Andre Anfray", "Mark Emmanuel", "Alia May Plesa-Topham"],
           "vocal": "Alia May Plesa-Topham",
           "visualize": "VJTB87"
         },

@@ -30,9 +30,7 @@ function App() {
 
         songs = Object.values(json["songs"])
           .reduce((a, b) => [...a, ...b])
-          .sort((a, b) =>
-            a["title"].toLowerCase().localeCompare(b["title"].toLowerCase())
-          );
+          .sort((a, b) => a["title"].toLowerCase().localeCompare(b["title"].toLowerCase()));
 
         for (let dlc in list["songs"]) {
           list["songs"][dlc].forEach((song) => {
@@ -85,10 +83,7 @@ function App() {
                   for (let subCat in artist) {
                     let subArtist = artist[subCat];
 
-                    if (
-                      typeof subArtist == "string" ||
-                      Array.isArray(subArtist)
-                    ) {
+                    if (typeof subArtist == "string" || Array.isArray(subArtist)) {
                       if (typeof subArtist == "string") {
                         subArtist = [subArtist];
                       }
@@ -100,10 +95,7 @@ function App() {
                           addArtist(s, category, song, subCat);
                         }
                       });
-                    } else if (
-                      typeof subArtist == "object" &&
-                      "nominal" in subArtist
-                    ) {
+                    } else if (typeof subArtist == "object" && "nominal" in subArtist) {
                       addArtistNominal(subArtist, category, song, subCat);
                     }
                   }
@@ -116,9 +108,7 @@ function App() {
         }
 
         artists = Object.fromEntries(
-          Object.entries(artists).sort((a, b) =>
-            a[0].toLowerCase().localeCompare(b[0].toLowerCase())
-          )
+          Object.entries(artists).sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()))
         );
         for (let artist in artists) {
           for (let category in artists[artist]) {
@@ -127,27 +117,17 @@ function App() {
             if (Array.isArray(artists[artist][category])) {
               artists[artist][category].sort((a, b) => {
                 if (a["dlc"] == b["dlc"]) {
-                  return a["title"]
-                    .toLowerCase()
-                    .localeCompare(b["title"].toLowerCase());
+                  return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
                 }
-                return (
-                  Object.keys(list["songs"]).indexOf(a["dlc"]) -
-                  Object.keys(list["songs"]).indexOf(b["dlc"])
-                );
+                return Object.keys(list["songs"]).indexOf(a["dlc"]) - Object.keys(list["songs"]).indexOf(b["dlc"]);
               });
             } else {
               for (let subCat in artists[artist][category]) {
                 artists[artist][category][subCat].sort((a, b) => {
                   if (a["dlc"] == b["dlc"]) {
-                    return a["title"]
-                      .toLowerCase()
-                      .localeCompare(b["title"].toLowerCase());
+                    return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
                   }
-                  return (
-                    Object.keys(list["songs"]).indexOf(a["dlc"]) -
-                    Object.keys(list["songs"]).indexOf(b["dlc"])
-                  );
+                  return Object.keys(list["songs"]).indexOf(a["dlc"]) - Object.keys(list["songs"]).indexOf(b["dlc"]);
                 });
               }
             }
@@ -199,11 +179,7 @@ function App() {
           <div id="result">
             <Select onChange={onChange} />
             {mode != "title" && <Buttons />}
-            {mode == "title" ? (
-              <Title dlcSelect={dlcSelect} />
-            ) : (
-              <Artist mode={mode} dlcSelect={dlcSelect} />
-            )}
+            {mode == "title" ? <Title dlcSelect={dlcSelect} /> : <Artist mode={mode} dlcSelect={dlcSelect} />}
           </div>
         </>
       )}
@@ -222,11 +198,7 @@ function DlcSelect({ dlcSelect, onDlcSelect }) {
     <div id="dlcSelect" onChange={onDlcSelect}>
       {Object.keys(list["songs"]).map((category) => (
         <label key={category} className="shadow-white">
-          <input
-            type="checkbox"
-            value={category}
-            defaultChecked={dlcSelect.has(category)}
-          />
+          <input type="checkbox" value={category} defaultChecked={dlcSelect.has(category)} />
           {list["dlcKor"][category]}
         </label>
       ))}
@@ -290,9 +262,7 @@ function Artist({ mode, dlcSelect }) {
           .some((song) => dlcSelect.has(song["dlc"]))
       );
     } else {
-      artistList = artistList.filter((artist) =>
-        artists[artist][mode].some((song) => dlcSelect.has(song["dlc"]))
-      );
+      artistList = artistList.filter((artist) => artists[artist][mode].some((song) => dlcSelect.has(song["dlc"])));
     }
   }
 
@@ -325,9 +295,7 @@ function Category({ mode, artist, dlcSelect }) {
       let subCats = [];
 
       for (let subCat in artists[artist][category]) {
-        songList = artists[artist][category][subCat].filter((song) =>
-          dlcSelect.has(song["dlc"])
-        );
+        songList = artists[artist][category][subCat].filter((song) => dlcSelect.has(song["dlc"]));
 
         if (songList.length) {
           if (["feat", "visualize"].includes(subCat)) {
@@ -339,9 +307,7 @@ function Category({ mode, artist, dlcSelect }) {
             subCats.push(
               <ul key={subCat} className="subCatUl">
                 <li className="subCatLi">
-                  <p>
-                    {category == "visualize" ? categoryKorMap[subCat] : subCat}
-                  </p>
+                  <p>{category == "visualize" ? categoryKorMap[subCat] : subCat}</p>
                   <SongUl songList={songList} artist={artist} />
                 </li>
               </ul>
@@ -352,24 +318,16 @@ function Category({ mode, artist, dlcSelect }) {
 
       subCatOrSong = subCats;
     } else {
-      songList = artists[artist][category].filter((song) =>
-        dlcSelect.has(song["dlc"])
-      );
+      songList = artists[artist][category].filter((song) => dlcSelect.has(song["dlc"]));
 
       if (songList.length) {
-        subCatOrSong = (
-          <SongUl key={category} songList={songList} artist={artist} />
-        );
+        subCatOrSong = <SongUl key={category} songList={songList} artist={artist} />;
       }
     }
 
     if (Array.isArray(subCatOrSong) ? subCatOrSong.length : subCatOrSong) {
       categoryLi.push(
-        <li
-          key={category}
-          className="categoryLi"
-          style={{ listStyleType: mode == "all" ? "" : "none" }}
-        >
+        <li key={category} className="categoryLi" style={{ listStyleType: mode == "all" ? "" : "none" }}>
           <p hidden={mode != "all"}>{categoryKorMap[category]}</p>
           {subCatOrSong}
         </li>
@@ -401,12 +359,7 @@ function SongLi({ song, artist, credit }) {
   }
 
   return (
-    <li
-      className="songLi"
-      style={
-        credit ? null : getCategoryStyle(song["dlc"], list["collaboration"])
-      }
-    >
+    <li className="songLi" style={credit ? null : getCategoryStyle(song["dlc"], list["collaboration"])}>
       <img src={`${song["urlTitle"]}_1.png`} />
       {credit ? (
         <Credit song={credit} />
@@ -425,12 +378,7 @@ function Title({ dlcSelect }) {
       {songs
         .filter((song) => dlcSelect.has(song["dlc"]))
         .map((song) => (
-          <SongLi
-            key={song["uniqueTitle"]}
-            song={song}
-            artist={song["artist"]["compose"]}
-            credit={song}
-          />
+          <SongLi key={song["uniqueTitle"]} song={song} artist={song["artist"]["compose"]} credit={song} />
         ))}
     </ul>
   );
@@ -447,9 +395,7 @@ function Credit({ song }) {
       if (typeof artist == "string") {
         artist = [artist];
       }
-      artist = artist.map((a) =>
-        typeof a == "object" && "nominal" in a ? a["nominal"] : a
-      );
+      artist = artist.map((a) => (typeof a == "object" && "nominal" in a ? a["nominal"] : a));
       art += artist.join(" / ");
     } else if (typeof artist == "object") {
       if ("nominal" in artist) {
@@ -457,22 +403,14 @@ function Credit({ song }) {
       } else {
         let subArtist = [];
         for (let subCat in artist) {
-          if (
-            typeof artist[subCat] == "string" ||
-            Array.isArray(artist[subCat])
-          ) {
+          if (typeof artist[subCat] == "string" || Array.isArray(artist[subCat])) {
             if (typeof artist[subCat] == "string") {
               artist[subCat] = [artist[subCat]];
             }
             artist[subCat].forEach((s) => {
-              subArtist.push(
-                typeof s == "object" && "nominal" in s ? s["nominal"] : s
-              );
+              subArtist.push(typeof s == "object" && "nominal" in s ? s["nominal"] : s);
             });
-          } else if (
-            typeof artist[subCat] == "object" &&
-            "nominal" in artist[subCat]
-          ) {
+          } else if (typeof artist[subCat] == "object" && "nominal" in artist[subCat]) {
             subArtist.push(artist[subCat]["nominal"]);
           }
         }
@@ -481,9 +419,7 @@ function Credit({ song }) {
     }
     credits.push(
       <p key={category}>
-        <span className="cat">
-          {category[0].toUpperCase() + category.slice(1)}
-        </span>
+        <span className="cat">{category[0].toUpperCase() + category.slice(1)}</span>
         <span className="art">{art}</span>
       </p>
     );
@@ -542,12 +478,7 @@ function addArtistNominal(artist, category, song, subCat) {
   }
 
   if (["feat", "visualize"].includes(category)) {
-    addArtist(
-      `${artist["nominal"]} ${extra}`,
-      category,
-      song,
-      subCat || category
-    );
+    addArtist(`${artist["nominal"]} ${extra}`, category, song, subCat || category);
   } else {
     addArtist(`${artist["nominal"]} ${extra}`, category, song, null);
   }

@@ -21,15 +21,15 @@ const MIN_LEVEL = 1;
 const MAX_LEVEL = 15;
 const ASC = "▲";
 const DES = "▼";
-let [
-  songs,
-  categoryList,
-  categoryData,
-  levelCountList,
-  patternCountList,
-  noteCountList,
-  levelNoteList,
-] = [[], [], [], [], [], [], []];
+let [songs, categoryList, categoryData, levelCountList, patternCountList, noteCountList, levelNoteList] = [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+];
 let [
   list,
   totalLevelSum,
@@ -41,9 +41,7 @@ let [
   totalNoteCount,
   totalNoteAvg,
 ] = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
-let [totalLengthSum, totalLengthAvg, totalBpmMin, totalBpmMid, totalBpmMax] = [
-  0, 0, 0, 0, 0,
-];
+let [totalLengthSum, totalLengthAvg, totalBpmMin, totalBpmMid, totalBpmMax] = [0, 0, 0, 0, 0];
 let timeStart; //시간 측정할 때
 let dateFormat = new Intl.DateTimeFormat("ko", {
   year: "numeric",
@@ -58,9 +56,7 @@ function App() {
       .then((json) => {
         list = json;
         for (let category in list["songs"]) {
-          list["songs"][category] = list["songs"][category].map(
-            (song) => new Song(song, true)
-          );
+          list["songs"][category] = list["songs"][category].map((song) => new Song(song, true));
         }
         categoryList = Object.keys(list["songs"]); //인덱스 비교용
 
@@ -146,19 +142,13 @@ function App() {
               }
             }
 
-            if (
-              !patternCountList.find(
-                (pc) => pc["patternCount"] == song["patternCount"]["전체"]
-              )
-            ) {
+            if (!patternCountList.find((pc) => pc["patternCount"] == song["patternCount"]["전체"])) {
               patternCountList.push({
                 patternCount: song["patternCount"]["전체"],
                 전체: 0,
               });
             }
-            patternCountList.find(
-              (pc) => pc["patternCount"] == song["patternCount"]["전체"]
-            )["전체"] += 1;
+            patternCountList.find((pc) => pc["patternCount"] == song["patternCount"]["전체"])["전체"] += 1;
 
             for (let noteCountKey in song["noteCount"]) {
               for (let btn in song["noteCount"][noteCountKey]) {
@@ -173,8 +163,7 @@ function App() {
                     "8B": 0,
                   });
                 }
-                noteCountList.find((nc) => nc["note"] == noteCountKey)[btn] +=
-                  count;
+                noteCountList.find((nc) => nc["note"] == noteCountKey)[btn] += count;
               }
             }
 
@@ -185,15 +174,11 @@ function App() {
             totalLevelSum[head] += catDat["levelSum"][head];
             totalNoteSum[head] += catDat["noteSum"][head];
             totalPatternCount[head] += catDat["patternCount"][head];
-            catDat["levelAvg"][head] =
-              catDat["levelSum"][head] / catDat["patternCount"][head];
-            catDat["noteAvg"][head] =
-              catDat["noteSum"][head] / catDat["patternCount"][head];
+            catDat["levelAvg"][head] = catDat["levelSum"][head] / catDat["patternCount"][head];
+            catDat["noteAvg"][head] = catDat["noteSum"][head] / catDat["patternCount"][head];
           });
           totalPatternCount["SC"] += catDat["patternCount"]["SC"];
-          catDat["SC 비율"] =
-            (catDat["patternCount"]["SC"] / catDat["patternCount"]["전체"]) *
-            100;
+          catDat["SC 비율"] = (catDat["patternCount"]["SC"] / catDat["patternCount"]["전체"]) * 100;
           catDat["songCount"] = list["songs"][category].length;
 
           categoryData.push(catDat);
@@ -211,23 +196,16 @@ function App() {
 
         noteCountList = noteCountList
           .filter((nc) => nc["note"] != "0")
-          .sort(
-            (a, b) =>
-              parseInt(a["note"].split(" ~ ")[0]) -
-              parseInt(b["note"].split(" ~ ")[0])
-          );
+          .sort((a, b) => parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0]));
 
         categoryData.forEach((catDat) => {
           catDat["patternCountAvg"] = {};
           tableHeads["patternCountAvg"].forEach((head) => {
-            catDat["patternCountAvg"][head] =
-              catDat["patternCount"][head] / catDat["songCount"];
+            catDat["patternCountAvg"][head] = catDat["patternCount"][head] / catDat["songCount"];
           });
         });
 
-        songs.sort((a, b) =>
-          a["title"].toLowerCase().localeCompare(b["title"].toLowerCase())
-        );
+        songs.sort((a, b) => a["title"].toLowerCase().localeCompare(b["title"].toLowerCase()));
         setLoading(false);
       });
   }, []);
@@ -239,9 +217,7 @@ function App() {
   const [dateMode, setDateMode] = React.useState("early");
   const [isLevelsNotesSort, setIsLevelsNotesSort] = React.useState(false);
   const [btnSelect, setBtnSelect] = React.useState(new Set(["4B"]));
-  const [rankSelect, setRankSelect] = React.useState(
-    new Set(["NM", "HD", "MX", "SC"])
-  );
+  const [rankSelect, setRankSelect] = React.useState(new Set(["NM", "HD", "MX", "SC"]));
   const [sort, setSort] = React.useState();
 
   const onModeChange = (event) => {
@@ -353,15 +329,11 @@ function App() {
             />
             <Tfoot mode={mode} titleMode={titleMode} bpmMode={bpmMode} />
           </table>
-          {((["levelAvg", "patternCount", "noteAvg"].includes(mode) &&
-            titleMode == "category") ||
+          {((["levelAvg", "patternCount", "noteAvg"].includes(mode) && titleMode == "category") ||
             mode == "patternCountAvg" ||
             mode.includes("Histogram") ||
             (mode == "levelAvg" && titleMode == "title")) && (
-            <Graph
-              mode={mode}
-              tbodyMode={getTbodyMode(mode, titleMode, isLevelsNotesSort)}
-            />
+            <Graph mode={mode} tbodyMode={getTbodyMode(mode, titleMode, isLevelsNotesSort)} />
           )}
         </>
       )}
@@ -460,9 +432,7 @@ function Thead({
   onThClick,
 }) {
   React.useEffect(() => {
-    document
-      .querySelectorAll("th[data-sorted]")
-      .forEach((th) => th.removeAttribute("data-sorted"));
+    document.querySelectorAll("th[data-sorted]").forEach((th) => th.removeAttribute("data-sorted"));
   }, [mode, titleMode]);
 
   React.useEffect(() => {
@@ -477,28 +447,14 @@ function Thead({
   let isSeperator = ["levelAvg", "patternCount", "noteAvg"].includes(mode);
   let titleLabel = (
     <label id="titleLabel" className="click inline">
-      {isSeperator && (
-        <input
-          type="radio"
-          name="titleMode"
-          value="title"
-          defaultChecked={titleMode == "title"}
-        />
-      )}
+      {isSeperator && <input type="radio" name="titleMode" value="title" defaultChecked={titleMode == "title"} />}
       제목<span className="sortArrow">{ASC}</span>
     </label>
   );
   let seperator = <span> / </span>;
   let categoryLabel = (
     <label className="click inline categorySort">
-      {isSeperator && (
-        <input
-          type="radio"
-          name="titleMode"
-          value="category"
-          defaultChecked={titleMode == "category"}
-        />
-      )}
+      {isSeperator && <input type="radio" name="titleMode" value="category" defaultChecked={titleMode == "category"} />}
       카테고리<span className="sortArrow">{ASC}</span>
     </label>
   );
@@ -529,15 +485,10 @@ function Thead({
       break;
     default:
       leftTopTh = (
-        <th
-          onChange={onTitleChange}
-          rowSpan={["levels", "notes", "noteDensity"].includes(mode) ? 3 : 1}
-        >
+        <th onChange={onTitleChange} rowSpan={["levels", "notes", "noteDensity"].includes(mode) ? 3 : 1}>
           {mode != "patternCountAvg" && titleLabel}
           {isSeperator && seperator}
-          {["levelAvg", "patternCount", "patternCountAvg", "noteAvg"].includes(
-            mode
-          ) && categoryLabel}
+          {["levelAvg", "patternCount", "patternCountAvg", "noteAvg"].includes(mode) && categoryLabel}
         </th>
       );
       break;
@@ -547,10 +498,7 @@ function Thead({
   let tbodyMode = getTbodyMode(mode, titleMode, isLevelsNotesSort);
 
   for (let head of tableHeads[mode]) {
-    if (
-      (tbodyMode == "title" && head == "SC 비율") ||
-      (tbodyMode == "category" && head == "카테고리")
-    ) {
+    if ((tbodyMode == "title" && head == "SC 비율") || (tbodyMode == "category" && head == "카테고리")) {
       continue;
     }
 
@@ -558,9 +506,7 @@ function Thead({
     let isSortClick =
       !["levels", "notes", "noteDensity"].includes(mode) ||
       (["levels", "notes", "noteDensity"].includes(mode) &&
-        (head == "카테고리" ||
-          (["레벨", "노트 수", "노트 밀도(개수/초)"].includes(head) &&
-            isLevelsNotesSort)));
+        (head == "카테고리" || (["레벨", "노트 수", "노트 밀도(개수/초)"].includes(head) && isLevelsNotesSort)));
 
     if (isSortClick) {
       classList.add("click");
@@ -573,10 +519,7 @@ function Thead({
     }
 
     let id = "";
-    if (
-      (mode == "length" && head == "길이") ||
-      (mode == "date" && head == "수록 날짜")
-    ) {
+    if ((mode == "length" && head == "길이") || (mode == "date" && head == "수록 날짜")) {
       id = mode;
     }
 
@@ -585,15 +528,9 @@ function Thead({
         key={head}
         className={[...classList].join(" ")}
         id={id}
-        rowSpan={
-          ["levels", "notes", "noteDensity"].includes(mode) &&
-          ["버튼", "카테고리"].includes(head)
-            ? 3
-            : 1
-        }
+        rowSpan={["levels", "notes", "noteDensity"].includes(mode) && ["버튼", "카테고리"].includes(head) ? 3 : 1}
         colSpan={
-          ["levels", "notes", "noteDensity"].includes(mode) &&
-          ["레벨", "노트 수", "노트 밀도(개수/초)"].includes(head)
+          ["levels", "notes", "noteDensity"].includes(mode) && ["레벨", "노트 수", "노트 밀도(개수/초)"].includes(head)
             ? 4
             : 1
         }
@@ -603,30 +540,15 @@ function Thead({
         {mode == "bpm" && head == "BPM" && (
           <div className="subSelectMode" onChange={onBpmChange}>
             <label>
-              <input
-                type="radio"
-                name="bpmMode"
-                value="min"
-                defaultChecked={bpmMode == "min"}
-              />
+              <input type="radio" name="bpmMode" value="min" defaultChecked={bpmMode == "min"} />
               최솟값
             </label>
             <label>
-              <input
-                type="radio"
-                name="bpmMode"
-                value="mid"
-                defaultChecked={bpmMode == "mid"}
-              />
+              <input type="radio" name="bpmMode" value="mid" defaultChecked={bpmMode == "mid"} />
               중간값
             </label>
             <label>
-              <input
-                type="radio"
-                name="bpmMode"
-                value="max"
-                defaultChecked={bpmMode == "max"}
-              />
+              <input type="radio" name="bpmMode" value="max" defaultChecked={bpmMode == "max"} />
               최댓값
             </label>
           </div>
@@ -634,41 +556,25 @@ function Thead({
         {mode == "date" && head == "수록 날짜" && (
           <div className="subSelectMode" onChange={onDateChange}>
             <label>
-              <input
-                type="radio"
-                name="dateMode"
-                value="early"
-                defaultChecked={dateMode == "early"}
-              />
+              <input type="radio" name="dateMode" value="early" defaultChecked={dateMode == "early"} />
               빠른 날짜
             </label>
             <label>
-              <input
-                type="radio"
-                name="dateMode"
-                value="PS4"
-                defaultChecked={dateMode == "PS4"}
-              />
+              <input type="radio" name="dateMode" value="PS4" defaultChecked={dateMode == "PS4"} />
               PS4
             </label>
             <label>
-              <input
-                type="radio"
-                name="dateMode"
-                value="PC"
-                defaultChecked={dateMode == "PC"}
-              />
+              <input type="radio" name="dateMode" value="PC" defaultChecked={dateMode == "PC"} />
               PC
             </label>
           </div>
         )}
-        {["levels", "notes", "noteDensity"].includes(mode) &&
-          ["레벨", "노트 수", "노트 밀도(개수/초)"].includes(head) && (
-            <label id="levelsNotesSort" onChange={onIsLevelsNotesSort}>
-              <input type="checkbox" defaultChecked={isLevelsNotesSort} />
-              정렬
-            </label>
-          )}
+        {["levels", "notes", "noteDensity"].includes(mode) && ["레벨", "노트 수", "노트 밀도(개수/초)"].includes(head) && (
+          <label id="levelsNotesSort" onChange={onIsLevelsNotesSort}>
+            <input type="checkbox" defaultChecked={isLevelsNotesSort} />
+            정렬
+          </label>
+        )}
       </th>
     );
   }
@@ -682,22 +588,10 @@ function Thead({
       {["levels", "notes", "noteDensity"].includes(mode) && isLevelsNotesSort && (
         <tr className="subSelectMode btnSelect" onChange={onBtnSelectChange}>
           {commonHeads.slice(1).map((btn) => (
-            <th
-              key={btn}
-              className={
-                btnSelect.has(btn)
-                  ? `${btn}-background btn-rank`
-                  : `${btn}-color`
-              }
-            >
+            <th key={btn} className={btnSelect.has(btn) ? `${btn}-background btn-rank` : `${btn}-color`}>
               <label>
                 {isLevelsNotesSort && (
-                  <input
-                    type="checkbox"
-                    value={btn}
-                    defaultChecked={btnSelect.has(btn)}
-                    className="block"
-                  />
+                  <input type="checkbox" value={btn} defaultChecked={btnSelect.has(btn)} className="block" />
                 )}
                 {btn}
               </label>
@@ -710,20 +604,11 @@ function Thead({
           {ranks.map((rank) => (
             <th
               key={rank}
-              className={
-                !isLevelsNotesSort || rankSelect.has(rank)
-                  ? `${rank}-background btn-rank`
-                  : `${rank}-color`
-              }
+              className={!isLevelsNotesSort || rankSelect.has(rank) ? `${rank}-background btn-rank` : `${rank}-color`}
             >
               <label>
                 {isLevelsNotesSort && (
-                  <input
-                    type="checkbox"
-                    value={rank}
-                    defaultChecked={rankSelect.has(rank)}
-                    className="block"
-                  />
+                  <input type="checkbox" value={rank} defaultChecked={rankSelect.has(rank)} className="block" />
                 )}
                 {rank}
               </label>
@@ -735,15 +620,7 @@ function Thead({
   );
 }
 
-function Tbody({
-  mode,
-  titleMode,
-  bpmMode,
-  dateMode,
-  isLevelsNotesSort,
-  btnSelect,
-  rankSelect,
-}) {
+function Tbody({ mode, titleMode, bpmMode, dateMode, isLevelsNotesSort, btnSelect, rankSelect }) {
   let trs;
 
   switch (getTbodyMode(mode, titleMode, isLevelsNotesSort)) {
@@ -757,13 +634,7 @@ function Tbody({
       trs = <Histogram mode={mode} />;
       break;
     case "levelsNotesSort":
-      trs = (
-        <LevelsNotesSort
-          mode={mode}
-          btnSelect={btnSelect}
-          rankSelect={rankSelect}
-        />
-      );
+      trs = <LevelsNotesSort mode={mode} btnSelect={btnSelect} rankSelect={rankSelect} />;
       break;
   }
 
@@ -779,9 +650,7 @@ function Title({ mode, bpmMode, dateMode }) {
   } else if (mode == "date" && dateMode != "early") {
     filteredSongs = songs.filter((song) => song["date"][dateMode] > 0);
   } else if (["noteAvg", "notes", "noteDensity"].includes(mode)) {
-    filteredSongs = songs.filter((song) =>
-      Object.values(song["noteSum"]).every((noteSum) => noteSum > 0)
-    );
+    filteredSongs = songs.filter((song) => Object.values(song["noteSum"]).every((noteSum) => noteSum > 0));
   }
 
   (filteredSongs || songs).forEach((song) => {
@@ -789,10 +658,7 @@ function Title({ mode, bpmMode, dateMode }) {
     let category = song["category"];
 
     if (!["levels", "notes", "noteDensity"].includes(mode)) {
-      (mode == "patternCount"
-        ? tableHeads[mode].slice(0, -1)
-        : tableHeads[mode]
-      ).forEach((head, i) => {
+      (mode == "patternCount" ? tableHeads[mode].slice(0, -1) : tableHeads[mode]).forEach((head, i) => {
         let data;
 
         if (head == "카테고리") {
@@ -812,9 +678,7 @@ function Title({ mode, bpmMode, dateMode }) {
               data = song["patternCount"][head];
               break;
             case "length":
-              data = `${Math.floor(song["length"] / 60)}분 ${
-                song["length"] % 60
-              }초`;
+              data = `${Math.floor(song["length"] / 60)}분 ${song["length"] % 60}초`;
               break;
             case "bpm":
               data = song["bpm"];
@@ -831,22 +695,12 @@ function Title({ mode, bpmMode, dateMode }) {
         tds.push(
           <td
             key={tableHeads[mode][i]}
-            style={
-              mode == "date" && head == "카테고리"
-                ? getCategoryStyle(category, list["collaboration"])
-                : null
-            }
+            style={mode == "date" && head == "카테고리" ? getCategoryStyle(category, list["collaboration"]) : null}
           >
             {data}
-            {mode == "bpm" &&
-              head == "BPM" &&
-              bpmMode == "mid" &&
-              isNaN(song["bpm"]) && (
-                <span className="mid">{`(${bpmToNumber(
-                  song["bpm"],
-                  "mid"
-                )})`}</span>
-              )}
+            {mode == "bpm" && head == "BPM" && bpmMode == "mid" && isNaN(song["bpm"]) && (
+              <span className="mid">{`(${bpmToNumber(song["bpm"], "mid")})`}</span>
+            )}
             {mode == "date" && head == "수록 날짜" && dateMode == "early" && (
               <span className="early">{`(${song["date"]["earlyPlatform"]})`}</span>
             )}
@@ -857,22 +711,13 @@ function Title({ mode, bpmMode, dateMode }) {
 
     trs.push(
       <tr key={song["uniqueTitle"]}>
-        <th
-          className="title"
-          rowSpan={["levels", "notes", "noteDensity"].includes(mode) ? 5 : 1}
-        >
+        <th className="title" rowSpan={["levels", "notes", "noteDensity"].includes(mode) ? 5 : 1}>
           <img
             src={`${song["urlTitle"]}_1.png`}
             hidden={!["levels", "notes", "noteDensity"].includes(mode)}
             loading="lazy"
           />
-          <p
-            className={
-              ["levels", "notes", "noteDensity"].includes(mode) ? "narrow" : ""
-            }
-          >
-            {song["uniqueTitle"]}
-          </p>
+          <p className={["levels", "notes", "noteDensity"].includes(mode) ? "narrow" : ""}>{song["uniqueTitle"]}</p>
         </th>
         {tds}
       </tr>
@@ -885,21 +730,12 @@ function Title({ mode, bpmMode, dateMode }) {
             <th className={`${btn}-color`}>{btn}</th>
             {ranks.map((rank) =>
               mode == "levels" ? (
-                <Level
-                  key={rank}
-                  rank={rank}
-                  level={song["level"][btn][rank]}
-                  condition={rank in song["level"][btn]}
-                />
+                <Level key={rank} rank={rank} level={song["level"][btn][rank]} condition={rank in song["level"][btn]} />
               ) : mode == "notes" ? (
-                <td key={rank}>
-                  {rank in song["note"][btn] ? song["note"][btn][rank] : "　"}
-                </td>
+                <td key={rank}>{rank in song["note"][btn] ? song["note"][btn][rank] : "　"}</td>
               ) : (
                 <td key={rank}>
-                  {rank in song["noteDensity"][btn]
-                    ? song["noteDensity"][btn][rank].toFixed(2)
-                    : "　"}
+                  {rank in song["noteDensity"][btn] ? song["noteDensity"][btn][rank].toFixed(2) : "　"}
                 </td>
               )
             )}
@@ -917,9 +753,7 @@ function Category({ mode }) {
   let filteredCategoryData;
 
   if (mode == "noteAvg") {
-    filteredCategoryData = categoryData.filter((catDat) =>
-      Object.values(catDat["noteSum"]).every((note) => note > 0)
-    );
+    filteredCategoryData = categoryData.filter((catDat) => Object.values(catDat["noteSum"]).every((note) => note > 0));
   }
 
   return (filteredCategoryData || categoryData).map((catDat) => {
@@ -927,9 +761,7 @@ function Category({ mode }) {
 
     return (
       <tr key={category}>
-        <th style={getCategoryStyle(category, list["collaboration"])}>
-          {list["dlcKor"][category]}
-        </th>
+        <th style={getCategoryStyle(category, list["collaboration"])}>{list["dlcKor"][category]}</th>
         {tableHeads[mode]
           .filter((head) => head != "카테고리")
           .map((head) => {
@@ -940,10 +772,7 @@ function Category({ mode }) {
                 data = catDat["levelAvg"][head].toFixed(2);
                 break;
               case "patternCount":
-                data =
-                  head == "SC 비율"
-                    ? `${catDat[head].toFixed(1)}%`
-                    : catDat["patternCount"][head];
+                data = head == "SC 비율" ? `${catDat[head].toFixed(1)}%` : catDat["patternCount"][head];
                 break;
               case "patternCountAvg":
                 data = catDat["patternCountAvg"][head].toFixed(2);
@@ -994,38 +823,22 @@ function LevelsNotesSort({ mode, btnSelect, rankSelect }) {
   let filteredLevelNoteList;
 
   if (["notes", "noteDensity"].includes(mode)) {
-    filteredLevelNoteList = levelNoteList.filter(
-      (levelNote) => levelNote["note"] > 0
-    );
+    filteredLevelNoteList = levelNoteList.filter((levelNote) => levelNote["note"] > 0);
   }
 
   return (filteredLevelNoteList || levelNoteList)
-    .filter(
-      (levelNote) =>
-        btnSelect.has(levelNote["btn"]) && rankSelect.has(levelNote["rank"])
-    )
+    .filter((levelNote) => btnSelect.has(levelNote["btn"]) && rankSelect.has(levelNote["rank"]))
     .map((levelNote) => (
       <tr key={levelNote["title"] + levelNote["btn"] + levelNote["rank"]}>
         <th>{levelNote["title"]}</th>
         <th className={`${levelNote["btn"]}-color`}>{levelNote["btn"]}</th>
         {ranks.map((rank) =>
           mode == "levels" ? (
-            <Level
-              key={rank}
-              rank={rank}
-              level={levelNote["level"]}
-              condition={levelNote["rank"] == rank}
-            />
+            <Level key={rank} rank={rank} level={levelNote["level"]} condition={levelNote["rank"] == rank} />
           ) : mode == "notes" ? (
-            <td key={rank}>
-              {levelNote["rank"] == rank ? levelNote["note"] : "　"}
-            </td>
+            <td key={rank}>{levelNote["rank"] == rank ? levelNote["note"] : "　"}</td>
           ) : (
-            <td key={rank}>
-              {levelNote["rank"] == rank
-                ? levelNote["noteDensity"].toFixed(2)
-                : "　"}
-            </td>
+            <td key={rank}>{levelNote["rank"] == rank ? levelNote["noteDensity"].toFixed(2) : "　"}</td>
           )
         )}
         <td>{list["dlcKor"][levelNote["category"]]}</td>
@@ -1041,9 +854,7 @@ function Level({ rank, level, condition }) {
             </span> */}
       {condition && (
         <svg
-          className={`${
-            rank == "SC" ? "SC" : level <= 5 ? "NM" : level <= 10 ? "HD" : "MX"
-          }-svg`}
+          className={`${rank == "SC" ? "SC" : level <= 5 ? "NM" : level <= 10 ? "HD" : "MX"}-svg`}
           width="1em"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -1061,9 +872,7 @@ function Tfoot({ mode, titleMode, bpmMode }) {
   let trs = [];
 
   if (
-    ["patternCountAvg", "date", "levels", "notes", "noteDensity"].includes(
-      mode
-    ) ||
+    ["patternCountAvg", "date", "levels", "notes", "noteDensity"].includes(mode) ||
     (["levelAvg", "noteAvg"].includes(mode) && titleMode == "category")
   ) {
     return trs;
@@ -1093,17 +902,11 @@ function Tfoot({ mode, titleMode, bpmMode }) {
                   : (totalPatternCount[head] / categoryData.length).toFixed(1);
               break;
             case "length":
-              data = `${Math.floor(totalLengthAvg / 60)}분 ${
-                totalLengthAvg % 60
-              }초`;
+              data = `${Math.floor(totalLengthAvg / 60)}분 ${totalLengthAvg % 60}초`;
               break;
             case "bpm":
               data = (
-                (bpmMode == "min"
-                  ? totalBpmMin
-                  : bpmMode == "mid"
-                  ? totalBpmMid
-                  : totalBpmMax) / songs.length
+                (bpmMode == "min" ? totalBpmMin : bpmMode == "mid" ? totalBpmMid : totalBpmMax) / songs.length
               ).toFixed(1);
               break;
             case "minLevel":
@@ -1116,16 +919,10 @@ function Tfoot({ mode, titleMode, bpmMode }) {
               data = totalNoteAvg[head].toFixed(1);
               break;
             case "levelHistogram":
-              data = (
-                levelCountList.reduce((a, b) => a + b[head], 0) /
-                levelCountList.length
-              ).toFixed(1);
+              data = (levelCountList.reduce((a, b) => a + b[head], 0) / levelCountList.length).toFixed(1);
               break;
             case "noteHistogram":
-              data = (
-                noteCountList.reduce((a, b) => a + b[head], 0) /
-                noteCountList.length
-              ).toFixed(1);
+              data = (noteCountList.reduce((a, b) => a + b[head], 0) / noteCountList.length).toFixed(1);
               break;
           }
 
@@ -1151,9 +948,7 @@ function Tfoot({ mode, titleMode, bpmMode }) {
               break;
             case "length":
               let minutes = totalLengthSum % 3600;
-              data = `${Math.floor(totalLengthSum / 3600)}시간 ${Math.floor(
-                minutes / 60
-              )}분 ${minutes % 60}초`;
+              data = `${Math.floor(totalLengthSum / 3600)}시간 ${Math.floor(minutes / 60)}분 ${minutes % 60}초`;
               break;
           }
 
@@ -1168,12 +963,7 @@ function Tfoot({ mode, titleMode, bpmMode }) {
           <th>비율</th>
           {heads.map((head, i) => (
             <th key={head}>
-              {i == 0
-                ? ""
-                : `${(
-                    (totalPatternCount[head] / totalPatternCount["전체"]) *
-                    100
-                  ).toFixed(1)}%`}
+              {i == 0 ? "" : `${((totalPatternCount[head] / totalPatternCount["전체"]) * 100).toFixed(1)}%`}
             </th>
           ))}
         </tr>
@@ -1184,15 +974,7 @@ function Tfoot({ mode, titleMode, bpmMode }) {
   return <tfoot>{trs}</tfoot>;
 }
 
-function sortTable({
-  target,
-  mode,
-  titleMode,
-  bpmMode,
-  dateMode,
-  isLevelsNotesSort,
-  setSort,
-}) {
+function sortTable({ target, mode, titleMode, bpmMode, dateMode, isLevelsNotesSort, setSort }) {
   let th = target.closest("th");
   let label = target.closest("label");
 
@@ -1217,8 +999,7 @@ function sortTable({
 
   let head = th.matches(".click")
     ? th.firstChild.textContent
-    : label.firstElementChild.nextSibling?.textContent ||
-      label.firstChild.textContent;
+    : label.firstElementChild.nextSibling?.textContent || label.firstChild.textContent;
   let span = (th.matches(".click") ? th : label).querySelector("span");
   // console.log(head);
   if (th.matches(".categorySort") || label?.matches(".categorySort")) {
@@ -1266,10 +1047,7 @@ function sortTitle({ mode, head, order, bpmMode, dateMode }) {
   } else if (head == "카테고리") {
     if (mode == "length") {
       songs.sort((a, b) => {
-        if (
-          categoryList.indexOf(a["category"]) ==
-          categoryList.indexOf(b["category"])
-        ) {
+        if (categoryList.indexOf(a["category"]) == categoryList.indexOf(b["category"])) {
           // if (a["length"] == b["length"]) {
           let prev = document.querySelector("#titleLabel span").textContent;
           return prev == ASC
@@ -1283,51 +1061,32 @@ function sortTitle({ mode, head, order, bpmMode, dateMode }) {
           //         : b["length"] - a["length"]
           // );
         }
-        return (
-          categoryList.indexOf(a["category"]) -
-          categoryList.indexOf(b["category"])
-        );
+        return categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]);
       });
     } else if (mode == "date") {
       songs.sort((a, b) => {
-        if (
-          categoryList.indexOf(a["category"]) ==
-          categoryList.indexOf(b["category"])
-        ) {
+        if (categoryList.indexOf(a["category"]) == categoryList.indexOf(b["category"])) {
           if (a["date"][dateMode] - b["date"][dateMode] == 0) {
             //a["date"][dateMode].valueOf() == b[dateMode]["PC"].valueOf()
             let prev = document.querySelector("#titleLabel span").textContent;
             return prev == ASC
               ? a["title"].toLowerCase().localeCompare(b["title"].toLowerCase())
-              : b["title"]
-                  .toLowerCase()
-                  .localeCompare(a["title"].toLowerCase());
+              : b["title"].toLowerCase().localeCompare(a["title"].toLowerCase());
           }
           let prev = document.querySelector("#date span").textContent;
-          return prev == ASC
-            ? a["date"][dateMode] - b["date"][dateMode]
-            : b["date"][dateMode] - a["date"][dateMode];
+          return prev == ASC ? a["date"][dateMode] - b["date"][dateMode] : b["date"][dateMode] - a["date"][dateMode];
         }
-        return (
-          categoryList.indexOf(a["category"]) -
-          categoryList.indexOf(b["category"])
-        );
+        return categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]);
       });
     } else {
       songs.sort((a, b) => {
-        if (
-          categoryList.indexOf(a["category"]) ==
-          categoryList.indexOf(b["category"])
-        ) {
+        if (categoryList.indexOf(a["category"]) == categoryList.indexOf(b["category"])) {
           let prev = document.querySelector("#titleLabel span").textContent;
           return prev == ASC
             ? a["title"].toLowerCase().localeCompare(b["title"].toLowerCase())
             : b["title"].toLowerCase().localeCompare(a["title"].toLowerCase());
         }
-        return (
-          categoryList.indexOf(a["category"]) -
-          categoryList.indexOf(b["category"])
-        );
+        return categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]);
       });
     }
   } else {
@@ -1339,35 +1098,23 @@ function sortTitle({ mode, head, order, bpmMode, dateMode }) {
       case "noteAvg":
         songs.sort((a, b) => {
           if (a[mode][head] == b[mode][head]) {
-            return a["title"]
-              .toLowerCase()
-              .localeCompare(b["title"].toLowerCase());
+            return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
           }
-          return order == ASC
-            ? a[mode][head] - b[mode][head]
-            : b[mode][head] - a[mode][head];
+          return order == ASC ? a[mode][head] - b[mode][head] : b[mode][head] - a[mode][head];
         });
         break;
       case "length":
         songs.sort((a, b) => {
           if (a["length"] == b["length"]) {
-            return a["title"]
-              .toLowerCase()
-              .localeCompare(b["title"].toLowerCase());
+            return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
           }
-          return order == ASC
-            ? a["length"] - b["length"]
-            : b["length"] - a["length"];
+          return order == ASC ? a["length"] - b["length"] : b["length"] - a["length"];
         });
         break;
       case "bpm":
         songs.sort((a, b) => {
-          if (
-            bpmToNumber(a["bpm"], bpmMode) == bpmToNumber(b["bpm"], bpmMode)
-          ) {
-            return a["title"]
-              .toLowerCase()
-              .localeCompare(b["title"].toLowerCase());
+          if (bpmToNumber(a["bpm"], bpmMode) == bpmToNumber(b["bpm"], bpmMode)) {
+            return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
           }
           return order == ASC
             ? bpmToNumber(a["bpm"], bpmMode) - bpmToNumber(b["bpm"], bpmMode)
@@ -1377,23 +1124,14 @@ function sortTitle({ mode, head, order, bpmMode, dateMode }) {
       case "date":
         songs.sort((a, b) => {
           if (a["date"][dateMode] - b["date"][dateMode] == 0) {
-            if (
-              categoryList.indexOf(a["category"]) ==
-              categoryList.indexOf(b["category"])
-            ) {
-              return a["title"]
-                .toLowerCase()
-                .localeCompare(b["title"].toLowerCase());
+            if (categoryList.indexOf(a["category"]) == categoryList.indexOf(b["category"])) {
+              return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
             }
             return order == ASC
-              ? categoryList.indexOf(a["category"]) -
-                  categoryList.indexOf(b["category"])
-              : categoryList.indexOf(b["category"]) -
-                  categoryList.indexOf(a["category"]);
+              ? categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"])
+              : categoryList.indexOf(b["category"]) - categoryList.indexOf(a["category"]);
           }
-          return order == ASC
-            ? a["date"][dateMode] - b["date"][dateMode]
-            : b["date"][dateMode] - a["date"][dateMode];
+          return order == ASC ? a["date"][dateMode] - b["date"][dateMode] : b["date"][dateMode] - a["date"][dateMode];
         });
         break;
     }
@@ -1402,63 +1140,43 @@ function sortTitle({ mode, head, order, bpmMode, dateMode }) {
 
 function sortCategory({ mode, head, order }) {
   if (head == "카테고리") {
-    categoryData.sort(
-      (a, b) =>
-        categoryList.indexOf(a["category"]) -
-        categoryList.indexOf(b["category"])
-    );
+    categoryData.sort((a, b) => categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]));
   } else if (head == "SC 비율") {
     categoryData.sort((a, b) => {
       if (a[head] == b[head]) {
-        return (
-          categoryList.indexOf(a["category"]) -
-          categoryList.indexOf(b["category"])
-        );
+        return categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]);
       }
       return order == ASC ? a[head] - b[head] : b[head] - a[head];
     });
   } else {
     categoryData.sort((a, b) => {
       if (a[mode][head] == b[mode][head]) {
-        return (
-          categoryList.indexOf(a["category"]) -
-          categoryList.indexOf(b["category"])
-        );
+        return categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]);
       }
-      return order == ASC
-        ? a[mode][head] - b[mode][head]
-        : b[mode][head] - a[mode][head];
+      return order == ASC ? a[mode][head] - b[mode][head] : b[mode][head] - a[mode][head];
     });
   }
 }
 
 function sortHistogram({ mode, head, order }) {
   if (head == "레벨") {
-    levelCountList.sort((a, b) =>
-      order == ASC ? a["level"] - b["level"] : b["level"] - a["level"]
-    );
+    levelCountList.sort((a, b) => (order == ASC ? a["level"] - b["level"] : b["level"] - a["level"]));
   } else if (head == "패턴 개수") {
     patternCountList.sort((a, b) =>
-      order == ASC
-        ? a["patternCount"] - b["patternCount"]
-        : b["patternCount"] - a["patternCount"]
+      order == ASC ? a["patternCount"] - b["patternCount"] : b["patternCount"] - a["patternCount"]
     );
   } else if (head == "노트 수") {
     noteCountList.sort((a, b) =>
       order == ASC
-        ? parseInt(a["note"].split(" ~ ")[0]) -
-          parseInt(b["note"].split(" ~ ")[0])
-        : parseInt(b["note"].split(" ~ ")[0]) -
-          parseInt(a["note"].split(" ~ ")[0])
+        ? parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0])
+        : parseInt(b["note"].split(" ~ ")[0]) - parseInt(a["note"].split(" ~ ")[0])
     );
   } else {
     switch (mode) {
       case "levelHistogram":
         levelCountList.sort((a, b) => {
           if (a[head] == b[head]) {
-            return order == ASC
-              ? a["level"] - b["level"]
-              : b["level"] - a["level"];
+            return order == ASC ? a["level"] - b["level"] : b["level"] - a["level"];
           }
           return order == ASC ? a[head] - b[head] : b[head] - a[head];
         });
@@ -1466,9 +1184,7 @@ function sortHistogram({ mode, head, order }) {
       case "patternCountHistogram":
         patternCountList.sort((a, b) => {
           if (a["전체"] == b["전체"]) {
-            return order == ASC
-              ? a["patternCount"] - b["patternCount"]
-              : b["patternCount"] - a["patternCount"];
+            return order == ASC ? a["patternCount"] - b["patternCount"] : b["patternCount"] - a["patternCount"];
           }
           return order == ASC ? a["전체"] - b["전체"] : b["전체"] - a["전체"];
         });
@@ -1477,10 +1193,8 @@ function sortHistogram({ mode, head, order }) {
         noteCountList.sort((a, b) => {
           if (a[head] == b[head]) {
             return order == ASC
-              ? parseInt(a["note"].split(" ~ ")[0]) -
-                  parseInt(b["note"].split(" ~ ")[0])
-              : parseInt(b["note"].split(" ~ ")[0]) -
-                  parseInt(a["note"].split(" ~ ")[0]);
+              ? parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0])
+              : parseInt(b["note"].split(" ~ ")[0]) - parseInt(a["note"].split(" ~ ")[0]);
           }
           return order == ASC ? a[head] - b[head] : b[head] - a[head];
         });
@@ -1504,10 +1218,7 @@ function sortLevelsNotes({ mode, head, order }) {
     });
   } else if (head == "카테고리") {
     levelNoteList.sort((a, b) => {
-      if (
-        categoryList.indexOf(a["category"]) ==
-        categoryList.indexOf(b["category"])
-      ) {
+      if (categoryList.indexOf(a["category"]) == categoryList.indexOf(b["category"])) {
         if (a["title"] == b["title"]) {
           if (a["btn"] == b["btn"]) {
             return ranks.indexOf(a["rank"]) - ranks.indexOf(b["rank"]);
@@ -1519,22 +1230,16 @@ function sortLevelsNotes({ mode, head, order }) {
           ? a["title"].toLowerCase().localeCompare(b["title"].toLowerCase())
           : b["title"].toLowerCase().localeCompare(a["title"].toLowerCase());
       }
-      return (
-        categoryList.indexOf(a["category"]) -
-        categoryList.indexOf(b["category"])
-      );
+      return categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]);
     });
   } else {
-    let key =
-      mode == "levels" ? "level" : mode == "notes" ? "note" : "noteDensity";
+    let key = mode == "levels" ? "level" : mode == "notes" ? "note" : "noteDensity";
 
     levelNoteList.sort((a, b) => {
       if (a[key] == b[key]) {
         if (a["btn"] == b["btn"]) {
           if (a["rank"] == b["rank"]) {
-            return a["title"]
-              .toLowerCase()
-              .localeCompare(b["title"].toLowerCase());
+            return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
           }
           return order == ASC
             ? ranks.indexOf(a["rank"]) - ranks.indexOf(b["rank"])
@@ -1551,19 +1256,13 @@ function sortLevelsNotes({ mode, head, order }) {
 
 function Graph({ mode, tbodyMode }) {
   let x, y, heads, text, orientation, height, xrange, yrange, margin;
-  let levelCountSorted = [...levelCountList].sort(
-    (a, b) => a["level"] - b["level"]
-  );
-  let patternCountSorted = [...patternCountList].sort(
-    (a, b) => a["patternCount"] - b["patternCount"]
-  );
+  let levelCountSorted = [...levelCountList].sort((a, b) => a["level"] - b["level"]);
+  let patternCountSorted = [...patternCountList].sort((a, b) => a["patternCount"] - b["patternCount"]);
   let noteCountSorted = [...noteCountList].sort(
-    (a, b) =>
-      parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0])
+    (a, b) => parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0])
   );
   let categoryDataSorted = [...categoryData].sort(
-    (a, b) =>
-      categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"])
+    (a, b) => categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"])
   );
 
   if (mode == "levelHistogram") {
@@ -1579,10 +1278,7 @@ function Graph({ mode, tbodyMode }) {
     heads = tableHeads[mode];
     x = noteCountSorted.map((nc) => nc["note"]);
     y = heads.map((head) => noteCountSorted.map((nc) => nc[head]));
-  } else if (
-    ["levelAvg", "patternCountAvg", "noteAvg"].includes(mode) &&
-    tbodyMode == "category"
-  ) {
+  } else if (["levelAvg", "patternCountAvg", "noteAvg"].includes(mode) && tbodyMode == "category") {
     heads = commonHeads;
     x = categoryList.map((category) => list["dlcKor"][category]);
 
@@ -1590,13 +1286,9 @@ function Graph({ mode, tbodyMode }) {
       categoryDataSorted = categoryDataSorted.filter((catDat) =>
         Object.values(catDat["noteSum"]).every((note) => note > 0)
       );
-      x = categoryDataSorted.map(
-        (catDat) => list["dlcKor"][catDat["category"]]
-      );
+      x = categoryDataSorted.map((catDat) => list["dlcKor"][catDat["category"]]);
     }
-    y = heads.map((head) =>
-      categoryDataSorted.map((catDat) => catDat[mode][head])
-    );
+    y = heads.map((head) => categoryDataSorted.map((catDat) => catDat[mode][head]));
 
     if (mode == "levelAvg") {
       // text = (data) => data.toFixed(2);
@@ -1608,16 +1300,12 @@ function Graph({ mode, tbodyMode }) {
   } else if (mode == "patternCount") {
     heads = [...commonHeads, "SC"];
     x = categoryList.map((category) => list["dlcKor"][category]);
-    y = heads.map((head) =>
-      categoryDataSorted.map((catDat) => catDat[mode][head])
-    );
+    y = heads.map((head) => categoryDataSorted.map((catDat) => catDat[mode][head]));
     text = String;
   } else if (mode == "levelAvg" && tbodyMode == "title") {
     // heads = ["전체"];
     heads = [];
-    let songSorted = [...songs].sort(
-      (a, b) => a["levelAvg"]["전체"] - b["levelAvg"]["전체"]
-    );
+    let songSorted = [...songs].sort((a, b) => a["levelAvg"]["전체"] - b["levelAvg"]["전체"]);
     x = [songSorted.map((song) => song["levelAvg"]["전체"])];
     y = songSorted.map((song) => song["uniqueTitle"]);
     orientation = "h";
@@ -1656,19 +1344,7 @@ function Graph({ mode, tbodyMode }) {
   );
 }
 
-function drawGraph({
-  mode,
-  tbodyMode,
-  head,
-  x,
-  y,
-  text,
-  orientation,
-  height,
-  xrange,
-  yrange,
-  margin,
-}) {
+function drawGraph({ mode, tbodyMode, head, x, y, text, orientation, height, xrange, yrange, margin }) {
   let trace = {
     x,
     y,
@@ -1705,14 +1381,10 @@ function drawGraph({
 function getTbodyMode(mode, titleMode, isLevelsNotesSort) {
   if (mode.includes("Histogram")) {
     return "histogram";
-  } else if (
-    ["levels", "notes", "noteDensity"].includes(mode) &&
-    isLevelsNotesSort
-  ) {
+  } else if (["levels", "notes", "noteDensity"].includes(mode) && isLevelsNotesSort) {
     return "levelsNotesSort";
   } else if (
-    (["levelAvg", "patternCount", "noteAvg"].includes(mode) &&
-      titleMode == "category") ||
+    (["levelAvg", "patternCount", "noteAvg"].includes(mode) && titleMode == "category") ||
     mode == "patternCountAvg"
   ) {
     return "category";

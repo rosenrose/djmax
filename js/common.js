@@ -54,9 +54,7 @@ function randomInt(minInclude, maxExclude) {
 }
 
 function range(startInclude, endExclude) {
-  return [...Array(endExclude - startInclude).keys()].map(
-    (num) => num + startInclude
-  );
+  return [...Array(endExclude - startInclude).keys()].map((num) => num + startInclude);
 }
 
 function toggleInput(input, condition) {
@@ -67,9 +65,7 @@ function toggleInput(input, condition) {
 function getCategoryStyle(category, collab) {
   return {
     color: category == "clazziquai" ? "" : "#fff",
-    backgroundImage: `url(/djmax/img/color_${
-      collab.includes(category) ? "collaboration" : category
-    }.png)`,
+    backgroundImage: `url(/djmax/img/color_${collab.includes(category) ? "collaboration" : category}.png)`,
     backgroundSize: "100% 100%",
   };
 }
@@ -99,9 +95,7 @@ function Song(song, isStat) {
     title = title.replace(char[0], char[1]);
   });
   title = new URLSearchParams({ title }).toString().split("=")[1];
-  this[
-    "urlTitle"
-  ] = `https://d2l1b145ht03q6.cloudfront.net/djmax/song_pic/${title}`;
+  this["urlTitle"] = `https://d2l1b145ht03q6.cloudfront.net/djmax/song_pic/${title}`;
 
   if (isStat) {
     let commonHeads = ["전체", ...Object.keys(this["level"])];
@@ -113,8 +107,7 @@ function Song(song, isStat) {
     if ("PS4" in this["date"] && "PC" in this["date"]) {
       if (this["date"]["PS4"] <= this["date"]["PC"]) {
         this["date"]["early"] = this["date"]["PS4"];
-        this["date"]["earlyPlatform"] =
-          this["date"]["PS4"] < this["date"]["PC"] ? "PS4" : "PS4, PC";
+        this["date"]["earlyPlatform"] = this["date"]["PS4"] < this["date"]["PC"] ? "PS4" : "PS4, PC";
       } else {
         this["date"]["early"] = this["date"]["PC"];
         this["date"]["earlyPlatform"] = "PC";
@@ -202,10 +195,8 @@ function Song(song, isStat) {
     this["maxLevel"]["전체"] = Math.max(...Object.values(this["maxLevel"]));
 
     commonHeads.forEach((head) => {
-      this["levelAvg"][head] =
-        this["levelSum"][head] / this["patternCount"][head];
-      this["noteAvg"][head] =
-        this["noteSum"][head] / this["patternCount"][head];
+      this["levelAvg"][head] = this["levelSum"][head] / this["patternCount"][head];
+      this["noteAvg"][head] = this["noteSum"][head] / this["patternCount"][head];
     });
   }
 }
