@@ -122,11 +122,7 @@
         "title": "서울여자",
         "artist": {
           "compose": "ESTi",
-          "lyrics": [
-            "ESTi",
-            "박지연(MonoTree)",
-            "최영경"
-          ],
+          "lyrics": ["ESTi", "박지연(MonoTree)", "최영경"],
           "vocal": "YUKIKA"
         },
         "genre": "K-Pop",
@@ -356,14 +352,8 @@
         "artist": {
           "compose": "seibin",
           "lyrics": "seibin",
-          "vocal": [
-            "장예나",
-            "장미"
-          ],
-          "feat": [
-            "AZ(on Guitar)",
-            "Benicx(String Arrange)"
-          ],
+          "vocal": ["장예나", "장미"],
+          "feat": ["AZ(on Guitar)", "Benicx(String Arrange)"],
           "visualize": {
             "illust": "Clover",
             "motion": "PaXim"
@@ -550,10 +540,7 @@
       {
         "title": "Always",
         "artist": {
-          "compose": [
-            "YUGI",
-            "Mool"
-          ],
+          "compose": ["YUGI", "Mool"],
           "lyrics": "YUGI",
           "vocal": "Shin Ji",
           "visualize": "MUCA"
@@ -833,10 +820,7 @@
         "title": "Binary World",
         "artist": {
           "compose": "Tsukasa",
-          "lyrics": [
-            "Aki Misawa",
-            "Tiffaco"
-          ],
+          "lyrics": ["Aki Misawa", "Tiffaco"],
           "vocal": "Aki Misawa",
           "visualize": {
             "illust": "Racoona",
@@ -905,10 +889,7 @@
           "compose": "BEXTER",
           "lyrics": "JC",
           "vocal": "정창훈",
-          "feat": [
-            "Mycin.T(on Guitar)",
-            "JC(on Rap)"
-          ],
+          "feat": ["Mycin.T(on Guitar)", "JC(on Rap)"],
           "visualize": {
             "illust": "SHIHYUN",
             "motion": "DumpingLIFE",
@@ -968,10 +949,7 @@
       {
         "title": "Bleed",
         "artist": {
-          "compose": [
-            "Axol",
-            "The Tech Thieves"
-          ],
+          "compose": ["Axol", "The Tech Thieves"],
           "lyrics": [
             "Victor Louis Andre Anfray",
             "Mark Emmanuel",
@@ -1028,10 +1006,7 @@
         "title": "Boom!",
         "artist": {
           "compose": "BEXTER",
-          "lyrics": [
-            "BEXTER",
-            "DPENGUIN"
-          ],
+          "lyrics": ["BEXTER", "DPENGUIN"],
           "vocal": "DyoN Joo",
           "feat": "AZ(on Guitar)",
           "visualize": "VCRWORKS"
@@ -1332,14 +1307,8 @@
         "artist": {
           "compose": "House Rulez",
           "arrange": "서로",
-          "lyrics": [
-            "Ahn Ji Suk",
-            "Kali"
-          ],
-          "vocal": [
-            "Yehana",
-            "Kali"
-          ],
+          "lyrics": ["Ahn Ji Suk", "Kali"],
+          "vocal": ["Yehana", "Kali"],
           "visualize": "Coooooool-J"
         },
         "genre": "House",
@@ -1819,15 +1788,9 @@
       {
         "title": "glory day",
         "artist": {
-          "compose": [
-            "BEXTER",
-            "Mycin.T"
-          ],
+          "compose": ["BEXTER", "Mycin.T"],
           "arrange": "Mycin.T",
-          "lyrics": [
-            "BEXTER",
-            "MD Pistol"
-          ],
+          "lyrics": ["BEXTER", "MD Pistol"],
           "vocal": "DyoN Joo",
           "visualize": {
             "illust": "SHIHYUN",
@@ -1888,16 +1851,10 @@
       {
         "title": "glory day (Mintorment Remix)",
         "artist": {
-          "compose": [
-            "BEXTER",
-            "Mycin.T"
-          ],
+          "compose": ["BEXTER", "Mycin.T"],
           "arrange": "Mycin.T",
           "remix": "Mintorment",
-          "lyrics": [
-            "BEXTER",
-            "MD Pistol"
-          ],
+          "lyrics": ["BEXTER", "MD Pistol"],
           "vocal": "DyoN Joo",
           "visualize": "SB_ENGINEER"
         },
@@ -1955,16 +1912,10 @@
       {
         "title": "glory day -JHS Remix-",
         "artist": {
-          "compose": [
-            "BEXTER",
-            "Mycin.T"
-          ],
+          "compose": ["BEXTER", "Mycin.T"],
           "arrange": "Mycin.T",
           "remix": "JHS",
-          "lyrics": [
-            "BEXTER",
-            "MD Pistol"
-          ],
+          "lyrics": ["BEXTER", "MD Pistol"],
           "vocal": "DyoN Joo",
           "visualize": "SB_ENGINEER"
         },
@@ -2029,10 +1980,7 @@
         "title": "Grid System",
         "artist": {
           "compose": "Tsukasa",
-          "visualize": [
-            "Kimys",
-            "ECO"
-          ]
+          "visualize": ["Kimys", "ECO"]
         },
         "genre": "Trance",
         "level": {
@@ -2204,19 +2152,10 @@
           "compose": "Lin-G",
           "remix": {
             "nominal": "Studio LAY-BACK",
-            "include": [
-              "Mycin.T",
-              "GOTH",
-              "jam-jam"
-            ]
+            "include": ["Mycin.T", "GOTH", "jam-jam"]
           },
-          "lyrics": [
-            "Lin-G",
-            "yuuto"
-          ],
-          "vocal": [
-            "파인(FiNE)"
-          ],
+          "lyrics": ["Lin-G", "yuuto"],
+          "vocal": ["파인(FiNE)"],
           "visualize": {
             "illust": "Mauve",
             "motion": "SMIN"
@@ -3040,10 +2979,7 @@
           "lyrics": "foolen",
           "vocal": "foolen",
           "visualize": {
-            "illust": [
-              "SINBARU",
-              "SR"
-            ],
+            "illust": ["SINBARU", "SR"],
             "motion": "AJ"
           }
         },
@@ -3100,15 +3036,9 @@
       {
         "title": "Relation Again (ESTi's Remix)",
         "artist": {
-          "compose": [
-            "Tsukasa",
-            "ESTi"
-          ],
+          "compose": ["Tsukasa", "ESTi"],
           "arrange": "ESTi",
-          "visualize": [
-            "Tari",
-            "Eter"
-          ]
+          "visualize": ["Tari", "Eter"]
         },
         "genre": "Bright Fusion",
         "level": {
@@ -3538,10 +3468,7 @@
           "feat": "JC(on Rap)",
           "visualize": {
             "illust": "Shin Min Kyung",
-            "motion": [
-              "Carrotjuice",
-              "DumpingLIFE"
-            ]
+            "motion": ["Carrotjuice", "DumpingLIFE"]
           }
         },
         "genre": "Moombah Core",
@@ -3891,10 +3818,7 @@
           "arrange": "Mycin.T",
           "vocal": "Kim Min Seon",
           "feat": "Mycin.T(on Guitar)",
-          "visualize": [
-            "NEOWIZ Bless team",
-            "Red Comet"
-          ]
+          "visualize": ["NEOWIZ Bless team", "Red Comet"]
         },
         "genre": "Pop",
         "level": {
@@ -4002,10 +3926,7 @@
           "vocal": "Lena",
           "visualize": {
             "illust": "Mamo.C",
-            "motion": [
-              "Cow_0",
-              "DumpingLIFE"
-            ]
+            "motion": ["Cow_0", "DumpingLIFE"]
           }
         },
         "genre": "Pop",
@@ -4593,13 +4514,7 @@
           "lyrics": "Forte Escape",
           "vocal": "Miya",
           "feat": "Planetboom(on Guitar)",
-          "visualize": [
-            "NG",
-            "BS",
-            "Eyehead",
-            "Neruhoo",
-            "SB_ENGINEER"
-          ]
+          "visualize": ["NG", "BS", "Eyehead", "Neruhoo", "SB_ENGINEER"]
         },
         "genre": "Live Pop",
         "level": {
@@ -4986,10 +4901,7 @@
         "artist": {
           "compose": "Forte Escape",
           "vocal": "Pyk",
-          "visualize": [
-            "Aqualix",
-            "White Shadow"
-          ]
+          "visualize": ["Aqualix", "White Shadow"]
         },
         "genre": "Acid Jazz",
         "level": {
@@ -5455,10 +5367,7 @@
           "feat": "NieN(on Guitar)",
           "visualize": {
             "illust": "NG",
-            "motion": [
-              "Z_B",
-              "DumpingLIFE"
-            ]
+            "motion": ["Z_B", "DumpingLIFE"]
           }
         },
         "genre": "Fantasy Pop",
@@ -5671,10 +5580,7 @@
         "title": "FTR",
         "artist": {
           "compose": "Supbaby",
-          "visualize": [
-            "Tari",
-            "Eter"
-          ]
+          "visualize": ["Tari", "Eter"]
         },
         "genre": "Electric House",
         "level": {
@@ -6114,10 +6020,7 @@
           "compose": "3rd Coast",
           "lyrics": "3rd Coast",
           "vocal": "So Fly",
-          "feat": [
-            "JC(on Rap)",
-            "Mi Jung Leem(on Piano)"
-          ],
+          "feat": ["JC(on Rap)", "Mi Jung Leem(on Piano)"],
           "visualize": "Miyu"
         },
         "genre": "HipHop",
@@ -6448,10 +6351,7 @@
         "title": "Minimal Life",
         "artist": {
           "compose": "EarBreaker",
-          "visualize": [
-            "ECO",
-            "Tina"
-          ]
+          "visualize": ["ECO", "Tina"]
         },
         "genre": "Techno",
         "level": {
@@ -6508,17 +6408,8 @@
         "artist": {
           "compose": "M2U",
           "lyrics": "M2U",
-          "feat": [
-            "M2U",
-            "NieN(on Rap)"
-          ],
-          "visualize": [
-            "Ponglow",
-            "ECO",
-            "NG",
-            "Eter",
-            "Tari"
-          ]
+          "feat": ["M2U", "NieN(on Rap)"],
+          "visualize": ["Ponglow", "ECO", "NG", "Eter", "Tari"]
         },
         "genre": "Scream Funk",
         "level": {
@@ -6635,11 +6526,7 @@
           "compose": "ESTi",
           "visualize": {
             "illust": "D-myo",
-            "motion": [
-              "NG",
-              "Tari",
-              "ECO"
-            ]
+            "motion": ["NG", "Tari", "ECO"]
           }
         },
         "genre": "Dramatic Trance",
@@ -6703,12 +6590,7 @@
           "remix": "NieN",
           "visualize": {
             "illust": "D-myo",
-            "motion": [
-              "NG",
-              "Tari",
-              "ECO",
-              "ENTIA J"
-            ]
+            "motion": ["NG", "Tari", "ECO", "ENTIA J"]
           }
         },
         "genre": "Rock",
@@ -6773,10 +6655,7 @@
           "compose": "ND Lee",
           "lyrics": "Bean",
           "vocal": "ND Lee",
-          "visualize": [
-            "RB",
-            "DumpingLIFE"
-          ]
+          "visualize": ["RB", "DumpingLIFE"]
         },
         "genre": "2Step Slow",
         "level": {
@@ -6992,11 +6871,7 @@
         "title": "Ray of Illuminati",
         "artist": {
           "compose": "ESTi",
-          "visualize": [
-            "Tari",
-            "Eter",
-            "ECO"
-          ]
+          "visualize": ["Tari", "Eter", "ECO"]
         },
         "genre": "Euro Dance",
         "level": {
@@ -7058,14 +6933,8 @@
           "compose": "Croove",
           "lyrics": "JC",
           "vocal": "So Fly",
-          "feat": [
-            "JC(on Rap)",
-            "Planetboom(on Guitar)"
-          ],
-          "visualize": [
-            "Tari",
-            "Eter"
-          ]
+          "feat": ["JC(on Rap)", "Planetboom(on Guitar)"],
+          "visualize": ["Tari", "Eter"]
         },
         "genre": "Spanish R&B",
         "level": {
@@ -7572,10 +7441,7 @@
         "title": "Temptation",
         "artist": {
           "compose": "S-TRO",
-          "arrange": [
-            "S-TRO",
-            "Forte Escape"
-          ],
+          "arrange": ["S-TRO", "Forte Escape"],
           "lyrics": "S-TRO",
           "vocal": "Borami",
           "feat": "JC(on Rap)",
@@ -7682,10 +7548,7 @@
         "title": "Ya! Party!",
         "artist": {
           "compose": "Forte Escape",
-          "visualize": [
-            "Tari",
-            "Eter"
-          ]
+          "visualize": ["Tari", "Eter"]
         },
         "genre": "Candy Pop",
         "level": {
@@ -7847,10 +7710,7 @@
         "title": "A Lie",
         "artist": {
           "compose": "makou",
-          "lyrics": [
-            "Rin",
-            "JimKim"
-          ],
+          "lyrics": ["Rin", "JimKim"],
           "vocal": "Rin",
           "visualize": "Ache"
         },
@@ -8480,15 +8340,9 @@
       {
         "title": "Fentanest",
         "artist": {
-          "compose": [
-            "EarBreaker",
-            "Eszett"
-          ],
+          "compose": ["EarBreaker", "Eszett"],
           "feat": "Planetboom(on Guitar)",
-          "visualize": [
-            "Tari",
-            "Eter"
-          ]
+          "visualize": ["Tari", "Eter"]
         },
         "genre": "Spiral Sequence",
         "level": {
@@ -8542,10 +8396,7 @@
         "title": "For Seasons",
         "artist": {
           "compose": "makou",
-          "visualize": [
-            "Tari",
-            "Eter"
-          ]
+          "visualize": ["Tari", "Eter"]
         },
         "genre": "Easy Listening",
         "level": {
@@ -8708,10 +8559,7 @@
         "artist": {
           "compose": "ND Lee",
           "lyrics": "ND Lee",
-          "vocal": [
-            "Gypsi Road",
-            "Jimmy Len"
-          ],
+          "vocal": ["Gypsi Road", "Jimmy Len"],
           "visualize": "4.5"
         },
         "genre": "R&B HipHop",
@@ -8991,10 +8839,7 @@
         "title": "Lost n' found",
         "artist": {
           "compose": "bermei.inazawa",
-          "vocal": [
-            "bermei.inazawa",
-            "ryorca"
-          ],
+          "vocal": ["bermei.inazawa", "ryorca"],
           "visualize": "NB5"
         },
         "genre": "Electronic Pop",
@@ -9103,10 +8948,7 @@
         "title": "Mess it Up",
         "artist": {
           "compose": "Nauts",
-          "visualize": [
-            "Tari",
-            "Eter"
-          ]
+          "visualize": ["Tari", "Eter"]
         },
         "genre": "Electro Big Band",
         "level": {
@@ -9398,10 +9240,7 @@
           "compose": "Dayz",
           "lyrics": "Dayz",
           "vocal": "Tornade",
-          "visualize": [
-            "Kimys",
-            "ECO"
-          ]
+          "visualize": ["Kimys", "ECO"]
         },
         "genre": "DnB Core",
         "level": {
@@ -9512,15 +9351,8 @@
         "artist": {
           "compose": "NieN",
           "lyrics": "NieN",
-          "vocal": [
-            "NieN",
-            "utein"
-          ],
-          "visualize": [
-            "Panax",
-            "ECO",
-            "Tari"
-          ]
+          "vocal": ["NieN", "utein"],
+          "visualize": ["Panax", "ECO", "Tari"]
         },
         "genre": "Progressive Metal",
         "level": {
@@ -10191,11 +10023,7 @@
           "compose": "Oriental ST8",
           "lyrics": "YU HI",
           "vocal": "YU HI",
-          "visualize": [
-            "Tari",
-            "Kimys",
-            "Eyehead"
-          ]
+          "visualize": ["Tari", "Kimys", "Eyehead"]
         },
         "genre": "Euro Beat",
         "level": {
@@ -10311,10 +10139,7 @@
           "compose": "Planetboom",
           "lyrics": "Planetboom",
           "vocal": "Planetboom",
-          "visualize": [
-            "Tari",
-            "Eter"
-          ]
+          "visualize": ["Tari", "Eter"]
         },
         "genre": "Techno Core",
         "level": {
@@ -10471,10 +10296,7 @@
         "title": "Syriana",
         "artist": {
           "compose": "BEXTER",
-          "arrange": [
-            "BEXTER",
-            "Planetboom"
-          ],
+          "arrange": ["BEXTER", "Planetboom"],
           "lyrics": "JC",
           "feat": "JC(on Rap)",
           "visualize": "Ache"
@@ -10699,11 +10521,7 @@
           "compose": "Ruby Tuesday",
           "lyrics": "Christine Jones",
           "vocal": "Christine Jones",
-          "visualize": [
-            "Ache",
-            "Eyehead",
-            "ROBOTA STUDIO"
-          ]
+          "visualize": ["Ache", "Eyehead", "ROBOTA STUDIO"]
         },
         "genre": "Miracle Pop",
         "level": {
@@ -10764,10 +10582,7 @@
       {
         "title": "Become Myself",
         "artist": {
-          "compose": [
-            "Kibum",
-            "Yohan"
-          ],
+          "compose": ["Kibum", "Yohan"],
           "arrange": "PIA",
           "lyrics": "Yohan",
           "vocal": "Yohan",
@@ -10951,10 +10766,7 @@
           "remix": "Paul Bazooka",
           "lyrics": "JC",
           "feat": "JC(on Rap)",
-          "visualize": [
-            "NOVA",
-            "Super52"
-          ]
+          "visualize": ["NOVA", "Super52"]
         },
         "genre": "Dark Jungle",
         "level": {
@@ -11074,10 +10886,7 @@
           "lyrics": "Etsuko Yusa",
           "vocal": "Etsuko Yusa",
           "feat": "NieN(on Guitar)",
-          "visualize": [
-            "ECO",
-            "Xloth"
-          ]
+          "visualize": ["ECO", "Xloth"]
         },
         "genre": "Progressive House",
         "level": {
@@ -11138,10 +10947,7 @@
         "artist": {
           "compose": "Mr.Funky",
           "feat": "Magix Soundpool(on Vocal Sample)",
-          "visualize": [
-            "DumpingLIFE",
-            "Z_B"
-          ]
+          "visualize": ["DumpingLIFE", "Z_B"]
         },
         "genre": "Hip House",
         "level": {
@@ -11562,22 +11368,10 @@
       {
         "title": "NB Ranger : Nonstop Remix",
         "artist": {
-          "compose": [
-            "M2U",
-            "NieN",
-            "Sugardonut"
-          ],
+          "compose": ["M2U", "NieN", "Sugardonut"],
           "remix": "Paul Bazooka",
-          "lyrics": [
-            "M2U",
-            "NieN",
-            "Sugardonut"
-          ],
-          "vocal": [
-            "M2U",
-            "NieN",
-            "Sugardonut"
-          ],
+          "lyrics": ["M2U", "NieN", "Sugardonut"],
+          "vocal": ["M2U", "NieN", "Sugardonut"],
           "visualize": {
             "nominal": "NB Ranger Green",
             "alias": "Z_B"
@@ -11816,10 +11610,7 @@
           "remix": "Mr.Funky",
           "lyrics": "Michael Blunck",
           "vocal": "Michael Blunck",
-          "visualize": [
-            "DumpingLIFE",
-            "Z_B"
-          ]
+          "visualize": ["DumpingLIFE", "Z_B"]
         },
         "genre": "Nu Disco",
         "level": {
@@ -12167,10 +11958,7 @@
         "artist": {
           "compose": "makou",
           "remix": "Electronic Boutique",
-          "lyrics": [
-            "Rin",
-            "JimKim"
-          ],
+          "lyrics": ["Rin", "JimKim"],
           "vocal": "Rin",
           "visualize": "Ache"
         },
@@ -12346,10 +12134,7 @@
         "artist": {
           "compose": "makou",
           "remix": "Planetboom",
-          "visualize": [
-            "Tari",
-            "Eter"
-          ]
+          "visualize": ["Tari", "Eter"]
         },
         "genre": "Easy Listening",
         "level": {
@@ -12405,10 +12190,7 @@
           "compose": "ND Lee",
           "remix": "DJ EON",
           "lyrics": "ND Lee",
-          "vocal": [
-            "Gypsi Road",
-            "Jimmy Len"
-          ],
+          "vocal": ["Gypsi Road", "Jimmy Len"],
           "visualize": "4.5"
         },
         "genre": "House HipHop",
@@ -12464,10 +12246,7 @@
         "artist": {
           "compose": "NieN",
           "lyrics": "NieN",
-          "vocal": [
-            "NieN",
-            "Yayoo(Band 'Guyz')"
-          ],
+          "vocal": ["NieN", "Yayoo(Band 'Guyz')"],
           "visualize": "BraveNine"
         },
         "genre": "Modern Hard Rock",
@@ -12771,10 +12550,7 @@
           "lyrics": "JC",
           "vocal": "So Fly",
           "feat": "JC(on Rap)",
-          "visualize": [
-            "Tari",
-            "Eter"
-          ]
+          "visualize": ["Tari", "Eter"]
         },
         "genre": "Big Band House",
         "level": {
@@ -12888,10 +12664,7 @@
           "compose": "BEXTER",
           "remix": "DJ EON",
           "lyrics": "JC",
-          "feat": [
-            "JC(on Rap)",
-            "Planetboom(on Guitar)"
-          ],
+          "feat": ["JC(on Rap)", "Planetboom(on Guitar)"],
           "visualize": "Ache"
         },
         "genre": "Blast Wave Mix",
@@ -13197,11 +12970,7 @@
           "remix": "makou",
           "lyrics": "Christine Jones",
           "vocal": "Christine Jones",
-          "visualize": [
-            "Ache",
-            "Eyehead",
-            "ROBOTA STUDIO"
-          ]
+          "visualize": ["Ache", "Eyehead", "ROBOTA STUDIO"]
         },
         "genre": "Disco House",
         "level": {
@@ -13392,14 +13161,8 @@
         "title": "내게로 와",
         "artist": {
           "compose": "CLAZZIQUAI",
-          "lyrics": [
-            "Alex",
-            "Horan"
-          ],
-          "vocal": [
-            "Alex",
-            "Horan"
-          ],
+          "lyrics": ["Alex", "Horan"],
+          "vocal": ["Alex", "Horan"],
           "visualize": {
             "illust": "SARA",
             "motion": "Z_B"
@@ -13717,10 +13480,7 @@
           "compose": "CLAZZIQUAI",
           "lyrics": "DJ Clazzi",
           "vocal": "DJ Clazzi",
-          "visualize": [
-            "ENTIA J",
-            "JT"
-          ]
+          "visualize": ["ENTIA J", "JT"]
         },
         "genre": "Electronica",
         "level": {
@@ -13905,10 +13665,7 @@
           "compose": "CLAZZIQUAI",
           "lyrics": "Alex",
           "vocal": "Alex",
-          "visualize": [
-            "DumpingLIFE",
-            "Madum"
-          ]
+          "visualize": ["DumpingLIFE", "Madum"]
         },
         "genre": "Electro House",
         "level": {
@@ -14098,14 +13855,8 @@
         "title": "Flea",
         "artist": {
           "compose": "CLAZZIQUAI",
-          "lyrics": [
-            "Alex",
-            "Horan"
-          ],
-          "vocal": [
-            "Alex",
-            "Horan"
-          ],
+          "lyrics": ["Alex", "Horan"],
+          "vocal": ["Alex", "Horan"],
           "visualize": "CLAZZIQUAI PROJECT"
         },
         "genre": "New Wave",
@@ -14168,10 +13919,7 @@
           "vocal": "CHRISTINA",
           "visualize": {
             "illust": "SARA",
-            "motion": [
-              "Carrotjuice",
-              "Purplelemon"
-            ]
+            "motion": ["Carrotjuice", "Purplelemon"]
           }
         },
         "genre": "Electronica",
@@ -14231,10 +13979,7 @@
           "vocal": "LEAH",
           "visualize": {
             "illust": "KKUEM",
-            "motion": [
-              "Hwain",
-              "Jin"
-            ]
+            "motion": ["Hwain", "Jin"]
           }
         },
         "genre": "Bossa Nova",
@@ -14300,10 +14045,7 @@
           "vocal": "LEAH",
           "visualize": {
             "illust": "KKUEM",
-            "motion": [
-              "Hwain",
-              "Jin"
-            ]
+            "motion": ["Hwain", "Jin"]
           }
         },
         "genre": "Bossa Nova",
@@ -14432,19 +14174,9 @@
         "title": "Love Mode",
         "artist": {
           "compose": "CLAZZIQUAI",
-          "lyrics": [
-            "Alex",
-            "Horan"
-          ],
-          "vocal": [
-            "Alex",
-            "Horan"
-          ],
-          "visualize": [
-            "CLAZZIQUAI PROJECT",
-            "Z_B",
-            "HooN"
-          ]
+          "lyrics": ["Alex", "Horan"],
+          "vocal": ["Alex", "Horan"],
+          "visualize": ["CLAZZIQUAI PROJECT", "Z_B", "HooN"]
         },
         "genre": "Electronica",
         "level": {
@@ -14692,18 +14424,9 @@
         "title": "The Night Stage",
         "artist": {
           "compose": "CLAZZIQUAI",
-          "lyrics": [
-            "Alex",
-            "Horan"
-          ],
-          "vocal": [
-            "Alex",
-            "Horan"
-          ],
-          "visualize": [
-            "DumpingLIFE",
-            "Madum"
-          ]
+          "lyrics": ["Alex", "Horan"],
+          "vocal": ["Alex", "Horan"],
+          "visualize": ["DumpingLIFE", "Madum"]
         },
         "genre": "Electro Pop",
         "level": {
@@ -14997,10 +14720,7 @@
         "title": "Beat U Down",
         "artist": {
           "compose": "makou",
-          "visualize": [
-            "Kimys",
-            "Z_B"
-          ]
+          "visualize": ["Kimys", "Z_B"]
         },
         "genre": "Euro Beat",
         "level": {
@@ -15312,10 +15032,7 @@
           "vocal": "So Fly",
           "feat": "JC(on Rap)",
           "visualize": {
-            "illust": [
-              "Y.J",
-              "JOJO"
-            ],
+            "illust": ["Y.J", "JOJO"],
             "motion": "79c"
           }
         },
@@ -15376,10 +15093,7 @@
           "lyrics": "Younghoo Kim",
           "vocal": "Brandy",
           "feat": "Jessica Kim",
-          "visualize": [
-            "DJMAX ALLSTARS",
-            "Carrotjuice"
-          ]
+          "visualize": ["DJMAX ALLSTARS", "Carrotjuice"]
         },
         "genre": "Dance Rock",
         "level": {
@@ -15694,10 +15408,7 @@
         "artist": {
           "compose": "Planetboom",
           "lyrics": "Yohan(PIA)",
-          "vocal": [
-            "Yohan(PIA)",
-            "Planetboom"
-          ],
+          "vocal": ["Yohan(PIA)", "Planetboom"],
           "visualize": {
             "illust": "GODO",
             "motion": "Carrotjuice"
@@ -15889,10 +15600,7 @@
         "artist": {
           "compose": "Trish",
           "arrange": "Urbatronic Chopsticks",
-          "lyrics": [
-            "Trish",
-            "Joan"
-          ],
+          "lyrics": ["Trish", "Joan"],
           "vocal": "샛별",
           "feat": "Zito(on Rap)",
           "visualize": "cozy"
@@ -16020,10 +15728,7 @@
           "compose": "BEXTER",
           "lyrics": "JC",
           "vocal": "So Fly",
-          "feat": [
-            "JC(on Rap)",
-            "Planetboom(on Guitar)"
-          ],
+          "feat": ["JC(on Rap)", "Planetboom(on Guitar)"],
           "visualize": {
             "illust": "Shin Min Kyung",
             "motion": "Carrotjuice"
@@ -16389,16 +16094,10 @@
         "title": "Dream it",
         "artist": {
           "compose": "BEXTER",
-          "arrange": [
-            "BEXTER",
-            "Ocean"
-          ],
+          "arrange": ["BEXTER", "Ocean"],
           "lyrics": "BEXTER",
           "vocal": "DyoN Joo",
-          "feat": [
-            "AZ(on Guitar)",
-            "Ocean(on Organ)"
-          ],
+          "feat": ["AZ(on Guitar)", "Ocean(on Organ)"],
           "visualize": {
             "illust": "Monamin",
             "motion": "SB_ENGINEER"
@@ -16463,14 +16162,8 @@
       {
         "title": "Fancy Night",
         "artist": {
-          "compose": [
-            "SiNA",
-            "CHUCK"
-          ],
-          "lyrics": [
-            "SiNA",
-            "CHUCK"
-          ],
+          "compose": ["SiNA", "CHUCK"],
+          "lyrics": ["SiNA", "CHUCK"],
           "vocal": "Hyezoo",
           "visualize": "AJ"
         },
@@ -16912,14 +16605,8 @@
       {
         "title": "Misty Er'A",
         "artist": {
-          "compose": [
-            "Mycin.T",
-            "jam-jam"
-          ],
-          "lyrics": [
-            "Mycin.T",
-            "jam-jam"
-          ],
+          "compose": ["Mycin.T", "jam-jam"],
+          "lyrics": ["Mycin.T", "jam-jam"],
           "vocal": "jam-jam",
           "visualize": {
             "illust": "Mamo.C",
@@ -16981,10 +16668,7 @@
       {
         "title": "Move Yourself",
         "artist": {
-          "compose": [
-            "IMLAY",
-            "YESEO"
-          ],
+          "compose": ["IMLAY", "YESEO"],
           "lyrics": "YESEO",
           "vocal": "YESEO",
           "visualize": {
@@ -17247,10 +16931,7 @@
           "compose": "Bagagee Viphex13",
           "lyrics": "Bagagee Viphex13",
           "visualize": {
-            "illust": [
-              "zz7zz7",
-              "yeop x2"
-            ],
+            "illust": ["zz7zz7", "yeop x2"],
             "motion": "SB_ENGINEER"
           }
         },
@@ -17704,10 +17385,7 @@
           "compose": "Kanallia",
           "visualize": {
             "illust": "OZ",
-            "motion": [
-              "DumpingLIFE",
-              "VJTB87"
-            ]
+            "motion": ["DumpingLIFE", "VJTB87"]
           }
         },
         "genre": "Trance Step",
@@ -17831,23 +17509,10 @@
       {
         "title": "Daydream",
         "artist": {
-          "compose": [
-            "Mycin.T",
-            "SiNA"
-          ],
-          "lyrics": [
-            "Mycin.T",
-            "SiNA"
-          ],
-          "vocal": [
-            "Jayoung",
-            "Iree"
-          ],
-          "feat": [
-            "Mycin.T(on Guitar)",
-            "SiNA(on Bass)",
-            "jam-jam(on Chorus)"
-          ],
+          "compose": ["Mycin.T", "SiNA"],
+          "lyrics": ["Mycin.T", "SiNA"],
+          "vocal": ["Jayoung", "Iree"],
+          "feat": ["Mycin.T(on Guitar)", "SiNA(on Bass)", "jam-jam(on Chorus)"],
           "visualize": {
             "illust": "HAMMA",
             "story": "DumpingLIFE"
@@ -17918,8 +17583,8 @@
           "lyrics": "NieN",
           "vocal": "이지애",
           "visualize": {
-              "illust": "31",
-              "motion": "SumGyeol"
+            "illust": "31",
+            "motion": "SumGyeol"
           }
         },
         "genre": "K-Pop",
@@ -18496,8 +18161,8 @@
           "lyrics": "jam-jam",
           "vocal": "jam-jam",
           "visualize": {
-              "illust": "moodio",
-              "motion": "SB_ENGINEER"
+            "illust": "moodio",
+            "motion": "SB_ENGINEER"
           }
         },
         "genre": "Dance Pop",
@@ -18559,12 +18224,7 @@
           "compose": "Nauts",
           "lyrics": "Nauts",
           "vocal": "Lim Ryu",
-          "visualize": [
-            "QMENG",
-            "Callnong",
-            "Sun Lee",
-            "Lee PD"
-          ]
+          "visualize": ["QMENG", "Callnong", "Sun Lee", "Lee PD"]
         },
         "genre": "Fantasy",
         "level": {
@@ -18749,10 +18409,7 @@
       {
         "title": "Won't Back Down",
         "artist": {
-          "compose": [
-            "Pure 100%",
-            "KASA"
-          ],
+          "compose": ["Pure 100%", "KASA"],
           "arrange": "Pure 100%",
           "lyrics": "KASA",
           "vocal": "KASA",
@@ -18823,10 +18480,7 @@
         "artist": {
           "compose": "SiNA",
           "arrange": "SiNA",
-          "lyrics": [
-            "SiNA",
-            "Yonge Jaundice"
-          ],
+          "lyrics": ["SiNA", "Yonge Jaundice"],
           "vocal": "Yonge Jaundice",
           "feat": "jam-jam",
           "visualize": "prince"
@@ -19646,10 +19300,7 @@
           "lyrics": "Sugardonut",
           "vocal": "Sugardonut",
           "visualize": {
-            "illust": [
-              "Y.J",
-              "JOJO"
-            ],
+            "illust": ["Y.J", "JOJO"],
             "motion": "ssamanko"
           }
         },
@@ -19713,10 +19364,7 @@
         "title": "HEXAD",
         "artist": {
           "compose": "Electronic Boutique",
-          "visualize": [
-            "Kimys",
-            "Z_B"
-          ]
+          "visualize": ["Kimys", "Z_B"]
         },
         "genre": "Electro House",
         "level": {
@@ -20043,10 +19691,7 @@
           "compose": "Urbatronic Chopsticks",
           "lyrics": "Urbatronic Chopsticks",
           "vocal": "Urbatronic Chopsticks",
-          "visualize": [
-            "Kimys",
-            "Z_B"
-          ]
+          "visualize": ["Kimys", "Z_B"]
         },
         "genre": "Electro House",
         "level": {
@@ -20227,10 +19872,7 @@
         "title": "SON OF SUN",
         "artist": {
           "compose": "Hosoe Shinji",
-          "visualize": [
-            "ECO",
-            "HooN"
-          ]
+          "visualize": ["ECO", "HooN"]
         },
         "genre": "Gabber",
         "level": {
@@ -20292,10 +19934,7 @@
         "title": "SON OF SUN ~Extended Mix~",
         "artist": {
           "compose": "Hosoe Shinji",
-          "visualize": [
-            "ECO",
-            "HooN"
-          ]
+          "visualize": ["ECO", "HooN"]
         },
         "genre": "Gabber",
         "level": {
@@ -20781,10 +20420,7 @@
         "title": "Burn it Down",
         "artist": {
           "compose": "P'sycho-Remi",
-          "lyrics": [
-            "P'sycho-Remi",
-            "Kalos"
-          ],
+          "lyrics": ["P'sycho-Remi", "Kalos"],
           "vocal": "P'sycho-Remi",
           "visualize": {
             "illust": "SR",
@@ -21093,11 +20729,7 @@
         "title": "Dual Strikers",
         "artist": {
           "compose": "7 Sequence",
-          "visualize": [
-            "Giggsan",
-            "Z_B",
-            "D"
-          ]
+          "visualize": ["Giggsan", "Z_B", "D"]
         },
         "genre": "Techno Trance",
         "level": {
@@ -21399,10 +21031,7 @@
           "lyrics": "Michael Blunck",
           "vocal": "Michael Blunck",
           "feat": "Planetboom(on Guitar)",
-          "visualize": [
-            "Saree",
-            "D"
-          ]
+          "visualize": ["Saree", "D"]
         },
         "genre": "Nu Skool Breakz",
         "level": {
@@ -21639,10 +21268,7 @@
         "artist": {
           "compose": "makou",
           "feat": "Yoshihiro Tsukahara(on Guitar)",
-          "visualize": [
-            "Z_B",
-            "GrooveBEAR"
-          ]
+          "visualize": ["Z_B", "GrooveBEAR"]
         },
         "genre": "Classic Handbag",
         "level": {
@@ -21698,10 +21324,7 @@
         "title": "Sweet Dream",
         "artist": {
           "compose": "Lin-G",
-          "arrange": [
-            "Lin-G",
-            "Mr.love & pop"
-          ],
+          "arrange": ["Lin-G", "Mr.love & pop"],
           "lyrics": "Lin-G",
           "vocal": {
             "nominal": "Jay",
@@ -22142,10 +21765,7 @@
           "compose": "STi",
           "lyrics": "STi",
           "vocal": "수정",
-          "feat": [
-            "STi(on Rap)",
-            "안지연(on Chorus)"
-          ],
+          "feat": ["STi(on Rap)", "안지연(on Chorus)"],
           "visualize": {
             "illust": "Tari",
             "motion": "NOVA"
@@ -22831,10 +22451,7 @@
         "artist": {
           "compose": "makou",
           "feat": "Yoshihiro Tsukahara(on Mandolin)",
-          "visualize": [
-            "Xloth",
-            "D"
-          ]
+          "visualize": ["Xloth", "D"]
         },
         "genre": "Irish Dance",
         "level": {
@@ -22959,10 +22576,7 @@
         "artist": {
           "compose": "NieN",
           "lyrics": "JaeHwan",
-          "vocal": [
-            "NieN",
-            "JaeHwan"
-          ],
+          "vocal": ["NieN", "JaeHwan"],
           "visualize": {
             "illust": "zaktan",
             "motion": "DumpingLIFE"
@@ -23270,10 +22884,7 @@
         "title": "Out of CTRL",
         "artist": {
           "compose": "Mr.Funky",
-          "lyrics": [
-            "Mr.Funky",
-            "Yohan"
-          ],
+          "lyrics": ["Mr.Funky", "Yohan"],
           "vocal": "Yohan",
           "visualize": {
             "illust": "zaktan",
@@ -23640,14 +23251,8 @@
       {
         "title": "Supersonic 2011",
         "artist": {
-          "compose": [
-            "Planetboom",
-            "Sound LAB"
-          ],
-          "lyrics": [
-            "Michael Blunck",
-            "Planetboom"
-          ],
+          "compose": ["Planetboom", "Sound LAB"],
+          "lyrics": ["Michael Blunck", "Planetboom"],
           "vocal": "Sound LAB",
           "feat": "Michael Blunck(on Rap)",
           "visualize": "Pentavision Sound LAB"
@@ -23829,10 +23434,7 @@
         "artist": {
           "compose": "NieN",
           "lyrics": "NieN",
-          "vocal": [
-            "정상희",
-            "혜린"
-          ],
+          "vocal": ["정상희", "혜린"],
           "visualize": {
             "illust": "KKUEM",
             "motion": "Jin"
@@ -24084,10 +23686,7 @@
           "compose": "Rikako Watanabe(Basicape)",
           "lyrics": "Rikako Watanabe",
           "vocal": "ErumNagi",
-          "visualize": [
-            "MICA Team",
-            "Kurokawa Tomoyuki"
-          ]
+          "visualize": ["MICA Team", "Kurokawa Tomoyuki"]
         },
         "level": {
           "4B": {
@@ -24145,20 +23744,11 @@
       {
         "title": "Frontline",
         "artist": {
-          "compose": [
-            "B@kamin",
-            "M2U"
-          ],
+          "compose": ["B@kamin", "M2U"],
           "arrange": "B@kamin",
-          "lyrics": [
-            "JiHEE",
-            "shimauma"
-          ],
+          "lyrics": ["JiHEE", "shimauma"],
           "vocal": "Guriri",
-          "visualize": [
-            "MICA Team",
-            "DumpingLIFE"
-          ]
+          "visualize": ["MICA Team", "DumpingLIFE"]
         },
         "level": {
           "4B": {
@@ -24218,10 +23808,7 @@
           "lyrics": "KANASA",
           "vocal": "AKINO with bless4",
           "feat": "AKINO with bless4",
-          "visualize": [
-            "MICA Team",
-            "DumpingLIFE"
-          ]
+          "visualize": ["MICA Team", "DumpingLIFE"]
         },
         "level": {
           "4B": {
@@ -24630,10 +24217,7 @@
       {
         "title": "ouroboros -twin stroke of the end-",
         "artist": {
-          "compose": [
-            "Cranky",
-            "MASAKI"
-          ]
+          "compose": ["Cranky", "MASAKI"]
         },
         "level": {
           "4B": {
@@ -25098,10 +24682,7 @@
         "title": "Magnolia",
         "artist": {
           "compose": "M2U",
-          "arrange": [
-            "M2U",
-            "WAV.AV."
-          ],
+          "arrange": ["M2U", "WAV.AV."],
           "lyrics": "WAV.AV.",
           "vocal": "Guriri"
         },
@@ -25559,10 +25140,7 @@
       {
         "title": "conflict",
         "artist": {
-          "compose": [
-            "Cranky",
-            "siromaru"
-          ]
+          "compose": ["Cranky", "siromaru"]
         },
         "genre": "Harmonic Schranz",
         "level": {
@@ -26417,10 +25995,7 @@
       {
         "title": "Trrricksters!!",
         "artist": {
-          "compose": [
-            "s-don",
-            "Hino Isuka"
-          ],
+          "compose": ["s-don", "Hino Isuka"],
           "visualize": "DJMAX Team"
         },
         "level": {
@@ -26483,10 +26058,7 @@
       {
         "title": "안아줘",
         "artist": {
-          "compose": [
-            "TAK",
-            "seibin"
-          ],
+          "compose": ["TAK", "seibin"],
           "lyrics": "TAK",
           "vocal": "YUKIKA",
           "visualize": "VIVINOS"
@@ -26612,10 +26184,7 @@
           "vocal": "Misato",
           "visualize": {
             "illust": "BF.",
-            "motion": [
-              "Latte",
-              "SB_ENGINEER"
-            ]
+            "motion": ["Latte", "SB_ENGINEER"]
           }
         },
         "level": {
@@ -26670,10 +26239,7 @@
       {
         "title": "Obelisque",
         "artist": {
-          "compose": [
-            "ESTi",
-            "M2U"
-          ],
+          "compose": ["ESTi", "M2U"],
           "visualize": {
             "illust": "DORAE",
             "motion": "SB_ENGINEER"
@@ -26796,10 +26362,7 @@
         "title": "공성전 ~Pierre Blanche, Yonce Remix~",
         "artist": {
           "compose": "NEXON",
-          "remix": [
-            "Pierre Blanche",
-            "Yonce"
-          ]
+          "remix": ["Pierre Blanche", "Yonce"]
         },
         "level": {
           "4B": {
@@ -27300,10 +26863,7 @@
       {
         "title": "카트라이더 Mashup ~Cosmograph Remix~",
         "artist": {
-          "compose": [
-            "NEXON",
-            "Studio EIM"
-          ],
+          "compose": ["NEXON", "Studio EIM"],
           "remix": "Cosmograph"
         },
         "level": {
@@ -27363,10 +26923,7 @@
       {
         "title": "카트라이더 Mashup ~Pure 100% Remix~",
         "artist": {
-          "compose": [
-            "NEXON",
-            "Studio EIM"
-          ],
+          "compose": ["NEXON", "Studio EIM"],
           "remix": "Pure 100%"
         },
         "level": {
@@ -27958,7 +27515,17 @@
       }
     ]
   },
-  "collaboration": ["guiltygear", "girlsfrontline", "groovecoaster", "deemo", "cytus", "chunithm", "estimate", "nexon", "musedash"],
+  "collaboration": [
+    "guiltygear",
+    "girlsfrontline",
+    "groovecoaster",
+    "deemo",
+    "cytus",
+    "chunithm",
+    "estimate",
+    "nexon",
+    "musedash"
+  ],
   "dlcKor": {
     "respect": "리스펙트",
     "portable1": "포터블 1",

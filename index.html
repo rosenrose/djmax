@@ -1,67 +1,91 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>디제이맥스 리스펙트</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel='stylesheet' type='text/css' media='screen' href='css/common.css' title="common">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="css/common.css"
+      title="common"
+    />
     <style>
-        body {
-            background-image: url("img/cover.jpg");
-        }
-        a {
-            text-decoration: none;
-        }
-        ul {
-            list-style: none;
-        }
-        li {
-            margin: 1em;
-            font-size: 1.3em;
-        }
-        li a {
-            background-color: #fff;
-            border-radius: 0.5em;
-        }
+      body {
+        background-image: url("img/cover.jpg");
+      }
+      a {
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+      li {
+        margin: 1em;
+        font-size: 1.3em;
+      }
+      li a {
+        background-color: #fff;
+        border-radius: 0.5em;
+      }
 
+      #so_happy > * {
+        display: block;
+        margin: 0 auto;
+        width: 45%;
+      }
+      #select {
+        margin-top: 1em;
+      }
+      @media (max-width: 768px) {
         #so_happy > * {
-            display: block;
-            margin: 0 auto;
-            width: 45%;
+          width: 100%;
         }
-        #select {
-            margin-top: 1em;
-        }
-        @media ( max-width: 768px ) {
-            #so_happy > * {
-                width: 100%;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <picture id="so_happy">
-            <source srcset="img/ClearPlayFail.webp 384w" media="(max-width: 768px)">
-            <source srcset="img/ClearPlayFail_1.5x.webp 576w" media="(max-width: 1024px)">
-            <source srcset="img/ClearPlayFail_2x.webp 576w" media="(max-width: 1440px)">
-            <source srcset="img/ClearPlayFail_3x.webp 1152w">
-            <img src="img/ClearPlayFail_006.png">
-        </picture>
+      <picture id="so_happy">
+        <source
+          srcset="img/ClearPlayFail.webp 384w"
+          media="(max-width: 768px)"
+        />
+        <source
+          srcset="img/ClearPlayFail_1.5x.webp 576w"
+          media="(max-width: 1024px)"
+        />
+        <source
+          srcset="img/ClearPlayFail_2x.webp 576w"
+          media="(max-width: 1440px)"
+        />
+        <source srcset="img/ClearPlayFail_3x.webp 1152w" />
+        <img src="img/ClearPlayFail_006.png" />
+      </picture>
     </div>
     <ul id="select" class="center">
-        <li><a href="random/">❔ 랜덤 선곡하기</a></li>
-        <li><a href="artist/">🎨 아티스트별 곡 목록</a></li>
-        <li><a href="tag/">🏷️ 장르 태그</a></li>
-        <li><a href="gallery/">🖼️ 갤러리 고화질 이미지 모음</a></li>
-        <li><a href="song_pic/">🎵 곡 썸네일 모음</a></li>
-        <li><a href="emoticon/">😉 이모티콘 모음</a></li>
-        <li><a href="stat/">📊 통계</a></li>
-        <li><a href="result/">💯 성과 스샷 생성기</a></li>
-        <li><a href="inventory/">👜 인벤토리 이모티콘 모음</a></li>
-        <li><a href="https://github.com/rosenrose/DjmaxTyping/" target="_blank">⌨️ 디맥 타이핑</a></li>
-    </div>
-</body>
+      <li><a href="random/">❔ 랜덤 선곡하기</a></li>
+      <li><a href="artist/">🎨 아티스트별 곡 목록</a></li>
+      <li><a href="tag/">🏷️ 장르 태그</a></li>
+      <li><a href="gallery/">🖼️ 갤러리 고화질 이미지 모음</a></li>
+      <li><a href="song_pic/">🎵 곡 썸네일 모음</a></li>
+      <li><a href="emoticon/">😉 이모티콘 모음</a></li>
+      <li><a href="stat/">📊 통계</a></li>
+      <li><a href="result/">💯 성과 스샷 생성기</a></li>
+      <li><a href="inventory/">👜 인벤토리 이모티콘 모음</a></li>
+      <li>
+        <a href="https://github.com/rosenrose/DjmaxTyping/" target="_blank"
+          >⌨️ 디맥 타이핑</a
+        >
+      </li>
+    </ul>
+  </body>
 </html>
