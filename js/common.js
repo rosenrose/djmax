@@ -206,8 +206,8 @@ function noteRange(note) {
     return { lower: 0, upper: 0, key: "0" };
   }
 
-  let lower = parseInt((note - 1) / 100) * 100 + 1;
-  let upper = (parseInt((note - 1) / 100) + 1) * 100;
+  let lower = Math.floor((note - 1) / 100) * 100 + 1;
+  let upper = (Math.floor((note - 1) / 100) + 1) * 100;
 
   return {
     lower,
