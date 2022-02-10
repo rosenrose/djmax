@@ -658,7 +658,7 @@ function Title({ mode, bpmMode, dateMode }) {
     let category = song["category"];
 
     if (!["levels", "notes", "noteDensity"].includes(mode)) {
-      (mode == "patternCount" ? tableHeads[mode].slice(0, -1) : tableHeads[mode]).forEach((head, i) => {
+      (mode == "patternCount" ? tableHeads[mode].slice(0, -1) : tableHeads[mode]).forEach((head) => {
         let data;
 
         if (head == "카테고리") {
@@ -694,7 +694,7 @@ function Title({ mode, bpmMode, dateMode }) {
 
         tds.push(
           <td
-            key={tableHeads[mode][i]}
+            key={head}
             style={mode == "date" && head == "카테고리" ? getCategoryStyle(category, list["collaboration"]) : null}
           >
             {data}
@@ -724,7 +724,7 @@ function Title({ mode, bpmMode, dateMode }) {
     );
 
     if (["levels", "notes", "noteDensity"].includes(mode)) {
-      commonHeads.slice(1).forEach((btn, i) => {
+      commonHeads.slice(1).forEach((btn) => {
         trs.push(
           <tr className="levels-notes" key={song["uniqueTitle"] + btn}>
             <th className={`${btn}-color`}>{btn}</th>
@@ -739,7 +739,7 @@ function Title({ mode, bpmMode, dateMode }) {
                 </td>
               )
             )}
-            {i == 0 && <td rowSpan="5">{list["dlcKor"][song["category"]]}</td>}
+            {btn == "4B" && <td rowSpan="5">{list["dlcKor"][song["category"]]}</td>}
           </tr>
         );
       });
