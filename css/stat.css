@@ -1,97 +1,103 @@
 body {
-    background-image: url('../img/cover.jpg');
+  background-image: url("../img/cover.jpg");
 }
 table {
-    margin: 1em auto;
-    border-collapse: collapse;
+  margin: 1em auto;
+  border-collapse: collapse;
 }
-thead th, tbody .levels-notes th, tfoot th {
-    border: 2px dashed purple;
-    padding: 0.5em 1em;
+thead th,
+tbody .levels-notes th,
+tbody .levels-notes-sort th:nth-child(2),
+tfoot th {
+  border: 2px dashed purple;
+  padding: 0.5em 1em;
 }
-th[data-sorted='▲'] {
-    border: 2px dashed red;
+th[data-sorted="▲"] {
+  border: 2px dashed red;
 }
-th[data-sorted='▼'] {
-    border: 2px dashed blue;
+th[data-sorted="▼"] {
+  border: 2px dashed blue;
 }
-td, th {
-    border: 1px solid #444;
-    padding: 0.5em;
+td,
+th {
+  border: 1px solid #444;
+  padding: 0.5em;
 }
-tr.levels-notes:nth-child(5n), td[rowspan] {
-    border-bottom: 2px dotted #777;
+tr.levels-notes:nth-child(5n),
+td[rowspan] {
+  border-bottom: 2px dotted #777;
 }
 tbody img {
-    width: 30%;
-    margin-right: 1em;
-    vertical-align: middle;
+  width: 30%;
+  margin-right: 1em;
+  vertical-align: middle;
 }
 tr th:first-child {
-    max-width: 22em;
+  max-width: 22em;
 }
 tr th:first-child p {
-    margin: 0;
-    width: 100%;
+  margin: 0;
+  width: 100%;
 }
 tr th:first-child p.narrow {
-    display: inline-block;
-    width: 65%;
+  display: inline-block;
+  width: 65%;
 }
 
 span.sortArrow {
-    font-size: small;
-    margin-left: 3px;
+  font-size: small;
+  margin-left: 3px;
 }
 input {
-    margin: 0.5em;
+  margin: 0.5em;
 }
 svg {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 #result {
-    min-width: 60%;
+  min-width: 60%;
 }
 #levelsSort {
-    margin-left: 0.5em;
+  margin-left: 0.5em;
 }
 
 .title {
-    text-align: left;
+  text-align: left;
 }
 .subSelectMode {
-    margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 .subSelectMode th :is(label, input) {
-    margin: 0 auto;
-    padding: 0;
+  margin: 0 auto;
+  padding: 0;
 }
-.mid, .early {
-    margin-left: 0.3em;
+.mid,
+.early {
+  margin-left: 0.3em;
 }
 .early {
-    font-size: small;
+  font-size: small;
 }
 .js-plotly-plot {
-    /* position: relative; */
-    display: inline-block;
-    border: 1px solid #777;
-    width: 100%;
+  /* position: relative; */
+  display: inline-block;
+  border: 1px solid #777;
+  width: 100%;
 }
 
-@media ( max-width: 1440px ) {
-    #result {
-        min-width: 80vw;
-    }
+@media (max-width: 1440px) {
+  #result {
+    min-width: 80vw;
+  }
 }
-@media ( max-width: 1024px ) {
-    #result {
-        min-width: 100vw;
-    }
+@media (max-width: 1024px) {
+  #result {
+    min-width: 100vw;
+  }
 }
-@media ( max-width: 768px ) {
-    #result {
-        min-width: 260vw;
-    }
+@media (max-width: 768px) {
+  #result {
+    min-width: 260vw;
+  }
 }

@@ -1,165 +1,178 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>디제이맥스 리스펙트 갤러리 뷰어</title>
     <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: #999;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        img {
-            max-width: 100%;
-            max-height: 100%;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #999;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
 
+      .float {
+        position: fixed;
+        width: 3em;
+        height: 3em;
+        border-radius: 1em;
+        top: 50%;
+        background-color: #ffff67;
+        text-align: center;
+        box-shadow: 2px 2px 3px #999;
+        opacity: 0.3;
+      }
+      .float:hover {
+        opacity: 0.7;
+      }
+      .fadeOut {
+        transition: opacity 1s;
+      }
+
+      #prev,
+      #next {
+        opacity: 1;
+      }
+      #prev {
+        left: 1em;
+      }
+      #next {
+        right: 1em;
+      }
+      @media (max-width: 768px) {
         .float {
-            position: fixed;
-            width: 3em;
-            height: 3em;
-            border-radius: 1em;
-            top: 50%;
-            background-color: #ffff67;
-            text-align: center;
-            box-shadow: 2px 2px 3px #999;
-            opacity: 0.3;
+          width: 2em;
+          height: 2em;
+          opacity: 0;
         }
-        .float:hover {
-            opacity: 0.7;
-        }
-        #prev {
-            left: 1em;
-        }
-        #next {
-            right: 1em;
-        }
-        @media ( max-width: 768px ) {
-            .float {
-                width: 2em;
-                height: 2em;
-                opacity: 0;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-    <img src="">
+  </head>
+  <body>
+    <img src="" />
     <div>
-        <img src="../img/left-arrow.svg" class="float" id="prev">
-        <img src="../img/right-arrow.svg" class="float" id="next">
+      <img src="../img/left-arrow.svg" class="float fadeOut" id="prev" hidden />
+      <img src="../img/right-arrow.svg" class="float fadeOut" id="next" hidden />
     </div>
     <script type="text/javascript">
-        img = document.querySelector("img");
-        url = new URL(document.URL);
-        protocol = url.protocol;
-        category = url.searchParams.get("category");
-        file = url.searchParams.get("file");
-        prefix = `${protocol}//d2l1b145ht03q6.cloudfront.net/djmax`;
+      img = document.querySelector("img");
+      url = new URL(document.URL);
+      protocol = url.protocol;
+      category = url.searchParams.get("category");
+      file = url.searchParams.get("file");
+      prefix = `${protocol}//d2l1b145ht03q6.cloudfront.net/djmax`;
 
-        fetch("list.json")
-        .then(response => response.json())
-        .then(json => {
-            list = json;
-            all = Object.values(list).reduce((a,b) => [...a, ...b]);
-            all.sort();
+      fetch("list.json")
+        .then((response) => response.json())
+        .then((json) => {
+          list = json;
+          all = Object.values(list).reduce((a, b) => [...a, ...b]);
+          all.sort();
 
-            if (file) {
-                img.src = `${prefix}/original/${file}.png`;
-                document.head.querySelector("title").textContent = file.slice(4);
-            }
+          if (file) {
+            img.src = `${prefix}/original/${file}.png`;
+            document.head.querySelector("title").textContent = file.slice(4);
+          }
         });
 
-        prev = document.querySelector("#prev");
-        next = document.querySelector("#next");
-        document.querySelectorAll(".float").forEach(btn => {
-            btn.addEventListener("click", event => {
-                iter = (category == "all" || category == "")? all : list[category];
-                cur = iter.indexOf(file);
-                switch (event.target.id) {
-                    case "prev":
-                        if (cur > 0) {
-                            url.searchParams.set("file", iter[cur-1]);
-                        }
-                        else {
-                            alert("첫 번째 이미지입니다.");
-                        }
-                        break;
-                    case "next":
-                        if (cur < iter.length-1) {
-                            url.searchParams.set("file", iter[cur+1]);
-                        }
-                        else {
-                            alert("마지막 이미지입니다.");
-                        }
-                        break;
-                }
-                if (url.toString() != document.URL) {
-                    window.location = url.toString();
-                }
-            });
+      prev = document.querySelector("#prev");
+      next = document.querySelector("#next");
+      document.querySelectorAll(".float").forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          iter = category == "all" || category == "" ? all : list[category];
+          cur = iter.indexOf(file);
+          switch (event.target.id) {
+            case "prev":
+              if (cur > 0) {
+                url.searchParams.set("file", iter[cur - 1]);
+              } else {
+                alert("첫 번째 이미지입니다.");
+              }
+              break;
+            case "next":
+              if (cur < iter.length - 1) {
+                url.searchParams.set("file", iter[cur + 1]);
+              } else {
+                alert("마지막 이미지입니다.");
+              }
+              break;
+          }
+          if (url.toString() != document.URL) {
+            window.location = url.toString();
+          }
         });
-        document.addEventListener("keydown", event => {
-            switch (event.key) {
-                case "ArrowLeft":
-                    prev.click();
-                    break;
-                case "ArrowRight":
-                    next.click();
-                    break;
-            }
-        });
+      });
+      document.addEventListener("keydown", (event) => {
+        switch (event.key) {
+          case "ArrowLeft":
+            prev.click();
+            break;
+          case "ArrowRight":
+            next.click();
+            break;
+        }
+      });
 
-        interval = null;
-        window.addEventListener('touchstart', event => {
-            // touch = event.touches[0];
-            // touchstartX = touch.clientX;
-            // touchstartY = touch.clientY;
-            if (!interval) {
-                prev.style.opacity = 1;
-                next.style.opacity = 1;
-                interval = setInterval(() => {
-                    if ((opacity = Number(window.getComputedStyle(prev).opacity)) > 0) {
-                        prev.style.opacity = opacity - 0.1;
-                        next.style.opacity = opacity - 0.1;
-                    }
-                    else {
-                        clearInterval(interval);
-                        interval = null;
-                    }
-                    console.log(opacity);
-                },80);
-            }
-        }, false);
+      fading = false;
+      window.addEventListener(
+        "touchstart",
+        (event) => {
+          // touch = event.touches[0];
+          // touchstartX = touch.clientX;
+          // touchstartY = touch.clientY;
+          if (fading) {
+            return;
+          }
 
-        // window.addEventListener('touchend', event => {
-        //     if (event.touches.length == 0) {
-        //         touch = event.changedTouches.at(-1);
-        //         touchendX = touch.clientX;
-        //         touchendY = touch.clientY;
-        //         touchoffsetX = touchendX - touchstartX;
-        //         touchoffsetY = touchendY - touchstartY;
+          fading = true;
+          prev.hidden = false;
+          next.hidden = false;
+          setTimeout(() => {
+            prev.style.opacity = 0;
+            next.style.opacity = 0;
+          });
+          setTimeout(() => {
+            prev.hidden = true;
+            next.hidden = true;
+            prev.style = "";
+            next.style = "";
+            fading = false;
+          }, 1000);
+        },
+        false
+      );
 
-        //         console.log(touchoffsetX,touchoffsetY)
-        //         if (Math.abs(touchoffsetX) >= 80 && Math.abs(touchoffsetY) <= 100) {
-        //             if (touchoffsetX < 0) {
-        //                 next.click();
-        //             }
-        //             else {
-        //                 prex.click();
-        //             }
-        //         }
-        //     }
-        // }, false);
+      // window.addEventListener('touchend', event => {
+      //     if (event.touches.length == 0) {
+      //         touch = event.changedTouches.at(-1);
+      //         touchendX = touch.clientX;
+      //         touchendY = touch.clientY;
+      //         touchoffsetX = touchendX - touchstartX;
+      //         touchoffsetY = touchendY - touchstartY;
+
+      //         console.log(touchoffsetX,touchoffsetY)
+      //         if (Math.abs(touchoffsetX) >= 80 && Math.abs(touchoffsetY) <= 100) {
+      //             if (touchoffsetX < 0) {
+      //                 next.click();
+      //             }
+      //             else {
+      //                 prex.click();
+      //             }
+      //         }
+      //     }
+      // }, false);
     </script>
-</body>
+  </body>
 </html>

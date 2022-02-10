@@ -830,6 +830,7 @@ function LevelsNotesSort({ mode, btnSelect, rankSelect }) {
     .filter((levelNote) => btnSelect.has(levelNote["btn"]) && rankSelect.has(levelNote["rank"]))
     .map((levelNote) => (
       <tr key={levelNote["title"] + levelNote["btn"] + levelNote["rank"]}>
+        {/* className="levels-notes-sort" */}
         <th>{levelNote["title"]}</th>
         <th className={`${levelNote["btn"]}-color`}>{levelNote["btn"]}</th>
         {ranks.map((rank) =>
