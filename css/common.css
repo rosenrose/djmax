@@ -1,128 +1,139 @@
+:root {
+  --color-NM: rgb(255, 186, 0);
+  --color-HD: rgb(255, 126, 49);
+  --color-MX: rgb(255, 30, 30);
+  --color-SC: rgb(242, 28, 199);
+  --color-4B: rgb(0, 154, 75);
+  --color-5B: rgb(43, 145, 175);
+  --color-6B: rgb(193, 115, 17);
+  --color-8B: rgb(68, 73, 172);
+}
+
 .center {
-    text-align: center;
+  text-align: center;
 }
 .left {
-    text-align: left;
+  text-align: left;
 }
 .inline {
-    display: inline;
+  display: inline;
 }
 .block {
-    display: block;
+  display: block;
 }
 .color-white {
-    color: #fff;
+  color: #fff;
 }
 .shadow-white {
-    text-shadow: 1px 1px 0px #fff, -1px 1px 0px #fff, 1px -1px 0px #fff, -1px -1px 0px #fff,
-                2px 2px 5px #fff, -2px 2px 5px #fff, 2px -2px 5px #fff, -2px -2px 5px #fff;
+  text-shadow: 1px 1px 0px #fff, -1px 1px 0px #fff, 1px -1px 0px #fff, -1px -1px 0px #fff, 2px 2px 5px #fff,
+    -2px 2px 5px #fff, 2px -2px 5px #fff, -2px -2px 5px #fff;
 }
 .bold {
-    font-weight: 600;
+  font-weight: 600;
 }
 .click {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .NM-color {
-    color: rgb(255,186,0);
+  color: var(--color-NM);
 }
 .HD-color {
-    color: rgb(255,126,49);
+  color: var(--color-HD);
 }
 .MX-color {
-    color: rgb(255,30,30);
+  color: var(--color-MX);
 }
 .SC-color {
-    color: rgb(242,28,199);
+  color: var(--color-SC);
 }
 .NM-background {
-    /* border-radius: 0.3em; */
-    background-color: rgb(255, 186, 0);
+  /* border-radius: 0.3em; */
+  background-color: var(--color-NM);
 }
 .HD-background {
-    background-color: rgb(255, 126,49);
+  background-color: var(--color-HD);
 }
 .MX-background {
-    background-color: rgb(255, 30, 30);
+  background-color: var(--color-MX);
 }
 .SC-background {
-    background-color: rgb(242, 28, 199);
+  background-color: var(--color-SC);
 }
 .NM-svg {
-    fill: rgb(255, 186, 0);
+  fill: var(--color-NM);
 }
 .HD-svg {
-    fill: rgb(255, 126,49);
+  fill: var(--color-HD);
 }
 .MX-svg {
-    fill: rgb(255, 30, 30);
+  fill: var(--color-MX);
 }
 .SC-svg {
-    fill: rgb(242, 28, 199);
+  fill: var(--color-SC);
 }
 
 .\34 B-color {
-    color: rgb(0, 154, 75);
+  color: var(--color-4B);
 }
 .\35 B-color {
-    color: rgb(43, 145, 175);
+  color: var(--color-5B);
 }
 .\36 B-color {
-    color: rgb(193, 115, 17);
+  color: var(--color-6B);
 }
 .\38 B-color {
-    color: rgb(68, 73, 172);
+  color: var(--color-8B);
 }
 .전체-background {
-    background: linear-gradient(135deg, rgb(0, 154, 75), rgb(43, 145, 175), rgb(193, 115, 17), rgb(68, 73, 172));
+  background: linear-gradient(135deg, var(--color-4B), var(--color-5B), var(--color-6B), var(--color-8B));
 }
 .\34 B-background {
-    background-color: rgb(0, 154, 75);
+  background-color: var(--color-4B);
 }
 .\35 B-background {
-    background-color: rgb(43, 145, 175);
+  background-color: var(--color-5B);
 }
 .\36 B-background {
-    background-color: rgb(193, 115, 17);
+  background-color: var(--color-6B);
 }
 .\38 B-background {
-    background-color: rgb(68, 73, 172);
+  background-color: var(--color-8B);
 }
 
 .btn-rank {
-    color: #fff;
+  color: #fff;
 }
 /* .category-background {
     background-size: 100% 100%;
 } */
 
 body {
-    background-size: cover;
-    background-size: 100%;
+  background-size: cover;
+  background-size: 100%;
 }
 button:not(:disabled) {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #home {
-    background-color: mediumspringgreen;
-    border-radius: 4em;
+  background-color: mediumspringgreen;
+  border-radius: 4em;
 }
 
 #result {
-    padding: 1%;
-    background-color: #fff;
-    border-radius: 2em;
-    width: 35%;
-    margin: auto;
+  padding: 1%;
+  background-color: #fff;
+  border-radius: 2em;
+  width: 35%;
+  margin: auto;
 }
 
-@media ( max-width: 768px ) {
-    body {
-        background-size: contain;
-    }
-    #result {
-        width: 100%;
-    }
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+  }
+  #result {
+    width: 100%;
+  }
 }
