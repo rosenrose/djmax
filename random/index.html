@@ -1,88 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>디제이맥스 리스펙트 랜덤 선곡</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='../css/common.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../css/random.css'>
-</head>
-<body>
-    <a href=".."><img src="../img/djmax-64.png" id="home"></a>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/random.css" />
+  </head>
+  <body>
+    <a href=".."><img src="../img/djmax-64.png" id="home" /></a>
     <div class="center">
-        <h2 class="shadow-white">랜덤으로 고르고 싶을 때 사용해보세요.</h2>
-        <div id="select">
-            <div id="modeSelect">
-                <label class="shadow-white"><input type="radio" name="mode" value="PC" checked>PC</label>
-                <label class="shadow-white"><input type="radio" name="mode" value="PS4">PS4</label>
-            </div>
-            <br>
-            <div id="dlcSelect">
-                <div>
-                    <button type="button" id="spread">모두 선택</button>
-                    <button type="button" id="collapse">모두 해제</button>
-                </div>
-                <div id="dlcCheckbox" class="left"></div>
-            </div>
-            <br>
-            <div id="patternSelect">
-                <div id="buttonSelect">
-                    <label class="shadow-white"><input type="checkbox" value="4B">4B</label>
-                    <label class="shadow-white"><input type="checkbox" value="5B">5B</label>
-                    <label class="shadow-white"><input type="checkbox" value="6B">6B</label>
-                    <label class="shadow-white"><input type="checkbox" value="8B">8B</label>
-                </div>
-                <div id="rankSelect">
-                    <label class="shadow-white"><input type="checkbox" value="NM">NM</label>
-                    <label class="shadow-white"><input type="checkbox" value="HD">HD</label>
-                    <label class="shadow-white"><input type="checkbox" value="MX">MX</label>
-                    <label class="shadow-white"><input type="checkbox" value="SC">SC</label>
-                </div>
-            </div>
-            <br>
-            <div id="levelSelect">
-                <label class="shadow-white"><input type="checkbox" id="levelCheck">난이도 조건</label>
-                <div hidden>
-                    <input type="number" id="levelInput" min="1" max="15" placeholder="1~15">
-                    <div id="range" class="inline" hidden>
-                        <span class="shadow-white">and </span>
-                        <input type="number" id="levelInput2" min="1" max="15" placeholder="1~15">
-                    </div>
-                    <select id="levelCondition">
-                        <option value="gtr" selected>이상</option>
-                        <option value="lss">이하</option>
-                        <option value="equal">일치</option>
-                        <option value="range">사이</option>
-                    </select>
-                </div>
-            </div>
+      <h2 class="shadow-white">랜덤 선곡</h2>
+      <div id="select">
+        <div id="modeSelect">
+          <label class="shadow-white"><input type="radio" name="mode" value="PC" checked />PC</label>
+          <label class="shadow-white"><input type="radio" name="mode" value="PS4" />PS4</label>
         </div>
-        <div id="pick"><button type="button" id="run" disabled>로딩...</button></div>
-        <div id="result">
-            <div id="resultCount">
-                <span>결과 개수: </span>
-                <input type="number" id="resultCountInput" min="1" max="10" value="10">
-            </div>
-            <ol id="randomResult"></ol>
+        <br />
+        <div id="dlcSelect">
+          <div>
+            <button type="button" id="spread">모두 선택</button>
+            <button type="button" id="collapse">모두 해제</button>
+          </div>
+          <div id="dlcCheckbox" class="left"></div>
         </div>
+        <br />
+        <div id="patternSelect">
+          <div id="buttonSelect">
+            <label class="shadow-white"><input type="checkbox" value="4B" />4B</label>
+            <label class="shadow-white"><input type="checkbox" value="5B" />5B</label>
+            <label class="shadow-white"><input type="checkbox" value="6B" />6B</label>
+            <label class="shadow-white"><input type="checkbox" value="8B" />8B</label>
+          </div>
+          <div id="rankSelect">
+            <label class="shadow-white"><input type="checkbox" value="NM" />NM</label>
+            <label class="shadow-white"><input type="checkbox" value="HD" />HD</label>
+            <label class="shadow-white"><input type="checkbox" value="MX" />MX</label>
+            <label class="shadow-white"><input type="checkbox" value="SC" />SC</label>
+          </div>
+        </div>
+        <br />
+        <div id="levelSelect">
+          <label class="shadow-white"><input type="checkbox" id="levelCheck" />난이도 조건</label>
+          <div hidden>
+            <input type="number" id="levelInput" min="1" max="15" placeholder="1~15" />
+            <div id="range" class="inline" hidden>
+              <span class="shadow-white">and </span>
+              <input type="number" id="levelInput2" min="1" max="15" placeholder="1~15" />
+            </div>
+            <select id="levelCondition">
+              <option value="gtr" selected>이상</option>
+              <option value="lss">이하</option>
+              <option value="equal">일치</option>
+              <option value="range">사이</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div id="pick"><button type="button" id="run" disabled>로딩...</button></div>
+      <div id="result">
+        <div id="resultCount">
+          <span>결과 개수: </span>
+          <input type="number" id="resultCountInput" min="1" max="10" value="10" />
+        </div>
+        <ol id="randomResult"></ol>
+      </div>
     </div>
     <template id="songTemplate">
-        <li class="left">
-            <img class="song_pic" src="">
-            <div class="title_artist">
-                <p class="title"></p>
-                <p class="artist"></p>
-            </div>
-        </li>
+      <li class="left">
+        <img class="song_pic" src="" />
+        <div class="title_artist">
+          <p class="title"></p>
+          <p class="artist"></p>
+        </div>
+      </li>
     </template>
     <template id="dlcCheckboxTemplate">
-        <label class="shadow-white">
-            <input type="checkbox" value="">
-            dlc title
-        </label>
+      <label class="shadow-white">
+        <input type="checkbox" value="" />
+        dlc title
+      </label>
     </template>
     <script type="text/javascript" src="../js/common.js"></script>
     <script type="text/javascript" src="../js/random.js"></script>
-</body>
+  </body>
 </html>
