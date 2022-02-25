@@ -205,7 +205,6 @@ function App() {
           });
         });
 
-        songs.sort((a, b) => a["title"].toLowerCase().localeCompare(b["title"].toLowerCase()));
         setLoading(false);
       });
   }, []);
