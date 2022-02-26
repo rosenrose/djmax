@@ -6,20 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>랜덤 BGA 컷</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/common.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
       body {
         background-image: url("../img/cover.jpg");
+      }
+      div {
+        margin: 0 0 1em 0;
+      }
+
+      .gray {
+        filter: grayscale(0.8);
+        transition: filter 0.5s;
+      }
+      .item {
+        display: inline-block;
+        width: 32%;
+      }
+      .itemImg {
+        width: 100%;
+      }
+      .loading {
+        width: 50%;
+      }
+
+      #spread,
+      #collapse {
+        border-radius: 1em;
+      }
+      #dlcCheckbox {
+        width: 40%;
+        margin: auto;
+      }
+      #dlcCheckbox label {
+        display: inline-block;
+        width: 23%;
+        margin: 0.3em;
+      }
+      #run {
+        width: 10%;
+      }
+      #resultCountInput {
+        width: 2em;
+      }
+
+      @media (max-width: 1280px) {
+        #dlcCheckbox {
+          width: 50%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #dlcCheckbox {
+          width: 105%;
+        }
+        #dlcCheckbox label {
+          margin: 0.1em;
+          width: 32%;
+        }
+        #run {
+          width: 50%;
+        }
       }
     </style>
   </head>
   <body>
     <a href=".."><img src="../img/djmax-64.png" id="home" /></a>
-    <div id="dlcSelect">
-      <div>
-        <button type="button" id="spread">모두 선택</button>
-        <button type="button" id="collapse">모두 해제</button>
+    <div class="center">
+      <div id="dlcSelect">
+        <div>
+          <button type="button" id="spread">모두 선택</button>
+          <button type="button" id="collapse">모두 해제</button>
+        </div>
+        <div id="dlcCheckbox" class="left"></div>
       </div>
-      <div id="dlcCheckbox" class="left"></div>
+      <div id="resultCount">
+        <span class="shadow-white">개수: </span>
+        <input type="number" id="resultCountInput" min="1" max="4" value="1" />
+      </div>
+      <img src="../img/btn_ready.png" id="run" class="click" />
+      <div id="itemContainer"></div>
     </div>
     <template id="dlcCheckboxTemplate">
       <label class="shadow-white">
@@ -27,37 +93,139 @@
         dlc title
       </label>
     </template>
+    <template id="itemTemplate">
+      <figure class="item">
+        <img src="../img/loading.svg" class="loading" />
+        <img src="" class="itemImg" />
+        <figcaption></figcaption>
+      </figure>
+    </template>
+    <script type="text/javascript" src="../js/common.js"></script>
     <script>
-      // fetch("list.json")
-      //   .then((response) => response.json())
-      //   .then((json) => {
-      //     list = json;
-      //     for (let category in list["songs"]) {
-      //       list["songs"][category] = list["songs"][category].map((song) => new Song(song));
-      //     }
-      //     songs = Object.values(list["songs"]).reduce((a, b) => [...a, ...b]);
-      //     document.querySelector("#run").textContent = "뽑기";
-      //     document.querySelector("#run").disabled = false;
+      fetch("https://rosenrose-youtube-url.herokuapp.com/");
+      const dlcSelect = new Set();
+      const itemContainer = document.querySelector("#itemContainer");
+      const runBtn = document.querySelector("#run");
 
-      //     let dlcCheck = document.querySelector("#dlcCheckbox");
+      fetch("../list.json")
+        .then((response) => response.json())
+        .then((json) => {
+          dlcKor = json["dlcKor"];
+          return fetch("list.json");
+        })
+        .then((response) => response.json())
+        .then((json) => {
+          list = json;
+          const dlcCheck = document.querySelector("#dlcCheckbox");
 
-      //     Object.keys(list["songs"]).forEach((dlc) => {
-      //       let template = document.querySelector("#dlcCheckboxTemplate").content.cloneNode(true);
-      //       let label = template.firstElementChild;
-      //       let input = template.querySelector("input");
+          for (dlc in list) {
+            let template = document.querySelector("#dlcCheckboxTemplate").content.cloneNode(true);
+            let label = template.firstElementChild;
+            let input = template.querySelector("input");
 
-      //       input.value = dlc;
-      //       input.nextSibling.textContent = list["dlcKor"][dlc];
-      //       dlcCheck.append(label);
-      //     });
+            input.value = dlc;
+            input.nextSibling.textContent = dlc === "hidden" ? "히든" : dlcKor[dlc];
+            dlcCheck.append(label);
+          }
 
-      //     document.querySelectorAll("input[checked], select").forEach((input) => {
-      //       input.dispatchEvent(new InputEvent("change", { bubbles: true }));
-      //     });
-      //     document.querySelectorAll("#dlcSelect input, #buttonSelect input, #rankSelect input").forEach((check) => {
-      //       check.click();
-      //     });
-      //   });
+          document.querySelectorAll("#dlcSelect input").forEach((check) => {
+            check.click();
+          });
+          document.querySelector("#resultCountInput").dispatchEvent(new InputEvent("change"));
+        });
+
+      document.querySelector("#spread").addEventListener("click", () => {
+        document.querySelectorAll("#dlcCheckbox input").forEach((input) => {
+          if (!input.checked) {
+            input.click();
+          }
+        });
+      });
+      document.querySelector("#collapse").addEventListener("click", () => {
+        document.querySelectorAll("#dlcCheckbox input").forEach((input) => {
+          if (input.checked) {
+            input.click();
+          }
+        });
+      });
+
+      document.querySelector("#dlcSelect").addEventListener("change", (event) => {
+        if (event.target.checked) {
+          dlcSelect.add(event.target.value);
+        } else {
+          dlcSelect.delete(event.target.value);
+        }
+      });
+
+      runBtn.addEventListener("click", (event) => {
+        if (!event.target.matches(".click") || dlcSelect.size < 1) {
+          return;
+        }
+        toggleRunbtn();
+
+        let songs = [...dlcSelect]
+          .map((dlc) => list[dlc])
+          .reduce((a, b) => {
+            return { ...a, ...b };
+          });
+        songs = Object.entries(songs);
+
+        itemContainer.querySelectorAll(".itemImg").forEach((img) => {
+          if (img.src) {
+            URL.revokeObjectURL(img.src);
+          }
+        });
+        itemContainer.replaceChildren();
+
+        const promsies = [];
+        for (let i = 0; i < count; i++) {
+          const rand = randomInt(0, songs.length);
+          const [id, title] = songs[rand];
+          const itemTemplate = document.querySelector("#itemTemplate").content.cloneNode(true);
+          const [loading, itemImg] = itemTemplate.querySelectorAll("img");
+          const caption = itemTemplate.querySelector("figcaption");
+
+          promsies.push(
+            new Promise((resolve) => {
+              axios
+                .get(`https://rosenrose-youtube-url.herokuapp.com/frame/${id}`, {
+                  responseType: "arraybuffer",
+                  timeout: 60 * 1000,
+                })
+                .then((response) => {
+                  itemImg.src = URL.createObjectURL(new Blob([response.data], { type: "image/jpeg" }));
+                  loading.hidden = true;
+                  caption.textContent = title;
+                  resolve();
+                });
+            })
+          );
+          itemContainer.append(itemTemplate.firstElementChild);
+        }
+
+        Promise.all(promsies).then(() => {
+          toggleRunbtn();
+        });
+      });
+      runBtn.addEventListener("mouseenter", (event) => {
+        if (event.target.matches(".click")) {
+          event.target.src = "../img/btn_press.png";
+        }
+      });
+      runBtn.addEventListener("mouseleave", (event) => {
+        if (event.target.matches(".click")) {
+          event.target.src = "../img/btn_ready.png";
+        }
+      });
+
+      document.querySelector("#resultCountInput").addEventListener("change", (event) => {
+        count = parseInt(event.target.value);
+      });
+
+      function toggleRunbtn() {
+        runBtn.classList.toggle("click");
+        runBtn.classList.toggle("gray");
+      }
     </script>
   </body>
 </html>
