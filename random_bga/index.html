@@ -91,8 +91,8 @@
         <div id="dlcCheckbox" class="left"></div>
       </div>
       <div id="resultCount">
-        <span class="shadow-white">개수(1~4): </span>
-        <input type="number" id="resultCountInput" min="1" max="4" value="1" />
+        <span class="shadow-white">개수(1~6): </span>
+        <input type="number" id="resultCountInput" min="1" max="6" value="1" />
       </div>
       <img src="../img/btn_ready.png" id="run" class="click" />
     </div>
@@ -116,7 +116,7 @@
       const dlcSelect = new Set();
       const itemContainer = document.querySelector("#itemContainer");
       const runBtn = document.querySelector("#run");
-      const maxCount = 4;
+      const maxCount = 6;
 
       fetch("../list.json")
         .then((response) => response.json())

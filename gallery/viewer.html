@@ -69,10 +69,9 @@
     <script type="text/javascript">
       img = document.querySelector("img");
       url = new URL(document.URL);
-      protocol = url.protocol;
       category = url.searchParams.get("category");
       file = url.searchParams.get("file");
-      prefix = `${protocol}//d2l1b145ht03q6.cloudfront.net/djmax`;
+      prefix = `https://d2l1b145ht03q6.cloudfront.net/djmax`;
 
       fetch("list.json")
         .then((response) => response.json())
