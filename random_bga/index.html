@@ -209,7 +209,7 @@
                 .then((response) => {
                   itemImg.src = URL.createObjectURL(new Blob([response.data], { type: "image/jpeg" }));
                   loading.hidden = true;
-                  caption.textContent = title;
+                  caption.textContent = name;
                   resolve();
                 });
             })
