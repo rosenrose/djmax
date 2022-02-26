@@ -5,6 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>랜덤 BGA 컷</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/common.css" />
+    <style>
+      body {
+        background-image: url("../img/cover.jpg");
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <a href=".."><img src="../img/djmax-64.png" id="home" /></a>
+    <div id="dlcSelect">
+      <div>
+        <button type="button" id="spread">모두 선택</button>
+        <button type="button" id="collapse">모두 해제</button>
+      </div>
+      <div id="dlcCheckbox" class="left"></div>
+    </div>
+    <template id="dlcCheckboxTemplate">
+      <label class="shadow-white">
+        <input type="checkbox" value="" />
+        dlc title
+      </label>
+    </template>
+    <script>
+      // fetch("list.json")
+      //   .then((response) => response.json())
+      //   .then((json) => {
+      //     list = json;
+      //     for (let category in list["songs"]) {
+      //       list["songs"][category] = list["songs"][category].map((song) => new Song(song));
+      //     }
+      //     songs = Object.values(list["songs"]).reduce((a, b) => [...a, ...b]);
+      //     document.querySelector("#run").textContent = "뽑기";
+      //     document.querySelector("#run").disabled = false;
+
+      //     let dlcCheck = document.querySelector("#dlcCheckbox");
+
+      //     Object.keys(list["songs"]).forEach((dlc) => {
+      //       let template = document.querySelector("#dlcCheckboxTemplate").content.cloneNode(true);
+      //       let label = template.firstElementChild;
+      //       let input = template.querySelector("input");
+
+      //       input.value = dlc;
+      //       input.nextSibling.textContent = list["dlcKor"][dlc];
+      //       dlcCheck.append(label);
+      //     });
+
+      //     document.querySelectorAll("input[checked], select").forEach((input) => {
+      //       input.dispatchEvent(new InputEvent("change", { bubbles: true }));
+      //     });
+      //     document.querySelectorAll("#dlcSelect input, #buttonSelect input, #rankSelect input").forEach((check) => {
+      //       check.click();
+      //     });
+      //   });
+    </script>
+  </body>
 </html>
