@@ -1,148 +1,149 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>디제이맥스 리스펙트 갤러리</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='../css/common.css' title="common">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/common.css" title="common" />
     <style type="text/css">
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: gray;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: gray;
+      }
 
-        #menu {
-            text-align: center;
-        }
-        #menu a {
-            display: inline;
-            vertical-align: middle;
-        }
+      #menu {
+        text-align: center;
+      }
+      #menu a {
+        display: inline;
+        vertical-align: middle;
+      }
+      #menu img {
+        width: 12%;
+        margin: 1%;
+      }
+
+      @media (max-width: 768px) {
         #menu img {
-            width: 12%;
-            margin: 1%;
+          width: 30%;
         }
+      }
 
-        @media ( max-width: 768px ) {
-            #menu img {
-                width: 30%;
-            }
-        }
-
-        .grid {
-            display: grid;
-            max-width: 100%;
-            width: 100%;
-            min-height: 400px;
-            margin: 0 auto;
-            grid-template-columns: repeat(auto-fill, minmax(19%, 1fr));
-            grid-auto-rows: 40px;
-            grid-gap: 5px;
-        }
-        .item {
-            width: 100%;
-            background-color: bisque;
-            /* overflow: hidden; */
-            /* position: relative; */
-        }
-        .item img {
-            width: 100%;
-            /* position: absolute; */
-            /* left: 50%;
+      .grid {
+        display: grid;
+        max-width: 100%;
+        width: 100%;
+        min-height: 400px;
+        margin: 0 auto;
+        grid-template-columns: repeat(auto-fill, minmax(19%, 1fr));
+        grid-auto-rows: 40px;
+        grid-gap: 5px;
+      }
+      .item {
+        width: 100%;
+        background-color: bisque;
+        /* overflow: hidden; */
+        /* position: relative; */
+      }
+      .item img {
+        width: 100%;
+        /* position: absolute; */
+        /* left: 50%;
             top: 50%; */
-            /* transform: translate(-50%, -50%); */
-        }
-        .selected {
-            box-shadow: 0 0 1em 1em mediumseagreen;
-            background-color: mediumseagreen;
-        }
+        /* transform: translate(-50%, -50%); */
+      }
+      .selected {
+        box-shadow: 0 0 1em 1em mediumseagreen;
+        background-color: mediumseagreen;
+      }
     </style>
-</head>
-<body>
-    <a href=".."><img src="../img/djmax-64.png" id="home"></a>
+  </head>
+  <body>
+    <a href=".."><img src="../img/djmax-64.png" id="home" /></a>
     <div id="menu">
-        <a href="./?category=all"><img src="../img/category_all.png"></a>
-        <a href="./?category=portable1,2"><img src="../img/category_portable1,2.png"></a>
-        <a href="./?category=respect"><img src="../img/category_respect.png"></a>
-        <a href="./?category=trilogy"><img src="../img/category_trilogy.png"></a>
-        <a href="./?category=clazziquai"><img src="../img/category_clazziquai.png"></a>
-        <a href="./?category=technika1"><img src="../img/category_technika1.png"></a>
-        <a href="./?category=blacksquare"><img src="../img/category_blacksquare.png"></a>
-        <a href="./?category=technika2"><img src="../img/category_technika2.png"></a>
-        <a href="./?category=technika3"><img src="../img/category_technika3.png"></a>
-        <a href="./?category=vextension"><img src="../img/category_vextension.png"></a>
-        <a href="./?category=portable3"><img src="../img/category_portable3.png"></a>
-        <a href="./?category=collaboration"><img src="../img/collab_estimate.png"></a>
-        <a href="./?category=vextension2"><img src="../img/category_vextension2.png"></a>
+      <a href="./?category=all"><img src="../img/category_all.png" /></a>
+      <a href="./?category=portable1,2"><img src="../img/category_portable1,2.png" /></a>
+      <a href="./?category=respect"><img src="../img/category_respect.png" /></a>
+      <a href="./?category=trilogy"><img src="../img/category_trilogy.png" /></a>
+      <a href="./?category=clazziquai"><img src="../img/category_clazziquai.png" /></a>
+      <a href="./?category=technika1"><img src="../img/category_technika1.png" /></a>
+      <a href="./?category=blacksquare"><img src="../img/category_blacksquare.png" /></a>
+      <a href="./?category=technika2"><img src="../img/category_technika2.png" /></a>
+      <a href="./?category=technika3"><img src="../img/category_technika3.png" /></a>
+      <a href="./?category=vextension"><img src="../img/category_vextension.png" /></a>
+      <a href="./?category=portable3"><img src="../img/category_portable3.png" /></a>
+      <a href="./?category=collaboration"><img src="../img/collab_estimate.png" /></a>
+      <a href="./?category=vextension2"><img src="../img/category_vextension2.png" /></a>
     </div>
     <div class="grid"></div>
     <template id="itemTemplate">
-        <a class="item" href="" target="_blank">
-            <figure>
-                <img src="">
-                <figcaption></figcaption>
-            </figure>
-        </a>
+      <a class="item" href="" target="_blank">
+        <figure>
+          <img src="" />
+          <figcaption></figcaption>
+        </figure>
+      </a>
     </template>
     <script type="text/javascript">
-        grid = document.querySelector(".grid");
-        function SetGridItemHeight() {
-            let rows = 0;
-            let rowHeight = parseInt(window.getComputedStyle(grid)["grid-auto-rows"]);
-            let rowGap = parseInt(window.getComputedStyle(grid)["grid-row-gap"]);
-            let items = grid.querySelectorAll(".item");
-            items.forEach((item, i) => {
-                let span = Math.ceil((item.querySelector("img").offsetHeight + item.querySelector("figcaption").offsetHeight) / (rowHeight + rowGap));
-                item.style.gridRowEnd = `span ${span}`;
-                // rows += span;
-                // item.style.gridRowEnd = `span ${item.clientHeight}`;
+      grid = document.querySelector(".grid");
+      function SetGridItemHeight() {
+        let rows = 0;
+        let rowHeight = parseInt(window.getComputedStyle(grid)["grid-auto-rows"]);
+        let rowGap = parseInt(window.getComputedStyle(grid)["grid-row-gap"]);
+        let items = grid.querySelectorAll(".item");
+        items.forEach((item, i) => {
+          let span = Math.ceil(
+            (item.querySelector("img").offsetHeight + item.querySelector("figcaption").offsetHeight) /
+              (rowHeight + rowGap)
+          );
+          item.style.gridRowEnd = `span ${span}`;
+          // rows += span;
+          // item.style.gridRowEnd = `span ${item.clientHeight}`;
+        });
+        // alert(rows);
+      }
+      // window.addEventListener("load", SetGridItemHeight);
+      window.addEventListener("resize", SetGridItemHeight);
+      url = new URL(document.URL);
+      category = url.searchParams.get("category");
+      num = parseInt(url.searchParams.get("num"));
+      prefix = "https://d2l1b145ht03q6.cloudfront.net/djmax";
+
+      fetch("list.json")
+        .then((response) => response.json())
+        .then((json) => {
+          list = json;
+          all = Object.values(list).reduce((a, b) => [...a, ...b]);
+          all.sort();
+
+          if (category) {
+            iter = category == "all" ? all : list[category];
+            iter.forEach((i) => {
+              let template = document.querySelector("#itemTemplate").content.cloneNode(true);
+
+              let item = template.firstElementChild;
+              item.href = `viewer.html?category=${category}&file=${i}`;
+              // let div = document.createElement("div");
+              let img = template.querySelector("img");
+              img.src = `${prefix}/thumbnail/${i}.png`;
+              img.onload = SetGridItemHeight;
+
+              template.querySelector("figcaption").textContent = i.slice(4);
+              // div.append(img);
+              grid.append(item);
             });
-            // alert(rows);
-        }
-        // window.addEventListener("load", SetGridItemHeight);
-        window.addEventListener("resize", SetGridItemHeight);
-        url = new URL(document.URL);
-        protocol = url.protocol;
-        category = url.searchParams.get("category");
-        num = parseInt(url.searchParams.get("num"));
-        prefix = `${protocol}//d2l1b145ht03q6.cloudfront.net/djmax`;
-
-        fetch("list.json")
-        .then(response => response.json())
-        .then(json => {
-            list = json;
-            all = Object.values(list).reduce((a, b) => [...a, ...b]);
-            all.sort();
-
-            if (category) {
-                iter = (category == "all")? all : list[category];
-                iter.forEach(i => {
-                    let template = document.querySelector("#itemTemplate").content.cloneNode(true);
-
-                    let item = template.firstElementChild;
-                    item.href = `viewer.html?category=${category}&file=${i}`;
-                    // let div = document.createElement("div");
-                    let img = template.querySelector("img");
-                    img.src = `${prefix}/thumbnail/${i}.png`;
-                    img.onload = SetGridItemHeight;
-
-                    template.querySelector("figcaption").textContent = i.slice(4);
-                    // div.append(img);
-                    grid.append(item);
-                });
-                let current = document.querySelector(`a[href='./?category=${category}']`);
-                current.href = "./";
-                current.querySelector("img").className = "selected";
-            }
-            else {
-                grid.remove();
-            }
+            let current = document.querySelector(`a[href='./?category=${category}']`);
+            current.href = "./";
+            current.querySelector("img").className = "selected";
+          } else {
+            grid.remove();
+          }
         });
     </script>
-</body>
+  </body>
 </html>

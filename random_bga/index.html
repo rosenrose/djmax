@@ -14,6 +14,9 @@
       div {
         margin: 0 0 1em 0;
       }
+      figure {
+        margin: 0.5em;
+      }
 
       .gray {
         filter: grayscale(0.8);
@@ -21,13 +24,13 @@
       }
       .item {
         display: inline-block;
-        width: 32%;
+        width: 49%;
       }
       .itemImg {
         width: 100%;
       }
       .loading {
-        width: 50%;
+        width: 20%;
       }
 
       #spread,
@@ -49,6 +52,10 @@
       #resultCountInput {
         width: 2em;
       }
+      /* #itemContainer {
+        display: inline-block;
+        width: 90%;
+      } */
 
       @media (max-width: 1280px) {
         #dlcCheckbox {
@@ -65,7 +72,10 @@
           width: 32%;
         }
         #run {
-          width: 50%;
+          width: 30%;
+        }
+        .item {
+          width: 100%;
         }
       }
     </style>
@@ -81,12 +91,12 @@
         <div id="dlcCheckbox" class="left"></div>
       </div>
       <div id="resultCount">
-        <span class="shadow-white">개수: </span>
+        <span class="shadow-white">개수(1~4): </span>
         <input type="number" id="resultCountInput" min="1" max="4" value="1" />
       </div>
       <img src="../img/btn_ready.png" id="run" class="click" />
-      <div id="itemContainer"></div>
     </div>
+    <div id="itemContainer" class="center"></div>
     <template id="dlcCheckboxTemplate">
       <label class="shadow-white">
         <input type="checkbox" value="" />
@@ -97,7 +107,7 @@
       <figure class="item">
         <img src="../img/loading.svg" class="loading" />
         <img src="" class="itemImg" />
-        <figcaption></figcaption>
+        <figcaption class="shadow-white""></figcaption>
       </figure>
     </template>
     <script type="text/javascript" src="../js/common.js"></script>
@@ -106,12 +116,13 @@
       const dlcSelect = new Set();
       const itemContainer = document.querySelector("#itemContainer");
       const runBtn = document.querySelector("#run");
+      const maxCount = 4;
 
       fetch("../list.json")
         .then((response) => response.json())
         .then((json) => {
           dlcKor = json["dlcKor"];
-          return fetch("list.json");
+          return fetch("list_static.json");
         })
         .then((response) => response.json())
         .then((json) => {
@@ -161,7 +172,10 @@
         if (!event.target.matches(".click") || dlcSelect.size < 1) {
           return;
         }
-        toggleRunbtn();
+        event.target.dispatchEvent(new MouseEvent("mouseenter"));
+        setTimeout(() => {
+          toggleRunbtn();
+        });
 
         let songs = [...dlcSelect]
           .map((dlc) => list[dlc])
@@ -180,7 +194,7 @@
         const promsies = [];
         for (let i = 0; i < count; i++) {
           const rand = randomInt(0, songs.length);
-          const [id, title] = songs[rand];
+          const [id, {name, duration}] = songs[rand];
           const itemTemplate = document.querySelector("#itemTemplate").content.cloneNode(true);
           const [loading, itemImg] = itemTemplate.querySelectorAll("img");
           const caption = itemTemplate.querySelector("figcaption");
@@ -188,7 +202,7 @@
           promsies.push(
             new Promise((resolve) => {
               axios
-                .get(`https://rosenrose-youtube-url.herokuapp.com/frame/${id}`, {
+                .get(`https://rosenrose-youtube-url.herokuapp.com/frame/${id}?duration=${duration}&static`, {
                   responseType: "arraybuffer",
                   timeout: 60 * 1000,
                 })
@@ -205,6 +219,7 @@
 
         Promise.all(promsies).then(() => {
           toggleRunbtn();
+          event.target.src = "../img/btn_ready.png";
         });
       });
       runBtn.addEventListener("mouseenter", (event) => {
@@ -219,7 +234,7 @@
       });
 
       document.querySelector("#resultCountInput").addEventListener("change", (event) => {
-        count = parseInt(event.target.value);
+        count = Math.min(parseInt(event.target.value), maxCount);
       });
 
       function toggleRunbtn() {
