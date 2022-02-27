@@ -23,6 +23,9 @@
         max-height: 100%;
       }
 
+      .click {
+        cursor: pointer;
+      }
       .float {
         position: fixed;
         width: 3em;
@@ -60,8 +63,8 @@
   <body>
     <img src="" />
     <div>
-      <img src="../img/left-arrow.svg" class="float fadeOut" id="prev" />
-      <img src="../img/right-arrow.svg" class="float fadeOut" id="next" />
+      <img src="../img/left-arrow.svg" class="click float fadeOut" id="prev" />
+      <img src="../img/right-arrow.svg" class="click float fadeOut" id="next" />
     </div>
     <script type="text/javascript">
       img = document.querySelector("img");
