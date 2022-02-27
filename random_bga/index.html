@@ -37,13 +37,28 @@
         border-radius: 1em;
       }
       #dlcCheckbox {
-        width: 40%;
+        width: 60%;
         margin: auto;
       }
-      #dlcCheckbox label {
+      .dlcLabel {
         display: inline-block;
-        width: 23%;
+        width: 19%;
         margin: 0.3em;
+      }
+      .dlcLabel > input {
+        display: inline;
+        vertical-align: top;
+        margin: 0;
+      }
+      #dlcCheckbox details {
+        display: inline;
+        vertical-align: top;
+        width: 90%;
+      }
+      .songLabel {
+        display: block;
+        width: 100%;
+        margin: 0.5em 0;
       }
       #run {
         width: 5%;
@@ -51,7 +66,7 @@
         margin-left: 2em;
       }
       #resultCountInput {
-        width: 2em;
+        width: 2.5em;
       }
       /* #itemContainer {
         display: inline-block;
@@ -68,15 +83,33 @@
         #dlcCheckbox {
           width: 105%;
         }
-        #dlcCheckbox label {
+        .dlcLabel {
           margin: 0.1em;
           width: 32%;
+        }
+        .dlcLabel > input{
+          width: 1em;
+        }
+        #dlcCheckbox details {
+          width: 80%;
+        }
+        #dlcCheckbox summary {
+          font-size: 0.9em;
+        }
+        .songLabel {
+          margin: 0.3em 0;
+          font-size: 0.8em;
+        }
+        .songLabel input {
+          width: 0.8em;
+          margin-left: -1em;
         }
         #run {
           width: 20%;
         }
         .item {
           width: 100%;
+          margin-left: 0;
         }
       }
     </style>
@@ -93,16 +126,18 @@
         <div id="dlcCheckbox" class="left"></div>
       </div>
       <div id="resultCount">
-        <span class="shadow-white">개수(1~6): </span>
-        <input type="number" id="resultCountInput" min="1" max="6" value="1" />
+        <span class="shadow-white">개수(1~12): </span>
+        <input type="number" id="resultCountInput" min="1" max="12" value="1" />
         <img src="../img/btn_ready.png" id="run" class="click" />
       </div>
     </div>
     <div id="itemContainer" class="center"></div>
     <template id="dlcCheckboxTemplate">
-      <label class="shadow-white bold">
+      <label id="" class="shadow-white">
         <input type="checkbox" value="" />
-        dlc title
+        <details>
+          <summary class="bold"></summary>
+        </select>
       </label>
     </template>
     <template id="itemTemplate">
@@ -113,134 +148,6 @@
       </figure>
     </template>
     <script type="text/javascript" src="../js/common.js"></script>
-    <script>
-      const dlcSelect = new Set();
-      const itemContainer = document.querySelector("#itemContainer");
-      const runBtn = document.querySelector("#run");
-      const maxCount = 6;
-
-      fetch("../list.json")
-        .then((response) => response.json())
-        .then((json) => {
-          dlcKor = json["dlcKor"];
-          return fetch("list.json");
-        })
-        .then((response) => response.json())
-        .then((json) => {
-          list = json;
-          const dlcCheck = document.querySelector("#dlcCheckbox");
-
-          for (dlc in list) {
-            let template = document.querySelector("#dlcCheckboxTemplate").content.cloneNode(true);
-            let label = template.firstElementChild;
-            let input = template.querySelector("input");
-
-            input.value = dlc;
-            input.nextSibling.textContent = dlc === "hidden" ? "히든" : dlcKor[dlc];
-            dlcCheck.append(label);
-          }
-
-          document.querySelectorAll("#dlcSelect input").forEach((check) => {
-            check.click();
-          });
-          document.querySelector("#resultCountInput").dispatchEvent(new InputEvent("change"));
-        });
-
-      document.querySelector("#spread").addEventListener("click", () => {
-        document.querySelectorAll("#dlcCheckbox input").forEach((input) => {
-          if (!input.checked) {
-            input.click();
-          }
-        });
-      });
-      document.querySelector("#collapse").addEventListener("click", () => {
-        document.querySelectorAll("#dlcCheckbox input").forEach((input) => {
-          if (input.checked) {
-            input.click();
-          }
-        });
-      });
-
-      document.querySelector("#dlcSelect").addEventListener("change", (event) => {
-        if (event.target.checked) {
-          dlcSelect.add(event.target.value);
-        } else {
-          dlcSelect.delete(event.target.value);
-        }
-      });
-
-      runBtn.addEventListener("click", () => {
-        if (!runBtn.matches(".click") || dlcSelect.size < 1) {
-          return;
-        }
-        runBtn.dispatchEvent(new MouseEvent("mouseenter"));
-        setTimeout(() => {
-          toggleRunbtn();
-        });
-
-        let songs = [...dlcSelect]
-          .map((dlc) => list[dlc])
-          .reduce((a, b) => {
-            return { ...a, ...b };
-          });
-        songs = Object.entries(songs);
-
-        itemContainer.querySelectorAll(".itemImg").forEach((img) => {
-          if (img.src) {
-            URL.revokeObjectURL(img.src);
-          }
-        });
-        itemContainer.replaceChildren();
-
-        const promsies = [];
-        for (let i = 0; i < count; i++) {
-          const rand = randomInt(0, songs.length);
-          const [id, { name, cut }] = songs[rand];
-          const itemTemplate = document.querySelector("#itemTemplate").content.cloneNode(true);
-          const [loading, itemImg] = itemTemplate.querySelectorAll("img");
-          const caption = itemTemplate.querySelector("figcaption");
-          const randCut = randomInt(1, parseInt(cut) + 1)
-            .toString()
-            .padStart(4, "0");
-
-          itemImg.src = `https://d2l1b145ht03q6.cloudfront.net/djmax/bga/cut/${id}/${randCut}.jpg`;
-          promsies.push(
-            new Promise((resolve) => {
-              itemImg.addEventListener("load", () => {
-                loading.hidden = true;
-                caption.textContent = name;
-                resolve();
-              });
-            })
-          );
-          itemContainer.append(itemTemplate.firstElementChild);
-        }
-
-        Promise.all(promsies).then(() => {
-          toggleRunbtn();
-          runBtn.src = "../img/btn_ready.png";
-        });
-      });
-
-      runBtn.addEventListener("mouseenter", () => {
-        if (runBtn.matches(".click")) {
-          runBtn.src = "../img/btn_press.png";
-        }
-      });
-      runBtn.addEventListener("mouseleave", () => {
-        if (runBtn.matches(".click")) {
-          runBtn.src = "../img/btn_ready.png";
-        }
-      });
-
-      document.querySelector("#resultCountInput").addEventListener("change", (event) => {
-        count = Math.min(parseInt(event.target.value), maxCount);
-      });
-
-      function toggleRunbtn() {
-        runBtn.classList.toggle("click");
-        runBtn.classList.toggle("gray");
-      }
-    </script>
+    <script type="text/javascript" src="../js/random_bga.js"></script>
   </body>
 </html>
