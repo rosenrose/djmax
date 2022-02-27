@@ -182,7 +182,7 @@ runBtn.addEventListener("mouseleave", () => {
 resultCount.addEventListener("input", (event) => {
   count = Math.min(parseInt(event.target.value), maxCount);
   if (isNaN(count)) {
-    count = 1;
+    count = 0;
   }
   event.target.value = count;
 });
