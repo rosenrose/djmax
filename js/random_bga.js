@@ -144,12 +144,14 @@ runBtn.addEventListener("click", () => {
     const [id, { name, cut }] = songList[rand];
     const itemTemplate = document.querySelector("#itemTemplate").content.cloneNode(true);
     const [loading, itemImg] = itemTemplate.querySelectorAll("img");
+    const link = itemTemplate.querySelector("a");
     const caption = itemTemplate.querySelector("figcaption");
     const randCut = randomInt(1, parseInt(cut) + 1)
       .toString()
       .padStart(4, "0");
 
     itemImg.src = `https://d2l1b145ht03q6.cloudfront.net/djmax/bga/cut/${id}/${randCut}.jpg`;
+    link.href = `https://youtu.be/${id}`;
     promsies.push(
       new Promise((resolve) => {
         itemImg.addEventListener("load", () => {
