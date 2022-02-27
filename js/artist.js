@@ -197,7 +197,7 @@ function DlcSelect({ dlcSelect, onDlcSelect }) {
   return (
     <div id="dlcSelect" onChange={onDlcSelect}>
       {Object.keys(list["songs"]).map((category) => (
-        <label key={category} className="shadow-white">
+        <label key={category} className="shadow-white bold">
           <input type="checkbox" value={category} defaultChecked={dlcSelect.has(category)} />
           {list["dlcKor"][category]}
         </label>

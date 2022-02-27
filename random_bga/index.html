@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>랜덤 BGA 컷</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/common.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
       body {
         background-image: url("../img/cover.jpg");
       }
       div {
-        margin: 0 0 1em 0;
+        margin: 0 0 0.5em 0;
       }
       figure {
-        margin: 0.5em;
+        margin: 0.5em 0.5em 1em 0.5em;
       }
 
       .gray {
@@ -24,7 +23,7 @@
       }
       .item {
         display: inline-block;
-        width: 49%;
+        width: 48%;
       }
       .itemImg {
         width: 100%;
@@ -47,7 +46,9 @@
         margin: 0.3em;
       }
       #run {
-        width: 10%;
+        width: 5%;
+        vertical-align: middle;
+        margin-left: 2em;
       }
       #resultCountInput {
         width: 2em;
@@ -72,7 +73,7 @@
           width: 32%;
         }
         #run {
-          width: 30%;
+          width: 20%;
         }
         .item {
           width: 100%;
@@ -83,6 +84,7 @@
   <body>
     <a href=".."><img src="../img/djmax-64.png" id="home" /></a>
     <div class="center">
+      <h2 class="shadow-white">랜덤 BGA 컷</h2>
       <div id="dlcSelect">
         <div>
           <button type="button" id="spread">모두 선택</button>
@@ -93,12 +95,12 @@
       <div id="resultCount">
         <span class="shadow-white">개수(1~6): </span>
         <input type="number" id="resultCountInput" min="1" max="6" value="1" />
+        <img src="../img/btn_ready.png" id="run" class="click" />
       </div>
-      <img src="../img/btn_ready.png" id="run" class="click" />
     </div>
     <div id="itemContainer" class="center"></div>
     <template id="dlcCheckboxTemplate">
-      <label class="shadow-white">
+      <label class="shadow-white bold">
         <input type="checkbox" value="" />
         dlc title
       </label>
@@ -107,12 +109,11 @@
       <figure class="item">
         <img src="../img/loading.svg" class="loading" />
         <img src="" class="itemImg" />
-        <figcaption class="shadow-white""></figcaption>
+        <figcaption class="shadow-white bold"></figcaption>
       </figure>
     </template>
     <script type="text/javascript" src="../js/common.js"></script>
     <script>
-      fetch("https://rosenrose-youtube-url.herokuapp.com/");
       const dlcSelect = new Set();
       const itemContainer = document.querySelector("#itemContainer");
       const runBtn = document.querySelector("#run");
@@ -122,7 +123,7 @@
         .then((response) => response.json())
         .then((json) => {
           dlcKor = json["dlcKor"];
-          return fetch("list_static.json");
+          return fetch("list.json");
         })
         .then((response) => response.json())
         .then((json) => {
@@ -168,11 +169,11 @@
         }
       });
 
-      runBtn.addEventListener("click", (event) => {
-        if (!event.target.matches(".click") || dlcSelect.size < 1) {
+      runBtn.addEventListener("click", () => {
+        if (!runBtn.matches(".click") || dlcSelect.size < 1) {
           return;
         }
-        event.target.dispatchEvent(new MouseEvent("mouseenter"));
+        runBtn.dispatchEvent(new MouseEvent("mouseenter"));
         setTimeout(() => {
           toggleRunbtn();
         });
@@ -194,24 +195,22 @@
         const promsies = [];
         for (let i = 0; i < count; i++) {
           const rand = randomInt(0, songs.length);
-          const [id, {name, duration}] = songs[rand];
+          const [id, { name, cut }] = songs[rand];
           const itemTemplate = document.querySelector("#itemTemplate").content.cloneNode(true);
           const [loading, itemImg] = itemTemplate.querySelectorAll("img");
           const caption = itemTemplate.querySelector("figcaption");
+          const randCut = randomInt(1, parseInt(cut) + 1)
+            .toString()
+            .padStart(4, "0");
 
+          itemImg.src = `https://d2l1b145ht03q6.cloudfront.net/djmax/bga/cut/${id}/${randCut}.jpg`;
           promsies.push(
             new Promise((resolve) => {
-              axios
-                .get(`https://rosenrose-youtube-url.herokuapp.com/frame/${id}?duration=${duration}&static`, {
-                  responseType: "arraybuffer",
-                  timeout: 60 * 1000,
-                })
-                .then((response) => {
-                  itemImg.src = URL.createObjectURL(new Blob([response.data], { type: "image/jpeg" }));
-                  loading.hidden = true;
-                  caption.textContent = name;
-                  resolve();
-                });
+              itemImg.addEventListener("load", () => {
+                loading.hidden = true;
+                caption.textContent = name;
+                resolve();
+              });
             })
           );
           itemContainer.append(itemTemplate.firstElementChild);
@@ -219,17 +218,18 @@
 
         Promise.all(promsies).then(() => {
           toggleRunbtn();
-          event.target.src = "../img/btn_ready.png";
+          runBtn.src = "../img/btn_ready.png";
         });
       });
-      runBtn.addEventListener("mouseenter", (event) => {
-        if (event.target.matches(".click")) {
-          event.target.src = "../img/btn_press.png";
+
+      runBtn.addEventListener("mouseenter", () => {
+        if (runBtn.matches(".click")) {
+          runBtn.src = "../img/btn_press.png";
         }
       });
-      runBtn.addEventListener("mouseleave", (event) => {
-        if (event.target.matches(".click")) {
-          event.target.src = "../img/btn_ready.png";
+      runBtn.addEventListener("mouseleave", () => {
+        if (runBtn.matches(".click")) {
+          runBtn.src = "../img/btn_ready.png";
         }
       });
 
