@@ -41,10 +41,6 @@
         transition: opacity 1s;
       }
 
-      #prev,
-      #next {
-        opacity: 1;
-      }
       #prev {
         left: 1em;
       }
@@ -53,9 +49,10 @@
       }
       @media (max-width: 768px) {
         .float {
+          display: none;
           width: 2em;
           height: 2em;
-          opacity: 0;
+          opacity: 1;
         }
       }
     </style>
@@ -63,8 +60,8 @@
   <body>
     <img src="" />
     <div>
-      <img src="../img/left-arrow.svg" class="float fadeOut" id="prev" hidden />
-      <img src="../img/right-arrow.svg" class="float fadeOut" id="next" hidden />
+      <img src="../img/left-arrow.svg" class="float fadeOut" id="prev" />
+      <img src="../img/right-arrow.svg" class="float fadeOut" id="next" />
     </div>
     <script type="text/javascript">
       img = document.querySelector("img");
@@ -136,15 +133,15 @@
           }
 
           fading = true;
-          prev.hidden = false;
-          next.hidden = false;
+          prev.style.display = "block";
+          next.style.display = "block";
           setTimeout(() => {
             prev.style.opacity = 0;
             next.style.opacity = 0;
           });
           setTimeout(() => {
-            prev.hidden = true;
-            next.hidden = true;
+            prev.style.display = "none";
+            next.style.display = "none";
             prev.style = "";
             next.style = "";
             fading = false;
