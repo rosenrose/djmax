@@ -106,6 +106,8 @@ document.querySelector("#dlcSelect").addEventListener("change", (event) => {
         songSelect.delete(songId);
         if (dlcInput.checked) {
           dlcSelect.add(dlc);
+        } else {
+          dlcSelect.delete(dlc);
         }
       }
     });
@@ -134,11 +136,6 @@ runBtn.addEventListener("click", () => {
     toggleRunbtn();
   });
 
-  itemContainer.querySelectorAll(".itemImg").forEach((img) => {
-    if (img.src) {
-      URL.revokeObjectURL(img.src);
-    }
-  });
   itemContainer.replaceChildren();
 
   const promsies = [];
