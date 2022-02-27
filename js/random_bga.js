@@ -48,7 +48,7 @@ fetch("../list.json")
     document.querySelectorAll(".dlcLabel > input").forEach((check) => {
       check.click();
     });
-    resultCount.dispatchEvent(new InputEvent("change"));
+    resultCount.dispatchEvent(new InputEvent("input"));
   });
 
 document.querySelector("#spread").addEventListener("click", () => {
