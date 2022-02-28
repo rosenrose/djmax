@@ -1,5 +1,4 @@
-const dlcSelect = new Set();
-const songSelect = new Set();
+const songSelect = {};
 const itemContainer = document.querySelector("#itemContainer");
 const runBtn = document.querySelector("#run");
 const resultCount = document.querySelector("#resultCountInput");
@@ -45,6 +44,45 @@ fetch("../list.json")
       dlcCheck.append(label);
     }
 
+    document.querySelectorAll(".dlcLabel > input").forEach((input) => {
+      input.addEventListener("change", (event) => {
+        const dlc = event.target.value;
+        if (!(dlc in songSelect)) {
+          songSelect[dlc] = new Set();
+        }
+
+        const checked = event.target.checked;
+        const details = event.target.nextElementSibling;
+        details.querySelectorAll(".songLabel input").forEach((input) => {
+          input.checked = checked;
+          input.dispatchEvent(new InputEvent("change"));
+        });
+      });
+    });
+
+    document.querySelectorAll(".songLabel input").forEach((input) => {
+      input.addEventListener("change", (event) => {
+        const details = event.target.closest("details");
+        const dlcInput = details.previousElementSibling;
+        const dlc = dlcInput.value;
+        const songInputs = [...details.querySelectorAll("input")];
+
+        const allChecked = songInputs.every((input) => input.checked);
+        const allUnchecked = songInputs.every((input) => !input.checked);
+        dlcInput.indeterminate = !(allChecked || allUnchecked);
+        dlcInput.checked = allChecked;
+
+        songInputs.forEach((input) => {
+          songId = input.value;
+          if (input.checked) {
+            songSelect[dlc].add(songId);
+          } else {
+            songSelect[dlc].delete(songId);
+          }
+        });
+      });
+    });
+
     document.querySelectorAll(".dlcLabel > input").forEach((check) => {
       check.click();
     });
@@ -63,69 +101,20 @@ document.querySelector("#collapse").addEventListener("click", () => {
     if (input.checked) {
       input.click();
     }
-  });
-});
-
-document.querySelector("#dlcSelect").addEventListener("change", (event) => {
-  if (event.target.matches("details, summary")) {
-    return;
-  }
-
-  const label = event.target.closest("label");
-
-  if (label.matches(".dlcLabel")) {
-    if (event.target.checked) {
-      dlcSelect.add(event.target.value);
-    } else {
-      dlcSelect.delete(event.target.value);
+    if (input.indeterminate) {
+      input.checked = false;
+      input.dispatchEvent(new InputEvent("change"));
     }
-    label.querySelectorAll(".songLabel input").forEach((input) => {
-      input.checked = event.target.checked;
-      input.dispatchEvent(new InputEvent("change", { bubbles: true }));
-    });
-  } else if (label.matches(".songLabel")) {
-    const dlcInput = label.closest("details").previousElementSibling;
-    const dlc = dlcInput.value;
-    const songInputs = [...label.parentNode.querySelectorAll("input")];
-
-    dlcInput.indeterminate = !(
-      songInputs.every((input) => input.checked) || songInputs.every((input) => !input.checked)
-    );
-
-    songInputs.forEach((input) => {
-      songId = input.value;
-
-      if (dlcInput.indeterminate) {
-        if (input.checked) {
-          songSelect.add(songId);
-        } else {
-          songSelect.delete(songId);
-        }
-        dlcSelect.delete(dlc);
-      } else {
-        songSelect.delete(songId);
-        if (dlcInput.checked) {
-          dlcSelect.add(dlc);
-        } else {
-          dlcSelect.delete(dlc);
-        }
-      }
-    });
-  }
+  });
 });
 
 runBtn.addEventListener("click", () => {
-  let songMap = [...dlcSelect]
-    .map((dlc) => list[dlc])
-    .reduce((a, b) => {
-      return { ...a, ...b };
-    }, {});
-  songSelect.forEach((id) => {
-    songMap = { ...songMap, ...{ [id]: idMap[id] } };
-  });
-  console.log(dlcSelect, songSelect);
-  // console.log(songMap);
-  songList = Object.entries(songMap);
+  const songList = Object.values(songSelect)
+    .reduce((a, b) => [...a, ...b])
+    .map((id) => {
+      return { id, ...idMap[id] };
+    });
+  // console.log(songList);
 
   if (!runBtn.matches(".click") || songList.length < 1) {
     return;
@@ -141,7 +130,7 @@ runBtn.addEventListener("click", () => {
   const promsies = [];
   for (let i = 0; i < count; i++) {
     const rand = randomInt(0, songList.length);
-    const [id, { name, cut }] = songList[rand];
+    const { id, name, cut } = songList[rand];
     const itemTemplate = document.querySelector("#itemTemplate").content.cloneNode(true);
     const [loading, itemImg] = itemTemplate.querySelectorAll("img");
     const link = itemTemplate.querySelector("a");
