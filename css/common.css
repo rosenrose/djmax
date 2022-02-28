@@ -115,6 +115,9 @@ body {
 button:not(:disabled) {
   cursor: pointer;
 }
+h2 {
+  margin-top: 0;
+}
 
 #home {
   background-color: mediumspringgreen;
