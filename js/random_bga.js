@@ -3,6 +3,7 @@ const itemContainer = document.querySelector("#itemContainer");
 const runBtn = document.querySelector("#run");
 const resultCount = document.querySelector("#resultCountInput");
 const maxCount = parseInt(resultCount.max);
+const shareBtn = document.querySelector("#shareBtn");
 
 fetch("../list.json")
   .then((response) => response.json())
@@ -123,6 +124,7 @@ runBtn.addEventListener("click", () => {
   runBtn.dispatchEvent(new MouseEvent("mouseenter"));
   setTimeout(() => {
     toggleRunbtn();
+    shareBtn.hidden = true;
   });
 
   itemContainer.replaceChildren();
@@ -156,6 +158,7 @@ runBtn.addEventListener("click", () => {
   Promise.all(promsies).then(() => {
     toggleRunbtn();
     runBtn.src = "../img/btn_ready.png";
+    shareBtn.hidden = false;
   });
 });
 
@@ -176,6 +179,30 @@ resultCount.addEventListener("input", (event) => {
     count = 0;
   }
   event.target.value = count;
+});
+
+shareBtn.addEventListener("click", () => {
+  const source = [...document.querySelectorAll("figure.item")]
+    .map((item) => {
+      const template = document.querySelector("#shareTemplate").content.cloneNode(true);
+      const [p1, p2] = template.querySelectorAll("p");
+
+      p1.querySelector("img").src = item.querySelector(".itemImg").src;
+      p2.textContent = item.querySelector("figcaption").textContent;
+
+      return template.firstElementChild.innerHTML.trim().replace(/\n\s+/g, "\n");
+    })
+    .join("\n");
+
+  if (source.length) {
+    navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
+      if (result.state == "granted" || result.state == "prompt") {
+        navigator.clipboard.writeText(source).then(() => {
+          alert("복사되었습니다.");
+        });
+      }
+    });
+  }
 });
 
 function toggleRunbtn() {
