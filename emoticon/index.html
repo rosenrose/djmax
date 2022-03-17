@@ -1,159 +1,170 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>디제이맥스 리스펙트 이모티콘</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='../css/common.css' title="common">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/common.css" title="common" />
     <style type="text/css">
-        body {
-            background-color: gray;
-        }
+      body {
+        background-color: gray;
+      }
 
-        .season > img{
-            display: block;
-            margin: 1em auto;
+      .season > img {
+        display: block;
+        margin: 1em auto;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
+        text-align: left;
+      }
+      .item {
+        text-align: center;
+        margin: 0;
+      }
+      .item > img {
+        width: 100%;
+      }
+      .item > figcaption {
+        color: #fff;
+        margin: 1em;
+      }
+      @media (max-width: 768px) {
+        .season > img {
+          width: 100%;
         }
         .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
-            text-align: left;
+          grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
         }
-        .item {
-            text-align: center;
-            margin: 0;
-        }
-        .item > img {
-            width: 100%;
-        }
-        .item > figcaption {
-            color: #fff;
-            margin: 1em;
-        }
-        @media ( max-width: 768px ) {
-            .season > img {
-                width: 100%;
-            }
-            .container {
-                grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-            }
-        }
+      }
     </style>
-</head>
-<body>
-    <a href=".."><img src="../img/djmax-64.png" id="home"></a>
+  </head>
+  <body>
+    <a href=".."><img src="../img/djmax-64.png" id="home" /></a>
     <div id="main"></div>
     <template id="seasonTemplate">
-        <div class="season" id="">
-            <img src="" class="click">
-            <div class="container">
-            </div>
-        </div>
+      <div class="season" id="">
+        <img src="" class="click" />
+        <div class="container"></div>
+      </div>
     </template>
     <template id="itemTemplate">
-        <figure class="item">
-            <img src="" loading="lazy">
-            <figcaption></figcaption>
-        </figure>
+      <figure class="item">
+        <img src="" loading="lazy" />
+        <figcaption></figcaption>
+      </figure>
     </template>
     <script type="text/javascript">
-        list = {
-            "s1": {
-                "ClearHappy": "HAPPY",
-                "ClearWhat": "WHAT!?",
-                "ClearWrath": "WRATH",
-                "FailAttack": "ATTACK",
-                "FailWhat": "WHAT!?",
-                "PlayHappy": "HAPPY",
-                "PlayWrath": "WRATH",
-                "ShowtimeHi": "HELLO",
-                "NbBreak": "BREAK",
-                "MorningGood": "NICE",
-                "ShowtimePanic": "WHAT!?",
-                "LadyCheer": "CHEER",
-                "MilesBye": "BYE"
-            },
-            "s2": {
-                "PlayPopcorn": "POPCORN",
-                "FailFlex": "FLEX",
-                "ClearSalty": "SALTY",
-                "SuiWink": "WINK",
-                "RungirlSleep": "SLEEP",
-                "DolphinLaugh": "LAUGH",
-                "YonaCry": "CRY",
-                "ClearPositive": "POSITIVE",
-                "FailNegative": "NEGATIVE",
-                "PlayJetkick": "JETKICK"
-            },
-            "s3": {
-                "ClearHammer": "MALLET MAX",
-                "ClearHi": "HI",
-                "FailBye": "BYE",
-                "FailHammer": "MALLET BREAK",
-                "FarEastPlease": "PLZ",
-                "LenaHug": "HUG ME",
-                "MistyNoob": {
-                    "displayName": "NOOB?",
-                    "anotherFileName": "MistyNewbie",
-                    "anotherDisplayName": "NEWBIE?"
-                },
-                "MistyPerfect": "PERFECT!",
-                "PlayWall": "SNOOP",
-                "SonRun": "RUN OF SUN"
-            },
-            "s4": {
-                "AnotherStop": "STOP",
-                "Battery": "LOW BATTERY",
-                "ClearHny": "HAPPY 2022 (CLEAR Ver.)",
-                "ClearMcr": "MERRY X-MAS",
-                "Dalgona": "DALGONA",
-                "FailBack": "RED LIGHT, GREEN LIGHT",
-                "FailHny": "HAPPY 2022 (FAIL Ver.)",
-                "FailMcr": "MERRY X-MAS",
-                "OfySalute": "SALUTE",
-                "OfySorry": "SORRY"
-            }
-        }
-        for (let season in list) {
-            let seasonTemplate = document.querySelector("#seasonTemplate").content.cloneNode(true);
-            seasonTemplate.querySelector("div").id = season;
-            seasonTemplate.querySelector("img").src = `${season}.png`;
-            let container = seasonTemplate.querySelector(".container");
+      list = {
+        s1: {
+          ClearHappy: "HAPPY",
+          ClearWhat: "WHAT!?",
+          ClearWrath: "WRATH",
+          FailAttack: "ATTACK",
+          FailWhat: "WHAT!?",
+          PlayHappy: "HAPPY",
+          PlayWrath: "WRATH",
+          ShowtimeHi: "HELLO",
+          NbBreak: "BREAK",
+          MorningGood: "NICE",
+          ShowtimePanic: "WHAT!?",
+          LadyCheer: "CHEER",
+          MilesBye: "BYE",
+        },
+        s2: {
+          PlayPopcorn: "POPCORN",
+          FailFlex: "FLEX",
+          ClearSalty: "SALTY",
+          SuiWink: "WINK",
+          RungirlSleep: "SLEEP",
+          DolphinLaugh: "LAUGH",
+          YonaCry: "CRY",
+          ClearPositive: "POSITIVE",
+          FailNegative: "NEGATIVE",
+          PlayJetkick: "JETKICK",
+        },
+        s3: {
+          ClearHammer: "MALLET MAX",
+          ClearHi: "HI",
+          FailBye: "BYE",
+          FailHammer: "MALLET BREAK",
+          FarEastPlease: "PLZ",
+          LenaHug: "HUG ME",
+          MistyNoob: {
+            displayName: "NOOB?",
+            anotherFileName: "MistyNewbie",
+            anotherDisplayName: "NEWBIE?",
+          },
+          MistyPerfect: "PERFECT!",
+          PlayWall: "SNOOP",
+          SonRun: "RUN OF SUN",
+        },
+        s4: {
+          AnotherStop: "STOP",
+          Battery: "LOW BATTERY",
+          ClearHny: "HAPPY 2022 (CLEAR Ver.)",
+          ClearMcr: "MERRY X-MAS",
+          Dalgona: "DALGONA",
+          FailBack: "RED LIGHT, GREEN LIGHT",
+          FailHny: "HAPPY 2022 (FAIL Ver.)",
+          FailMcr: "MERRY X-MAS",
+          OfySalute: "SALUTE",
+          OfySorry: "SORRY",
+        },
+        s5: {
+          ClearOops: "OOPS",
+          DalryDizzy: "DIZZY",
+          HeartBeat: "HEART BEAT",
+          LenaGoodLuck: "GOOD LUCK!",
+          MorningCatStare: "STARE",
+          NbJustDream: "JUST DREAM",
+          PlayCupid: "CUPID",
+          FailMarryMe: "MARRY ME",
+          PlayYes: "YES!",
+          ClearNo: "NO!",
+        },
+      };
+      for (let season in list) {
+        let seasonTemplate = document.querySelector("#seasonTemplate").content.cloneNode(true);
+        seasonTemplate.querySelector("div").id = season;
+        seasonTemplate.querySelector("img").src = `${season}.png`;
+        let container = seasonTemplate.querySelector(".container");
 
-            Object.entries(list[season]).forEach(([fileName, displayName], i) => {
-                let template = document.querySelector("#itemTemplate").content.cloneNode(true);
-                let img = template.querySelector("img");
-                let caption = template.querySelector("figcaption");
+        Object.entries(list[season]).forEach(([fileName, displayName], i) => {
+          let template = document.querySelector("#itemTemplate").content.cloneNode(true);
+          let img = template.querySelector("img");
+          let caption = template.querySelector("figcaption");
 
-                img.src = `https://d2l1b145ht03q6.cloudfront.net/djmax/emoticon/${season}_${(i+1).toString().padStart(2,0)}_${fileName}.webp`;
+          img.src = `https://d2l1b145ht03q6.cloudfront.net/djmax/emoticon/${fileName}.webp`;
 
-                if (typeof displayName == "string") {
-                    caption.textContent = displayName;
-                }
-                else {
-                    caption.textContent = displayName["displayName"];
-                    template2 = document.querySelector("#itemTemplate").content.cloneNode(true);
-                    template2.querySelector("img").src = `https://d2l1b145ht03q6.cloudfront.net/djmax/emoticon/${season}_${(i+1).toString().padStart(2,0)}_${displayName["anotherFileName"]}.webp`;
-                    template2.querySelector("figcaption").textContent = displayName["anotherDisplayName"];
-                }
+          if (typeof displayName == "string") {
+            caption.textContent = displayName;
+          } else {
+            caption.textContent = displayName["displayName"];
+            template2 = document.querySelector("#itemTemplate").content.cloneNode(true);
+            template2.querySelector(
+              "img"
+            ).src = `https://d2l1b145ht03q6.cloudfront.net/djmax/emoticon/${displayName["anotherFileName"]}.webp`;
+            template2.querySelector("figcaption").textContent = displayName["anotherDisplayName"];
+          }
 
-                container.append(template.firstElementChild);
-                if (typeof displayName != "string") {
-                    container.append(template2.firstElementChild);
-                }
-            });
-            document.querySelector("#main").append(seasonTemplate.firstElementChild);
-        }
+          container.append(template.firstElementChild);
+          if (typeof displayName != "string") {
+            container.append(template2.firstElementChild);
+          }
+        });
+        document.querySelector("#main").append(seasonTemplate.firstElementChild);
+      }
 
-        document.querySelectorAll(".season > img").forEach(img => {
-            img.addEventListener("click", event => {
-                let container = event.target.nextElementSibling;
-                container.style.display = (container.style.display == "none")? "" : "none";
-            });
-            img.click();
-        })
-
+      document.querySelectorAll(".season > img").forEach((img) => {
+        img.addEventListener("click", (event) => {
+          let container = event.target.nextElementSibling;
+          container.style.display = container.style.display == "none" ? "" : "none";
+        });
+        img.click();
+      });
     </script>
-</body>
+  </body>
 </html>
