@@ -79,6 +79,7 @@
       <a href="./?category=portable3"><img src="../img/category_portable3.png" /></a>
       <a href="./?category=collaboration"><img src="../img/collab_estimate.png" /></a>
       <a href="./?category=vextension2"><img src="../img/category_vextension2.png" /></a>
+      <a href="./?category=season5"><img src="../emoticon/s5.png" /></a>
     </div>
     <div class="grid"></div>
     <template id="itemTemplate">
@@ -98,7 +99,8 @@
         let items = grid.querySelectorAll(".item");
         items.forEach((item, i) => {
           let span = Math.ceil(
-            (item.querySelector("img").offsetHeight + item.querySelector("figcaption").offsetHeight) /
+            (item.querySelector("img").offsetHeight +
+              item.querySelector("figcaption").offsetHeight) /
               (rowHeight + rowGap)
           );
           item.style.gridRowEnd = `span ${span}`;
@@ -112,7 +114,7 @@
       url = new URL(document.URL);
       category = url.searchParams.get("category");
       num = parseInt(url.searchParams.get("num"));
-      prefix = "https://d2l1b145ht03q6.cloudfront.net/djmax";
+      prefix = "https://d2l1b145ht03q6.cloudfront.net/djmax/gallery";
 
       fetch("list.json")
         .then((response) => response.json())
