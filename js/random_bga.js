@@ -14,9 +14,7 @@ fetch("../list.json")
   .then((response) => response.json())
   .then((json) => {
     list = json;
-    idMap = Object.values(list).reduce((a, b) => {
-      return { ...a, ...b };
-    });
+    idMap = Object.values(list).reduce((a, b) => ({ ...a, ...b }));
     const dlcCheck = document.querySelector("#dlcCheckbox");
 
     for (dlc in list) {
@@ -112,9 +110,7 @@ document.querySelector("#collapse").addEventListener("click", () => {
 runBtn.addEventListener("click", () => {
   const songList = Object.values(songSelect)
     .reduce((a, b) => [...a, ...b])
-    .map((id) => {
-      return { id, ...idMap[id] };
-    });
+    .map((id) => ({ id, ...idMap[id] }));
   // console.log(songList);
 
   if (!runBtn.matches(".click") || songList.length < 1) {
