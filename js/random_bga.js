@@ -137,7 +137,7 @@ runBtn.addEventListener("click", () => {
       .toString()
       .padStart(4, "0");
 
-    itemImg.src = `https://d2l1b145ht03q6.cloudfront.net/djmax/bga/${id}/${randCut}.jpg`;
+    itemImg.src = `https://d2wwh0934dzo2k.cloudfront.net/djmax/cut/${id}/${randCut}.jpg`;
     link.href = `https://youtu.be/${id}`;
     promsies.push(
       new Promise((resolve) => {
