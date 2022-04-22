@@ -1,96 +1,97 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>디제이맥스 리스펙트 인벤토리 아이콘</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='../css/common.css' title="common">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/common.css" title="common" />
     <script src="https://unpkg.com/json5@^2.0.0/dist/index.min.js"></script>
     <style type="text/css">
-        body {
-            background-color: gray;
-        }
+      body {
+        background-color: gray;
+      }
 
-        .category > img{
-            display: block;
-            margin: 1em auto;
+      .category > img {
+        display: block;
+        margin: 1em auto;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
+        text-align: left;
+      }
+      .item {
+        text-align: center;
+        margin: 0.5em;
+      }
+      .item > img {
+        width: 100%;
+      }
+      .item > figcaption {
+        color: #fff;
+        margin: 0.5em;
+      }
+      @media (max-width: 768px) {
+        .category > img {
+          width: 100%;
         }
         .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
-            text-align: left;
+          grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
         }
-        .item {
-            text-align: center;
-            margin: 0.5em;
-        }
-        .item > img {
-            width: 100%;
-        }
-        .item > figcaption {
-            color: #fff;
-            margin: 0.5em;
-        }
-        @media ( max-width: 768px ) {
-            .category > img {
-                width: 100%;
-            }
-            .container {
-                grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
-            }
-        }
+      }
     </style>
-</head>
-<body>
-    <a href=".."><img src="../img/djmax-64.png" id="home"></a>
+  </head>
+  <body>
+    <a href=".."><img src="../img/djmax-64.png" id="home" /></a>
     <div id="main"></div>
     <template id="categoryTemplate">
-        <div class="category" id="">
-            <img src="" class="click">
-            <div class="container">
-            </div>
-        </div>
+      <div class="category" id="">
+        <img src="" class="click" />
+        <div class="container"></div>
+      </div>
     </template>
     <template id="itemTemplate">
-        <figure class="item">
-            <img src="" loading="lazy">
-            <figcaption></figcaption>
-        </figure>
+      <figure class="item">
+        <img src="" loading="lazy" />
+        <figcaption></figcaption>
+      </figure>
     </template>
     <script type="text/javascript">
-        fetch("list.json5")
-        .then(response => response.text())
-        .then(json5 => {
-            list = JSON5.parse(json5);
- 
-            for (let category in list) {
-                let categoryTemplate = document.querySelector("#categoryTemplate").content.cloneNode(true);
-                categoryTemplate.querySelector("div").id = category;
-                categoryTemplate.querySelector("img").src = `${category}.png`;
-                let container = categoryTemplate.querySelector(".container");
-    
-                Object.entries(list[category]).forEach(([fileName, displayName]) => {
-                    let template = document.querySelector("#itemTemplate").content.cloneNode(true);
-                    let img = template.querySelector("img");
-                    let caption = template.querySelector("figcaption");
-    
-                    img.src = `https://d2l1b145ht03q6.cloudfront.net/djmax/inventory/${category}/${fileName}.png`;
-                    caption.textContent = displayName;
-    
-                    container.append(template.firstElementChild);
-                });
-                document.querySelector("#main").append(categoryTemplate.firstElementChild);
-            }
+      fetch("item_list.json5")
+        .then((response) => response.text())
+        .then((json5) => {
+          list = JSON5.parse(json5);
 
-            document.querySelectorAll(".category > img").forEach(img => {
-                img.addEventListener("click", event => {
-                    let container = event.target.nextElementSibling;
-                    container.style.display = (container.style.display == "none")? "" : "none";
-                });
-                img.click();
-            })
+          for (let category in list) {
+            let categoryTemplate = document
+              .querySelector("#categoryTemplate")
+              .content.cloneNode(true);
+            categoryTemplate.querySelector("div").id = category;
+            categoryTemplate.querySelector("img").src = `${category}.png`;
+            let container = categoryTemplate.querySelector(".container");
+
+            Object.entries(list[category]).forEach(([fileName, displayName]) => {
+              let template = document.querySelector("#itemTemplate").content.cloneNode(true);
+              let img = template.querySelector("img");
+              let caption = template.querySelector("figcaption");
+
+              img.src = `https://d2l1b145ht03q6.cloudfront.net/djmax/inventory/${category}/${fileName}.png`;
+              caption.textContent = displayName;
+
+              container.append(template.firstElementChild);
+            });
+            document.querySelector("#main").append(categoryTemplate.firstElementChild);
+          }
+
+          document.querySelectorAll(".category > img").forEach((img) => {
+            img.addEventListener("click", (event) => {
+              let container = event.target.nextElementSibling;
+              container.style.display = container.style.display == "none" ? "" : "none";
+            });
+            img.click();
+          });
         });
     </script>
-</body>
+  </body>
 </html>

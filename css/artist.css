@@ -1,110 +1,113 @@
 body {
-    background-image: url('../img/cover.jpg');
+  background-image: url("../img/cover.jpg");
 }
 button {
-    border-radius: 1em;
+  border-radius: 1em;
 }
 
 /* #artistUl, #titleUl { */
-#artistUl, .songUl, #titleUl {
-    list-style-type: none;
+#artistUl,
+.songUl,
+#titleUl {
+  list-style-type: none;
 }
 
 .artistLi {
-    margin: 1em;
+  margin: 1em;
 }
 .songLi :is(p, h3) {
-    margin-left: 0.5em;
+  margin-left: 0.5em;
 }
 .songLi div {
-    display: inline-block;
+  display: inline-block;
 }
 .cat {
-    color: gray;
-    margin-right: 0.5em;
+  color: gray;
+  margin-right: 0.5em;
 }
 
 #dlcSelect {
-    width: 40%;
-    margin: auto;
+  width: 40%;
+  margin: auto;
 }
 #dlcSelect label {
-    display: inline-block;
-    width: 23%;
-    margin: 0.3em;
+  display: inline-block;
+  width: 23%;
+  margin: 0.3em;
 }
 #result {
-    width: 50%;
+  width: 50%;
 }
 #result > div {
-    margin: 1em auto;
+  margin: 1em auto;
 }
 #selectMode {
-    text-align: center;
+  text-align: center;
 }
 
 #artistUl {
-    margin-left: 4em;
+  margin-left: 4em;
 }
 #artistUl img {
-    width: 10%;
-    vertical-align: middle;
+  width: 10%;
+  vertical-align: middle;
 }
 #artistUl .songLi {
-    margin: 0.5em;
+  margin: 0.5em;
 }
 #artistUl .songLi div {
-    width: 80%;
+  width: 80%;
 }
 #artistUl .subCatUl {
-    margin-left: 1em;
+  margin-left: 1em;
 }
 
 #titleUl .songLi {
-    margin: 1em;
-    border-bottom: 2px dotted #777;
+  margin: 1em;
+  border-bottom: 2px dotted #777;
 }
 #titleUl .songLi img {
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 #titleUl .songLi div {
-    vertical-align: top;
-    width: 75%;
+  vertical-align: top;
+  width: 75%;
 }
 #titleUl .songLi h3 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
-@media ( max-width: 1280px ) {
-    #dlcSelect {
-        width: 50%;
-    }
+@media (max-width: 1280px) {
+  #dlcSelect {
+    width: 50%;
+  }
 }
 
-@media ( max-width: 768px ) {
-    #dlcSelect {
-        width: 105%;
-    }
-    #dlcSelect label {
-        margin: 0.1em;
-        width: 32%;
-    }
-    #result {
-        width: 100%;
-    }
-    ul, #artistUl {
-        margin-left: -1.5em;
-    }
-    #artistUl img {
-        width: 20%;
-    }
-    #artistUl .songLi div{
-        width: 70%;
-    }
-    #titleUl img {
-        width: 25%;
-    }
-    #titleUl .songLi div{
-        width: 65%;
-    }
+@media (max-width: 768px) {
+  #dlcSelect {
+    width: 105%;
+  }
+  #dlcSelect label {
+    margin: 0.1em;
+    width: 32%;
+  }
+  #result {
+    width: 100%;
+  }
+  ul,
+  #artistUl {
+    margin-left: -1.5em;
+  }
+  #artistUl img {
+    width: 20%;
+  }
+  #artistUl .songLi div {
+    width: 70%;
+  }
+  #titleUl img {
+    width: 25%;
+  }
+  #titleUl .songLi div {
+    width: 65%;
+  }
 }

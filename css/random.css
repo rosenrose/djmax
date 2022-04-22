@@ -1,99 +1,101 @@
 body {
-    background-image: url('../img/cover.jpg');
+  background-image: url("../img/cover.jpg");
 }
 div {
-    margin: 0px 0px 5px 0px;
+  margin: 0px 0px 5px 0px;
 }
 td {
-    width: 25%;
+  width: 25%;
 }
 
 .song_pic {
-    width: 5em;
+  width: 5em;
 }
 .title_artist {
-    height: 100%;
-    padding-left: 0.5em;
-    flex-grow: 1;
+  height: 100%;
+  padding-left: 0.5em;
+  flex-grow: 1;
 }
 .title {
-    font-size: 1.25em;
-    margin: 0;
-    /* height: 50%; */
+  font-size: 1.25em;
+  margin: 0;
+  /* height: 50%; */
 }
 .artist {
-    margin-top: 0.4em;
-    /* height: 50%; */
+  margin-top: 0.4em;
+  /* height: 50%; */
 }
 .pattern {
-    padding: 0;
-    font-size: 0.7em;
+  padding: 0;
+  font-size: 0.7em;
 }
 
 #dlcCheckbox {
-    width: 40%;
-    margin: auto;
+  width: 40%;
+  margin: auto;
 }
 #dlcCheckbox label {
-    display: inline-block;
-    width: 23%;
-    margin: 0.3em;
+  display: inline-block;
+  width: 23%;
+  margin: 0.3em;
 }
-#spread, #collapse {
-    border-radius: 1em;
+#spread,
+#collapse {
+  border-radius: 1em;
 }
 #result {
-    padding: 1%;
-    background-color: #fff;
-    border-radius: 2em;
-    width: 35%;
-    margin: auto;
+  padding: 1%;
+  background-color: #fff;
+  border-radius: 2em;
+  width: 35%;
+  margin: auto;
 }
 #run {
-    font-size: 1.5em;
-    border-radius: 2em;
+  font-size: 1.5em;
+  border-radius: 2em;
 }
-#levelInput, #levelInput2 {
-    width: 3.5em;
+#levelInput,
+#levelInput2 {
+  width: 3.5em;
 }
 #resultCountInput {
-    width: 2.5em;
+  width: 2.5em;
 }
 #randomResult > li {
-    margin: 2%;
-    height: 5em;
-    color: #000;
-    display: flex;
+  margin: 2%;
+  height: 5em;
+  color: #000;
+  display: flex;
 }
 
-@media ( max-width: 1280px ) {
-    #dlcCheckbox {
-        width: 50%;
-    }
+@media (max-width: 1280px) {
+  #dlcCheckbox {
+    width: 50%;
+  }
 }
 
-@media ( max-width: 768px ) {
-    #dlcCheckbox {
-        width: 105%;
-    }
-    #dlcCheckbox label {
-        margin: 0.1em;
-        width: 32%;
-    }
-    #result {
-        width: 100%;
-    }
-    #randomResult {
-        margin-left: -5%;
-    }
-    #randomResult .title {
-        font-size: 1.1em;
-    }
-    #randomResult .artist {
-        font-size: 0.8em;
-        padding-top: 3%;
-    }
-    #randomResult .pattern {
-        font-size: 0.6em;
-    }
+@media (max-width: 768px) {
+  #dlcCheckbox {
+    width: 105%;
+  }
+  #dlcCheckbox label {
+    margin: 0.1em;
+    width: 32%;
+  }
+  #result {
+    width: 100%;
+  }
+  #randomResult {
+    margin-left: -5%;
+  }
+  #randomResult .title {
+    font-size: 1.1em;
+  }
+  #randomResult .artist {
+    font-size: 0.8em;
+    padding-top: 3%;
+  }
+  #randomResult .pattern {
+    font-size: 0.6em;
+  }
 }

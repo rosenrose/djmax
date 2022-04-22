@@ -14,7 +14,9 @@
       <h2 class="shadow-white">랜덤 선곡</h2>
       <div id="select">
         <div id="modeSelect">
-          <label class="shadow-white"><input type="radio" name="mode" value="PC" checked />PC</label>
+          <label class="shadow-white">
+            <input type="radio" name="mode" value="PC" checked />PC
+          </label>
           <label class="shadow-white"><input type="radio" name="mode" value="PS4" />PS4</label>
         </div>
         <br />
@@ -42,7 +44,9 @@
         </div>
         <br />
         <div id="levelSelect">
-          <label class="shadow-white bold"><input type="checkbox" id="levelCheck" />난이도 조건</label>
+          <label class="shadow-white bold">
+            <input type="checkbox" id="levelCheck" />난이도 조건
+          </label>
           <div hidden>
             <input type="number" id="levelInput" min="1" max="15" placeholder="1~15" />
             <div id="range" class="inline" hidden>
@@ -77,10 +81,7 @@
       </li>
     </template>
     <template id="dlcCheckboxTemplate">
-      <label class="shadow-white bold">
-        <input type="checkbox" value="" />
-        dlc title
-      </label>
+      <label class="shadow-white bold"><input type="checkbox" value="" />dlc title</label>
     </template>
     <script type="text/javascript" src="../js/common.js"></script>
     <script type="text/javascript" src="../js/random.js"></script>

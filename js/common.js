@@ -65,7 +65,9 @@ function toggleInput(input, condition) {
 function getCategoryStyle(category, collab) {
   return {
     color: category == "clazziquai" ? "" : "#fff",
-    backgroundImage: `url(/djmax/img/color_${collab.includes(category) ? "collaboration" : category}.png)`,
+    backgroundImage: `url(/djmax/img/color_${
+      collab.includes(category) ? "collaboration" : category
+    }.png)`,
     backgroundSize: "100% 100%",
   };
 }
@@ -107,7 +109,8 @@ function Song(song, isStat) {
     if ("PS4" in this["date"] && "PC" in this["date"]) {
       if (this["date"]["PS4"] <= this["date"]["PC"]) {
         this["date"]["early"] = this["date"]["PS4"];
-        this["date"]["earlyPlatform"] = this["date"]["PS4"] < this["date"]["PC"] ? "PS4" : "PS4, PC";
+        this["date"]["earlyPlatform"] =
+          this["date"]["PS4"] < this["date"]["PC"] ? "PS4" : "PS4, PC";
       } else {
         this["date"]["early"] = this["date"]["PC"];
         this["date"]["earlyPlatform"] = "PC";

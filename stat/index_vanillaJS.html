@@ -1,276 +1,286 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>디제이맥스 리스펙트 곡 통계</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='../css/common.css' title="common">
-    <script src='https://cdn.plot.ly/plotly-2.8.3.min.js'></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/common.css" title="common" />
+    <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
     <style type="text/css">
-        body {
-            background-image: url('../img/cover.jpg');
-        }
-        table {
-            margin: 1em auto;
-            border-collapse: collapse;
-        }
-        thead th, tbody :is(.levels, .notes) th, tfoot th {
-            border: 2px dashed purple;
-            padding: 0.5em 1em;
-        }
-        th[data-sorted='asc'] {
-            border: 2px dashed red;
-        }
-        th[data-sorted='des'] {
-            border: 2px dashed blue;
-        }
-        td, th {
-            border: 1px solid #444;
-            padding: 0.5em;
-        }
-        #titleTbody :is(tr.levels:nth-child(17n+13), tr.notes:nth-child(17n)), td[rowspan] {
-            border-bottom: 2px dotted #777;
-        }
-        tbody img {
-            margin-right: 1em;
-            vertical-align: middle;
-        }
-        span.sort {
-            font-size: small;
-            margin-left: 3px;
-        }
-        input {
-            margin: 0.5em;
-        }
+      body {
+        background-image: url("../img/cover.jpg");
+      }
+      table {
+        margin: 1em auto;
+        border-collapse: collapse;
+      }
+      thead th,
+      tbody :is(.levels, .notes) th,
+      tfoot th {
+        border: 2px dashed purple;
+        padding: 0.5em 1em;
+      }
+      th[data-sorted="asc"] {
+        border: 2px dashed red;
+      }
+      th[data-sorted="des"] {
+        border: 2px dashed blue;
+      }
+      td,
+      th {
+        border: 1px solid #444;
+        padding: 0.5em;
+      }
+      #titleTbody :is(tr.levels:nth-child(17n + 13), tr.notes:nth-child(17n)),
+      td[rowspan] {
+        border-bottom: 2px dotted #777;
+      }
+      tbody img {
+        margin-right: 1em;
+        vertical-align: middle;
+      }
+      span.sort {
+        font-size: small;
+        margin-left: 3px;
+      }
+      input {
+        margin: 0.5em;
+      }
 
+      #result {
+        min-width: 70%;
+      }
+      #titleDiv,
+      #categoryDiv {
+        display: inline;
+      }
+      #bpmModeDiv,
+      #levelsSortModeDiv {
+        margin-top: 0.5em;
+      }
+      #levelsSort > label {
+        margin-left: 0.5em;
+      }
+
+      tbody .title {
+        text-align: left;
+      }
+      .mid {
+        margin-left: 0.3em;
+      }
+      .js-plotly-plot {
+        /* position: relative; */
+        display: inline-block;
+        border: 1px solid #777;
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
         #result {
-            min-width: 70%;
+          width: 200vw;
         }
-        #titleDiv, #categoryDiv {
-            display: inline;
-        }
-        #bpmModeDiv, #levelsSortModeDiv {
-            margin-top: 0.5em;
-        }
-        #levelsSort > label {
-            margin-left: 0.5em;
-        }
-
-        tbody .title {
-            text-align: left;
-        }
-        .mid {
-            margin-left: 0.3em;
-        }
-        .js-plotly-plot {
-            /* position: relative; */
-            display: inline-block;
-            border: 1px solid #777;
-            width: 100%;
-        }
-
-        @media ( max-width: 768px ) {
-            #result {
-                width: 200vw;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-    <a href=".."><img src="../img/djmax-64.png" id="home"></a>
+  </head>
+  <body>
+    <a href=".."><img src="../img/djmax-64.png" id="home" /></a>
     <div class="center">
-        <h2 class="shadow-white">곡 통계</h2>
-        <div id="result">
-            <div id="selectMode">
-                <div>
-                    <label><input type="radio" name="mode" value="levelAvg" checked>레벨 평균</label>
-                    <label><input type="radio" name="mode" value="minLevel">최소 레벨</label>
-                    <label><input type="radio" name="mode" value="maxLevel">최대 레벨</label>
-                    <label><input type="radio" name="mode" value="levels">레벨 목록</label>
-                    <label><input type="radio" name="mode" value="histogram">레벨 분포</label>
-                </div>
-                <div>
-                    <label><input type="radio" name="mode" value="patternCount">패턴 개수</label>
-                    <label><input type="radio" name="mode" value="patternCountAvg">패턴 개수 평균</label>
-                </div>
-                <div>
-                    <label><input type="radio" name="mode" value="length">곡 길이</label>
-                    <label><input type="radio" name="mode" value="bpm">BPM</label>
-                    <label><input type="radio" name="mode" value="date">수록 날짜</label>
-                </div>
-                <div>
-                    <label><input type="radio" name="mode" value="notes">노트 수 목록</label>
-                </div>
-            </div>
-            <p id="fallback">로딩...</p>
-            <div id="stat">
-                <table id="statResult" hidden>
-                    <thead>
-                        <tr class="firstColumn">
-                            <th rowspan="2">
-                                <div id="titleDiv" class="click">
-                                    <input type="radio" name="titleMode" value="title" checked>
-                                    제목<span class="sort">▲</span>
-                                </div>
-                                <span id="seperator"> / </span>
-                                <div id="categoryDiv" class="click categorySort">
-                                    <input type="radio" name="titleMode" value="category">
-                                    카테고리<span class="sort">▲</span>
-                                </div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="titleTbody"></tbody>
-                    <tbody id="categoryTbody" hidden></tbody>
-                    <tbody id="levelsTbody" hidden></tbody>
-                    <tfoot>
-                        <tr class="avg firstColumn"><th rowspan="2">평균</th></tr>
-                        <tr class="sum firstColumn"><th rowspan="2">합계</th></tr>
-                        <tr class="ratio firstColumn"><th rowspan="2">비율</th></tr>
-                    </tfoot>
-                </table>
-            </div>
-            <div id="histogram">
-                <table id="histogramTable" hidden>
-                    <thead>
-                        <tr>
-                            <th class="click">레벨<span class="sort">▲</span></th>
-                            <th class="click 전체-background btn-rank">전체<span class="sort">▼</span></th>
-                            <th class="click 4B-background btn-rank">4B<span class="sort">▼</span></th>
-                            <th class="click 5B-background btn-rank">5B<span class="sort">▼</span></th>
-                            <th class="click 6B-background btn-rank">6B<span class="sort">▼</span></th>
-                            <th class="click 8B-background btn-rank">8B<span class="sort">▼</span></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-            <div id="graph">
-                <div class="levelAvg">
-                    <div id="levelAvg_전체"></div>
-                    <div id="levelAvg_4B"></div>
-                    <div id="levelAvg_5B"></div>
-                    <div id="levelAvg_6B"></div>
-                    <div id="levelAvg_8B"></div>
-                </div>
-                <div class="patternCountAvg">
-                    <div id="patternCountAvg_전체"></div>
-                    <div id="patternCountAvg_4B"></div>
-                    <div id="patternCountAvg_5B"></div>
-                    <div id="patternCountAvg_6B"></div>
-                    <div id="patternCountAvg_8B"></div>
-                </div>
-                <div class="histogram">
-                    <div id="histogram_전체"></div>
-                    <div id="histogram_4B"></div>
-                    <div id="histogram_5B"></div>
-                    <div id="histogram_6B"></div>
-                    <div id="histogram_8B"></div>
-                </div>
-            </div>
+      <h2 class="shadow-white">곡 통계</h2>
+      <div id="result">
+        <div id="selectMode">
+          <div>
+            <label><input type="radio" name="mode" value="levelAvg" checked />레벨 평균</label>
+            <label><input type="radio" name="mode" value="minLevel" />최소 레벨</label>
+            <label><input type="radio" name="mode" value="maxLevel" />최대 레벨</label>
+            <label><input type="radio" name="mode" value="levels" />레벨 목록</label>
+            <label><input type="radio" name="mode" value="histogram" />레벨 분포</label>
+          </div>
+          <div>
+            <label><input type="radio" name="mode" value="patternCount" />패턴 개수</label>
+            <label><input type="radio" name="mode" value="patternCountAvg" />패턴 개수 평균</label>
+          </div>
+          <div>
+            <label><input type="radio" name="mode" value="length" />곡 길이</label>
+            <label><input type="radio" name="mode" value="bpm" />BPM</label>
+            <label><input type="radio" name="mode" value="date" />수록 날짜</label>
+          </div>
+          <div>
+            <label><input type="radio" name="mode" value="notes" />노트 수 목록</label>
+          </div>
         </div>
+        <p id="fallback">로딩...</p>
+        <div id="stat">
+          <table id="statResult" hidden>
+            <thead>
+              <tr class="firstColumn">
+                <th rowspan="2">
+                  <div id="titleDiv" class="click">
+                    <input type="radio" name="titleMode" value="title" checked />
+                    제목<span class="sort">▲</span>
+                  </div>
+                  <span id="seperator"> / </span>
+                  <div id="categoryDiv" class="click categorySort">
+                    <input type="radio" name="titleMode" value="category" />
+                    카테고리<span class="sort">▲</span>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="titleTbody"></tbody>
+            <tbody id="categoryTbody" hidden></tbody>
+            <tbody id="levelsTbody" hidden></tbody>
+            <tfoot>
+              <tr class="avg firstColumn">
+                <th rowspan="2">평균</th>
+              </tr>
+              <tr class="sum firstColumn">
+                <th rowspan="2">합계</th>
+              </tr>
+              <tr class="ratio firstColumn">
+                <th rowspan="2">비율</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div id="histogram">
+          <table id="histogramTable" hidden>
+            <thead>
+              <tr>
+                <th class="click">레벨<span class="sort">▲</span></th>
+                <th class="click 전체-background btn-rank">전체<span class="sort">▼</span></th>
+                <th class="click 4B-background btn-rank">4B<span class="sort">▼</span></th>
+                <th class="click 5B-background btn-rank">5B<span class="sort">▼</span></th>
+                <th class="click 6B-background btn-rank">6B<span class="sort">▼</span></th>
+                <th class="click 8B-background btn-rank">8B<span class="sort">▼</span></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div id="graph">
+          <div class="levelAvg">
+            <div id="levelAvg_전체"></div>
+            <div id="levelAvg_4B"></div>
+            <div id="levelAvg_5B"></div>
+            <div id="levelAvg_6B"></div>
+            <div id="levelAvg_8B"></div>
+          </div>
+          <div class="patternCountAvg">
+            <div id="patternCountAvg_전체"></div>
+            <div id="patternCountAvg_4B"></div>
+            <div id="patternCountAvg_5B"></div>
+            <div id="patternCountAvg_6B"></div>
+            <div id="patternCountAvg_8B"></div>
+          </div>
+          <div class="histogram">
+            <div id="histogram_전체"></div>
+            <div id="histogram_4B"></div>
+            <div id="histogram_5B"></div>
+            <div id="histogram_6B"></div>
+            <div id="histogram_8B"></div>
+          </div>
+        </div>
+      </div>
     </div>
     <template id="titleTemplate">
-        <tr class="firstColumn" id="">
-            <th class="title" rowspan="2">
-                <img class="levels notes" src="">song title
-            </th>
-        </tr>
-        <tr class="levels">
-            <th class="levelsNotSort 4B-color">4B</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="levelsNotSort" rowspan="5">dlc title</td>
-        </tr>
-        <tr class="levels">
-            <th class="levelsNotSort 5B-color">5B</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr class="levels">
-            <th class="levelsNotSort 6B-color">6B</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr class="levels">
-            <th class="levelsNotSort 8B-color">8B</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr class="notes">
-            <th class="4B-color">4B</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td rowspan="5">dlc title</td>
-        </tr>
-        <tr class="notes">
-            <th class="5B-color">5B</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr class="notes">
-            <th class="6B-color">6B</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr class="notes">
-            <th class="8B-color">8B</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+      <tr class="firstColumn" id="">
+        <th class="title" rowspan="2"><img class="levels notes" src="" />song title</th>
+      </tr>
+      <tr class="levels">
+        <th class="levelsNotSort 4B-color">4B</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="levelsNotSort" rowspan="5">dlc title</td>
+      </tr>
+      <tr class="levels">
+        <th class="levelsNotSort 5B-color">5B</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="levels">
+        <th class="levelsNotSort 6B-color">6B</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="levels">
+        <th class="levelsNotSort 8B-color">8B</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="notes">
+        <th class="4B-color">4B</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td rowspan="5">dlc title</td>
+      </tr>
+      <tr class="notes">
+        <th class="5B-color">5B</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="notes">
+        <th class="6B-color">6B</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="notes">
+        <th class="8B-color">8B</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
     </template>
     <template id="categoryTemplate">
-        <tr class="firstColumn" id="">
-            <th class="category category-background" rowspan="2"></th>
-        </tr>
+      <tr class="firstColumn" id="">
+        <th class="category category-background" rowspan="2"></th>
+      </tr>
     </template>
     <template id="histogramTemplate">
-        <tr data-level="">
-            <th></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+      <tr data-level="">
+        <th></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
     </template>
     <template id="bpmModeTemplate">
-        <div id="bpmModeDiv">
-            <label><input type="radio" name="bpmMode" value="min" checked>최솟값</label>
-            <label><input type="radio" name="bpmMode" value="mid">중간값</label>
-            <label><input type="radio" name="bpmMode" value="max">최댓값</label>
-        </div>
-        <span class="bpm min"></span>
-        <span class="bpm mid"></span>
-        <span class="bpm max"></span>
+      <div id="bpmModeDiv">
+        <label><input type="radio" name="bpmMode" value="min" checked />최솟값</label>
+        <label><input type="radio" name="bpmMode" value="mid" />중간값</label>
+        <label><input type="radio" name="bpmMode" value="max" />최댓값</label>
+      </div>
+      <span class="bpm min"></span>
+      <span class="bpm mid"></span>
+      <span class="bpm max"></span>
     </template>
     <template id="levelsTemplate">
-        <label><input type="checkbox">정렬</label>
-        <div id="levelsSortModeDiv" hidden>
-            <label><input type="radio" name="levelsSort" value="4B" checked>4B</label>
-            <label><input type="radio" name="levelsSort" value="5B">5B</label>
-            <label><input type="radio" name="levelsSort" value="6B">6B</label>
-            <label><input type="radio" name="levelsSort" value="8B">8B</label>
-        </div>
+      <label><input type="checkbox" />정렬</label>
+      <div id="levelsSortModeDiv" hidden>
+        <label><input type="radio" name="levelsSort" value="4B" checked />4B</label>
+        <label><input type="radio" name="levelsSort" value="5B" />5B</label>
+        <label><input type="radio" name="levelsSort" value="6B" />6B</label>
+        <label><input type="radio" name="levelsSort" value="8B" />8B</label>
+      </div>
     </template>
     <script type="text/javascript" src="../js/common.js"></script>
     <script type="text/javascript" src="../js/stat_vanillaJS.js"></script>
-</body>
+  </body>
 </html>
