@@ -73,7 +73,7 @@
       file = url.searchParams.get("file");
       prefix = `https://d2l1b145ht03q6.cloudfront.net/djmax/gallery`;
 
-      fetch("list.json")
+      fetch("gallery_list.json")
         .then((response) => response.json())
         .then((json) => {
           list = json;

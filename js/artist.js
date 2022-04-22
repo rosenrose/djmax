@@ -20,7 +20,7 @@ let featRegex = /([^()]+)(?:\((.+)\))?/;
 
 function App() {
   React.useEffect(() => {
-    fetch("../list.json")
+    fetch("../db.json")
       .then((response) => response.json())
       .then((json) => {
         list = json;
@@ -108,7 +108,9 @@ function App() {
         }
 
         artists = Object.fromEntries(
-          Object.entries(artists).sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()))
+          Object.entries(artists).sort((a, b) =>
+            a[0].toLowerCase().localeCompare(b[0].toLowerCase())
+          )
         );
         for (let artist in artists) {
           for (let category in artists[artist]) {
@@ -119,7 +121,10 @@ function App() {
                 if (a["dlc"] == b["dlc"]) {
                   return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
                 }
-                return Object.keys(list["songs"]).indexOf(a["dlc"]) - Object.keys(list["songs"]).indexOf(b["dlc"]);
+                return (
+                  Object.keys(list["songs"]).indexOf(a["dlc"]) -
+                  Object.keys(list["songs"]).indexOf(b["dlc"])
+                );
               });
             } else {
               for (let subCat in artists[artist][category]) {
@@ -127,7 +132,10 @@ function App() {
                   if (a["dlc"] == b["dlc"]) {
                     return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
                   }
-                  return Object.keys(list["songs"]).indexOf(a["dlc"]) - Object.keys(list["songs"]).indexOf(b["dlc"]);
+                  return (
+                    Object.keys(list["songs"]).indexOf(a["dlc"]) -
+                    Object.keys(list["songs"]).indexOf(b["dlc"])
+                  );
                 });
               }
             }
@@ -179,7 +187,11 @@ function App() {
           <div id="result">
             <Select onChange={onChange} />
             {mode != "title" && <Buttons />}
-            {mode == "title" ? <Title dlcSelect={dlcSelect} /> : <Artist mode={mode} dlcSelect={dlcSelect} />}
+            {mode == "title" ? (
+              <Title dlcSelect={dlcSelect} />
+            ) : (
+              <Artist mode={mode} dlcSelect={dlcSelect} />
+            )}
           </div>
         </>
       )}
@@ -262,7 +274,9 @@ function Artist({ mode, dlcSelect }) {
           .some((song) => dlcSelect.has(song["dlc"]))
       );
     } else {
-      artistList = artistList.filter((artist) => artists[artist][mode].some((song) => dlcSelect.has(song["dlc"])));
+      artistList = artistList.filter((artist) =>
+        artists[artist][mode].some((song) => dlcSelect.has(song["dlc"]))
+      );
     }
   }
 
@@ -327,7 +341,11 @@ function Category({ mode, artist, dlcSelect }) {
 
     if (Array.isArray(subCatOrSong) ? subCatOrSong.length : subCatOrSong) {
       categoryLi.push(
-        <li key={category} className="categoryLi" style={{ listStyleType: mode == "all" ? "" : "none" }}>
+        <li
+          key={category}
+          className="categoryLi"
+          style={{ listStyleType: mode == "all" ? "" : "none" }}
+        >
           <p hidden={mode != "all"}>{categoryKorMap[category]}</p>
           {subCatOrSong}
         </li>
@@ -359,7 +377,10 @@ function SongLi({ song, artist, credit }) {
   }
 
   return (
-    <li className="songLi" style={credit ? null : getCategoryStyle(song["dlc"], list["collaboration"])}>
+    <li
+      className="songLi"
+      style={credit ? null : getCategoryStyle(song["dlc"], list["collaboration"])}
+    >
       <img src={`${song["urlTitle"]}_1.png`} />
       {credit ? (
         <Credit song={credit} />
@@ -378,7 +399,12 @@ function Title({ dlcSelect }) {
       {songs
         .filter((song) => dlcSelect.has(song["dlc"]))
         .map((song) => (
-          <SongLi key={song["uniqueTitle"]} song={song} artist={song["artist"]["compose"]} credit={song} />
+          <SongLi
+            key={song["uniqueTitle"]}
+            song={song}
+            artist={song["artist"]["compose"]}
+            credit={song}
+          />
         ))}
     </ul>
   );

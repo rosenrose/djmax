@@ -21,15 +21,15 @@ const MIN_LEVEL = 1;
 const MAX_LEVEL = 15;
 const ASC = "▲";
 const DES = "▼";
-let [songs, categoryList, categoryData, levelCountList, patternCountList, noteCountList, levelNoteList] = [
-  [],
-  [],
-  [],
-  [],
-  [],
-  [],
-  [],
-];
+let [
+  songs,
+  categoryList,
+  categoryData,
+  levelCountList,
+  patternCountList,
+  noteCountList,
+  levelNoteList,
+] = [[], [], [], [], [], [], []];
 let [
   list,
   totalLevelSum,
@@ -51,7 +51,7 @@ let dateFormat = new Intl.DateTimeFormat("ko", {
 
 function App() {
   React.useEffect(() => {
-    fetch("../list.json")
+    fetch("../db.json")
       .then((response) => response.json())
       .then((json) => {
         list = json;
@@ -142,13 +142,17 @@ function App() {
               }
             }
 
-            if (!patternCountList.find((pc) => pc["patternCount"] == song["patternCount"]["전체"])) {
+            if (
+              !patternCountList.find((pc) => pc["patternCount"] == song["patternCount"]["전체"])
+            ) {
               patternCountList.push({
                 patternCount: song["patternCount"]["전체"],
                 전체: 0,
               });
             }
-            patternCountList.find((pc) => pc["patternCount"] == song["patternCount"]["전체"])["전체"] += 1;
+            patternCountList.find((pc) => pc["patternCount"] == song["patternCount"]["전체"])[
+              "전체"
+            ] += 1;
 
             for (let noteCountKey in song["noteCount"]) {
               for (let btn in song["noteCount"][noteCountKey]) {
@@ -196,7 +200,9 @@ function App() {
 
         noteCountList = noteCountList
           .filter((nc) => nc["note"] != "0")
-          .sort((a, b) => parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0]));
+          .sort(
+            (a, b) => parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0])
+          );
 
         categoryData.forEach((catDat) => {
           catDat["patternCountAvg"] = {};
@@ -446,14 +452,23 @@ function Thead({
   let isSeperator = ["levelAvg", "patternCount", "noteAvg"].includes(mode);
   let titleLabel = (
     <label id="titleLabel" className="click inline">
-      {isSeperator && <input type="radio" name="titleMode" value="title" defaultChecked={titleMode == "title"} />}
+      {isSeperator && (
+        <input type="radio" name="titleMode" value="title" defaultChecked={titleMode == "title"} />
+      )}
       제목<span className="sortArrow">{ASC}</span>
     </label>
   );
   let seperator = <span> / </span>;
   let categoryLabel = (
     <label className="click inline categorySort">
-      {isSeperator && <input type="radio" name="titleMode" value="category" defaultChecked={titleMode == "category"} />}
+      {isSeperator && (
+        <input
+          type="radio"
+          name="titleMode"
+          value="category"
+          defaultChecked={titleMode == "category"}
+        />
+      )}
       카테고리<span className="sortArrow">{ASC}</span>
     </label>
   );
@@ -484,10 +499,14 @@ function Thead({
       break;
     default:
       leftTopTh = (
-        <th onChange={onTitleChange} rowSpan={["levels", "notes", "noteDensity"].includes(mode) ? 3 : 1}>
+        <th
+          onChange={onTitleChange}
+          rowSpan={["levels", "notes", "noteDensity"].includes(mode) ? 3 : 1}
+        >
           {mode != "patternCountAvg" && titleLabel}
           {isSeperator && seperator}
-          {["levelAvg", "patternCount", "patternCountAvg", "noteAvg"].includes(mode) && categoryLabel}
+          {["levelAvg", "patternCount", "patternCountAvg", "noteAvg"].includes(mode) &&
+            categoryLabel}
         </th>
       );
       break;
@@ -497,7 +516,10 @@ function Thead({
   let tbodyMode = getTbodyMode(mode, titleMode, isLevelsNotesSort);
 
   for (let head of tableHeads[mode]) {
-    if ((tbodyMode == "title" && head == "SC 비율") || (tbodyMode == "category" && head == "카테고리")) {
+    if (
+      (tbodyMode == "title" && head == "SC 비율") ||
+      (tbodyMode == "category" && head == "카테고리")
+    ) {
       continue;
     }
 
@@ -505,7 +527,8 @@ function Thead({
     let isSortClick =
       !["levels", "notes", "noteDensity"].includes(mode) ||
       (["levels", "notes", "noteDensity"].includes(mode) &&
-        (head == "카테고리" || (["레벨", "노트 수", "노트 밀도(개수/초)"].includes(head) && isLevelsNotesSort)));
+        (head == "카테고리" ||
+          (["레벨", "노트 수", "노트 밀도(개수/초)"].includes(head) && isLevelsNotesSort)));
 
     if (isSortClick) {
       classList.add("click");
@@ -527,9 +550,14 @@ function Thead({
         key={head}
         className={[...classList].join(" ")}
         id={id}
-        rowSpan={["levels", "notes", "noteDensity"].includes(mode) && ["버튼", "카테고리"].includes(head) ? 3 : 1}
+        rowSpan={
+          ["levels", "notes", "noteDensity"].includes(mode) && ["버튼", "카테고리"].includes(head)
+            ? 3
+            : 1
+        }
         colSpan={
-          ["levels", "notes", "noteDensity"].includes(mode) && ["레벨", "노트 수", "노트 밀도(개수/초)"].includes(head)
+          ["levels", "notes", "noteDensity"].includes(mode) &&
+          ["레벨", "노트 수", "노트 밀도(개수/초)"].includes(head)
             ? 4
             : 1
         }
@@ -555,7 +583,12 @@ function Thead({
         {mode == "date" && head == "수록 날짜" && (
           <div className="subSelectMode" onChange={onDateChange}>
             <label>
-              <input type="radio" name="dateMode" value="early" defaultChecked={dateMode == "early"} />
+              <input
+                type="radio"
+                name="dateMode"
+                value="early"
+                defaultChecked={dateMode == "early"}
+              />
               빠른 날짜
             </label>
             <label>
@@ -568,12 +601,13 @@ function Thead({
             </label>
           </div>
         )}
-        {["levels", "notes", "noteDensity"].includes(mode) && ["레벨", "노트 수", "노트 밀도(개수/초)"].includes(head) && (
-          <label id="levelsNotesSort" onChange={onIsLevelsNotesSort}>
-            <input type="checkbox" defaultChecked={isLevelsNotesSort} />
-            정렬
-          </label>
-        )}
+        {["levels", "notes", "noteDensity"].includes(mode) &&
+          ["레벨", "노트 수", "노트 밀도(개수/초)"].includes(head) && (
+            <label id="levelsNotesSort" onChange={onIsLevelsNotesSort}>
+              <input type="checkbox" defaultChecked={isLevelsNotesSort} />
+              정렬
+            </label>
+          )}
       </th>
     );
   }
@@ -587,10 +621,18 @@ function Thead({
       {["levels", "notes", "noteDensity"].includes(mode) && isLevelsNotesSort && (
         <tr className="subSelectMode btnSelect" onChange={onBtnSelectChange}>
           {commonHeads.slice(1).map((btn) => (
-            <th key={btn} className={btnSelect.has(btn) ? `${btn}-background btn-rank` : `${btn}-color`}>
+            <th
+              key={btn}
+              className={btnSelect.has(btn) ? `${btn}-background btn-rank` : `${btn}-color`}
+            >
               <label>
                 {isLevelsNotesSort && (
-                  <input type="checkbox" value={btn} defaultChecked={btnSelect.has(btn)} className="block" />
+                  <input
+                    type="checkbox"
+                    value={btn}
+                    defaultChecked={btnSelect.has(btn)}
+                    className="block"
+                  />
                 )}
                 {btn}
               </label>
@@ -603,11 +645,20 @@ function Thead({
           {ranks.map((rank) => (
             <th
               key={rank}
-              className={!isLevelsNotesSort || rankSelect.has(rank) ? `${rank}-background btn-rank` : `${rank}-color`}
+              className={
+                !isLevelsNotesSort || rankSelect.has(rank)
+                  ? `${rank}-background btn-rank`
+                  : `${rank}-color`
+              }
             >
               <label>
                 {isLevelsNotesSort && (
-                  <input type="checkbox" value={rank} defaultChecked={rankSelect.has(rank)} className="block" />
+                  <input
+                    type="checkbox"
+                    value={rank}
+                    defaultChecked={rankSelect.has(rank)}
+                    className="block"
+                  />
                 )}
                 {rank}
               </label>
@@ -649,7 +700,9 @@ function Title({ mode, bpmMode, dateMode }) {
   } else if (mode == "date" && dateMode != "early") {
     filteredSongs = songs.filter((song) => song["date"][dateMode] > 0);
   } else if (["noteAvg", "notes", "noteDensity"].includes(mode)) {
-    filteredSongs = songs.filter((song) => Object.values(song["noteSum"]).every((noteSum) => noteSum > 0));
+    filteredSongs = songs.filter((song) =>
+      Object.values(song["noteSum"]).every((noteSum) => noteSum > 0)
+    );
   }
 
   (filteredSongs || songs).forEach((song) => {
@@ -657,55 +710,61 @@ function Title({ mode, bpmMode, dateMode }) {
     let category = song["category"];
 
     if (!["levels", "notes", "noteDensity"].includes(mode)) {
-      (mode == "patternCount" ? tableHeads[mode].slice(0, -1) : tableHeads[mode]).forEach((head) => {
-        let data;
+      (mode == "patternCount" ? tableHeads[mode].slice(0, -1) : tableHeads[mode]).forEach(
+        (head) => {
+          let data;
 
-        if (head == "카테고리") {
-          data = list["dlcKor"][song["category"]];
-        } else {
-          switch (mode) {
-            case "levelAvg":
-              data = song["levelAvg"][head].toFixed(2);
-              break;
-            case "minLevel":
-              data = song["minLevel"][head];
-              break;
-            case "maxLevel":
-              data = song["maxLevel"][head];
-              break;
-            case "patternCount":
-              data = song["patternCount"][head];
-              break;
-            case "length":
-              data = `${Math.floor(song["length"] / 60)}분 ${song["length"] % 60}초`;
-              break;
-            case "bpm":
-              data = song["bpm"];
-              break;
-            case "date":
-              data = dateFormat.format(song["date"][dateMode]);
-              break;
-            case "noteAvg":
-              data = song["noteAvg"][head].toFixed(1);
-              break;
+          if (head == "카테고리") {
+            data = list["dlcKor"][song["category"]];
+          } else {
+            switch (mode) {
+              case "levelAvg":
+                data = song["levelAvg"][head].toFixed(2);
+                break;
+              case "minLevel":
+                data = song["minLevel"][head];
+                break;
+              case "maxLevel":
+                data = song["maxLevel"][head];
+                break;
+              case "patternCount":
+                data = song["patternCount"][head];
+                break;
+              case "length":
+                data = `${Math.floor(song["length"] / 60)}분 ${song["length"] % 60}초`;
+                break;
+              case "bpm":
+                data = song["bpm"];
+                break;
+              case "date":
+                data = dateFormat.format(song["date"][dateMode]);
+                break;
+              case "noteAvg":
+                data = song["noteAvg"][head].toFixed(1);
+                break;
+            }
           }
-        }
 
-        tds.push(
-          <td
-            key={head}
-            style={mode == "date" && head == "카테고리" ? getCategoryStyle(category, list["collaboration"]) : null}
-          >
-            {data}
-            {mode == "bpm" && head == "BPM" && bpmMode == "mid" && isNaN(song["bpm"]) && (
-              <span className="mid">{`(${bpmToNumber(song["bpm"], "mid")})`}</span>
-            )}
-            {mode == "date" && head == "수록 날짜" && dateMode == "early" && (
-              <span className="early">{`(${song["date"]["earlyPlatform"]})`}</span>
-            )}
-          </td>
-        );
-      });
+          tds.push(
+            <td
+              key={head}
+              style={
+                mode == "date" && head == "카테고리"
+                  ? getCategoryStyle(category, list["collaboration"])
+                  : null
+              }
+            >
+              {data}
+              {mode == "bpm" && head == "BPM" && bpmMode == "mid" && isNaN(song["bpm"]) && (
+                <span className="mid">{`(${bpmToNumber(song["bpm"], "mid")})`}</span>
+              )}
+              {mode == "date" && head == "수록 날짜" && dateMode == "early" && (
+                <span className="early">{`(${song["date"]["earlyPlatform"]})`}</span>
+              )}
+            </td>
+          );
+        }
+      );
     }
 
     trs.push(
@@ -716,7 +775,9 @@ function Title({ mode, bpmMode, dateMode }) {
             hidden={!["levels", "notes", "noteDensity"].includes(mode)}
             loading="lazy"
           />
-          <p className={["levels", "notes", "noteDensity"].includes(mode) ? "narrow" : ""}>{song["uniqueTitle"]}</p>
+          <p className={["levels", "notes", "noteDensity"].includes(mode) ? "narrow" : ""}>
+            {song["uniqueTitle"]}
+          </p>
         </th>
         {tds}
       </tr>
@@ -729,12 +790,19 @@ function Title({ mode, bpmMode, dateMode }) {
             <th className={`${btn}-color`}>{btn}</th>
             {ranks.map((rank) =>
               mode == "levels" ? (
-                <Level key={rank} rank={rank} level={song["level"][btn][rank]} condition={rank in song["level"][btn]} />
+                <Level
+                  key={rank}
+                  rank={rank}
+                  level={song["level"][btn][rank]}
+                  condition={rank in song["level"][btn]}
+                />
               ) : mode == "notes" ? (
                 <td key={rank}>{rank in song["note"][btn] ? song["note"][btn][rank] : "　"}</td>
               ) : (
                 <td key={rank}>
-                  {rank in song["noteDensity"][btn] ? song["noteDensity"][btn][rank].toFixed(2) : "　"}
+                  {rank in song["noteDensity"][btn]
+                    ? song["noteDensity"][btn][rank].toFixed(2)
+                    : "　"}
                 </td>
               )
             )}
@@ -752,7 +820,9 @@ function Category({ mode }) {
   let filteredCategoryData;
 
   if (mode == "noteAvg") {
-    filteredCategoryData = categoryData.filter((catDat) => Object.values(catDat["noteSum"]).every((note) => note > 0));
+    filteredCategoryData = categoryData.filter((catDat) =>
+      Object.values(catDat["noteSum"]).every((note) => note > 0)
+    );
   }
 
   return (filteredCategoryData || categoryData).map((catDat) => {
@@ -760,7 +830,9 @@ function Category({ mode }) {
 
     return (
       <tr key={category}>
-        <th style={getCategoryStyle(category, list["collaboration"])}>{list["dlcKor"][category]}</th>
+        <th style={getCategoryStyle(category, list["collaboration"])}>
+          {list["dlcKor"][category]}
+        </th>
         {tableHeads[mode]
           .filter((head) => head != "카테고리")
           .map((head) => {
@@ -771,7 +843,8 @@ function Category({ mode }) {
                 data = catDat["levelAvg"][head].toFixed(2);
                 break;
               case "patternCount":
-                data = head == "SC 비율" ? `${catDat[head].toFixed(1)}%` : catDat["patternCount"][head];
+                data =
+                  head == "SC 비율" ? `${catDat[head].toFixed(1)}%` : catDat["patternCount"][head];
                 break;
               case "patternCountAvg":
                 data = catDat["patternCountAvg"][head].toFixed(2);
@@ -834,11 +907,18 @@ function LevelsNotesSort({ mode, btnSelect, rankSelect }) {
         <th className={`${levelNote["btn"]}-color`}>{levelNote["btn"]}</th>
         {ranks.map((rank) =>
           mode == "levels" ? (
-            <Level key={rank} rank={rank} level={levelNote["level"]} condition={levelNote["rank"] == rank} />
+            <Level
+              key={rank}
+              rank={rank}
+              level={levelNote["level"]}
+              condition={levelNote["rank"] == rank}
+            />
           ) : mode == "notes" ? (
             <td key={rank}>{levelNote["rank"] == rank ? levelNote["note"] : "　"}</td>
           ) : (
-            <td key={rank}>{levelNote["rank"] == rank ? levelNote["noteDensity"].toFixed(2) : "　"}</td>
+            <td key={rank}>
+              {levelNote["rank"] == rank ? levelNote["noteDensity"].toFixed(2) : "　"}
+            </td>
           )
         )}
         <td>{list["dlcKor"][levelNote["category"]]}</td>
@@ -906,7 +986,8 @@ function Tfoot({ mode, titleMode, bpmMode }) {
               break;
             case "bpm":
               data = (
-                (bpmMode == "min" ? totalBpmMin : bpmMode == "mid" ? totalBpmMid : totalBpmMax) / songs.length
+                (bpmMode == "min" ? totalBpmMin : bpmMode == "mid" ? totalBpmMid : totalBpmMax) /
+                songs.length
               ).toFixed(1);
               break;
             case "minLevel":
@@ -919,10 +1000,14 @@ function Tfoot({ mode, titleMode, bpmMode }) {
               data = totalNoteAvg[head].toFixed(1);
               break;
             case "levelHistogram":
-              data = (levelCountList.reduce((a, b) => a + b[head], 0) / levelCountList.length).toFixed(1);
+              data = (
+                levelCountList.reduce((a, b) => a + b[head], 0) / levelCountList.length
+              ).toFixed(1);
               break;
             case "noteHistogram":
-              data = (noteCountList.reduce((a, b) => a + b[head], 0) / noteCountList.length).toFixed(1);
+              data = (
+                noteCountList.reduce((a, b) => a + b[head], 0) / noteCountList.length
+              ).toFixed(1);
               break;
           }
 
@@ -948,7 +1033,9 @@ function Tfoot({ mode, titleMode, bpmMode }) {
               break;
             case "length":
               let minutes = totalLengthSum % 3600;
-              data = `${Math.floor(totalLengthSum / 3600)}시간 ${Math.floor(minutes / 60)}분 ${minutes % 60}초`;
+              data = `${Math.floor(totalLengthSum / 3600)}시간 ${Math.floor(minutes / 60)}분 ${
+                minutes % 60
+              }초`;
               break;
           }
 
@@ -963,7 +1050,9 @@ function Tfoot({ mode, titleMode, bpmMode }) {
           <th>비율</th>
           {heads.map((head, i) => (
             <th key={head}>
-              {i == 0 ? "" : `${((totalPatternCount[head] / totalPatternCount["전체"]) * 100).toFixed(1)}%`}
+              {i == 0
+                ? ""
+                : `${((totalPatternCount[head] / totalPatternCount["전체"]) * 100).toFixed(1)}%`}
             </th>
           ))}
         </tr>
@@ -1074,7 +1163,9 @@ function sortTitle({ mode, head, order, bpmMode, dateMode }) {
               : b["title"].toLowerCase().localeCompare(a["title"].toLowerCase());
           }
           let prev = document.querySelector("#date span").textContent;
-          return prev == ASC ? a["date"][dateMode] - b["date"][dateMode] : b["date"][dateMode] - a["date"][dateMode];
+          return prev == ASC
+            ? a["date"][dateMode] - b["date"][dateMode]
+            : b["date"][dateMode] - a["date"][dateMode];
         }
         return categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]);
       });
@@ -1131,7 +1222,9 @@ function sortTitle({ mode, head, order, bpmMode, dateMode }) {
               ? categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"])
               : categoryList.indexOf(b["category"]) - categoryList.indexOf(a["category"]);
           }
-          return order == ASC ? a["date"][dateMode] - b["date"][dateMode] : b["date"][dateMode] - a["date"][dateMode];
+          return order == ASC
+            ? a["date"][dateMode] - b["date"][dateMode]
+            : b["date"][dateMode] - a["date"][dateMode];
         });
         break;
     }
@@ -1140,7 +1233,9 @@ function sortTitle({ mode, head, order, bpmMode, dateMode }) {
 
 function sortCategory({ mode, head, order }) {
   if (head == "카테고리") {
-    categoryData.sort((a, b) => categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"]));
+    categoryData.sort(
+      (a, b) => categoryList.indexOf(a["category"]) - categoryList.indexOf(b["category"])
+    );
   } else if (head == "SC 비율") {
     categoryData.sort((a, b) => {
       if (a[head] == b[head]) {
@@ -1160,7 +1255,9 @@ function sortCategory({ mode, head, order }) {
 
 function sortHistogram({ mode, head, order }) {
   if (head == "레벨") {
-    levelCountList.sort((a, b) => (order == ASC ? a["level"] - b["level"] : b["level"] - a["level"]));
+    levelCountList.sort((a, b) =>
+      order == ASC ? a["level"] - b["level"] : b["level"] - a["level"]
+    );
   } else if (head == "패턴 개수") {
     patternCountList.sort((a, b) =>
       order == ASC ? a["patternCount"] - b["patternCount"] : b["patternCount"] - a["patternCount"]
@@ -1184,7 +1281,9 @@ function sortHistogram({ mode, head, order }) {
       case "patternCountHistogram":
         patternCountList.sort((a, b) => {
           if (a["전체"] == b["전체"]) {
-            return order == ASC ? a["patternCount"] - b["patternCount"] : b["patternCount"] - a["patternCount"];
+            return order == ASC
+              ? a["patternCount"] - b["patternCount"]
+              : b["patternCount"] - a["patternCount"];
           }
           return order == ASC ? a["전체"] - b["전체"] : b["전체"] - a["전체"];
         });
@@ -1257,7 +1356,9 @@ function sortLevelsNotes({ mode, head, order }) {
 function Graph({ mode, tbodyMode }) {
   let x, y, heads, text, orientation, height, xrange, yrange, margin;
   let levelCountSorted = [...levelCountList].sort((a, b) => a["level"] - b["level"]);
-  let patternCountSorted = [...patternCountList].sort((a, b) => a["patternCount"] - b["patternCount"]);
+  let patternCountSorted = [...patternCountList].sort(
+    (a, b) => a["patternCount"] - b["patternCount"]
+  );
   let noteCountSorted = [...noteCountList].sort(
     (a, b) => parseInt(a["note"].split(" ~ ")[0]) - parseInt(b["note"].split(" ~ ")[0])
   );
@@ -1344,7 +1445,19 @@ function Graph({ mode, tbodyMode }) {
   );
 }
 
-function drawGraph({ mode, tbodyMode, head, x, y, text, orientation, height, xrange, yrange, margin }) {
+function drawGraph({
+  mode,
+  tbodyMode,
+  head,
+  x,
+  y,
+  text,
+  orientation,
+  height,
+  xrange,
+  yrange,
+  margin,
+}) {
   let trace = {
     x,
     y,

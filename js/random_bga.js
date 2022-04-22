@@ -5,11 +5,11 @@ const resultCount = document.querySelector("#resultCountInput");
 const maxCount = parseInt(resultCount.max);
 const shareBtn = document.querySelector("#shareBtn");
 
-fetch("../list.json")
+fetch("../db.json")
   .then((response) => response.json())
   .then((json) => {
     dlcKor = json["dlcKor"];
-    return fetch("list.json");
+    return fetch("id_list.json");
   })
   .then((response) => response.json())
   .then((json) => {
