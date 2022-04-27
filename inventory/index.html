@@ -58,7 +58,8 @@
       </figure>
     </template>
     <script type="text/javascript">
-      fetch("item_list.json5")
+      // fetch("item_list.json5")
+      fetch("list.json5")
         .then((response) => response.text())
         .then((json5) => {
           list = JSON5.parse(json5);
