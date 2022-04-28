@@ -94,7 +94,7 @@ function Song(song, isStat) {
     [">", "＞"],
     ["|", "｜"],
   ].forEach((char) => {
-    title = title.replace(char[0], char[1]);
+    title = title.replaceAll(char[0], char[1]);
   });
   title = new URLSearchParams({ title }).toString().split("=")[1];
   this["urlTitle"] = `https://d2l1b145ht03q6.cloudfront.net/djmax/song_pic/${title}`;
