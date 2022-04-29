@@ -28,6 +28,10 @@
       "name": "2Nite",
       "cut": 1466
     },
+    "NEn1S_X1XmQ": {
+      "name": "Airlock",
+      "cut": 0
+    },
     "xwuyVf8RJ5Y": {
       "name": "ALiCE",
       "cut": 1836
@@ -95,6 +99,10 @@
     "X4igOUDOrL4": {
       "name": "Dance of the Dead",
       "cut": 1576
+    },
+    "XGz9MuFyH6s": {
+      "name": "Daylight",
+      "cut": 0
     },
     "WkC3jC5urD4": {
       "name": "Do you want it",
@@ -199,6 +207,10 @@
     "ost9dtpiDWs": {
       "name": "OPEN FIRE",
       "cut": 1337
+    },
+    "SuZTNs_upWc": {
+      "name": "OrBiTal",
+      "cut": 0
     },
     "f1ECBMQKs1E": {
       "name": "Over Your Dream",
@@ -1899,6 +1911,68 @@
     "KCwWvLgcCBI": {
       "name": "The Raindrop Flower ~jam-jam Remix~",
       "cut": 1440
+    }
+  },
+  "musedash": {
+    "BKYJgyIegls": {
+      "name": "Bang!!",
+      "cut": 1625
+    },
+    "p7BNoVGRL-s": {
+      "name": "can you feel it",
+      "cut": 1576
+    },
+    "mDJDVz0dtnI": {
+      "name": "Comet Coaster",
+      "cut": 1807
+    },
+    "BBde7iAkdBc": {
+      "name": "Cthugha",
+      "cut": 1855
+    },
+    "_ZJmnUg6TIc": {
+      "name": "DataErr0r",
+      "cut": 1491
+    },
+    "VQvsBOmS540": {
+      "name": "Dysthymia",
+      "cut": 1477
+    },
+    "_jZQdTrlFqI": {
+      "name": "ENERGY SYNERGY MATRIX",
+      "cut": 1478
+    },
+    "GItZ9ADSF2c": {
+      "name": "Koi no Moonlight",
+      "cut": 1780
+    },
+    "U1ufKQxzx0g": {
+      "name": "Lights of Muse",
+      "cut": 1195
+    },
+    "G8l4tt99E7o": {
+      "name": "MUSEDASH!!!!",
+      "cut": 1335
+    },
+    "n_241ngFQ4E": {
+      "name": "Pancake is Love",
+      "cut": 1345
+    },
+    "bsuyqnf0c_o": {
+      "name": "PUPA",
+      "cut": 1503
+    },
+    "cAcfj0Ms790": {
+      "name": "tape/stop/night",
+      "cut": 1730
+    },
+    "YuABnnIBZ9E": {
+      "name": "The 90's Decision",
+      "cut": 1573
+    },
+    "w0ezDwK9Bgk": {
+      "name": "XING",
+      "cut": 1621
     }
   },
   "hidden": {
