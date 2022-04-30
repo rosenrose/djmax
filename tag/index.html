@@ -13,10 +13,8 @@
 
       .cloud {
         background-color: skyblue;
-        border-radius: 0.75em;
-        margin: 0.25em;
-        padding: 0.25em;
-        display: inline-block;
+        border-radius: 0.75rem;
+        padding: 0.25rem;
       }
       .cloud:hover,
       .cloud[data-checked] {
@@ -32,19 +30,23 @@
       #tag {
         width: 50%;
         margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
       }
       #unselect {
-        border-radius: 1em;
+        border-radius: 1rem;
       }
       #result {
-        padding: 0.5em;
+        padding: 0.5rem;
         width: 50%;
         margin: auto;
       }
 
       @media (max-width: 768px) {
         .cloud {
-          font-size: 0.75em;
+          font-size: 0.75rem;
         }
         #tag,
         #result {
