@@ -2,7 +2,6 @@ const songSelect = {};
 const itemContainer = document.querySelector("#itemContainer");
 const runBtn = document.querySelector("#run");
 const resultCount = document.querySelector("#resultCountInput");
-const maxCount = parseInt(resultCount.max);
 const shareBtn = document.querySelector("#shareBtn");
 const cloud = "https://d2wwh0934dzo2k.cloudfront.net/djmax/cut/";
 const WEBP_WIDTH = 720;
@@ -125,8 +124,8 @@ document.querySelector("#webpSelect").addEventListener("change", (event) => {
     } else {
       resultCount.max = 4;
       resultCount.value = 1;
-      resultCount.dispatchEvent(new InputEvent("input", { bubbles: true }));
     }
+    resultCount.dispatchEvent(new InputEvent("input", { bubbles: true }));
     resultCount.previousElementSibling.textContent = `개수(1~${resultCount.max}): `;
   } else if (event.target.name == "webpFormat") {
     webpFormat = event.target.value;
@@ -227,7 +226,7 @@ runBtn.addEventListener("mouseleave", () => {
 });
 
 resultCount.addEventListener("input", (event) => {
-  count = Math.min(parseInt(event.target.value), maxCount);
+  count = Math.min(parseInt(event.target.value), parseInt(resultCount.max));
   if (isNaN(count)) {
     count = 0;
   }
