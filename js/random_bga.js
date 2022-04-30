@@ -111,15 +111,16 @@ document.querySelector("#collapse").addEventListener("click", () => {
 });
 
 document.querySelector("#webpSelect").addEventListener("change", (event) => {
-  if (event.target.name == "webpMode") {
-    webpMode = event.target.value;
+  if (event.target.name == "cutMode") {
+    cutMode = event.target.value;
     toggleAttribute(
       "style.display",
-      webpMode == "jpg" ? "none" : "",
+      cutMode == "jpg" ? "none" : "",
       document.querySelector("#webpOption")
     );
+    toggleAttribute("hidden", cutMode == "webp", shareBtn);
 
-    if (webpMode == "jpg") {
+    if (cutMode == "jpg") {
       resultCount.max = 12;
     } else {
       resultCount.max = 4;
@@ -169,10 +170,10 @@ runBtn.addEventListener("click", () => {
       .toString()
       .padStart(PAD_LENGTH, "0");
 
-    if (webpMode == "jpg") {
+    if (cutMode == "jpg") {
       itemImg.src = `https://d2wwh0934dzo2k.cloudfront.net/djmax/cut/${id}/${randCut}.jpg`;
       link.href = `https://youtu.be/${id}`;
-    } else if (webpMode == "webp") {
+    } else if (cutMode == "webp") {
       randCut = randomInt(1, parseInt(cut) + 1 - duration);
       try {
         getWebp(
