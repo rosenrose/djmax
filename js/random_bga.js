@@ -4,6 +4,10 @@ const runBtn = document.querySelector("#run");
 const resultCount = document.querySelector("#resultCountInput");
 const maxCount = parseInt(resultCount.max);
 const shareBtn = document.querySelector("#shareBtn");
+const cloud = "https://d2wwh0934dzo2k.cloudfront.net/djmax/cut/";
+const WEBP_WIDTH = 720;
+const GIF_WIDTH = 360;
+const PAD_LENGTH = 4;
 
 fetch("../db.json")
   .then((response) => response.json())
@@ -107,6 +111,35 @@ document.querySelector("#collapse").addEventListener("click", () => {
   });
 });
 
+document.querySelector("#webpSelect").addEventListener("change", (event) => {
+  if (event.target.name == "webpMode") {
+    webpMode = event.target.value;
+    toggleAttribute(
+      "style.display",
+      webpMode == "jpg" ? "none" : "",
+      document.querySelector("#webpOption")
+    );
+
+    if (webpMode == "jpg") {
+      resultCount.max = 12;
+    } else {
+      resultCount.max = 4;
+      resultCount.value = 1;
+      resultCount.dispatchEvent(new InputEvent("input", { bubbles: true }));
+    }
+    resultCount.previousElementSibling.textContent = `개수(1~${resultCount.max}): `;
+  } else if (event.target.name == "webpFormat") {
+    webpFormat = event.target.value;
+  }
+});
+document.querySelector("input[type='range']").addEventListener("input", (event) => {
+  duration = event.target.value;
+  seconds = duration / 12;
+  event.target.nextElementSibling.textContent = `${
+    Number.isInteger(seconds) ? seconds : seconds.toFixed(1)
+  }초`;
+});
+
 runBtn.addEventListener("click", () => {
   const songList = Object.values(songSelect)
     .reduce((a, b) => [...a, ...b])
@@ -133,12 +166,35 @@ runBtn.addEventListener("click", () => {
     const [loading, itemImg] = itemTemplate.querySelectorAll("img");
     const link = itemTemplate.querySelector("a");
     const caption = itemTemplate.querySelector("figcaption");
-    const randCut = randomInt(1, parseInt(cut) + 1)
+    let randCut = randomInt(1, parseInt(cut) + 1)
       .toString()
-      .padStart(4, "0");
+      .padStart(PAD_LENGTH, "0");
 
-    itemImg.src = `https://d2wwh0934dzo2k.cloudfront.net/djmax/cut/${id}/${randCut}.jpg`;
-    link.href = `https://youtu.be/${id}`;
+    if (webpMode == "jpg") {
+      itemImg.src = `https://d2wwh0934dzo2k.cloudfront.net/djmax/cut/${id}/${randCut}.jpg`;
+      link.href = `https://youtu.be/${id}`;
+    } else if (webpMode == "webp") {
+      randCut = randomInt(1, parseInt(cut) + 1 - duration);
+      try {
+        getWebp(
+          {
+            title: id,
+            name,
+            cut: randCut,
+            duration,
+            webpFormat,
+            cloud,
+            WEBP_WIDTH,
+            GIF_WIDTH,
+            PAD_LENGTH,
+          },
+          itemTemplate.firstElementChild
+        );
+      } catch (err) {
+        caption.textContent = "전송 실패";
+      }
+    }
+
     promsies.push(
       new Promise((resolve) => {
         itemImg.addEventListener("load", () => {
@@ -148,6 +204,7 @@ runBtn.addEventListener("click", () => {
         });
       })
     );
+
     itemContainer.append(itemTemplate.firstElementChild);
   }
 
@@ -201,7 +258,99 @@ shareBtn.addEventListener("click", () => {
   }
 });
 
+document.querySelectorAll("input[type='radio'][checked]").forEach((input) => {
+  input.dispatchEvent(new InputEvent("change", { bubbles: true }));
+});
+document
+  .querySelector("input[type='range']")
+  .dispatchEvent(new InputEvent("input", { bubbles: true }));
+
 function toggleRunbtn() {
   runBtn.classList.toggle("click");
   runBtn.classList.toggle("gray");
+}
+
+function getWebp(params, item) {
+  const { name, cut, duration, webpFormat } = params;
+  const img = item.querySelector(".itemImg");
+  const caption = item.querySelector("figcaption");
+  const bar = item.querySelector("progress");
+  const link = item.querySelector("a");
+
+  caption.textContent = `0/${duration} 다운로드`;
+  bar.max = duration * 2;
+  bar.value = 0;
+  bar.hidden = false;
+
+  const lastCut = cut + duration - 1;
+  const outputName = `${name}_${cut.toString().padStart(PAD_LENGTH, "0")}-${lastCut
+    .toString()
+    .padStart(PAD_LENGTH, "0")}.${webpFormat}`;
+  link.download = outputName;
+
+  if (img.getAttribute("src")) {
+    URL.revokeObjectURL(img.src);
+    img.src = "";
+  }
+
+  // const socket = io("ws://localhost:3000/");
+  const socket = io("wss://webp-cloudrun-osuiaeahvq-an.a.run.app/");
+  let buffer = [];
+
+  socket.emit("webp", params, () => {
+    createWebp({ buffer, img, link, caption, bar, webpFormat });
+  });
+  socket.on("progress", (progress) => {
+    // console.log("server", progress);
+    showProgress(caption, bar, progress);
+  });
+  socket.on("download", (count) => {
+    showDownload(caption, bar, duration, count);
+  });
+  socket.on("transfer", (chunk) => {
+    // console.log(chunk);
+    buffer.push(chunk);
+  });
+}
+
+function showProgress(caption, bar, progress) {
+  if ("frame" in progress) {
+    // const { frame, time, speed } = progress;
+    const frame = parseInt(progress.frame);
+    caption.textContent = `${((frame / (bar.max / 2)) * 100).toFixed(1)}% / frame=${frame}`;
+    bar.value = bar.max / 2 + parseInt(frame);
+  } else {
+    if (!progress.ratio || !progress.time) {
+      return;
+    }
+    caption.textContent = `${(progress.ratio * 100).toFixed(1)}% / ${
+      progress.time?.toFixed(2) || 0
+    }s`;
+    bar.value = bar.max / 2 + Math.round((bar.max / 2) * progress.ratio);
+  }
+}
+
+function showDownload(caption, bar, duration, count) {
+  caption.textContent = `${count}/${duration} 다운로드`;
+  bar.value += 1;
+}
+
+function createWebp(props) {
+  const { buffer, img, link, caption, bar, webpFormat } = props;
+  const blob = new Blob(buffer, { type: `image/${webpFormat}` });
+  const uri = URL.createObjectURL(blob);
+
+  img.src = uri;
+  link.href = uri;
+
+  let size = blob.size / 1024;
+  if (size > 1000) {
+    size /= 1024;
+    size = `${size.toFixed(1)}MB`;
+  } else {
+    size = `${size.toFixed(1)}KB`;
+  }
+
+  caption.textContent = size;
+  bar.hidden = true;
 }

@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>랜덤 BGA 컷</title>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io@4.5.0/client-dist/socket.io.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/common.css" />
+    <title>랜덤 BGA 컷</title>
     <style>
       * {
         box-sizing: border-box;
@@ -64,17 +65,34 @@
         width: 2.5rem;
       }
 
+      #webpOption {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      #webpOption p {
+        width: 3rem;
+        margin-right: 1rem;
+      }
+
       #itemContainer {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
-        column-gap: 1rem;
-        row-gap: 1.5rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+      .item {
+        width: 42rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       .itemImg {
         width: 100%;
       }
       .loading {
-        width: 20%;
+        width: 25%;
       }
 
       @media (max-width: 1440px) {
@@ -109,9 +127,6 @@
         #run {
           width: 20%;
         }
-        #itemContainer {
-          grid-template-columns: 100%;
-        }
       }
     </style>
   </head>
@@ -125,6 +140,26 @@
           <button type="button" id="collapse">모두 해제</button>
         </div>
         <div id="dlcCheckbox" class="left"></div>
+      </div>
+      <div id="webpSelect">
+        <div>
+          <label class="shadow-white">
+            <input type="radio" name="webpMode" value="jpg" checked />짤
+          </label>
+          <label class="shadow-white">
+            <input type="radio" name="webpMode" value="webp" />움짤
+          </label>
+        </div>
+        <div id="webpOption">
+          <input type="range" min="12" max="84" step="6" value="18" />
+          <p class="shadow-white"></p>
+          <label class="shadow-white">
+            <input type="radio" name="webpFormat" value="webp" checked />WebP
+          </label>
+          <label class="shadow-white">
+            <input type="radio" name="webpFormat" value="gif" />Gif
+          </label>
+        </div>
       </div>
       <div id="resultCount">
         <span class="shadow-white">개수(1~12): </span>
@@ -150,6 +185,7 @@
         <a target="_blank">
           <img src="" class="itemImg" />
         </a>
+        <progress value="" max="" hidden></progress>
         <figcaption class="shadow-white bold"></figcaption>
       </figure>
     </template>

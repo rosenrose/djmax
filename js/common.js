@@ -234,3 +234,16 @@ if (!Array.prototype.at) {
     return this[index];
   };
 }
+
+function saveAs(uri, filename) {
+  let link = document.createElement("a");
+  if (typeof link.download === "string") {
+    document.body.append(link); // Firefox requires the link to be in the body
+    link.download = filename;
+    link.href = uri;
+    link.click();
+    link.remove(); // remove the link when done
+  } else {
+    location.replace(uri);
+  }
+}
