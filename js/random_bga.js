@@ -225,12 +225,12 @@ runBtn.addEventListener("mouseleave", () => {
   }
 });
 
-resultCount.addEventListener("input", (event) => {
-  count = Math.min(parseInt(event.target.value), parseInt(resultCount.max));
+resultCount.addEventListener("input", () => {
+  count = Math.min(parseInt(resultCount.value), parseInt(resultCount.max));
   if (isNaN(count)) {
     count = 0;
   }
-  event.target.value = count;
+  resultCount.value = count;
 });
 
 shareBtn.addEventListener("click", () => {
