@@ -284,10 +284,8 @@ function getWebp(params, item) {
   bar.value = 0;
   bar.hidden = false;
 
-  const lastCut = cut + duration - 1;
-  const outputName = `${name}_${cut.toString().padStart(PAD_LENGTH, "0")}-${lastCut
-    .toString()
-    .padStart(PAD_LENGTH, "0")}.${webpFormat}`;
+  const lastCut = parsetInt(cut) + duration - 1;
+  const outputName = `${name}_${cut}-${lastCut.toString().padStart(PAD_LENGTH, "0")}.${webpFormat}`;
   link.download = outputName;
 
   if (img.getAttribute("src")) {
