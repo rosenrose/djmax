@@ -133,7 +133,7 @@ document.querySelector("#webpSelect").addEventListener("change", (event) => {
   }
 });
 document.querySelector("input[type='range']").addEventListener("input", (event) => {
-  duration = event.target.value;
+  duration = parseInt(event.target.value);
   seconds = duration / 12;
   event.target.nextElementSibling.textContent = `${
     Number.isInteger(seconds) ? seconds : seconds.toFixed(1)
