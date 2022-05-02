@@ -191,6 +191,7 @@ runBtn.addEventListener("click", () => {
           itemTemplate.firstElementChild
         );
       } catch (err) {
+        console.log(err);
         caption.textContent = "전송 실패";
       }
     }
@@ -284,7 +285,7 @@ function getWebp(params, item) {
   bar.value = 0;
   bar.hidden = false;
 
-  const lastCut = parsetInt(cut) + duration - 1;
+  const lastCut = parseInt(cut) + duration - 1;
   const outputName = `${name}_${cut}-${lastCut.toString().padStart(PAD_LENGTH, "0")}.${webpFormat}`;
   link.download = outputName;
 
