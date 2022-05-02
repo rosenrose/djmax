@@ -4,8 +4,6 @@ const runBtn = document.querySelector("#run");
 const resultCount = document.querySelector("#resultCountInput");
 const shareBtn = document.querySelector("#shareBtn");
 const cloud = "https://d2wwh0934dzo2k.cloudfront.net/djmax/cut/";
-const WEBP_WIDTH = 720;
-const GIF_WIDTH = 360;
 const PAD_LENGTH = 4;
 
 fetch("../db.json")
@@ -185,8 +183,6 @@ runBtn.addEventListener("click", () => {
             duration,
             webpFormat,
             cloud,
-            WEBP_WIDTH,
-            GIF_WIDTH,
             PAD_LENGTH,
           },
           itemTemplate.firstElementChild
