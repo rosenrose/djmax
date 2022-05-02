@@ -166,12 +166,13 @@ runBtn.addEventListener("click", () => {
     const [loading, itemImg] = itemTemplate.querySelectorAll("img");
     const link = itemTemplate.querySelector("a");
     const caption = itemTemplate.querySelector("figcaption");
-    let randCut = randomInt(1, parseInt(cut) + 1)
-      .toString()
-      .padStart(PAD_LENGTH, "0");
+    let randCut;
 
     if (cutMode == "jpg") {
-      itemImg.src = `https://d2wwh0934dzo2k.cloudfront.net/djmax/cut/${id}/${randCut}.jpg`;
+      randCut = randomInt(1, parseInt(cut) + 1);
+      itemImg.src = `https://d2wwh0934dzo2k.cloudfront.net/djmax/cut/${id}/${randCut
+        .toString()
+        .padStart(PAD_LENGTH, "0")}.jpg`;
       link.href = `https://youtu.be/${id}`;
     } else if (cutMode == "webp") {
       randCut = randomInt(1, parseInt(cut) + 1 - duration);
@@ -285,8 +286,10 @@ function getWebp(params, item) {
   bar.value = 0;
   bar.hidden = false;
 
-  const lastCut = parseInt(cut) + duration - 1;
-  const outputName = `${name}_${cut}-${lastCut.toString().padStart(PAD_LENGTH, "0")}.${webpFormat}`;
+  const lastCut = cut + duration - 1;
+  const outputName = `${name}_${cut.toString().padStart(PAD_LENGTH, "0")}-${lastCut
+    .toString()
+    .padStart(PAD_LENGTH, "0")}.${webpFormat}`;
   link.download = outputName;
 
   if (img.getAttribute("src")) {
