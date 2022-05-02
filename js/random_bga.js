@@ -211,7 +211,9 @@ runBtn.addEventListener("click", () => {
   Promise.all(promsies).then(() => {
     toggleRunbtn();
     runBtn.src = "../img/btn_ready.png";
-    shareBtn.hidden = false;
+    if (cutMode == "jpg") {
+      shareBtn.hidden = false;
+    }
   });
 });
 
