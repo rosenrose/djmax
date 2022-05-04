@@ -195,9 +195,9 @@ runBtn.addEventListener("click", () => {
 
     promsies.push(
       new Promise((resolve) => {
-        itemImg.addEventListener("load", () => {
+        itemImg.addEventListener("load", (event) => {
           loading.hidden = true;
-          caption.textContent = name;
+          caption.textContent = cutMode == "jpg" ? name : `${name} (${event.target.dataset.size})`;
           resolve();
         });
       })
@@ -336,7 +336,7 @@ function showDownload(caption, bar, duration, count) {
 }
 
 function createWebp(props) {
-  const { buffer, img, link, caption, bar, webpFormat } = props;
+  const { buffer, img, link, bar, webpFormat } = props;
   const blob = new Blob(buffer, { type: `image/${webpFormat}` });
   const uri = URL.createObjectURL(blob);
 
@@ -351,6 +351,6 @@ function createWebp(props) {
     size = `${size.toFixed(1)}KB`;
   }
 
-  caption.textContent = size;
+  img.dataset.size = size;
   bar.hidden = true;
 }
