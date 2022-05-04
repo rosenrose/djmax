@@ -154,6 +154,9 @@ runBtn.addEventListener("click", () => {
     shareBtn.hidden = true;
   });
 
+  itemContainer.querySelectorAll(".itemImg").forEach((img) => {
+    URL.revokeObjectURL(img.src);
+  });
   itemContainer.replaceChildren();
 
   const promsies = [];
@@ -287,11 +290,6 @@ function getWebp(params, item) {
     .toString()
     .padStart(PAD_LENGTH, "0")}.${webpFormat}`;
   link.download = outputName;
-
-  if (img.getAttribute("src")) {
-    URL.revokeObjectURL(img.src);
-    img.src = "";
-  }
 
   // const socket = io("ws://localhost:3000/");
   const socket = io("wss://webp-cloudrun-osuiaeahvq-an.a.run.app/");
