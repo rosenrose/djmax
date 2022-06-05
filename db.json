@@ -413,7 +413,7 @@
       {
         "title": "Airlock",
         "artist": {
-          "compose": "Xeon",
+          "compose": "XeoN",
           "visualize": "Lepusnette"
         },
         "genre": "Electronic",
@@ -5391,7 +5391,10 @@
       {
         "title": "CnP",
         "artist": {
-          "compose": "CRooFE",
+          "compose": {
+            "nominal": "CRooFE",
+            "include": ["Croove", "Forte Escape"]
+          },
           "visualize": "Tari"
         },
         "genre": "Electro Funk",
