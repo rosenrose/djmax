@@ -1,4 +1,5 @@
 *.cmd
 debug.log
 temp.csv
-ignore
+/ignore
+/test
