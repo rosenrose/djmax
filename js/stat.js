@@ -73,11 +73,14 @@ function App() {
         });
         totalPatternCount["SC"] = 0;
 
-        for (let i = MIN_LEVEL; i <= MAX_LEVEL; i++) {
-          levelCountList.push({ level: i });
-          commonHeads.forEach((head) => {
-            levelCountList[i - 1][head] = 0;
-          });
+        for (let count = 0; count < 2; count++) {
+          for (let i = MIN_LEVEL; i <= MAX_LEVEL; i++) {
+            let lc = { level: count == 0 ? i : `SC ${i}` };
+            commonHeads.forEach((head) => {
+              lc[head] = 0;
+            });
+            levelCountList.push(lc);
+          }
         }
 
         for (let category in list["songs"]) {
@@ -138,7 +141,7 @@ function App() {
             for (let level in song["levelCount"]) {
               for (let btn in song["levelCount"][level]) {
                 let count = song["levelCount"][level][btn];
-                levelCountList[level - 1][btn] += count;
+                levelCountList.find((lc) => lc["level"] == level)[btn] += count;
               }
             }
 
@@ -264,28 +267,32 @@ function App() {
   const onBtnSelectChange = (event) => {
     let btn = event.target.value;
     let th = event.target.closest("th");
+    let newBtnSelect = new Set(btnSelect);
 
     if (event.target.checked) {
       th.className = `${btn}-background btn-rank`;
-      btnSelect.add(event.target.value);
+      newBtnSelect.add(event.target.value);
     } else {
       th.className = `${btn}-color`;
-      btnSelect.delete(event.target.value);
+      newBtnSelect.delete(event.target.value);
     }
     document.querySelector("th[data-sorted]")?.removeAttribute("data-sorted");
+    setBtnSelect(newBtnSelect);
   };
   const onRankSelectChange = (event) => {
     let rank = event.target.value;
     let th = event.target.closest("th");
+    let newRankSelect = new Set(rankSelect);
 
     if (event.target.checked) {
       th.className = `${rank}-background btn-rank`;
-      rankSelect.add(event.target.value);
+      newRankSelect.add(event.target.value);
     } else {
       th.className = `${rank}-color`;
-      rankSelect.delete(event.target.value);
+      newRankSelect.delete(event.target.value);
     }
     document.querySelector("th[data-sorted]")?.removeAttribute("data-sorted");
+    setRankSelect(newRankSelect);
   };
   const onThClick = (event) => {
     sortTable({
@@ -439,15 +446,6 @@ function Thead({
   React.useEffect(() => {
     document.querySelectorAll("th[data-sorted]").forEach((th) => th.removeAttribute("data-sorted"));
   }, [mode, titleMode]);
-
-  React.useEffect(() => {
-    if (!isLevelsNotesSort) {
-      document.querySelectorAll("tr.rankSelect th").forEach((th) => {
-        let rank = th.querySelector("label").lastChild.textContent;
-        th.className = `${rank}-background btn-rank`;
-      });
-    }
-  }, [isLevelsNotesSort]);
 
   let isSeperator = ["levelAvg", "patternCount", "noteAvg"].includes(mode);
   let titleLabel = (
@@ -934,7 +932,19 @@ function Level({ rank, level, condition }) {
             </span> */}
       {condition && (
         <svg
-          className={`${rank == "SC" ? "SC" : level <= 5 ? "NM" : level <= 10 ? "HD" : "MX"}-svg`}
+          className={`${
+            rank == "SC"
+              ? level <= 5
+                ? "SC_5"
+                : level <= 10
+                ? "SC_10"
+                : "SC_15"
+              : level <= 5
+              ? "NM"
+              : level <= 10
+              ? "HD"
+              : "MX"
+          }-svg`}
           width="1em"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -1255,9 +1265,24 @@ function sortCategory({ mode, head, order }) {
 
 function sortHistogram({ mode, head, order }) {
   if (head == "레벨") {
-    levelCountList.sort((a, b) =>
-      order == ASC ? a["level"] - b["level"] : b["level"] - a["level"]
-    );
+    levelCountList.sort((a, b) => {
+      let aLevel = a["level"].toString();
+      let bLevel = b["level"].toString();
+
+      if (
+        (aLevel.includes("SC") && bLevel.toString().includes("SC")) ||
+        (!aLevel.includes("SC") && !bLevel.toString().includes("SC"))
+      ) {
+        return order == ASC
+          ? aLevel.includes("SC")
+            ? parseInt(aLevel.split(" ")[1]) - parseInt(bLevel.split(" ")[1])
+            : a["level"] - b["level"]
+          : aLevel.includes("SC")
+          ? parseInt(bLevel.split(" ")[1]) - parseInt(aLevel.split(" ")[1])
+          : b["level"] - a["level"];
+      }
+      return aLevel.includes("SC") ? (order == ASC ? 1 : -1) : order == ASC ? -1 : 1;
+    });
   } else if (head == "패턴 개수") {
     patternCountList.sort((a, b) =>
       order == ASC ? a["patternCount"] - b["patternCount"] : b["patternCount"] - a["patternCount"]
@@ -1335,27 +1360,43 @@ function sortLevelsNotes({ mode, head, order }) {
     let key = mode == "levels" ? "level" : mode == "notes" ? "note" : "noteDensity";
 
     levelNoteList.sort((a, b) => {
-      if (a[key] == b[key]) {
-        if (a["btn"] == b["btn"]) {
-          if (a["rank"] == b["rank"]) {
-            return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
+      if ((a["rank"] == "SC" && b["rank"] == "SC") || (a["rank"] != "SC" && b["rank"] != "SC")) {
+        if (a[key] == b[key]) {
+          if (a["btn"] == b["btn"]) {
+            if (a["rank"] == b["rank"]) {
+              return a["title"].toLowerCase().localeCompare(b["title"].toLowerCase());
+            }
+            return order == ASC
+              ? ranks.indexOf(a["rank"]) - ranks.indexOf(b["rank"])
+              : ranks.indexOf(b["rank"]) - ranks.indexOf(a["rank"]);
           }
           return order == ASC
-            ? ranks.indexOf(a["rank"]) - ranks.indexOf(b["rank"])
-            : ranks.indexOf(b["rank"]) - ranks.indexOf(a["rank"]);
+            ? commonHeads.indexOf(a["btn"]) - commonHeads.indexOf(b["btn"])
+            : commonHeads.indexOf(b["btn"]) - commonHeads.indexOf(a["btn"]);
         }
-        return order == ASC
-          ? commonHeads.indexOf(a["btn"]) - commonHeads.indexOf(b["btn"])
-          : commonHeads.indexOf(b["btn"]) - commonHeads.indexOf(a["btn"]);
+        return order == ASC ? a[key] - b[key] : b[key] - a[key];
       }
-      return order == ASC ? a[key] - b[key] : b[key] - a[key];
+      return a["rank"] == "SC" ? (order == ASC ? 1 : -1) : order == ASC ? -1 : 1;
     });
   }
 }
 
 function Graph({ mode, tbodyMode }) {
-  let x, y, heads, text, orientation, height, xrange, yrange, margin;
-  let levelCountSorted = [...levelCountList].sort((a, b) => a["level"] - b["level"]);
+  let x, y, heads, text, orientation, height, xrange, yrange, margin, graphTitleHeads;
+  let levelCountSorted = [...levelCountList].sort((a, b) => {
+    let aLevel = a["level"].toString();
+    let bLevel = b["level"].toString();
+
+    if (
+      (aLevel.includes("SC") && bLevel.toString().includes("SC")) ||
+      (!aLevel.includes("SC") && !bLevel.toString().includes("SC"))
+    ) {
+      return aLevel.includes("SC")
+        ? parseInt(aLevel.split(" ")[1]) - parseInt(bLevel.split(" ")[1])
+        : a["level"] - b["level"];
+    }
+    return aLevel.includes("SC") ? 1 : -1;
+  });
   let patternCountSorted = [...patternCountList].sort(
     (a, b) => a["patternCount"] - b["patternCount"]
   );
@@ -1368,13 +1409,19 @@ function Graph({ mode, tbodyMode }) {
 
   if (mode == "levelHistogram") {
     heads = tableHeads[mode];
-    // x = Array.from({length: MAX_LEVEL}, (_, i) => i+1);
+    graphTitleHeads = [
+      "Pad 전체",
+      ...heads.slice(1).map((head) => "Pad " + head),
+      "SC 전체",
+      ...heads.slice(1).map((head) => "SC " + head),
+    ];
     x = levelCountSorted.map((lc) => lc["level"]);
     y = heads.map((head) => levelCountSorted.map((lc) => lc[head]));
   } else if (mode == "patternCountHistogram") {
     heads = ["전체"];
     x = patternCountSorted.map((pc) => pc["patternCount"]);
     y = [patternCountSorted.map((pc) => pc["전체"])];
+    text = true;
   } else if (mode == "noteHistogram") {
     heads = tableHeads[mode];
     x = noteCountSorted.map((nc) => nc["note"]);
@@ -1402,7 +1449,6 @@ function Graph({ mode, tbodyMode }) {
     heads = [...commonHeads, "SC"];
     x = categoryList.map((category) => list["dlcKor"][category]);
     y = heads.map((head) => categoryDataSorted.map((catDat) => catDat[mode][head]));
-    text = String;
   } else if (mode == "levelAvg" && tbodyMode == "title") {
     // heads = ["전체"];
     heads = [];
@@ -1417,47 +1463,56 @@ function Graph({ mode, tbodyMode }) {
     };
   }
 
+  let graphId = (head) => `graph-${mode}-${tbodyMode}-${head}`;
   React.useEffect(() => {
     //렌더링이 끝난 후 호출됨. Real DOM에 접근 가능.
-    heads.forEach((head, i) => {
-      drawGraph({
-        mode,
-        tbodyMode,
-        head,
-        x: orientation ? x[i] : x,
-        y: orientation ? y : y[i],
-        text,
-        orientation,
-        height: height || "auto",
-        xrange,
-        yrange: yrange ? yrange(y[i]) : null,
-        margin,
+    if (mode == "levelHistogram") {
+      graphTitleHeads.slice(0, heads.length).forEach((head, i) => {
+        drawGraph({
+          head,
+          x: x.slice(0, MAX_LEVEL),
+          y: y[i].slice(0, MAX_LEVEL),
+          graphId: graphId(head),
+          text: y[i],
+        });
       });
-    });
+      graphTitleHeads.slice(heads.length).forEach((head, i) => {
+        drawGraph({
+          head,
+          x: x.slice(MAX_LEVEL).map((level) => level.split(" ")[1]),
+          y: y[i].slice(MAX_LEVEL),
+          graphId: graphId(head),
+          text: y[i],
+        });
+      });
+    } else {
+      heads.forEach((head, i) => {
+        drawGraph({
+          head,
+          x: orientation ? x[i] : x,
+          y: orientation ? y : y[i],
+          text: text ? (orientation ? x[i] : y[i]) : null,
+          orientation,
+          height: height || "auto",
+          xrange,
+          yrange: yrange ? yrange(y[i]) : null,
+          margin,
+          graphId: graphId(head),
+        });
+      });
+    }
   }, [mode, tbodyMode]);
 
   return (
     <div id="graph">
-      {heads.map((head) => (
-        <div key={head} id={`graph-${mode}-${tbodyMode}-${head}`}></div>
+      {(mode == "levelHistogram" ? graphTitleHeads : heads).map((head) => (
+        <div key={head} id={graphId(head)}></div>
       ))}
     </div>
   );
 }
 
-function drawGraph({
-  mode,
-  tbodyMode,
-  head,
-  x,
-  y,
-  text,
-  orientation,
-  height,
-  xrange,
-  yrange,
-  margin,
-}) {
+function drawGraph({ head, x, y, text, orientation, height, xrange, yrange, margin, graphId }) {
   let trace = {
     x,
     y,
@@ -1479,13 +1534,14 @@ function drawGraph({
     xaxis: {
       dtick: 1,
       range: xrange,
+      type: "category", //x축 데이터에 숫자랑 문자열이 섞이면 문자열이 무시된다.
     },
     yaxis: {
       // dtick: "auto",
       range: yrange,
     },
   };
-  Plotly.newPlot(`graph-${mode}-${tbodyMode}-${head}`, data, layout, {
+  Plotly.newPlot(graphId, data, layout, {
     staticPlot: true,
     responsive: true,
   });
@@ -1521,4 +1577,4 @@ function bpmToNumber(bpm, mode) {
   return Number(bpm);
 }
 
-ReactDOM.render(<App />, document.querySelector("#result"));
+ReactDOM.createRoot(document.querySelector("#result")).render(<App />);

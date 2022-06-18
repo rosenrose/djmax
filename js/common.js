@@ -165,14 +165,15 @@ function Song(song, isStat) {
           this["patternCount"]["SC"] += 1;
         }
 
-        if (!(level in this["levelCount"])) {
-          this["levelCount"][level] = { 전체: 0 };
+        let levelKey = rank == "SC" ? `SC ${level}` : level;
+        if (!(levelKey in this["levelCount"])) {
+          this["levelCount"][levelKey] = { 전체: 0 };
         }
-        if (!(btn in this["levelCount"][level])) {
-          this["levelCount"][level][btn] = 0;
+        if (!(btn in this["levelCount"][levelKey])) {
+          this["levelCount"][levelKey][btn] = 0;
         }
-        this["levelCount"][level][btn] += 1;
-        this["levelCount"][level]["전체"] += 1;
+        this["levelCount"][levelKey][btn] += 1;
+        this["levelCount"][levelKey]["전체"] += 1;
       }
 
       for (let rank in this["note"][btn]) {

@@ -60,8 +60,14 @@
 .MX-svg {
   fill: var(--color-MX);
 }
-.SC-svg {
-  fill: var(--color-SC);
+.SC_5-svg {
+  fill: var(--color-SC-5);
+}
+.SC_10-svg {
+  fill: var(--color-SC-10);
+}
+.SC_15-svg {
+  fill: var(--color-SC-15);
 }
 
 .\34 B-color {
