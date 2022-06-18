@@ -265,34 +265,29 @@ function App() {
     setIsLevelsNotesSort(event.target.checked);
   };
   const onBtnSelectChange = (event) => {
-    let btn = event.target.value;
+    let { value: btn, checked } = event.target;
     let th = event.target.closest("th");
-    let newBtnSelect = new Set(btnSelect);
 
-    if (event.target.checked) {
-      th.className = `${btn}-background btn-rank`;
-      newBtnSelect.add(event.target.value);
-    } else {
-      th.className = `${btn}-color`;
-      newBtnSelect.delete(event.target.value);
-    }
+    th.className = checked ? `${btn}-background btn-rank` : `${btn}-color`;
+    setBtnSelect((prev) => {
+      let next = new Set(prev);
+      // (checked ? next.add : next.delete)(btn); // 안됨
+      checked ? next.add(btn) : next.delete(btn);
+      return next;
+    });
     document.querySelector("th[data-sorted]")?.removeAttribute("data-sorted");
-    setBtnSelect(newBtnSelect);
   };
   const onRankSelectChange = (event) => {
-    let rank = event.target.value;
+    let { value: rank, checked } = event.target;
     let th = event.target.closest("th");
-    let newRankSelect = new Set(rankSelect);
 
-    if (event.target.checked) {
-      th.className = `${rank}-background btn-rank`;
-      newRankSelect.add(event.target.value);
-    } else {
-      th.className = `${rank}-color`;
-      newRankSelect.delete(event.target.value);
-    }
+    th.className = checked ? `${rank}-background btn-rank` : `${rank}-color`;
+    setRankSelect((prev) => {
+      let next = new Set(prev);
+      checked ? next.add(rank) : next.delete(rank);
+      return next;
+    });
     document.querySelector("th[data-sorted]")?.removeAttribute("data-sorted");
-    setRankSelect(newRankSelect);
   };
   const onThClick = (event) => {
     sortTable({
@@ -1266,8 +1261,7 @@ function sortCategory({ mode, head, order }) {
 function sortHistogram({ mode, head, order }) {
   if (head == "레벨") {
     levelCountList.sort((a, b) => {
-      let aLevel = a["level"].toString();
-      let bLevel = b["level"].toString();
+      let [aLevel, bLevel] = [a["level"], b["level"]].map(String);
 
       if (
         (aLevel.includes("SC") && bLevel.toString().includes("SC")) ||
@@ -1384,8 +1378,7 @@ function sortLevelsNotes({ mode, head, order }) {
 function Graph({ mode, tbodyMode }) {
   let x, y, heads, text, orientation, height, xrange, yrange, margin, graphTitleHeads;
   let levelCountSorted = [...levelCountList].sort((a, b) => {
-    let aLevel = a["level"].toString();
-    let bLevel = b["level"].toString();
+    let [aLevel, bLevel] = [a["level"], b["level"]].map(String);
 
     if (
       (aLevel.includes("SC") && bLevel.toString().includes("SC")) ||
@@ -1409,12 +1402,7 @@ function Graph({ mode, tbodyMode }) {
 
   if (mode == "levelHistogram") {
     heads = tableHeads[mode];
-    graphTitleHeads = [
-      "Pad 전체",
-      ...heads.slice(1).map((head) => "Pad " + head),
-      "SC 전체",
-      ...heads.slice(1).map((head) => "SC " + head),
-    ];
+    graphTitleHeads = ["Pad ", "SC "].flatMap((cat) => heads.map((head) => cat + head));
     x = levelCountSorted.map((lc) => lc["level"]);
     y = heads.map((head) => levelCountSorted.map((lc) => lc[head]));
   } else if (mode == "patternCountHistogram") {
