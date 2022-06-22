@@ -1,5 +1,5 @@
 *.cmd
 debug.log
 temp.csv
-/ignore
+/resources
 /test

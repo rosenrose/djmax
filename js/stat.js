@@ -272,7 +272,7 @@ function App() {
     setBtnSelect((prev) => {
       let next = new Set(prev);
       // (checked ? next.add : next.delete)(btn); // 안됨
-      checked ? next.add(btn) : next.delete(btn);
+      next[checked ? "add" : "delete"](btn);
       return next;
     });
     document.querySelector("th[data-sorted]")?.removeAttribute("data-sorted");
@@ -284,7 +284,7 @@ function App() {
     th.className = checked ? `${rank}-background btn-rank` : `${rank}-color`;
     setRankSelect((prev) => {
       let next = new Set(prev);
-      checked ? next.add(rank) : next.delete(rank);
+      next[checked ? "add" : "delete"](rank);
       return next;
     });
     document.querySelector("th[data-sorted]")?.removeAttribute("data-sorted");
@@ -1402,7 +1402,7 @@ function Graph({ mode, tbodyMode }) {
 
   if (mode == "levelHistogram") {
     heads = tableHeads[mode];
-    graphTitleHeads = ["Pad ", "SC "].flatMap((cat) => heads.map((head) => cat + head));
+    graphTitleHeads = ["NM / HD / MX ", "SC "].flatMap((cat) => heads.map((head) => cat + head));
     x = levelCountSorted.map((lc) => lc["level"]);
     y = heads.map((head) => levelCountSorted.map((lc) => lc[head]));
   } else if (mode == "patternCountHistogram") {
