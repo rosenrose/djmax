@@ -1461,7 +1461,7 @@ function Graph({ mode, tbodyMode }) {
           x: x.slice(0, MAX_LEVEL),
           y: y[i].slice(0, MAX_LEVEL),
           graphId: graphId(head),
-          text: y[i],
+          text: y[i].slice(0, MAX_LEVEL),
         });
       });
       graphTitleHeads.slice(heads.length).forEach((head, i) => {
@@ -1470,7 +1470,7 @@ function Graph({ mode, tbodyMode }) {
           x: x.slice(MAX_LEVEL).map((level) => level.split(" ")[1]),
           y: y[i].slice(MAX_LEVEL),
           graphId: graphId(head),
-          text: y[i],
+          text: y[i].slice(MAX_LEVEL),
         });
       });
     } else {
