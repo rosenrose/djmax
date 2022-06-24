@@ -781,6 +781,71 @@
         }
       },
       {
+        "title": "Angelic Tears",
+        "artist": {
+          "compose": "SHIKI",
+          "visualize": ["Kimys", "Eter", "ShininG"]
+        },
+        "genre": "Trance",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 12,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 12,
+            "SC": 7
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 12,
+            "SC": 9
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 12
+          }
+        },
+        "length": 137,
+        "bpm": "146",
+        "date": {
+          "PC": "2022-06-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
         "title": "Armored Phantom",
         "artist": {
           "compose": "ned",

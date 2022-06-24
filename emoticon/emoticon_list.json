@@ -1,0 +1,86 @@
+{
+  "s1": {
+    "ClearHappy": "HAPPY",
+    "ClearWhat": "WHAT!?",
+    "ClearWrath": "WRATH",
+    "FailAttack": "ATTACK",
+    "FailWhat": "WHAT!?",
+    "PlayHappy": "HAPPY",
+    "PlayWrath": "WRATH",
+    "ShowtimeHi": "HELLO",
+    "NbBreak": "BREAK",
+    "MorningGood": "NICE",
+    "ShowtimePanic": "WHAT!?",
+    "LadyCheer": "CHEER",
+    "MilesBye": "BYE"
+  },
+  "s2": {
+    "PlayPopcorn": "POPCORN",
+    "FailFlex": "FLEX",
+    "ClearSalty": "SALTY",
+    "SuiWink": "WINK",
+    "RungirlSleep": "SLEEP",
+    "DolphinLaugh": "LAUGH",
+    "YonaCry": "CRY",
+    "ClearPositive": "POSITIVE",
+    "FailNegative": "NEGATIVE",
+    "PlayJetkick": "JETKICK"
+  },
+  "s3": {
+    "ClearHammer": "MALLET MAX",
+    "ClearHi": "HI",
+    "FailBye": "BYE",
+    "FailHammer": "MALLET BREAK",
+    "FarEastPlease": "PLZ",
+    "LenaHug": "HUG ME",
+    "MistyNoob": {
+      "displayName": "NOOB?",
+      "anotherFileName": "MistyNewbie",
+      "anotherDisplayName": "NEWBIE?"
+    },
+    "MistyPerfect": "PERFECT!",
+    "PlayWall": "SNOOP",
+    "SonRun": "RUN OF SUN"
+  },
+  "s4": {
+    "AnotherStop": "STOP",
+    "Battery": "LOW BATTERY",
+    "ClearHny": "HAPPY 2022 (CLEAR Ver.)",
+    "ClearMcr": "MERRY X-MAS",
+    "Dalgona": "DALGONA",
+    "FailBack": "RED LIGHT, GREEN LIGHT",
+    "FailHny": "HAPPY 2022 (FAIL Ver.)",
+    "FailMcr": "MERRY X-MAS",
+    "OfySalute": "SALUTE",
+    "OfySorry": "SORRY"
+  },
+  "s5": {
+    "ClearOops": "OOPS",
+    "DalryDizzy": "DIZZY",
+    "HeartBeat": "HEART BEAT",
+    "LenaGoodLuck": "GOOD LUCK!",
+    "MorningCatStare": "STARE",
+    "NbJustDream": "JUST DREAM",
+    "PlayCupid": "CUPID",
+    "FailMarryMe": "MARRY ME",
+    "PlayYes": "YES!",
+    "ClearNo": "NO!"
+  },
+  "s6": {
+    "ClearChampagne": "CHAMPAGNE (CLEAR Ver.)",
+    "FailChampagne": "CHAMPAGNE (FAIL Ver.)",
+    "PlayChampagne": "CHAMPAGNE (PLAY Ver.)",
+    "LenaNewRecord": "NEW RECORD!",
+    "JisooQuestion": "QUESTION",
+    "SenPowerUp": "POWER UP!",
+    "NbBringItOn": "BRING IT ON!",
+    "NbFocus": "!!",
+    "OverMeMad": "...!!",
+    "OverMeThanks": "THANKS",
+    "ActionStart": "START!",
+    "ActionBreak": "BREAK!",
+    "ActionFever": "FEVER!",
+    "ActionClear": "CLEAR!",
+    "ActionMax": "MAX COMBO!"
+  }
+}

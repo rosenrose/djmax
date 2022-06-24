@@ -57,114 +57,50 @@
       </figure>
     </template>
     <script type="text/javascript">
-      list = {
-        s1: {
-          ClearHappy: "HAPPY",
-          ClearWhat: "WHAT!?",
-          ClearWrath: "WRATH",
-          FailAttack: "ATTACK",
-          FailWhat: "WHAT!?",
-          PlayHappy: "HAPPY",
-          PlayWrath: "WRATH",
-          ShowtimeHi: "HELLO",
-          NbBreak: "BREAK",
-          MorningGood: "NICE",
-          ShowtimePanic: "WHAT!?",
-          LadyCheer: "CHEER",
-          MilesBye: "BYE",
-        },
-        s2: {
-          PlayPopcorn: "POPCORN",
-          FailFlex: "FLEX",
-          ClearSalty: "SALTY",
-          SuiWink: "WINK",
-          RungirlSleep: "SLEEP",
-          DolphinLaugh: "LAUGH",
-          YonaCry: "CRY",
-          ClearPositive: "POSITIVE",
-          FailNegative: "NEGATIVE",
-          PlayJetkick: "JETKICK",
-        },
-        s3: {
-          ClearHammer: "MALLET MAX",
-          ClearHi: "HI",
-          FailBye: "BYE",
-          FailHammer: "MALLET BREAK",
-          FarEastPlease: "PLZ",
-          LenaHug: "HUG ME",
-          MistyNoob: {
-            displayName: "NOOB?",
-            anotherFileName: "MistyNewbie",
-            anotherDisplayName: "NEWBIE?",
-          },
-          MistyPerfect: "PERFECT!",
-          PlayWall: "SNOOP",
-          SonRun: "RUN OF SUN",
-        },
-        s4: {
-          AnotherStop: "STOP",
-          Battery: "LOW BATTERY",
-          ClearHny: "HAPPY 2022 (CLEAR Ver.)",
-          ClearMcr: "MERRY X-MAS",
-          Dalgona: "DALGONA",
-          FailBack: "RED LIGHT, GREEN LIGHT",
-          FailHny: "HAPPY 2022 (FAIL Ver.)",
-          FailMcr: "MERRY X-MAS",
-          OfySalute: "SALUTE",
-          OfySorry: "SORRY",
-        },
-        s5: {
-          ClearOops: "OOPS",
-          DalryDizzy: "DIZZY",
-          HeartBeat: "HEART BEAT",
-          LenaGoodLuck: "GOOD LUCK!",
-          MorningCatStare: "STARE",
-          NbJustDream: "JUST DREAM",
-          PlayCupid: "CUPID",
-          FailMarryMe: "MARRY ME",
-          PlayYes: "YES!",
-          ClearNo: "NO!",
-        },
-      };
-      for (let season in list) {
-        let seasonTemplate = document.querySelector("#seasonTemplate").content.cloneNode(true);
-        seasonTemplate.querySelector("div").id = season;
-        seasonTemplate.querySelector("img").src = `${season}.png`;
-        let container = seasonTemplate.querySelector(".container");
+      fetch("emoticon_list.json")
+        .then((r) => r.json())
+        .then((list) => {
+          for (let season in list) {
+            let seasonTemplate = document.querySelector("#seasonTemplate").content.cloneNode(true);
+            seasonTemplate.querySelector("div").id = season;
+            seasonTemplate.querySelector("img").src = `${season}.png`;
+            let container = seasonTemplate.querySelector(".container");
 
-        Object.entries(list[season]).forEach(([fileName, displayName], i) => {
-          let template = document.querySelector("#itemTemplate").content.cloneNode(true);
-          let img = template.querySelector("img");
-          let caption = template.querySelector("figcaption");
+            Object.entries(list[season]).forEach(([fileName, displayName], i) => {
+              let template = document.querySelector("#itemTemplate").content.cloneNode(true);
+              let img = template.querySelector("img");
+              let caption = template.querySelector("figcaption");
 
-          img.src = `https://d2l1b145ht03q6.cloudfront.net/djmax/emoticon/${fileName}.webp`;
+              img.src = `https://d2l1b145ht03q6.cloudfront.net/djmax/emoticon/${fileName}.webp`;
 
-          if (typeof displayName == "string") {
-            caption.textContent = displayName;
-          } else {
-            caption.textContent = displayName["displayName"];
-            template2 = document.querySelector("#itemTemplate").content.cloneNode(true);
-            template2.querySelector(
-              "img"
-            ).src = `https://d2l1b145ht03q6.cloudfront.net/djmax/emoticon/${displayName["anotherFileName"]}.webp`;
-            template2.querySelector("figcaption").textContent = displayName["anotherDisplayName"];
+              if (typeof displayName == "string") {
+                caption.textContent = displayName;
+              } else {
+                caption.textContent = displayName["displayName"];
+                template2 = document.querySelector("#itemTemplate").content.cloneNode(true);
+                template2.querySelector(
+                  "img"
+                ).src = `https://d2l1b145ht03q6.cloudfront.net/djmax/emoticon/${displayName["anotherFileName"]}.webp`;
+                template2.querySelector("figcaption").textContent =
+                  displayName["anotherDisplayName"];
+              }
+
+              container.append(template.firstElementChild);
+              if (typeof displayName != "string") {
+                container.append(template2.firstElementChild);
+              }
+            });
+            document.querySelector("#main").append(seasonTemplate.firstElementChild);
           }
 
-          container.append(template.firstElementChild);
-          if (typeof displayName != "string") {
-            container.append(template2.firstElementChild);
-          }
+          document.querySelectorAll(".season > img").forEach((img) => {
+            img.addEventListener("click", (event) => {
+              let container = event.target.nextElementSibling;
+              container.style.display = container.style.display == "none" ? "" : "none";
+            });
+            img.click();
+          });
         });
-        document.querySelector("#main").append(seasonTemplate.firstElementChild);
-      }
-
-      document.querySelectorAll(".season > img").forEach((img) => {
-        img.addEventListener("click", (event) => {
-          let container = event.target.nextElementSibling;
-          container.style.display = container.style.display == "none" ? "" : "none";
-        });
-        img.click();
-      });
     </script>
   </body>
 </html>
