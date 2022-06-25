@@ -586,5 +586,14 @@
     "558 MUSE DASH MISSION",
     "559 MUSE DASH ONLINE",
     "560 MUSE DASH RANKING"
+  ],
+  "season6": [
+    "561 S6 AIR",
+    "562 S6 FREESTYLE",
+    "563 S6 ONLINE",
+    "564 S6 COLLECTION",
+    "565 S6 MISSION",
+    "566 S6 RANKING",
+    "567 GRAND PRIX"
   ]
 }

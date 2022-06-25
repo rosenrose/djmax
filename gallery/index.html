@@ -31,12 +31,6 @@
         width: 100%;
       }
 
-      @media (max-width: 768px) {
-        #menu a {
-          width: 6rem;
-        }
-      }
-
       .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(19%, 1fr));
@@ -71,6 +65,16 @@
         box-shadow: 0 0 0.5rem 0.5rem mediumseagreen;
         background-color: mediumseagreen;
       }
+
+      @media (max-width: 768px) {
+        #menu a {
+          width: 6rem;
+        }
+        figcaption {
+          font-size: 0.8rem;
+          line-height: 0.9;
+        }
+      }
     </style>
   </head>
   <body>
@@ -91,6 +95,7 @@
       <a href="./?category=vextension2"><img src="../img/category_vextension2.png" /></a>
       <a href="./?category=season5"><img src="../emoticon/s5.png" /></a>
       <a href="./?category=musedash"><img src="../img/collaboration_musedash.png" /></a>
+      <a href="./?category=season6"><img src="../emoticon/s6.png" /></a>
     </div>
     <div class="grid"></div>
     <template id="itemTemplate">
