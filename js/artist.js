@@ -40,11 +40,7 @@ function App() {
               let artist = song["artist"][category];
 
               if (typeof artist == "string" || Array.isArray(artist)) {
-                if (typeof artist == "string") {
-                  artist = [artist];
-                }
-
-                artist.forEach((a) => {
+                [artist].flat().forEach((a) => {
                   if (typeof a == "object" && "nominal" in a) {
                     if (category == "feat") {
                       let result = featRegex.exec(a["nominal"]);
@@ -84,11 +80,7 @@ function App() {
                     let subArtist = artist[subCat];
 
                     if (typeof subArtist == "string" || Array.isArray(subArtist)) {
-                      if (typeof subArtist == "string") {
-                        subArtist = [subArtist];
-                      }
-
-                      subArtist.forEach((s) => {
+                      [subArtist].flat().forEach((s) => {
                         if (typeof s == "object" && "nominal" in s) {
                           addArtistNominal(s, category, song, subCat);
                         } else {
@@ -418,10 +410,9 @@ function Credit({ song }) {
     let artist = song["artist"][category];
 
     if (typeof artist == "string" || Array.isArray(artist)) {
-      if (typeof artist == "string") {
-        artist = [artist];
-      }
-      artist = artist.map((a) => (typeof a == "object" && "nominal" in a ? a["nominal"] : a));
+      artist = [artist]
+        .flat()
+        .map((a) => (typeof a == "object" && "nominal" in a ? a["nominal"] : a));
       art += artist.join(" / ");
     } else if (typeof artist == "object") {
       if ("nominal" in artist) {
@@ -430,10 +421,7 @@ function Credit({ song }) {
         let subArtist = [];
         for (let subCat in artist) {
           if (typeof artist[subCat] == "string" || Array.isArray(artist[subCat])) {
-            if (typeof artist[subCat] == "string") {
-              artist[subCat] = [artist[subCat]];
-            }
-            artist[subCat].forEach((s) => {
+            [artist[subCat]].flat().forEach((s) => {
               subArtist.push(typeof s == "object" && "nominal" in s ? s["nominal"] : s);
             });
           } else if (typeof artist[subCat] == "object" && "nominal" in artist[subCat]) {
@@ -497,10 +485,7 @@ function addArtistNominal(artist, category, song, subCat) {
     extra = `(${artist["ambiguous"]})`;
   } else if ("include" in artist) {
     let include = artist["include"];
-    if (typeof include == "string") {
-      include = [include];
-    }
-    extra = `(⊃${include.join(" / ")})`;
+    extra = `(⊃${[include].flat().join(" / ")})`;
   }
 
   if (["feat", "visualize"].includes(category)) {
@@ -518,10 +503,7 @@ function addArtistNominal(artist, category, song, subCat) {
   }
   if ("include" in artist) {
     let include = artist["include"];
-    if (typeof include == "string") {
-      include = [include];
-    }
-    include.forEach((i) => {
+    [include].flat().forEach((i) => {
       if (["feat", "visualize"].includes(category)) {
         addArtist(i, category, song, subCat || category);
       } else {
@@ -537,10 +519,7 @@ function listArtists(song) {
   for (let category in song["artist"]) {
     let artist = song["artist"][category];
     if (typeof artist == "string" || Array.isArray(artist)) {
-      if (typeof artist == "string") {
-        artist = [artist];
-      }
-      artist.forEach((a) => {
+      [artist].flat().forEach((a) => {
         artists.add(a);
       });
     } else if (typeof artist == "object") {
@@ -550,10 +529,7 @@ function listArtists(song) {
       } else {
         for (let subCat in artist) {
           let subArtist = artist[subCat];
-          if (typeof subArtist == "string") {
-            subArtist = [subArtist];
-          }
-          subArtist.forEach((a) => {
+          [subArtist].flat().forEach((a) => {
             artists.add(a);
           });
         }

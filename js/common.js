@@ -54,7 +54,7 @@ function randomInt(minInclude, maxExclude) {
 }
 
 function range(startInclude, endExclude) {
-  return [...Array(endExclude - startInclude).keys()].map((num) => num + startInclude);
+  return [...Array(endExclude - startInclude)].map((_, i) => i + startInclude);
 }
 
 function toggleInput(input, condition) {
@@ -221,19 +221,21 @@ function noteRange(note) {
 }
 
 if (!Array.prototype.at) {
-  Array.prototype.at = function (index) {
-    if (isNaN(index)) {
-      return undefined;
-    }
+  function at(n) {
+    n = Math.trunc(n) || 0;
+    if (n < 0) n += this.length;
+    if (n < 0 || n >= this.length) return undefined;
+    return this[n];
+  }
 
-    index = parseInt(index);
-
-    if (index < 0) {
-      index += this.length;
-    }
-
-    return this[index];
-  };
+  for (const C of [Array, String]) {
+    Object.defineProperty(C.prototype, "at", {
+      value: at,
+      writable: true,
+      enumerable: false,
+      configurable: true,
+    });
+  }
 }
 
 function saveAs(uri, filename) {
