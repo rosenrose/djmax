@@ -82,7 +82,7 @@
         .then((response) => response.json())
         .then((json) => {
           songs = Object.values(json["songs"])
-            .reduce((a, b) => [...a, ...b])
+            .flat()
             .map((song) => new Song(song));
           tags = songs.map((song) => song["genre"]).filter((genre) => genre !== undefined);
           tags = [...new Set(tags.join(" ").split(" "))].sort();

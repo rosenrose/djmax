@@ -148,7 +148,7 @@
         .then((response) => response.json())
         .then((json) => {
           list = json;
-          all = Object.values(list).reduce((a, b) => [...a, ...b]);
+          all = Object.values(list).flat();
           all.sort();
 
           if (category) {

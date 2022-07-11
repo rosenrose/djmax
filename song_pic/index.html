@@ -124,7 +124,7 @@
             list[category] = list[category].map((song) => new Song(song));
           }
           songs = Object.values(list)
-            .reduce((a, b) => [...a, ...b])
+            .flat()
             .sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1));
 
           if (category) {

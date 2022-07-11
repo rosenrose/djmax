@@ -11,7 +11,7 @@ fetch("../db.json")
   .then((json) => {
     list = json;
     songs = Object.values(json["songs"])
-      .reduce((a, b) => [...a, ...b])
+      .flat()
       .sort((a, b) => a["title"].toLowerCase().localeCompare(b["title"].toLowerCase()));
 
     artists = {};

@@ -29,7 +29,7 @@ function App() {
         }
 
         songs = Object.values(json["songs"])
-          .reduce((a, b) => [...a, ...b])
+          .flat()
           .sort((a, b) => a["title"].toLowerCase().localeCompare(b["title"].toLowerCase()));
 
         for (let dlc in list["songs"]) {
@@ -262,7 +262,7 @@ function Artist({ mode, dlcSelect }) {
     if (["feat", "visualize"].includes(mode)) {
       artistList = artistList.filter((artist) =>
         Object.values(artists[artist][mode])
-          .reduce((a, b) => [...a, ...b])
+          .flat()
           .some((song) => dlcSelect.has(song["dlc"]))
       );
     } else {

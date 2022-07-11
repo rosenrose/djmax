@@ -14,7 +14,7 @@ fetch("../db.json")
     for (let category in list["songs"]) {
       list["songs"][category] = list["songs"][category].map((song) => new Song(song));
     }
-    songs = Object.values(list["songs"]).reduce((a, b) => [...a, ...b]);
+    songs = Object.values(list["songs"]).flat();
     document.querySelector("#run").textContent = "뽑기";
     document.querySelector("#run").disabled = false;
 
