@@ -4147,6 +4147,72 @@
         }
       },
       {
+        "title": "Techno Racer",
+        "artist": {
+          "compose": "Paul Bazooka",
+          "visualize": "Coooooool-J"
+        },
+        "genre": "Complextro",
+        "dlc": "technikatuneq",
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 12,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 10
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 7,
+            "HD": 11,
+            "MX": 13,
+            "SC": 13
+          }
+        },
+        "length": 0,
+        "bpm": "142",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
         "title": "The Feelings",
         "artist": {
           "compose": "Supbaby",
@@ -23943,6 +24009,1301 @@
         }
       }
     ],
+    "technikatuneq": [
+      {
+        "title": "별빛정원",
+        "artist": {
+          "compose": "vneld",
+          "lyrics": "vneld",
+          "vocal": "이정은",
+          "visualize": {
+            "illust": "PUNEW",
+            "motion": "ENTIA J"
+          }
+        },
+        "genre": "Starlight Pop",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 10,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 11,
+            "SC": 5
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 11,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 11,
+            "SC": 6
+          }
+        },
+        "length": 0,
+        "bpm": "162",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "A Song of Sixpence",
+        "artist": {
+          "compose": "makou",
+          "lyrics": "English Nersery Rhymes",
+          "vocal": "Itsuki and Her Friends",
+          "visualize": ["Giggsan", "Saree"]
+        },
+        "genre": "Toy Box",
+        "level": {
+          "4B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 10,
+            "SC": 5
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 10,
+            "SC": 6
+          },
+          "6B": {
+            "NM": 2,
+            "HD": 4,
+            "MX": 8,
+            "SC": 5
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 10,
+            "SC": 5
+          }
+        },
+        "length": 0,
+        "bpm": "135",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Back to Life",
+        "artist": {
+          "compose": "Croove",
+          "lyrics": "JC",
+          "vocal": ["JC", "Croove"],
+          "visualize": "DumpingLIFE"
+        },
+        "genre": "Western House",
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 11,
+            "SC": 7
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 12,
+            "SC": 5
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 5,
+            "MX": 12,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 7
+          }
+        },
+        "length": 0,
+        "bpm": "135",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Deborah",
+        "artist": {
+          "compose": "Paul Bazooka",
+          "lyrics": "Paul Bazooka",
+          "vocal": {
+            "nominal": "Lucy",
+            "ambiguous": "보컬"
+          },
+          "visualize": {
+            "illust": "PUNEW",
+            "motion": "DANZI"
+          }
+        },
+        "genre": "Complextro",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 9
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 10,
+            "MX": 13,
+            "SC": 11
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 11,
+            "SC": 10
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 12,
+            "SC": 10
+          }
+        },
+        "length": 0,
+        "bpm": "132",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Eternal Fantasy (Miya Vocal Mix)",
+        "artist": {
+          "compose": "XeoN",
+          "lyrics": "XeoN",
+          "vocal": "Miya",
+          "feat": "Planetboom(on Guitar)",
+          "visualize": {
+            "illust": "NG",
+            "motion": "HooN"
+          }
+        },
+        "genre": "Fantasy Pop",
+        "level": {
+          "4B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 8,
+            "SC": 3
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 9,
+            "SC": 5
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 5,
+            "MX": 7,
+            "SC": 4
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 11,
+            "SC": 6
+          }
+        },
+        "length": 0,
+        "bpm": "127",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Festa Nova",
+        "artist": {
+          "compose": {
+            "nominal": "TerraMycin",
+            "alias": "Mycin.T"
+          },
+          "visualize": "DumpingLIFE"
+        },
+        "genre": "Tropical Jazz",
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 12,
+            "SC": 8
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 12,
+            "SC": 8
+          },
+          "6B": {
+            "NM": 7,
+            "HD": 9,
+            "MX": 12,
+            "SC": 12
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 14,
+            "SC": 13
+          }
+        },
+        "length": 0,
+        "bpm": "188 ~ 264",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Kal_wrnw",
+        "artist": {
+          "compose": "LeeZu",
+          "visualize": "DumpingLIFE"
+        },
+        "genre": "Nu Skool Breaks",
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 11,
+            "MX": 13,
+            "SC": 12
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 13,
+            "SC": 11
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 10
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 12,
+            "SC": 9
+          }
+        },
+        "length": 0,
+        "bpm": "140",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Love☆Panic",
+        "artist": {
+          "compose": "hiyong",
+          "lyrics": "vneld",
+          "vocal": "sugarhate",
+          "visualize": ["D", "Nyoung"]
+        },
+        "genre": "Acoustic Pop",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 10,
+            "SC": 5
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 10,
+            "SC": 5
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 10,
+            "SC": 6
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 11,
+            "SC": 7
+          }
+        },
+        "length": 0,
+        "bpm": "164",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Luv Yourself",
+        "artist": {
+          "compose": "ND Lee",
+          "lyrics": "Young \"JOHN\" Kim",
+          "vocal": "소찬휘",
+          "feat": "Young \"JOHN\" Kim(on Rap)",
+          "visualize": {
+            "illust": "Moolu",
+            "motion": "woodstock"
+          }
+        },
+        "genre": "Dance Floor",
+        "level": {
+          "4B": {
+            "NM": 2,
+            "HD": 7,
+            "MX": 10,
+            "SC": 5
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 9,
+            "SC": 5
+          },
+          "6B": {
+            "NM": 1,
+            "HD": 3,
+            "MX": 9,
+            "SC": 4
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 9,
+            "SC": 5
+          }
+        },
+        "length": 0,
+        "bpm": "105",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Mukilteo Beach",
+        "artist": {
+          "compose": "Croove",
+          "lyrics": "JinKim",
+          "vocal": "Nina Park",
+          "visualize": {
+            "illust": "SARA",
+            "motion": "DumpingLIFE"
+          }
+        },
+        "genre": "Miami DnB",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 6,
+            "MX": 9,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 10,
+            "SC": 6
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 8,
+            "SC": 8
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 8,
+            "MX": 10,
+            "SC": 8
+          }
+        },
+        "length": 0,
+        "bpm": "160",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Never Ending TECHNIKA",
+        "artist": {
+          "compose": "Studio LAY-BACK",
+          "lyrics": "Studio LAY-BACK",
+          "vocal": {
+            "nominal": "Studio LAY-BACK & U",
+            "include": "Studio LAY-BACK"
+          },
+          "visualize": "SB_ENGINEER"
+        },
+        "genre": "Electro Funk",
+        "level": {
+          "4B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 10,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 8,
+            "SC": 4
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 9,
+            "SC": 8
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 7
+          }
+        },
+        "length": 0,
+        "bpm": "106",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Renovation",
+        "artist": {
+          "compose": "XeoN",
+          "visualize": ["wony", "ENTIA J"]
+        },
+        "genre": "Melodic Trance",
+        "level": {
+          "4B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 13,
+            "SC": 10
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 11,
+            "MX": 14,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 13,
+            "SC": 12
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 13,
+            "SC": 10
+          }
+        },
+        "length": 0,
+        "bpm": "144",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Retention",
+        "artist": {
+          "compose": "XeoN",
+          "visualize": {
+            "illust": "38",
+            "motion": "ENTIA J"
+          }
+        },
+        "genre": "Ethnic Groove",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 10,
+            "SC": 8
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 11,
+            "SC": 10
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 6,
+            "MX": 11,
+            "SC": 9
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 8
+          }
+        },
+        "length": 0,
+        "bpm": "130",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Shining My Boy",
+        "artist": {
+          "compose": "AstroKid",
+          "lyrics": "AstroKid",
+          "vocal": "이정은",
+          "visualize": {
+            "illust": "Young-in",
+            "motion": "HooN"
+          }
+        },
+        "genre": "Ani Pop",
+        "level": {
+          "4B": {
+            "NM": 1,
+            "HD": 4,
+            "MX": 8,
+            "SC": 3
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 5,
+            "MX": 8,
+            "SC": 3
+          },
+          "6B": {
+            "NM": 1,
+            "HD": 4,
+            "MX": 8,
+            "SC": 4
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 8,
+            "SC": 4
+          }
+        },
+        "length": 0,
+        "bpm": "133",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Silent Clarity",
+        "artist": {
+          "compose": "Tsukasa",
+          "lyrics": "Aki Misawa",
+          "vocal": "Aki Misawa",
+          "visualize": ["DumpingLIFE", "ENTIA J"]
+        },
+        "genre": "Artcore",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 10
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 13,
+            "SC": 9
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 12,
+            "SC": 12
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 13,
+            "SC": 10
+          }
+        },
+        "length": 0,
+        "bpm": "180",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Take on Me",
+        "artist": {
+          "compose": "Cuve",
+          "lyrics": "Jeannie",
+          "vocal": "Jeannie",
+          "visualize": "AJ"
+        },
+        "genre": "House Dance",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 7
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 12,
+            "SC": 7
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 11,
+            "SC": 9
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 12,
+            "SC": 7
+          }
+        },
+        "length": 0,
+        "bpm": "128",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "The MAX",
+        "artist": {
+          "compose": "ND Lee",
+          "vocal": "ND Lee",
+          "feat": "E.M(on Rap)",
+          "visualize": "prince"
+        },
+        "genre": "Acid Dance",
+        "level": {
+          "4B": {
+            "NM": 3,
+            "HD": 8,
+            "MX": 10,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 9,
+            "SC": 5
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 8
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 11,
+            "SC": 8
+          }
+        },
+        "length": 0,
+        "bpm": "120",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Thor (Deepin' Absonant Mix)",
+        "artist": {
+          "compose": "XeoN",
+          "visualize": ["Kimys", "ECO"]
+        },
+        "genre": "Melodic Trance",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 14,
+            "SC": 10
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 10,
+            "MX": 14,
+            "SC": 11
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 11,
+            "MX": 14,
+            "SC": 13
+          }
+        },
+        "length": 0,
+        "bpm": "147",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "VORTEX",
+        "artist": {
+          "compose": "Electronic Boutique",
+          "visualize": "ECO"
+        },
+        "genre": "Full On",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 11,
+            "MX": 13,
+            "SC": 10
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 11,
+            "MX": 13,
+            "SC": 11
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 12,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 9,
+            "MX": 13,
+            "SC": 11
+          }
+        },
+        "length": 0,
+        "bpm": "145",
+        "date": {
+          "PC": "2022-07-28"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      }
+    ],
     "guiltygear": [
       {
         "title": "Break a Spell",
@@ -28894,6 +30255,7 @@
     "technika1": "테크니카 1",
     "technika2": "테크니카 2",
     "technika3": "테크니카 3",
+    "technikatuneq": "테크니카 튠&큐",
     "guiltygear": "길티기어",
     "girlsfrontline": "소녀전선",
     "groovecoaster": "그루브 코스터",

@@ -945,7 +945,7 @@ function Level({ rank, level, condition }) {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 27 28"
         >
-          <use href="#star" />
+          <use href={`#${rank == "SC" ? "star_sc" : "star"}`} />
         </svg>
       )}
       {condition ? level : "　"}
