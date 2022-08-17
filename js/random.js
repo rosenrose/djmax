@@ -130,9 +130,8 @@ document.querySelector("#levelCondition").addEventListener("change", (event) => 
 document.querySelector("#run").addEventListener("click", () => {
   let result = [];
   for (let dlc of dlcSelect) {
-    let temp = window.structuredClone
-      ? structuredClone(list["songs"][dlc])
-      : JSON.parse(JSON.stringify(list["songs"][dlc]));
+    let temp =
+      structuredClone?.(list["songs"][dlc]) || JSON.parse(JSON.stringify(list["songs"][dlc]));
     for (let song of temp) {
       song["category"] = dlc;
     }
