@@ -20929,9 +20929,21 @@
       {
         "title": "Burn it Down",
         "artist": {
-          "compose": "P'sycho-Remi",
-          "lyrics": ["P'sycho-Remi", "Kalos"],
-          "vocal": "P'sycho-Remi",
+          "compose": {
+            "nominal": "P'sycho-Remi",
+            "alias": "LeeZu"
+          },
+          "lyrics": [
+            {
+              "nominal": "P'sycho-Remi",
+              "alias": "LeeZu"
+            },
+            "Kalos"
+          ],
+          "vocal": {
+            "nominal": "P'sycho-Remi",
+            "alias": "LeeZu"
+          },
           "visualize": {
             "illust": "SR",
             "motion": "79c"
@@ -21418,7 +21430,10 @@
           "compose": "Electronic Boutique",
           "lyrics": "Kastle",
           "vocal": "Kastle",
-          "feat": "P'sycho-Remi(on Guitar)",
+          "feat": {
+            "nominal": "P'sycho-Remi(on Guitar)",
+            "alias": "LeeZu"
+          },
           "visualize": {
             "illust": "SARA",
             "motion": "DumpingLIFE"
@@ -21906,7 +21921,10 @@
       {
         "title": "The Guilty",
         "artist": {
-          "compose": "P'sycho-Remi",
+          "compose": {
+            "nominal": "P'sycho-Remi",
+            "alias": "LeeZu"
+          },
           "visualize": {
             "illust": "SINBARU",
             "motion": "woodstock"

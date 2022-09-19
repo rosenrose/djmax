@@ -46,9 +46,19 @@ function App() {
                       let result = featRegex.exec(a["nominal"]);
 
                       if (result[2]) {
-                        addArtistNominal(result[1], category, song, result[2]);
+                        addArtistNominal(
+                          { ...artist, nominal: result[1] },
+                          category,
+                          song,
+                          result[2]
+                        );
                       } else {
-                        addArtistNominal(result[1], category, song, category);
+                        addArtistNominal(
+                          { ...artist, nominal: result[1] },
+                          category,
+                          song,
+                          category
+                        );
                       }
                     } else if (category == "visualize") {
                       addArtistNominal(a, category, song, category);
@@ -73,7 +83,22 @@ function App() {
                 });
               } else if (typeof artist == "object") {
                 if ("nominal" in artist) {
-                  addArtistNominal(artist, category, song, null);
+                  if (category == "feat") {
+                    let result = featRegex.exec(artist["nominal"]);
+
+                    if (result[2]) {
+                      addArtistNominal(
+                        { ...artist, nominal: result[1] },
+                        category,
+                        song,
+                        result[2]
+                      );
+                    } else {
+                      addArtistNominal({ ...artist, nominal: result[1] }, category, song, category);
+                    }
+                  } else {
+                    addArtistNominal(artist, category, song, null);
+                  }
                 } else {
                   //visualize
                   for (let subCat in artist) {
