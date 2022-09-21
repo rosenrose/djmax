@@ -43,11 +43,6 @@ let [
 ] = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
 let [totalLengthSum, totalLengthAvg, totalBpmMin, totalBpmMid, totalBpmMax] = [0, 0, 0, 0, 0];
 let timeStart; //시간 측정할 때
-let dateFormat = new Intl.DateTimeFormat("ko", {
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-});
 
 function App() {
   React.useEffect(() => {
@@ -730,7 +725,7 @@ function Title({ mode, bpmMode, dateMode }) {
                 data = song["bpm"];
                 break;
               case "date":
-                data = dateFormat.format(song["date"][dateMode]);
+                data = song["date"][dateMode].toLocaleDateString();
                 break;
               case "noteAvg":
                 data = song["noteAvg"][head].toFixed(1);
