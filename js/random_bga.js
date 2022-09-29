@@ -3,9 +3,9 @@ const itemContainer = document.querySelector("#itemContainer");
 const runBtn = document.querySelector("#run");
 const resultCount = document.querySelector("#resultCountInput");
 const shareBtn = document.querySelector("#shareBtn");
-const cloud = "https://d2wwh0934dzo2k.cloudfront.net/djmax/cut/";
 const PAD_LENGTH = 4;
 
+fetch("https://webp-cloudrun-osuiaeahvq-an.a.run.app/");
 fetch("../db.json")
   .then((response) => response.json())
   .then((json) => {
@@ -185,7 +185,7 @@ runBtn.addEventListener("click", () => {
             cut: randCut,
             duration,
             webpFormat,
-            cloud,
+            from: "djmax",
             PAD_LENGTH,
           },
           itemTemplate.firstElementChild
