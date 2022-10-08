@@ -9,6 +9,7 @@
       * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
       body {
         background-color: #999;
@@ -18,10 +19,7 @@
         justify-content: center;
         align-items: center;
       }
-      img {
-        max-width: 100%;
-        max-height: 100%;
-      }
+      /* 이미지에 width, height 100% 설정하면 줌인 안됨 */
 
       .click {
         cursor: pointer;
@@ -61,7 +59,7 @@
     </style>
   </head>
   <body>
-    <img src="" />
+    <img src="" hidden />
     <div>
       <img src="../img/left-arrow.svg" class="click float fadeOut" id="prev" />
       <img src="../img/right-arrow.svg" class="click float fadeOut" id="next" />
@@ -72,6 +70,39 @@
       category = url.searchParams.get("category");
       file = url.searchParams.get("file");
       prefix = `https://d2l1b145ht03q6.cloudfront.net/djmax/gallery`;
+      initWidth = initHeight = 0;
+
+      img.addEventListener("load", () => {
+        if (img.height > initHeight) {
+          img.height = initHeight;
+        }
+
+        setTimeout(() => {
+          if (img.width > initWidth) {
+            img.width = initWidth;
+            img.height = initWidth * (img.naturalHeight / img.naturalWidth);
+          }
+        });
+
+        img.hidden = false;
+      });
+
+      window.addEventListener("DOMContentLoaded", () => {
+        [initWidth, initHeight] = [window.innerWidth, window.innerHeight];
+      });
+      window.addEventListener("resize", () => {
+        let { innerWidth, innerHeight } = window;
+        console.log(innerWidth, innerHeight);
+
+        if (innerHeight < initHeight) {
+          document.body.style.height = `${((initHeight / innerHeight) * 100).toFixed(2)}vh`;
+          document.body.style.width = `${((initWidth / innerWidth) * 100).toFixed(2)}vw`;
+          return;
+        }
+
+        document.body.style.height = "100vh";
+        document.body.style.width = "100vw";
+      });
 
       fetch("gallery_list.json")
         .then((response) => response.json())
