@@ -621,5 +621,16 @@
     "589 VORTEX",
     "590 VORTEX (2)",
     "591 VORTEX (3)"
+  ],
+  "season7": [
+    "592 S7 CLEAR",
+    "593 S7 CLEAR (2)",
+    "594 S7 FAIL",
+    "595 S7 FAIL (2)",
+    "596 S7 LENA",
+    "597 S7 LENA (2)",
+    "598 S7 LIVE",
+    "599 S7 LIVE (2)",
+    "600 S7 LIVE (3)"
   ]
 }
