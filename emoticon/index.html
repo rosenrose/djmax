@@ -12,6 +12,7 @@
       }
 
       .season > img {
+        width: 25%;
         display: block;
         margin: 1em auto;
       }
@@ -19,7 +20,30 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
         text-align: left;
+        animation: fadeIn 0.5s ease-in-out;
       }
+
+      @keyframes fadeIn {
+        0% {
+          margin-top: -2rem;
+          opacity: 0;
+        }
+        100% {
+          margin-top: 0;
+          opacity: 1;
+        }
+      }
+      @keyframes fadeOut {
+        0% {
+          margin-top: 0;
+          opacity: 1;
+        }
+        100% {
+          margin-top: -2rem;
+          opacity: 0;
+        }
+      }
+
       .item {
         text-align: center;
         margin: 0;
@@ -63,7 +87,7 @@
           for (let season in list) {
             let seasonTemplate = document.querySelector("#seasonTemplate").content.cloneNode(true);
             seasonTemplate.querySelector("div").id = season;
-            seasonTemplate.querySelector("img").src = `${season}.png`;
+            seasonTemplate.querySelector("img").src = `../img/${season}.png`;
             let container = seasonTemplate.querySelector(".container");
 
             Object.entries(list[season]).forEach(([fileName, displayName], i) => {

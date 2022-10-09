@@ -82,5 +82,17 @@
     "ActionFever": "FEVER!",
     "ActionClear": "CLEAR!",
     "ActionMax": "MAX COMBO!"
+  },
+  "s7": {
+    "ClearHiSeason7": "HI",
+    "ClearShock": "SHOCK",
+    "FailAppear": "APPEAR",
+    "FailTease": "TEASE",
+    "LenaQuestion": "QUESTION",
+    "LenaWelcome": "WELCOME",
+    "PlayBuro": "BURO",
+    "PlayCalm": "CALM",
+    "PlaySweat": "SWEAT",
+    "PlayWalral": "WALRAL"
   }
 }
