@@ -7,6 +7,11 @@
     <title>디제이맥스 리스펙트 이모티콘</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/common.css" title="common" />
     <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       body {
         background-color: gray;
       }
@@ -20,7 +25,18 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
         text-align: left;
-        transition: margin 0.5s, opacity 0.5s;
+        animation: fadeIn 0.5s ease-in-out;
+        transition: margin 1s, opacity 0.3s;
+      }
+      @keyframes fadeIn {
+        0% {
+          margin-top: -2rem;
+          opacity: 0;
+        }
+        100% {
+          margin-top: 0;
+          opacity: 1;
+        }
       }
 
       .item {
@@ -50,7 +66,7 @@
     <template id="seasonTemplate">
       <div class="season" id="">
         <img src="" class="click" />
-        <div class="container" style="display: none; opacity: 0; margin-top: -2rem"></div>
+        <div class="container" style="display: none; margin-top: 0; opacity: 1"></div>
       </div>
     </template>
     <template id="itemTemplate">
@@ -102,21 +118,19 @@
 
               if (container.style.display == "none") {
                 container.style.display = "";
-
-                setTimeout(() => {
-                  container.style.marginTop = "0";
-                  container.style.opacity = 1;
-                });
                 return;
               }
 
-              container.style.marginTop = "-5rem";
+              container.style.marginTop = `-${
+                container.clientHeight + parseInt(getComputedStyle(img).marginTop)
+              }px`;
               container.style.opacity = 0;
 
               setTimeout(() => {
                 container.style.display = "none";
-                container.style.marginTop = "-2rem";
-              }, 500);
+                container.style.marginTop = "0";
+                container.style.opacity = 1;
+              }, 1000);
             });
           });
         });
