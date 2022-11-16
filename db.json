@@ -625,6 +625,59 @@
       {
         "title": "Alone",
         "artist": {
+          "compose": "Marshmello"
+        },
+        "genre": "Future Bass",
+        "exclusive": "PC",
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 10
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 8
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12
+          }
+        },
+        "length": 199,
+        "bpm": "142",
+        "date": {
+          "PC": "2019-12-19"
+        },
+        "note": {
+          "4B": {
+            "NM": 703,
+            "HD": 1082
+          },
+          "5B": {
+            "NM": 605,
+            "HD": 831
+          },
+          "6B": {
+            "NM": 589,
+            "HD": 981,
+            "MX": 1328
+          },
+          "8B": {
+            "NM": 632,
+            "HD": 1006,
+            "MX": 1453
+          }
+        }
+      },
+      {
+        "title": "Alone",
+        "artist": {
           "compose": "Nauts",
           "lyrics": "Nauts",
           "vocal": {
@@ -686,59 +739,6 @@
             "HD": 472,
             "MX": 859,
             "SC": 972
-          }
-        }
-      },
-      {
-        "title": "Alone",
-        "artist": {
-          "compose": "Marshmello"
-        },
-        "genre": "Future Bass",
-        "exclusive": "PC",
-        "level": {
-          "4B": {
-            "NM": 6,
-            "HD": 10
-          },
-          "5B": {
-            "NM": 4,
-            "HD": 8
-          },
-          "6B": {
-            "NM": 5,
-            "HD": 8,
-            "MX": 12
-          },
-          "8B": {
-            "NM": 5,
-            "HD": 8,
-            "MX": 12
-          }
-        },
-        "length": 199,
-        "bpm": "142",
-        "date": {
-          "PC": "2019-12-19"
-        },
-        "note": {
-          "4B": {
-            "NM": 703,
-            "HD": 1082
-          },
-          "5B": {
-            "NM": 605,
-            "HD": 831
-          },
-          "6B": {
-            "NM": 589,
-            "HD": 981,
-            "MX": 1328
-          },
-          "8B": {
-            "NM": 632,
-            "HD": 1006,
-            "MX": 1453
           }
         }
       },
@@ -1287,7 +1287,7 @@
           "vocal": "Alia May Plesa-Topham",
           "visualize": "VJTB87"
         },
-        "genre": "Electronica Downtempo",
+        "genre": "Electronica Down-Tempo",
         "level": {
           "4B": {
             "NM": 3,
@@ -14100,7 +14100,7 @@
             "motion": "79c"
           }
         },
-        "genre": "Up Tempo",
+        "genre": "Up-Tempo",
         "level": {
           "4B": {
             "NM": 5,
@@ -17192,7 +17192,7 @@
           "compose": "IMLAY",
           "visualize": "YD"
         },
-        "genre": "Mid Tempo Dubstep",
+        "genre": "Mid-Tempo Dubstep",
         "level": {
           "4B": {
             "NM": 5,
@@ -19256,6 +19256,1389 @@
             "NM": 571,
             "MX": 1300,
             "SC": 1514
+          }
+        }
+      }
+    ],
+    "vextension3": [
+      {
+        "title": "밤비(Bambi) - DJMAX Edit -",
+        "artist": {
+          "compose": ["임수호", "웅킴", "N!ko"],
+          "arrange": ["임수호", "웅킴", "N!ko", "Memme"],
+          "lyrics": ["임수호", "N!ko", "림고"],
+          "vocal": "다즈비(DAZBEE)",
+          "visualize": "PEPPER CONPANNA"
+        },
+        "genre": "Pop",
+        "level": {
+          "4B": {
+            "NM": 3,
+            "HD": 8,
+            "MX": 11,
+            "SC": 8
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 9,
+            "SC": 9
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 10,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 10,
+            "SC": 6
+          }
+        },
+        "length": 143,
+        "bpm": "120",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "#mine (feat. Riho Iwamoto)",
+        "artist": {
+          "compose": "Tsukasa",
+          "lyrics": "Riho Iwamoto",
+          "vocal": "Riho Iwamoto",
+          "visualize": {
+            "illust": "nameDYE",
+            "motion": "MoDEKU"
+          }
+        },
+        "genre": "Progressive Future Bass",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 10,
+            "SC": 10
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 10,
+            "MX": 12,
+            "SC": 8
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 8
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 12,
+            "SC": 9
+          }
+        },
+        "length": 146,
+        "bpm": "195",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Bright Future",
+        "artist": {
+          "compose": "RiraN",
+          "visualize": "prince"
+        },
+        "genre": "Future Core",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 14
+          },
+          "5B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 13,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 8,
+            "HD": 10,
+            "MX": 13,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 14,
+            "SC": 14
+          }
+        },
+        "length": 128,
+        "bpm": "175",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Charming World",
+        "artist": {
+          "compose": "SOPHI",
+          "visualize": {
+            "illust": "S.in",
+            "motion": {
+              "alias": "Lepusnette",
+              "nominal": "RK"
+            }
+          }
+        },
+        "genre": "Future Bass",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 9,
+            "SC": 5
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 9,
+            "SC": 6
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 6,
+            "MX": 9,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 9,
+            "SC": 5
+          }
+        },
+        "length": 141,
+        "bpm": "160",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Disappearing Act",
+        "artist": {
+          "compose": "Pierre Blanche",
+          "visualize": "Akisawa Kosaku"
+        },
+        "genre": "Hard Style",
+        "level": {
+          "4B": {
+            "NM": 7,
+            "HD": 11,
+            "MX": 13,
+            "SC": 13
+          },
+          "5B": {
+            "NM": 8,
+            "HD": 12,
+            "MX": 14,
+            "SC": 14
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 11,
+            "MX": 15,
+            "SC": 14
+          },
+          "8B": {
+            "NM": 8,
+            "HD": 11,
+            "MX": 15,
+            "SC": 14
+          }
+        },
+        "length": 146,
+        "bpm": "185",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Emerge",
+        "artist": {
+          "compose": "Pure 100%",
+          "visualize": {
+            "illust": "Ongoo",
+            "motion": "MoDEKU"
+          }
+        },
+        "genre": "Mid-Tempo Bass",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 10,
+            "MX": 14,
+            "SC": 13
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 10,
+            "MX": 13,
+            "SC": 12
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 12
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 13
+          }
+        },
+        "length": 123,
+        "bpm": "100",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Every Day ~ Every Night",
+        "artist": {
+          "compose": "Night Tempo",
+          "lyrics": "EXN",
+          "vocal": "EXN",
+          "feat": "EXN",
+          "visualize": {
+            "illust": "moodio",
+            "motion": "SB_ENGINEER"
+          }
+        },
+        "genre": "House",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 8,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 8,
+            "SC": 4
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 8,
+            "SC": 5
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 11,
+            "SC": 5
+          }
+        },
+        "length": 124,
+        "bpm": "128",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Fundamental",
+        "artist": {
+          "compose": "Bagagee Viphex13",
+          "visualize": {
+            "illust": "Jongha Yoon",
+            "motion": "SB_ENGINEER"
+          }
+        },
+        "genre": "Hybrid DnB",
+        "level": {
+          "4B": {
+            "NM": 7,
+            "HD": 11,
+            "MX": 14,
+            "SC": 14
+          },
+          "5B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 14,
+            "SC": 15
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 12,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 8,
+            "HD": 13,
+            "MX": 15,
+            "SC": 15
+          }
+        },
+        "length": 119,
+        "bpm": "174",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "KICK IT",
+        "artist": {
+          "compose": "HAYAKO",
+          "visualize": "MoDEKU"
+        },
+        "genre": "Psychedelic Full-On",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 11,
+            "MX": 14,
+            "SC": 14
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 11,
+            "MX": 13,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 14
+          },
+          "8B": {
+            "NM": 7,
+            "HD": 11,
+            "MX": 15,
+            "SC": 14
+          }
+        },
+        "length": 135,
+        "bpm": "180",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Misty E'ra 'Mui'",
+        "artist": {
+          "compose": ["Mycin.T", "jam-jam"],
+          "lyrics": ["Mycin.T", "jam-jam"],
+          "vocal": "jam-jam",
+          "feat": "Mycin.T(on Guitar)",
+          "visualize": {
+            "illust": "Mamo.C",
+            "motion": "DumpingLIFE"
+          }
+        },
+        "genre": "Ethnic Fantasy",
+        "level": {
+          "4B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 11,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 10,
+            "MX": 13,
+            "SC": 11
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 11,
+            "SC": 10
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 11,
+            "MX": 13,
+            "SC": 11
+          }
+        },
+        "length": 138,
+        "bpm": "141",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Moment (feat. Nauts)",
+        "artist": {
+          "compose": "DoubleTO",
+          "arrange": ["DoubleTO", "Nauts"],
+          "lyrics": "DoubleTO",
+          "vocal": "정민준",
+          "feat": "Nauts",
+          "visualize": {
+            "illust": "nameDYE",
+            "motion": "MoDEKU"
+          }
+        },
+        "genre": "Electronic",
+        "level": {
+          "4B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 12,
+            "SC": 10
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 9
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 12,
+            "SC": 11
+          }
+        },
+        "length": 126,
+        "bpm": "165",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "NB RANGERS - 운명의 Destiny",
+        "artist": {
+          "compose": "NieN",
+          "lyrics": "NieN",
+          "vocal": "A.MON",
+          "visualize": {
+            "illust": "HAMMA",
+            "story": "DumpingLIFE"
+          }
+        },
+        "genre": "Rock",
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 13,
+            "SC": 13
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 13,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 11,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 7,
+            "HD": 9,
+            "MX": 12,
+            "SC": 12
+          }
+        },
+        "length": 132,
+        "bpm": "163",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Plasma Sphere",
+        "artist": {
+          "compose": "VoidRover",
+          "visualize": {
+            "illust": "FEMMER",
+            "motion": "필살기PSK"
+          }
+        },
+        "genre": "Mid-Tempo Electro",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 13,
+            "SC": 13
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 9,
+            "MX": 13,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 12,
+            "SC": 12
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 12,
+            "MX": 14,
+            "SC": 14
+          }
+        },
+        "length": 136,
+        "bpm": "107",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Secret",
+        "artist": {
+          "compose": ["Milkoi", "Ruxxi"],
+          "lyrics": "Kyojaku",
+          "vocal": "Sanso Nakamura",
+          "feat": "Sanso Nakamura",
+          "visualize": "팥쥐"
+        },
+        "genre": "J-Pop",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 10,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 6
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 6,
+            "MX": 10,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 10,
+            "SC": 9
+          }
+        },
+        "length": 122,
+        "bpm": "123",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Set Me Free",
+        "artist": {
+          "compose": "Takahiro Eguchi",
+          "lyrics": "Fumihisa Tanaka",
+          "vocal": "Kururu",
+          "feat": "Kururu",
+          "visualize": "KKORI"
+        },
+        "genre": "Future Bass",
+        "level": {
+          "4B": {
+            "NM": 2,
+            "HD": 7,
+            "MX": 9,
+            "SC": 9
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 6,
+            "MX": 12,
+            "SC": 10
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 5,
+            "MX": 10,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 9,
+            "MX": 12,
+            "SC": 12
+          }
+        },
+        "length": 143,
+        "bpm": "142",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Space Dream (feat. J.O.Y)",
+        "artist": {
+          "compose": [
+            { "nominal": "Newton", "include": "Mr.Funky" },
+            { "nominal": "Flash Finger", "alias": "Mr.Funky" },
+            "JooBooM",
+            "J.O.Y"
+          ],
+          "arrange": [{ "nominal": "Flash Finger", "alias": "Mr.Funky" }, "JooBooM"],
+          "lyrics": "J.O.Y",
+          "vocal": "J.O.Y",
+          "visualize": "Yeonzip"
+        },
+        "genre": "Synth Wave",
+        "level": {
+          "4B": {
+            "NM": 3,
+            "HD": 5,
+            "MX": 8,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 6
+          },
+          "6B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 9,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 10,
+            "SC": 8
+          }
+        },
+        "length": 155,
+        "bpm": "110",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "STEP",
+        "artist": {
+          "compose": "YESEO",
+          "lyrics": "YESEO",
+          "vocal": "YESEO",
+          "visualize": "SOHI"
+        },
+        "genre": "Progressive House",
+        "level": {
+          "4B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 9,
+            "SC": 9
+          },
+          "5B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 10,
+            "SC": 12
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 5,
+            "MX": 9,
+            "SC": 10
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 11,
+            "SC": 10
+          }
+        },
+        "length": 147,
+        "bpm": "125",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Tic! Tac! Toe!",
+        "artist": {
+          "compose": ["TAK", "Corbin"],
+          "arrange": "TAK",
+          "lyrics": "Corbin",
+          "vocal": "Lily",
+          "visualize": {
+            "illust": "Mamo.C",
+            "motion": [
+              "NANHA7",
+              {
+                "nominal": "Rocky Studio Graphic Team",
+                "include": ["eyekiss", "MoDEKU", "SB_ENGINEER"]
+              }
+            ]
+          }
+        },
+        "genre": "Electro House",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 13,
+            "SC": 9
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 11,
+            "SC": 9
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 11,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 13,
+            "SC": 9
+          }
+        },
+        "length": 144,
+        "bpm": "126",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Winners",
+        "artist": {
+          "compose": "CHUCK",
+          "lyrics": "CHUCK",
+          "vocal": "CielA",
+          "feat": "CHUCK(on Chorus)",
+          "visualize": {
+            "illust": "31",
+            "motion": "MoDEKU"
+          }
+        },
+        "genre": "Pop Rock",
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 12,
+            "MX": 14,
+            "SC": 12
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 12,
+            "MX": 14,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 10,
+            "MX": 13,
+            "SC": 12
+          },
+          "8B": {
+            "NM": 7,
+            "HD": 12,
+            "MX": 14,
+            "SC": 14
+          }
+        },
+        "length": 133,
+        "bpm": "190",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Zero-Break",
+        "artist": {
+          "compose": "Cosmograph",
+          "visualize": "Gunzo"
+        },
+        "genre": "Hard Techno",
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 11,
+            "MX": 14,
+            "SC": 15
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 11,
+            "MX": 15,
+            "SC": 14
+          },
+          "6B": {
+            "NM": 8,
+            "HD": 12,
+            "MX": 14,
+            "SC": 15
+          },
+          "8B": {
+            "NM": 8,
+            "HD": 12,
+            "MX": 14,
+            "SC": 15
+          }
+        },
+        "length": 127,
+        "bpm": "160 ~ 165",
+        "date": {
+          "PC": "2022-11-16"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
           }
         }
       }
@@ -30489,6 +31872,7 @@
     "blacksquare": "블랙 스퀘어",
     "vextension": "V 익스텐션",
     "vextension2": "V 익스텐션 2",
+    "vextension3": "V 익스텐션 3",
     "emotionalsense": "이모셔널 센스",
     "technika1": "테크니카 1",
     "technika2": "테크니카 2",
