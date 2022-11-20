@@ -112,7 +112,7 @@
           all.sort();
 
           if (file) {
-            img.src = `${prefix}/original/${file}.png`;
+            img.src = `${prefix}/original/${encodeURIComponent(file)}.png`;
             document.head.querySelector("title").textContent = file.slice(4);
           }
         });

@@ -98,6 +98,7 @@
       <a href="./?category=season6"><img src="../img/s6.png" /></a>
       <a href="./?category=technikatuneq"><img src="../img/category_technikatuneq.png" /></a>
       <a href="./?category=season7"><img src="../img/s7.png" /></a>
+      <a href="./?category=vextension3"><img src="../img/category_vextension3.png" /></a>
     </div>
     <div class="grid"></div>
     <template id="itemTemplate">
@@ -159,10 +160,12 @@
               let template = document.querySelector("#itemTemplate").content.cloneNode(true);
 
               let item = template.firstElementChild;
-              item.querySelector("a").href = `viewer.html?category=${category}&file=${i}`;
+              item.querySelector(
+                "a"
+              ).href = `viewer.html?category=${category}&file=${encodeURIComponent(i)}`;
               // let div = document.createElement("div");
               let img = template.querySelector("img");
-              img.src = `${prefix}/thumbnail/${i}.png`;
+              img.src = `${prefix}/thumbnail/${encodeURIComponent(i)}.png`;
               img.addEventListener("load", SetGridItemHeight);
 
               template.querySelector("figcaption").textContent = i.slice(4);
