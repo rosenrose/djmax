@@ -2903,6 +2903,74 @@
         }
       },
       {
+        "title": "Mr.Lonely",
+        "artist": {
+          "compose": "NieN",
+          "lyrics": "NieN",
+          "vocal": "Zim",
+          "visualize": "AJ"
+        },
+        "genre": "Hybrid Rock",
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 13,
+            "SC": 12
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 9
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 13,
+            "SC": 10
+          }
+        },
+        "length": 0,
+        "bpm": "114",
+        "date": {
+          "PS4": "2022-11-24",
+          "PC": "2022-11-24"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
         "title": "Mulch",
         "artist": {
           "compose": {
