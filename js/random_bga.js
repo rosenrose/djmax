@@ -130,6 +130,7 @@ document.querySelector("#webpSelect").addEventListener("change", (event) => {
     webpFormat = event.target.value;
   }
 });
+
 document.querySelector("input[type='range']").addEventListener("input", (event) => {
   duration = parseInt(event.target.value);
   seconds = duration / 12;
@@ -160,21 +161,25 @@ runBtn.addEventListener("click", () => {
   itemContainer.replaceChildren();
 
   const promsies = [];
+
   for (let i = 0; i < count; i++) {
     const rand = randomInt(0, songList.length);
     const { id, name, cut } = songList[rand];
     const itemTemplate = document.querySelector("#itemTemplate").content.cloneNode(true);
     const [loading, itemImg] = itemTemplate.querySelectorAll("img");
-    const link = itemTemplate.querySelector("a");
+    const [imgLink, youtubeLink] = itemTemplate.querySelectorAll("a");
     const caption = itemTemplate.querySelector("figcaption");
     let randCut;
 
     if (cutMode == "jpg") {
       randCut = randomInt(1, parseInt(cut) + 1);
-      itemImg.src = `https://d2wwh0934dzo2k.cloudfront.net/djmax/cut/${id}/${randCut
+      imgSrc = `https://d2wwh0934dzo2k.cloudfront.net/djmax/cut/${id}/${randCut
         .toString()
         .padStart(PAD_LENGTH, "0")}.jpg`;
-      link.href = `https://youtu.be/${id}`;
+
+      itemImg.src = imgSrc;
+      imgLink.href = imgSrc;
+      youtubeLink.href = `https://youtu.be/${id}`;
     } else if (cutMode == "webp") {
       randCut = randomInt(1, parseInt(cut) + 1 - duration);
       try {
@@ -200,6 +205,7 @@ runBtn.addEventListener("click", () => {
       new Promise((resolve) => {
         itemImg.addEventListener("load", (event) => {
           loading.hidden = true;
+          youtubeLink.querySelector("img").hidden = false;
           caption.textContent = cutMode == "jpg" ? name : `${name} (${event.target.dataset.size})`;
           resolve();
         });
