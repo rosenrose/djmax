@@ -179,7 +179,6 @@ runBtn.addEventListener("click", () => {
 
       itemImg.src = imgSrc;
       imgLink.href = imgSrc;
-      youtubeLink.href = `https://youtu.be/${id}`;
     } else if (cutMode == "webp") {
       randCut = randomInt(1, parseInt(cut) + 1 - duration);
       try {
@@ -200,6 +199,8 @@ runBtn.addEventListener("click", () => {
         caption.textContent = "전송 실패";
       }
     }
+
+    youtubeLink.href = `https://youtu.be/${id}`;
 
     promsies.push(
       new Promise((resolve) => {
