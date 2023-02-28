@@ -32105,6 +32105,1018 @@
           }
         }
       }
+    ],
+    "ez2on": [
+      {
+        "title": "느낌",
+        "artist": {
+          "compose": ["Kang Eun Soo", "eridanus"],
+          "visualize": "SR"
+        },
+        "level": {
+          "4B": {
+            "NM": 2,
+            "HD": 4,
+            "MX": 6,
+            "SC": 3
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 5,
+            "MX": 8,
+            "SC": 6
+          },
+          "6B": {
+            "NM": 1,
+            "HD": 4,
+            "MX": 8,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 10,
+            "SC": 7
+          }
+        },
+        "length": 0,
+        "bpm": "125",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Appeal",
+        "artist": {
+          "compose": {
+            "nominal": "Andy Lee",
+            "alias": "ND Lee"
+          },
+          "lyrics": "Jennifer",
+          "vocal": "Jennifer",
+          "feat": "Special K(on Rap)",
+          "visualize": {
+            "nominal": "S",
+            "alias": "imp17"
+          }
+        },
+        "level": {
+          "4B": {
+            "NM": 1,
+            "HD": 5,
+            "MX": 7,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 2,
+            "HD": 6,
+            "MX": 10,
+            "SC": 6
+          },
+          "6B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 8,
+            "SC": 6
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 10,
+            "SC": 7
+          }
+        },
+        "length": 0,
+        "bpm": "110",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Aquaris",
+        "artist": {
+          "compose": "Croove",
+          "vocal": "Miya",
+          "visualize": [
+            "imp17",
+            {
+              "nominal": "S",
+              "alias": "imp17"
+            }
+          ]
+        },
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 12,
+            "SC": 10
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 10,
+            "MX": 12,
+            "SC": 11
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 12,
+            "SC": 12
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 12,
+            "SC": 11
+          }
+        },
+        "length": 0,
+        "bpm": "140",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Back for more",
+        "artist": {
+          "compose": "Ruby Tuesday",
+          "lyrics": "Chris Carlson",
+          "vocal": "Jemmy Carlson",
+          "visualize": "Xeronion"
+        },
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 7
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 8,
+            "SC": 8
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 10,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 11,
+            "SC": 9
+          }
+        },
+        "length": 0,
+        "bpm": "130",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Complex",
+        "artist": {
+          "compose": "Croove",
+          "visualize": {
+            "nominal": "J",
+            "alias": "Ache"
+          }
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 14,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 10,
+            "MX": 13,
+            "SC": 13
+          }
+        },
+        "length": 0,
+        "bpm": "123",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Envy Mask",
+        "artist": {
+          "compose": ["Croove", "Mario Bolden"],
+          "arrange": "Ahn Sung il",
+          "lyrics": "Mario Bolden",
+          "vocal": "Mario Bolden",
+          "feat": "Mario Bolden(on Rap)",
+          "visualize": ["Xeronion", "Ponglow"]
+        },
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 10,
+            "SC": 8
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 11,
+            "SC": 9
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 11,
+            "SC": 8
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 8,
+            "MX": 13,
+            "SC": 8
+          }
+        },
+        "length": 0,
+        "bpm": "118",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Lie Lie",
+        "artist": {
+          "compose": {
+            "nominal": "Andy Lee",
+            "alias": "ND Lee"
+          },
+          "lyrics": "JAY",
+          "vocal": "Lee Seong yeon",
+          "visualize": "Ache"
+        },
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 7
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 8,
+            "MX": 11,
+            "SC": 7
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 11,
+            "SC": 9
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 8
+          }
+        },
+        "length": 0,
+        "bpm": "125",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Look out ~Here comes my love~",
+        "artist": {
+          "compose": "Ruby Tuesday",
+          "lyrics": "Ruby Tuesday",
+          "vocal": "Angel O'Brien",
+          "visualize": "Xeronion"
+        },
+        "level": {
+          "4B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 9,
+            "SC": 5
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 9,
+            "SC": 6
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 8,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 10,
+            "SC": 8
+          }
+        },
+        "length": 0,
+        "bpm": "125",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Metagalactic",
+        "artist": {
+          "compose": "xxdbxx",
+          "visualize": {
+            "nominal": "J",
+            "alias": "Ache"
+          }
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 12
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 10,
+            "MX": 12,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 13,
+            "SC": 12
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 13,
+            "SC": 12
+          }
+        },
+        "length": 0,
+        "bpm": "152",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Nihilism",
+        "artist": {
+          "compose": "nato",
+          "visualize": "Lepusnette"
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 14
+          },
+          "5B": {
+            "NM": 7,
+            "HD": 11,
+            "MX": 15,
+            "SC": 14
+          },
+          "6B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 14,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 11,
+            "MX": 14,
+            "SC": 14
+          }
+        },
+        "length": 0,
+        "bpm": "180",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Sand Storm",
+        "artist": {
+          "compose": "Croove",
+          "visualize": [
+            { "nominal": "P", "alias": "Ponglow" },
+            { "nominal": "A", "alias": "Airborn" },
+            { "nominal": "L", "alias": "lassoft" },
+            { "nominal": "A", "alias": "Ache" },
+            { "nominal": "F", "alias": "Forte Escape" }
+          ]
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 13
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 11,
+            "MX": 13,
+            "SC": 12
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 11,
+            "MX": 13,
+            "SC": 12
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 13
+          }
+        },
+        "length": 0,
+        "bpm": "164",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Showdown",
+        "artist": {
+          "compose": {
+            "nominal": "Andy Lee",
+            "alias": "ND Lee"
+          },
+          "feat": "Tommy Kim(on Guitar)",
+          "visualize": "Lee Wang-Soo"
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 11,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 11,
+            "SC": 10
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 12,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 12,
+            "SC": 11
+          }
+        },
+        "length": 0,
+        "bpm": "130",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Sparrow",
+        "artist": {
+          "compose": ["xxdbxx", "Croove"],
+          "feat": "Croove(on keyboard)",
+          "visualize": "DongHun"
+        },
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 13,
+            "SC": 10
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 12,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 13,
+            "SC": 11
+          }
+        },
+        "length": 0,
+        "bpm": "132",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Stay",
+        "artist": {
+          "compose": ["Jeon Jun Kyu", "Mario Bolden"],
+          "arrange": "Jeon Jun Kyu",
+          "lyrics": "Jeon Jun Kyu",
+          "vocal": "Mario Bolden",
+          "feat": "Terrence(on Rap)",
+          "visualize": "lassoft"
+        },
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 10,
+            "SC": 9
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 11,
+            "SC": 9
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 10,
+            "SC": 9
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 12,
+            "SC": 10
+          }
+        },
+        "length": 0,
+        "bpm": "125",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Weird Wave",
+        "artist": {
+          "compose": "Joyrock",
+          "visualize": "Shukei"
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 13
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 13,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 11,
+            "MX": 13,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 14
+          }
+        },
+        "length": 0,
+        "bpm": "147",
+        "date": {
+          "PC": "2023-02-23"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      }
     ]
   },
   "collaboration": [
@@ -32116,7 +33128,8 @@
     "chunithm",
     "estimate",
     "nexon",
-    "musedash"
+    "musedash",
+    "ez2on"
   ],
   "dlcKor": {
     "respect": "리스펙트",
@@ -32142,7 +33155,8 @@
     "chunithm": "츄니즘",
     "estimate": "에스티메이트",
     "nexon": "넥슨",
-    "musedash": "뮤즈 대쉬"
+    "musedash": "뮤즈 대쉬",
+    "ez2on": "이지투온"
   },
   "template": {
     "title": "",

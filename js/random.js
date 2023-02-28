@@ -70,11 +70,15 @@ document.querySelector("#modeSelect").addEventListener("change", (event) => {
     if (document.querySelector("input[value='vextension3']").checked) {
       dlcSelect.add("vextension3");
     }
+    if (document.querySelector("input[value='ez2on']").checked) {
+      dlcSelect.add("ez2on");
+    }
   } else if (mode == "PS4") {
     rankSelect.delete("SC");
     dlcSelect.delete("nexon");
     dlcSelect.delete("musedash");
     dlcSelect.delete("vextension3");
+    dlcSelect.delete("ez2on");
   }
 });
 

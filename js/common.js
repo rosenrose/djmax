@@ -78,8 +78,12 @@ function Song(song, isStat) {
   }
 
   let title = this["title"];
-  if (["Alone", "Urban Night", "Voyage"].includes(title)) {
-    title += ` (${this["artist"]["compose"]})`;
+  if (["Alone", "Showdown", "Urban Night", "Voyage"].includes(title)) {
+    if (typeof this["artist"]["compose"] === "string") {
+      title += ` (${this["artist"]["compose"]})`;
+    } else {
+      title += ` (${this["artist"]["compose"]["nominal"]})`;
+    }
   }
   this["uniqueTitle"] = title;
 
