@@ -2730,6 +2730,71 @@
         }
       },
       {
+        "title": "I'M ALIVE",
+        "artist": {
+          "compose": "Laurent Newfield",
+          "visualize": "wafflev0v"
+        },
+        "genre": "Euro Dance",
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 11,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 12
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 10,
+            "MX": 13,
+            "SC": 13
+          }
+        },
+        "length": 0,
+        "bpm": "170",
+        "date": {
+          "PC": "2023-03-09"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
         "title": "KILLER BEE",
         "artist": {
           "compose": "GOTH",
@@ -24394,7 +24459,7 @@
       {
         "title": "Angel",
         "artist": {
-          "compose": "Laurent Newfield & Ravenant",
+          "compose": ["Laurent Newfield", "Ravenant"],
           "lyrics": "Ravenant",
           "vocal": "Halya",
           "visualize": {
@@ -25703,7 +25768,7 @@
       {
         "title": "Wanna Be Your Lover",
         "artist": {
-          "compose": "Laurent Newfield & Ravenant",
+          "compose": ["Laurent Newfield", "Ravenant"],
           "lyrics": "Ravenant",
           "vocal": "Alex Ray",
           "visualize": {
