@@ -8337,9 +8337,9 @@
       {
         "title": "Temptation",
         "artist": {
-          "compose": "S-TRO",
-          "arrange": ["S-TRO", "Forte Escape"],
-          "lyrics": "S-TRO",
+          "compose": { "nominal": "S-TRO", "alias": "JC" },
+          "arrange": [{ "nominal": "S-TRO", "alias": "JC" }, "Forte Escape"],
+          "lyrics": { "nominal": "S-TRO", "alias": "JC" },
           "vocal": "Borami",
           "feat": "JC(on Rap)",
           "visualize": "Eyehead"
