@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>디제이맥스 리스펙트 갤러리 뷰어</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/common.css" title="common" />
     <style type="text/css">
       * {
         margin: 0;
@@ -20,6 +21,13 @@
         align-items: center;
       }
       /* 이미지에 width, height 100% 설정하면 줌인 안됨 */
+      #home {
+        background-color: none;
+        position: fixed;
+        left: 0.5rem;
+        top: 0.5rem;
+        opacity: 0.5;
+      }
 
       .click {
         cursor: pointer;
@@ -59,13 +67,14 @@
     </style>
   </head>
   <body>
+    <a href="../gallery"><img src="../img/djmax-64.png" id="home" /></a>
     <img src="" hidden />
     <div>
       <img src="../img/left-arrow.svg" class="click float fadeOut" id="prev" />
       <img src="../img/right-arrow.svg" class="click float fadeOut" id="next" />
     </div>
     <script type="text/javascript">
-      img = document.querySelector("img");
+      img = document.querySelectorAll("img")[1];
       url = new URL(document.URL);
       category = url.searchParams.get("category");
       file = url.searchParams.get("file");
