@@ -1728,6 +1728,72 @@
         }
       },
       {
+        "title": "Dark Lightning",
+        "artist": {
+          "compose": "AstroKid",
+          "visualize": "S4 League Team"
+        },
+        "genre": "Drum Ambient",
+        "exclusive": "PC",
+        "level": {
+          "4B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 11,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 12,
+            "SC": 10
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 11,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 13,
+            "SC": 10
+          }
+        },
+        "length": 116,
+        "bpm": "104 ~ 168",
+        "date": {
+          "PC": "2023-04-27"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
         "title": "Daylight",
         "artist": {
           "compose": "Croove",
@@ -2770,7 +2836,7 @@
             "SC": 13
           }
         },
-        "length": 146,
+        "length": 142,
         "bpm": "170",
         "date": {
           "PC": "2023-03-09"
@@ -32366,6 +32432,71 @@
         }
       },
       {
+        "title": "A Site De La Rue",
+        "artist": {
+          "compose": "KIEN",
+          "arrange": "STREME REVERIE",
+          "visualize": "Flow.D"
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 12
+          },
+          "5B": {
+            "NM": 7,
+            "HD": 11,
+            "MX": 14,
+            "SC": 14
+          },
+          "6B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 14,
+            "SC": 14
+          },
+          "8B": {
+            "NM": 8,
+            "HD": 12,
+            "MX": 15,
+            "SC": 14
+          }
+        },
+        "length": 132,
+        "bpm": "186",
+        "date": {
+          "PC": "2023-04-27"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
         "title": "Appeal",
         "artist": {
           "compose": {
@@ -32776,6 +32907,70 @@
             "HD": 384,
             "MX": 669,
             "SC": 847
+          }
+        }
+      },
+      {
+        "title": "LIMBO",
+        "artist": {
+          "compose": "Mori+",
+          "visualize": ["Truncate", "PT", "HC Artworks"]
+        },
+        "level": {
+          "4B": {
+            "NM": 8,
+            "HD": 12,
+            "MX": 15,
+            "SC": 15
+          },
+          "5B": {
+            "NM": 8,
+            "HD": 12,
+            "MX": 15,
+            "SC": 15
+          },
+          "6B": {
+            "NM": 9,
+            "HD": 13,
+            "MX": 15,
+            "SC": 15
+          },
+          "8B": {
+            "NM": 10,
+            "HD": 12,
+            "MX": 15,
+            "SC": 15
+          }
+        },
+        "length": 152,
+        "bpm": "191.91",
+        "date": {
+          "PC": "2023-04-27"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
           }
         }
       },
@@ -33308,6 +33503,70 @@
             "HD": 540,
             "MX": 944,
             "SC": 1270
+          }
+        }
+      },
+      {
+        "title": "Zeroize",
+        "artist": {
+          "compose": "Forte Escape",
+          "visualize": "Ache"
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 14
+          },
+          "5B": {
+            "NM": 7,
+            "HD": 11,
+            "MX": 14,
+            "SC": 14
+          },
+          "6B": {
+            "NM": 8,
+            "HD": 11,
+            "MX": 14,
+            "SC": 14
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 15,
+            "SC": 14
+          }
+        },
+        "length": 99,
+        "bpm": "165",
+        "date": {
+          "PC": "2023-04-27"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
           }
         }
       }

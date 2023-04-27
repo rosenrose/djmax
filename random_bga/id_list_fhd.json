@@ -28,6 +28,7 @@
     "wd-BE4uA9F8": "Child of Night",
     "X4igOUDOrL4": "Dance of the Dead",
     "": "Dancin' Planet",
+    "": "Dark Lightning",
     "zR0Te1JGq1E": "Daylight",
     "WkC3jC5urD4": "Do you want it",
     "EDRWcFsxvUE": "Don't Die",
@@ -577,12 +578,14 @@
   },
   "ez2on": {
     "": "느낌",
+    "": "A Site De La Rue",
     "": "Appeal",
     "": "Aquaris",
     "": "Back for more",
     "": "Complex",
     "": "Envy Mask",
     "": "Lie Lie",
+    "": "LIMBO",
     "": "Look out ~Here comes my love~",
     "": "Metagalactic",
     "": "Nihilism",
@@ -590,7 +593,8 @@
     "": "Showdown",
     "": "Sparrow",
     "": "Stay",
-    "": "Weird Wave"
+    "": "Weird Wave",
+    "": "Zeroize"
   },
   "hidden": {
     "EPTEB2YIxGU": "A Lie (Unused Ver.)",
