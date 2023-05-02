@@ -222,7 +222,7 @@ function writeResult() {
       if (is_cover) {
         writeCover();
       }
-      drawWatermark();
+      // drawWatermark();
     });
   } else {
     [canvas.width, canvas.height] = [cropMultiWidth, cropMultiHeight];
@@ -258,7 +258,7 @@ function writeResult() {
       if (is_cover) {
         writeCover();
       }
-      drawWatermark();
+      // drawWatermark();
     };
   }
 }
