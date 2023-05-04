@@ -692,5 +692,13 @@
     "654 S8 COLLECTION",
     "655 S8 MISSION",
     "656 S8 RANKING"
+  ],
+  "season9": [
+    "657 S9 AIR",
+    "658 S9 FREESTYLE",
+    "659 S9 ONLINE",
+    "660 S9 COLLECTION",
+    "661 S9 MISSION",
+    "662 S9 RANKING"
   ]
 }
