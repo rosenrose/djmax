@@ -70,7 +70,7 @@
           "compose": "ampstyle",
           "lyrics": "ampstyle",
           "vocal": "초희",
-          "visualize": "RDR"
+          "visualize": "RAMDARAM"
         },
         "level": {
           "4B": {
@@ -328,7 +328,7 @@
           "compose": "ampstyle",
           "lyrics": "ampstyle",
           "vocal": "초희",
-          "visualize": "RDR"
+          "visualize": "RAMDARAM"
         },
         "level": {
           "4B": {
@@ -1768,28 +1768,28 @@
         },
         "note": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 172,
+            "HD": 412,
+            "MX": 625,
+            "SC": 859
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 228,
+            "HD": 452,
+            "MX": 682,
+            "SC": 866
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 235,
+            "HD": 410,
+            "MX": 674,
+            "SC": 1090
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 283,
+            "HD": 477,
+            "MX": 809,
+            "SC": 960
           }
         }
       },
@@ -18163,7 +18163,7 @@
             "nominal": "Jisun",
             "ambiguous": "보컬"
           },
-          "visualize": "RDR"
+          "visualize": "RAMDARAM"
         },
         "genre": "Progressive House",
         "level": {
@@ -18361,7 +18361,7 @@
           "compose": "ampstyle",
           "lyrics": "ampstyle",
           "vocal": "초희",
-          "visualize": "RDR"
+          "visualize": "RAMDARAM"
         },
         "level": {
           "4B": {
@@ -21044,34 +21044,40 @@
       {
         "title": "너에게로 갈래",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": ["SOPHI", "혜이"],
+          "lyrics": ["SOPHI", "혜이"],
+          "vocal": "혜이",
+          "feat": "혜이",
+          "visualize": {
+            "illust": "31",
+            "motion": "Yeonzip"
+          }
         },
         "genre": "Electro Pop",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 3,
+            "HD": 6,
+            "MX": 8,
+            "SC": 5
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 2,
+            "HD": 6,
+            "MX": 9,
+            "SC": 7
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 3,
+            "HD": 6,
+            "MX": 8,
+            "SC": 7
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 3,
+            "HD": 6,
+            "MX": 8,
+            "SC": 8
           }
         },
         "length": 0,
@@ -21107,40 +21113,41 @@
         }
       },
       {
-        "title": "",
+        "title": "염라 ~Original Ver.~",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "ampstyle",
+          "lyrics": "ampstyle",
+          "vocal": "초희",
+          "visualize": "RAMDARAM"
         },
-        "genre": "",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 4,
+            "HD": 6,
+            "MX": 12,
+            "SC": 8
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 9,
+            "MX": 11,
+            "SC": 10
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 7,
+            "HD": 10,
+            "MX": 12,
+            "SC": 9
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 10
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "132",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21172,40 +21179,40 @@
         }
       },
       {
-        "title": "",
+        "title": "!!New Game Start!!",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "Teikyou",
+          "visualize": ["MoDEKU", "Mamo.C"]
         },
-        "genre": "",
+        "genre": "Hardcore",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 7,
+            "HD": 8,
+            "MX": 13,
+            "SC": 14
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 10,
+            "MX": 14,
+            "SC": 14
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 11,
+            "MX": 15,
+            "SC": 14
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 10,
+            "MX": 14,
+            "SC": 13
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "200",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21237,40 +21244,43 @@
         }
       },
       {
-        "title": "",
+        "title": "ADDICT!ON (DJMAX Edit)",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": ["ESAI(CLEF)", "REQ", "Memme"],
+          "arrange": "ESAI(CLEF)",
+          "lyrics": ["REQ", "아이리 칸나"],
+          "vocal": "아이리 칸나",
+          "visualize": ["TEMACA", "pokan"]
         },
-        "genre": "",
+        "genre": "Dance",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 3,
+            "HD": 5,
+            "MX": 8,
+            "SC": 4
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 3,
+            "HD": 7,
+            "MX": 9,
+            "SC": 8
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 3,
+            "HD": 6,
+            "MX": 8,
+            "SC": 4
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 7,
+            "MX": 10,
+            "SC": 9
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "128",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21302,40 +21312,40 @@
         }
       },
       {
-        "title": "",
+        "title": "Back to the oldschool",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "Blosso",
+          "visualize": "OH HOON"
         },
-        "genre": "",
+        "genre": "Hardcore",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 8,
+            "MX": 10,
+            "SC": 13
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 7,
+            "HD": 10,
+            "MX": 11,
+            "SC": 12
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 13
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 7,
+            "HD": 10,
+            "MX": 13,
+            "SC": 13
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "180",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21367,40 +21377,40 @@
         }
       },
       {
-        "title": "",
+        "title": "Deadly Bomber",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "Daisuke Kurosawa",
+          "visualize": "HAMMA"
         },
-        "genre": "",
+        "genre": "Progressive Metal",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 7,
+            "HD": 9,
+            "MX": 13,
+            "SC": 13
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 9,
+            "MX": 14,
+            "SC": 14
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 10,
+            "MX": 14,
+            "SC": 13
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 11,
+            "MX": 15,
+            "SC": 14
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "169",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21432,40 +21442,48 @@
         }
       },
       {
-        "title": "",
+        "title": "DIE IN",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": ["TAK", "Sobrem"],
+          "visualize": {
+            "illust": "Mamo.C",
+            "background": "lalla",
+            "story": "DumpingLIFE",
+            "motion": {
+              "nominal": "Rocky Studio Graphic Team",
+              "include": ["eyekiss", "MoDEKU", "SB_ENGINEER", "SUMMER"]
+            }
+          }
         },
-        "genre": "",
+        "genre": "Descent Bass",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 7,
+            "HD": 10,
+            "MX": 15,
+            "SC": 15
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 7,
+            "HD": 11,
+            "MX": 15,
+            "SC": 15
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 8,
+            "HD": 12,
+            "MX": 15,
+            "SC": 15
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 9,
+            "HD": 13,
+            "MX": 15,
+            "SC": 15
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "160 ~ 230",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21497,40 +21515,40 @@
         }
       },
       {
-        "title": "",
+        "title": "Don't Cry",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "Nauts",
+          "visualize": "SOHI"
         },
-        "genre": "",
+        "genre": "Healing",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 2,
+            "HD": 4,
+            "MX": 7,
+            "SC": 3
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 2,
+            "HD": 6,
+            "MX": 8,
+            "SC": 3
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 1,
+            "HD": 4,
+            "MX": 8,
+            "SC": 5
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 2,
+            "HD": 5,
+            "MX": 9,
+            "SC": 6
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "94",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21562,40 +21580,43 @@
         }
       },
       {
-        "title": "",
+        "title": "Gloxinia",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": ["Ruxxi", "Milkoi"],
+          "visualize": {
+            "illust": "nameDYE",
+            "motion": "MoDEKU"
+          }
         },
-        "genre": "",
+        "genre": "Electronic",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 11
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 7,
+            "HD": 9,
+            "MX": 12,
+            "SC": 12
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 9,
+            "MX": 11,
+            "SC": 12
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "190",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21627,40 +21648,43 @@
         }
       },
       {
-        "title": "",
+        "title": "Hell'o",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "Pan",
+          "visualize": {
+            "illust": "PUNEW",
+            "motion": "DumpingLIFE"
+          }
         },
-        "genre": "",
+        "genre": "Psytrance",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 8,
+            "HD": 10,
+            "MX": 14,
+            "SC": 15
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 8,
+            "HD": 11,
+            "MX": 14,
+            "SC": 15
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 9,
+            "HD": 12,
+            "MX": 14,
+            "SC": 15
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 11,
+            "MX": 14,
+            "SC": 15
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "185",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21692,40 +21716,40 @@
         }
       },
       {
-        "title": "",
+        "title": "Hyper Drive",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "MINIMONSTER",
+          "visualize": "Glycerine"
         },
-        "genre": "",
+        "genre": "Hard Dance",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 8,
+            "MX": 12,
+            "SC": 11
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 12
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 10,
+            "MX": 13,
+            "SC": 11
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 4,
+            "HD": 11,
+            "MX": 13,
+            "SC": 13
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "170",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21757,40 +21781,40 @@
         }
       },
       {
-        "title": "",
+        "title": "Hypernaid",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "KATOMORI",
+          "visualize": "팥쥐"
         },
-        "genre": "",
+        "genre": "Sparkling Dance",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 8,
+            "MX": 10,
+            "SC": 9
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 8,
+            "MX": 12,
+            "SC": 10
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 4,
+            "HD": 8,
+            "MX": 11,
+            "SC": 10
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 11
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "150",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21822,40 +21846,42 @@
         }
       },
       {
-        "title": "",
+        "title": "Like a Fool",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": ["Mr.Funky", "Purple J", "DAOM"],
+          "lyrics": ["Purple J", "LETXA"],
+          "vocal": "Purple J",
+          "visualize": "김라돈"
         },
-        "genre": "",
+        "genre": "K-Pop",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 2,
+            "HD": 5,
+            "MX": 8,
+            "SC": 6
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 2,
+            "HD": 5,
+            "MX": 8,
+            "SC": 6
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 1,
+            "HD": 4,
+            "MX": 9,
+            "SC": 6
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 2,
+            "HD": 6,
+            "MX": 9,
+            "SC": 6
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "95",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21887,40 +21913,45 @@
         }
       },
       {
-        "title": "",
+        "title": "Love.Game.Money",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "LeeZu",
+          "lyrics": "LeeZu",
+          "vocal": "LeeZu",
+          "visualize": {
+            "illust": "John Kafka",
+            "motion": "Lepusnette"
+          }
         },
-        "genre": "",
+        "genre": "Electric Rock",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 14
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 8,
+            "MX": 14,
+            "SC": 14
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 7,
+            "HD": 10,
+            "MX": 13,
+            "SC": 13
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 8,
+            "MX": 13,
+            "SC": 13
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "260",
         "date": {
           "PC": "2023-06-01"
         },
@@ -21952,40 +21983,42 @@
         }
       },
       {
-        "title": "",
+        "title": "LUV",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "ND Lee",
+          "lyrics": "Suri",
+          "vocal": "Suri",
+          "visualize": "RAMDARAM"
         },
-        "genre": "",
+        "genre": "K-Pop",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 2,
+            "HD": 5,
+            "MX": 8,
+            "SC": 5
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 3,
+            "HD": 7,
+            "MX": 10,
+            "SC": 6
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 2,
+            "HD": 4,
+            "MX": 7,
+            "SC": 6
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 7
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "90",
         "date": {
           "PC": "2023-06-01"
         },
@@ -22017,40 +22050,43 @@
         }
       },
       {
-        "title": "",
+        "title": "New World",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "Pure 100%",
+          "visualize": {
+            "illust": "S.in",
+            "motion": "SB_ENGINEER"
+          }
         },
-        "genre": "",
+        "genre": "Happy Hardcore",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 4,
+            "HD": 7,
+            "MX": 11,
+            "SC": 11
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 10,
+            "MX": 12,
+            "SC": 11
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 9,
+            "MX": 11,
+            "SC": 10
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 9,
+            "MX": 13,
+            "SC": 12
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "160",
         "date": {
           "PC": "2023-06-01"
         },
@@ -22082,40 +22118,42 @@
         }
       },
       {
-        "title": "",
+        "title": "Stay Alive",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "NieN",
+          "lyrics": ["Baik Eun Sol", "NieN"],
+          "vocal": "NieN",
+          "visualize": "SB_ENGINEER"
         },
-        "genre": "",
+        "genre": "Modern Metal",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 13
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 11,
+            "MX": 15,
+            "SC": 14
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 10,
+            "MX": 13,
+            "SC": 13
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 10,
+            "MX": 14,
+            "SC": 13
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "210",
         "date": {
           "PC": "2023-06-01"
         },
@@ -22147,40 +22185,40 @@
         }
       },
       {
-        "title": "",
+        "title": "Stolen Memory",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "Pierre Blanche",
+          "visualize": "Lepusnette"
         },
-        "genre": "",
+        "genre": "Bass Hardcore",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 9,
+            "MX": 12,
+            "SC": 12
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 11,
+            "MX": 13,
+            "SC": 13
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 11,
+            "MX": 13,
+            "SC": 12
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 9,
+            "MX": 14,
+            "SC": 13
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "185 ~ 200",
         "date": {
           "PC": "2023-06-01"
         },
@@ -22212,40 +22250,41 @@
         }
       },
       {
-        "title": "",
+        "title": "The Four Seasons : Summer 2017",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "Antonio Lucio Vivaldi",
+          "remix": "Funtwo",
+          "visualize": "prince"
         },
-        "genre": "",
+        "genre": "Rock",
         "level": {
           "4B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 6,
+            "HD": 9,
+            "MX": 11,
+            "SC": 11
           },
           "5B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 13
           },
           "6B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 11
           },
           "8B": {
-            "NM": 0,
-            "HD": 0,
-            "MX": 0,
-            "SC": 0
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 13
           }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "150",
         "date": {
           "PC": "2023-06-01"
         },
@@ -22277,13 +22316,44 @@
         }
       },
       {
-        "title": "",
+        "title": "Vertical Eclipse",
         "artist": {
-          "compose": "",
-          "visualize": ""
+          "compose": "TAG",
+          "visualize": "Cow_0"
         },
-        "genre": "",
+        "genre": "Akashic Hardcore",
         "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 14,
+            "SC": 14
+          },
+          "5B": {
+            "NM": 8,
+            "HD": 12,
+            "MX": 14,
+            "SC": 15
+          },
+          "6B": {
+            "NM": 8,
+            "HD": 12,
+            "MX": 15,
+            "SC": 14
+          },
+          "8B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 15,
+            "SC": 14
+          }
+        },
+        "length": 0,
+        "bpm": "200",
+        "date": {
+          "PC": "2023-06-01"
+        },
+        "note": {
           "4B": {
             "NM": 0,
             "HD": 0,
@@ -22308,9 +22378,48 @@
             "MX": 0,
             "SC": 0
           }
+        }
+      },
+      {
+        "title": "Weaponize",
+        "artist": {
+          "compose": "causeluve",
+          "lyrics": "Sample Pack (KARRA Presents: Heather Sommer Vocal Pack)",
+          "vocal": "Sample Pack (KARRA Presents: Heather Sommer Vocal Pack)",
+          "visualize": {
+            "illust": "Ongoo",
+            "motion": "DumpingLIFE"
+          }
+        },
+        "genre": "Colour Bass",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 11,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 9,
+            "MX": 13,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 12,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 10
+          }
         },
         "length": 0,
-        "bpm": "",
+        "bpm": "152",
         "date": {
           "PC": "2023-06-01"
         },
