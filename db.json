@@ -1488,6 +1488,72 @@
         }
       },
       {
+        "title": "Celestial Tears",
+        "artist": {
+          "compose": "Tsukasa",
+          "visualize": "RB"
+        },
+        "genre": "Piano Trance",
+        "exclusive": "PC",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 10,
+            "SC": 7
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 12,
+            "SC": 10
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 12,
+            "SC": 10
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 10
+          }
+        },
+        "length": 126,
+        "bpm": "165",
+        "date": {
+          "PC": "2023-08-10"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
         "title": "Chemical Slave",
         "artist": {
           "compose": "XeoN",
@@ -20562,10 +20628,7 @@
         "title": "Plasma Sphere",
         "artist": {
           "compose": "VoidRover",
-          "visualize": {
-            "illust": "FEMMER",
-            "motion": "필살기PSK"
-          }
+          "visualize": ["FEMMER", "필살기PSK"]
         },
         "genre": "Mid-Tempo Electro",
         "level": {
@@ -35110,6 +35173,73 @@
           }
         }
       }
+    ],
+    "clearpass": [
+      {
+        "title": "From Hell to Breakfast",
+        "artist": {
+          "compose": "Daisuke Kurosawa",
+          "visualize": ["FEMMER", "필살기PSK", "WOOP"]
+        },
+        "exclusive": "PC",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 10
+          },
+          "5B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 14,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 7,
+            "HD": 9,
+            "MX": 13,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 14,
+            "SC": 13
+          }
+        },
+        "length": 130,
+        "bpm": "142",
+        "date": {
+          "PC": "2023-08-10"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      }
     ]
   },
   "collaboration": [
@@ -35150,7 +35280,8 @@
     "estimate": "에스티메이트",
     "nexon": "넥슨",
     "musedash": "뮤즈 대쉬",
-    "ez2on": "이지투온"
+    "ez2on": "이지투온",
+    "clearpass": "클리어 패스"
   },
   "template": {
     "title": "",

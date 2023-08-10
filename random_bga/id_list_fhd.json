@@ -24,6 +24,7 @@
     "Zk45I55P1u4": "Bleed",
     "hGg1qT-18ZY": "Boom!",
     "f65RJw8lUOQ": "Bullet, Wanted!",
+    "": "Celestial Tears",
     "NG9yp11rWR8": "Chemical Slave",
     "wd-BE4uA9F8": "Child of Night",
     "X4igOUDOrL4": "Dance of the Dead",
@@ -618,6 +619,9 @@
     "": "Stay",
     "": "Weird Wave",
     "": "Zeroize"
+  },
+  "clearpass": {
+    "": "From Hell to Breakfast"
   },
   "hidden": {
     "EPTEB2YIxGU": "A Lie (Unused Ver.)",
