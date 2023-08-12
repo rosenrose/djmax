@@ -1736,7 +1736,6 @@
           "visualize": "Woong"
         },
         "genre": "Hybrid Core",
-        "exclusive": "PC",
         "level": {
           "4B": {
             "NM": 3,
@@ -1766,6 +1765,7 @@
         "length": 129,
         "bpm": "132",
         "date": {
+          "PS4": "2023-08-10",
           "PC": "2023-01-18"
         },
         "note": {
@@ -1802,7 +1802,6 @@
           "visualize": "S4 League Team"
         },
         "genre": "Drum Ambient",
-        "exclusive": "PC",
         "level": {
           "4B": {
             "NM": 3,
@@ -1832,6 +1831,7 @@
         "length": 116,
         "bpm": "104 ~ 168",
         "date": {
+          "PS4": "2023-08-10",
           "PC": "2023-04-27"
         },
         "note": {
@@ -2881,7 +2881,6 @@
           "visualize": "wafflev0v"
         },
         "genre": "Euro Dance",
-        "exclusive": "PC",
         "level": {
           "4B": {
             "NM": 6,
@@ -2911,6 +2910,7 @@
         "length": 142,
         "bpm": "170",
         "date": {
+          "PS4": "2023-08-10",
           "PC": "2023-03-09"
         },
         "note": {
@@ -35208,7 +35208,7 @@
             "SC": 13
           }
         },
-        "length": 130,
+        "length": 136,
         "bpm": "142",
         "date": {
           "PC": "2023-08-10"
