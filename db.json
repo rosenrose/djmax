@@ -27734,8 +27734,8 @@
       {
         "title": "별빛정원",
         "artist": {
-          "compose": "vneld",
-          "lyrics": "vneld",
+          "compose": { "nominal": "vneld", "alias": "ned" },
+          "lyrics": { "nominal": "vneld", "alias": "ned" },
           "vocal": "이정은",
           "visualize": {
             "illust": "PUNEW",
@@ -28223,7 +28223,7 @@
         "title": "Love☆Panic",
         "artist": {
           "compose": "hiyong",
-          "lyrics": "vneld",
+          "lyrics": { "nominal": "vneld", "alias": "ned" },
           "vocal": "sugarhate",
           "visualize": ["D", "Nyoung"]
         },
