@@ -35174,6 +35174,974 @@
         }
       }
     ],
+    "maplestory": [
+      {
+        "title": "Ariant ~ned Remix~",
+        "artist": {
+          "compose": "NEXON Korea",
+          "arrange": "이종혁",
+          "remix": "ned"
+        },
+        "level": {
+          "4B": {
+            "NM": 7,
+            "HD": 9,
+            "MX": 12,
+            "SC": 12
+          },
+          "5B": {
+            "NM": 7,
+            "HD": 11,
+            "MX": 15,
+            "SC": 14
+          },
+          "6B": {
+            "NM": 8,
+            "HD": 12,
+            "MX": 14,
+            "SC": 15
+          },
+          "8B": {
+            "NM": 7,
+            "HD": 11,
+            "MX": 14,
+            "SC": 14
+          }
+        },
+        "length": 0,
+        "bpm": "174",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Catch Your Dreams!",
+        "artist": {
+          "compose": "신동혁 (Studio EIM)",
+          "arrange": ["신동혁 (Studio EIM)", "이기종 (Studio EIM)"],
+          "lyrics": ["신동혁 (Studio EIM)", "TOTO", "전상민 (NEXON)"],
+          "vocal": "타루"
+        },
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 8
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 9
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 9
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 11
+          }
+        },
+        "length": 0,
+        "bpm": "180",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Dynamic Universe",
+        "artist": {
+          "compose": "유종호 (NEXON)"
+        },
+        "level": {
+          "4B": {
+            "NM": 2,
+            "HD": 6,
+            "MX": 8,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 9,
+            "SC": 6
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 9,
+            "SC": 8
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 11,
+            "SC": 8
+          }
+        },
+        "length": 0,
+        "bpm": "140",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Fairytale ~Pan Remix~",
+        "artist": {
+          "compose": "NEXON",
+          "remix": "Pan"
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 13,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 13,
+            "SC": 12
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 14,
+            "SC": 13
+          }
+        },
+        "length": 130,
+        "bpm": "165 ~ 175",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Frozen Link",
+        "artist": {
+          "compose": "유종호 (NEXON)"
+        },
+        "level": {
+          "4B": {
+            "NM": 2,
+            "HD": 6,
+            "MX": 9,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 8,
+            "SC": 6
+          },
+          "6B": {
+            "NM": 2,
+            "HD": 6,
+            "MX": 9,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 2,
+            "HD": 6,
+            "MX": 10,
+            "SC": 7
+          }
+        },
+        "length": 0,
+        "bpm": "136",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Leafre (EDM ver.)",
+        "artist": {
+          "compose": "Studio EIM",
+          "arrange": "신유식"
+        },
+        "level": {
+          "4B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 9,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 9,
+            "SC": 7
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 8,
+            "SC": 8
+          },
+          "8B": {
+            "NM": 2,
+            "HD": 6,
+            "MX": 9,
+            "SC": 7
+          }
+        },
+        "length": 0,
+        "bpm": "128",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Missing You ~SOPHI Remix~",
+        "artist": {
+          "compose": "NEXON",
+          "remix": "SOPHI"
+        },
+        "level": {
+          "4B": {
+            "NM": 1,
+            "HD": 5,
+            "MX": 12,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 8,
+            "MX": 14,
+            "SC": 14
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 11,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 12,
+            "SC": 11
+          }
+        },
+        "length": 0,
+        "bpm": "105",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Moonlight Shadow ~Paul Bazooka Remix~",
+        "artist": {
+          "compose": "NEXON",
+          "remix": "Paul Bazooka"
+        },
+        "level": {
+          "4B": {
+            "NM": 7,
+            "HD": 11,
+            "MX": 13,
+            "SC": 12
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
+          },
+          "6B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 13,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 12,
+            "SC": 11
+          }
+        },
+        "length": 0,
+        "bpm": "140",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Smile",
+        "artist": {
+          "compose": "ampstyle",
+          "arrange": "ampstyle",
+          "lyrics": "이소예",
+          "vocal": "BANAMI"
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 11,
+            "SC": 8
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 8
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 6,
+            "MX": 11,
+            "SC": 9
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 10,
+            "SC": 10
+          }
+        },
+        "length": 0,
+        "bpm": "157",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Star Bubble",
+        "artist": {
+          "compose": ["Ye-Yo!", "Laser"],
+          "arrange": "Ye-Yo!",
+          "lyrics": ["Ye-Yo!", "Laser"],
+          "vocal": "Rami"
+        },
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 9
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 6,
+            "MX": 11,
+            "SC": 8
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 9
+          }
+        },
+        "length": 136,
+        "bpm": "190",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Story of Maple",
+        "artist": {
+          "compose": ["Mycin.T", "ned"],
+          "arrange": ["Mycin.T", "ned"],
+          "lyrics": ["Mycin.T", "ned"],
+          "vocal": ["jam-jam", "윤솜"]
+        },
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 12,
+            "SC": 13
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 14,
+            "SC": 10
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 12,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 14,
+            "SC": 13
+          }
+        },
+        "length": 144,
+        "bpm": "200",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Temple of Time (EDM ver.)",
+        "artist": {
+          "compose": "Studio EIM",
+          "arrange": ["유종호", "박지훈"]
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 10,
+            "SC": 5
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 9,
+            "SC": 7
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 5,
+            "MX": 10,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 10,
+            "SC": 8
+          }
+        },
+        "length": 0,
+        "bpm": "150",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "The Lake of Oblivion ~jam-jam Remix~",
+        "artist": {
+          "compose": "채하나 (NEXON)",
+          "remix": "jam-jam"
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 12
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 9,
+            "MX": 12,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 14,
+            "SC": 13
+          }
+        },
+        "length": 0,
+        "bpm": "151",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "The Tune of the Azure Light ~Parang Remix~",
+        "artist": {
+          "compose": "김가해",
+          "remix": "Parang"
+        },
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 11,
+            "SC": 14
+          },
+          "5B": {
+            "NM": 8,
+            "HD": 12,
+            "MX": 15,
+            "SC": 14
+          },
+          "6B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 14,
+            "SC": 14
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 10,
+            "MX": 14,
+            "SC": 14
+          }
+        },
+        "length": 0,
+        "bpm": "234",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Where Stars Rest",
+        "artist": {
+          "compose": "이승재"
+        },
+        "level": {
+          "4B": {
+            "NM": 2,
+            "HD": 4,
+            "MX": 7,
+            "SC": 3
+          },
+          "5B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 8,
+            "SC": 3
+          },
+          "6B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 8,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 5,
+            "MX": 8,
+            "SC": 5
+          }
+        },
+        "length": 0,
+        "bpm": "117",
+        "date": {
+          "PC": "2023-09-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      }
+    ],
     "clearpass": [
       {
         "title": "From Hell to Breakfast",
@@ -35262,10 +36230,10 @@
     "trilogy": "트릴로지",
     "clazziquai": "클래지콰이",
     "blacksquare": "블랙 스퀘어",
-    "vextension": "V 익스텐션",
-    "vextension2": "V 익스텐션 2",
-    "vextension3": "V 익스텐션 3",
-    "vextension4": "V 익스텐션 4",
+    "vextension": "익텐",
+    "vextension2": "익텐 2",
+    "vextension3": "익텐 3",
+    "vextension4": "익텐 4",
     "emotionalsense": "이모셔널 센스",
     "technika1": "테크니카 1",
     "technika2": "테크니카 2",
@@ -35281,6 +36249,7 @@
     "nexon": "넥슨",
     "musedash": "뮤즈 대쉬",
     "ez2on": "이지투온",
+    "maplestory": "메이플 스토리",
     "clearpass": "클리어 패스"
   },
   "template": {
