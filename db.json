@@ -22411,6 +22411,1362 @@
         }
       }
     ],
+    "vextension5": [
+      {
+        "title": "별빛너머",
+        "artist": {
+          "compose": "ned",
+          "arrange": ["ned", "Mycin.T"],
+          "lyrics": "ned",
+          "vocal": "MRCH",
+          "visualize": {
+            "illust": "PUNEW",
+            "motion": "DumpingLIFE"
+          }
+        },
+        "genre": "Pop",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 7
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 5,
+            "MX": 10,
+            "SC": 8
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 10,
+            "SC": 8
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 12,
+            "SC": 9
+          }
+        },
+        "length": 146,
+        "bpm": "172",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "3:33",
+        "artist": {
+          "compose": "Pierre Blanche",
+          "visualize": "Lepusnette"
+        },
+        "genre": "Electro Core",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 13,
+            "SC": 14
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 10,
+            "MX": 15,
+            "SC": 14
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 11,
+            "MX": 15,
+            "SC": 15
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 11,
+            "MX": 15,
+            "SC": 14
+          }
+        },
+        "length": 146,
+        "bpm": "185",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Accelerate",
+        "artist": {
+          "compose": ["Teminite", "Skybreak"],
+          "visualize": "SB_ENGINEER"
+        },
+        "genre": "Melodic Bass",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 10
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 10,
+            "MX": 13,
+            "SC": 12
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 13,
+            "SC": 12
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
+          }
+        },
+        "length": 163,
+        "bpm": "150",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Behemoth",
+        "artist": {
+          "compose": "Paul Bazooka",
+          "visualize": "SV2P"
+        },
+        "genre": "Hard Techno",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 12,
+            "SC": 10
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 13,
+            "SC": 12
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 9,
+            "MX": 14,
+            "SC": 12
+          }
+        },
+        "length": 143,
+        "bpm": "144",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Carrot Carrot",
+        "artist": {
+          "compose": "Sobrem",
+          "visualize": {
+            "illust": "NANHA7",
+            "motion": "DumpingLIFE"
+          }
+        },
+        "genre": "Hard bop",
+        "level": {
+          "4B": {
+            "NM": 8,
+            "HD": 11,
+            "MX": 13,
+            "SC": 13
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 14,
+            "SC": 14
+          },
+          "6B": {
+            "NM": 10,
+            "HD": 13,
+            "MX": 15,
+            "SC": 15
+          },
+          "8B": {
+            "NM": 9,
+            "HD": 13,
+            "MX": 15,
+            "SC": 15
+          }
+        },
+        "length": 143,
+        "bpm": "337",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Critical Point",
+        "artist": {
+          "compose": "ND Lee",
+          "vocal": "Sample Source",
+          "visualize": {
+            "illust": "Ongoo",
+            "motion": "52:RA"
+          }
+        },
+        "genre": "Elec Core",
+        "level": {
+          "4B": {
+            "NM": 7,
+            "HD": 8,
+            "MX": 13,
+            "SC": 14
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 11,
+            "MX": 14,
+            "SC": 14
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 14,
+            "SC": 14
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 14,
+            "SC": 14
+          }
+        },
+        "length": 160,
+        "bpm": "180",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "ECiLA",
+        "artist": {
+          "compose": "seibin",
+          "lyrics": ["seibin", "Yumiha"],
+          "vocal": "Lency",
+          "feat": "Benicx(Orchestral Arrangement)",
+          "visualize": {
+            "illust": "Clover",
+            "motion": "MoDEKU"
+          }
+        },
+        "genre": "Ani Pop",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 10,
+            "SC": 9
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 10
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 12,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 12,
+            "SC": 10
+          }
+        },
+        "length": 147,
+        "bpm": "170",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "glory MAX -나의 최대치로 너와 함께할게-",
+        "artist": {
+          "compose": "TAK",
+          "lyrics": "Corbin",
+          "vocal": "DyoN Joo",
+          "feat": [
+            "AZ(Guitar)",
+            "Crost Ensemble(Strings)",
+            "Lily(Chorus)",
+            "Corbin(Chorus)",
+            "Sobrem(Chorus)",
+            "TAK(Chorus)"
+          ],
+          "visualize": ["DumpingLIFE", "Mamo.C", "Rocky Studio Graphic Team"]
+        },
+        "genre": "Rock",
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 12,
+            "SC": 12
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 12
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 13,
+            "SC": 10
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 14,
+            "SC": 12
+          }
+        },
+        "length": 153,
+        "bpm": "190",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "God Machine",
+        "artist": {
+          "compose": "VoidRover",
+          "visualize": "prince"
+        },
+        "genre": "Cinematic Electronica",
+        "level": {
+          "4B": {
+            "NM": 3,
+            "HD": 8,
+            "MX": 13,
+            "SC": 12
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 13,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 14,
+            "SC": 12
+          }
+        },
+        "length": 123,
+        "bpm": "159",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Inside the Light",
+        "artist": {
+          "compose": "danbi",
+          "lyrics": "danbi",
+          "vocal": "Seulgi",
+          "visualize": {
+            "illust": "ACOO",
+            "motion": "Cow_0"
+          }
+        },
+        "genre": "Pop",
+        "level": {
+          "4B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 9,
+            "SC": 10
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 11,
+            "SC": 8
+          },
+          "6B": {
+            "NM": 2,
+            "HD": 7,
+            "MX": 12,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 11,
+            "SC": 8
+          }
+        },
+        "length": 114,
+        "bpm": "186",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "My Wonderland",
+        "artist": {
+          "compose": "NieN",
+          "lyrics": "NieN",
+          "vocal": "이지애",
+          "visualize": "팥쥐"
+        },
+        "genre": "Rock",
+        "level": {
+          "4B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 13,
+            "SC": 10
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 11
+          }
+        },
+        "length": 140,
+        "bpm": "192",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Paradaise",
+        "artist": {
+          "compose": "Blosso",
+          "vocal": "Sample Source",
+          "visualize": "Yeonzip"
+        },
+        "genre": "DnB",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 11,
+            "SC": 9
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 10
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 12,
+            "SC": 9
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 9,
+            "MX": 14,
+            "SC": 13
+          }
+        },
+        "length": 106,
+        "bpm": "172",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Peace Comes At a Price",
+        "artist": {
+          "compose": ["Pure 100%", "Cappa"],
+          "arrange": "Pure 100%",
+          "lyrics": ["Pure 100%", "Cappa"],
+          "vocal": "Cappa",
+          "feat": "Cappa",
+          "visualize": {
+            "illust": "DORAE",
+            "motion": "SB_ENGINEER"
+          }
+        },
+        "genre": "DnB",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 6,
+            "MX": 9,
+            "SC": 9
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 12,
+            "SC": 8
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 10,
+            "SC": 8
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 8,
+            "MX": 12,
+            "SC": 10
+          }
+        },
+        "length": 143,
+        "bpm": "88",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Pitter-patter",
+        "artist": {
+          "compose": "SOPHI",
+          "visualize": "MoDEKU"
+        },
+        "genre": "Future Bass",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 12
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 13,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 13,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 12
+          }
+        },
+        "length": 125,
+        "bpm": "175",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Revenger",
+        "artist": {
+          "compose": "Sampling Masters AYA",
+          "visualize": "Simi Cho"
+        },
+        "genre": "Oldschool Hardcore",
+        "level": {
+          "4B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 14,
+            "SC": 14
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 11,
+            "MX": 15,
+            "SC": 15
+          },
+          "6B": {
+            "NM": 7,
+            "HD": 12,
+            "MX": 15,
+            "SC": 14
+          },
+          "8B": {
+            "NM": 7,
+            "HD": 11,
+            "MX": 15,
+            "SC": 15
+          }
+        },
+        "length": 149,
+        "bpm": "192",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Rhapsody for The VEndetta",
+        "artist": {
+          "compose": "Ice",
+          "visualize": {
+            "illust": "Canis",
+            "motion": "Lepusnette"
+          }
+        },
+        "genre": "Rhapsody",
+        "level": {
+          "4B": {
+            "NM": 8,
+            "HD": 10,
+            "MX": 14,
+            "SC": 14
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 15,
+            "SC": 15
+          },
+          "6B": {
+            "NM": 7,
+            "HD": 11,
+            "MX": 15,
+            "SC": 14
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 15,
+            "SC": 15
+          }
+        },
+        "length": 143,
+        "bpm": "200 ~ 290",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Right Time",
+        "artist": {
+          "compose": ["Faver", "Haz Haus"],
+          "arrange": "Haz Haus",
+          "lyrics": "Faver",
+          "vocal": "Faver",
+          "visualize": "SOHI"
+        },
+        "genre": "Electronic",
+        "level": {
+          "4B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 10,
+            "SC": 9
+          },
+          "5B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 13,
+            "SC": 12
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 7,
+            "MX": 11,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 3,
+            "HD": 9,
+            "MX": 13,
+            "SC": 12
+          }
+        },
+        "length": 141,
+        "bpm": "123",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Rocket Launcher",
+        "artist": {
+          "compose": "MINIMONSTER",
+          "visualize": "Glycerine"
+        },
+        "genre": "Hard Dance",
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 12
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 12,
+            "SC": 11
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 12
+          }
+        },
+        "length": 133,
+        "bpm": "170",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "S.A.V.E",
+        "artist": {
+          "compose": "RiraN",
+          "vocal": "Sample Source",
+          "visualize": "HAMMA"
+        },
+        "genre": "Future Hardstyle",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 11,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 11
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 8,
+            "MX": 11,
+            "SC": 9
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
+          }
+        },
+        "length": 134,
+        "bpm": "155",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Shining Light (feat. Shabel Tonya)",
+        "artist": {
+          "compose": ["INFX", "MIIM"],
+          "lyrics": "INFX",
+          "vocal": "Shabel Tonya",
+          "feat": "SH!N(Guitar)",
+          "visualize": "31"
+        },
+        "genre": "J-Rock",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 10,
+            "SC": 8
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 11,
+            "SC": 8
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 11,
+            "SC": 7
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 9
+          }
+        },
+        "length": 142,
+        "bpm": "178",
+        "date": {
+          "PC": "2023-12-07"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      }
+    ],
     "emotionalsense": [
       {
         "title": "Cosmic Elevator",
@@ -36474,6 +37830,7 @@
     "vextension2": "익텐 2",
     "vextension3": "익텐 3",
     "vextension4": "익텐 4",
+    "vextension5": "익텐 5",
     "emotionalsense": "이모셔널 센스",
     "technika1": "테크니카 1",
     "technika2": "테크니카 2",

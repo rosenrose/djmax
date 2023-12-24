@@ -56,7 +56,8 @@ document.querySelector("#modeSelect").addEventListener("change", (event) => {
     document.querySelector("input[value='musedash']").parentNode,
     document.querySelector("input[value='ez2on']").parentNode,
     document.querySelector("input[value='maplestory']").parentNode,
-    document.querySelector("input[value='clearpass']").parentNode
+    document.querySelector("input[value='clearpass']").parentNode,
+    document.querySelector("input[value='vextension5']").parentNode
   );
 
   if (mode == "PC") {
@@ -78,6 +79,9 @@ document.querySelector("#modeSelect").addEventListener("change", (event) => {
     if (document.querySelector("input[value='clearpass']").checked) {
       dlcSelect.add("clearpass");
     }
+    if (document.querySelector("input[value='vextension5']").checked) {
+      dlcSelect.add("vextension5");
+    }
   } else if (mode == "PS4") {
     rankSelect.delete("SC");
     dlcSelect.delete("nexon");
@@ -85,6 +89,7 @@ document.querySelector("#modeSelect").addEventListener("change", (event) => {
     dlcSelect.delete("ez2on");
     dlcSelect.delete("maplestory");
     dlcSelect.delete("clearpass");
+    dlcSelect.delete("vextension5");
   }
 });
 
