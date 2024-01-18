@@ -759,5 +759,32 @@
     "711 S11 MISSION",
     "712 S11 RANKING"
   ],
+  "vextension5": [
+    "713 Accelerate",
+    "714 Accelerate (2)",
+    "715 Carrot Carrot",
+    "716 Carrot Carrot (2)",
+    "717 Critical Point",
+    "718 ECiLA",
+    "719 ECiLA (2)",
+    "720 ECiLA (3)",
+    "721 ECiLA (4)",
+    "722 ECiLA (5)",
+    "723 ECiLA (6)",
+    "724 Inside the Light",
+    "725 별빛너머",
+    "726 별빛너머 (2)",
+    "727 별빛너머 (3)",
+    "728 Rhapsody for The VEndetta",
+    "729 Rhapsody for The VEndetta (2)",
+    "730 Rhapsody for The VEndetta (3)",
+    "731 S.A.V.E",
+    "732 S.A.V.E (2)",
+    "733 S.A.V.E (3)",
+    "734 S.A.V.E (4)",
+    "735 S.A.V.E (5)",
+    "736 Shining Light",
+    "737 Shining Light (2)"
+  ],
   "heights": ["738 DJMAX x HEIGHTS", "739 DJMAX x HEIGHTS (2)", "740 DJMAX x HEIGHTS (3)"]
 }
