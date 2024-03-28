@@ -80,6 +80,10 @@
       "name": "Bleed",
       "cut": 1748
     },
+    "sOFj9rjKRjg": {
+      "name": "BlueWhite",
+      "cut": 1680
+    },
     "MaKvqhC8jT0": {
       "name": "Boom!",
       "cut": 1120
@@ -2469,6 +2473,48 @@
     "5uJnCkw5pVs": {
       "name": "Where Stars Rest",
       "cut": 1518
+    }
+  },
+  "falcom": {
+    "HECwelYvCD4": {
+      "name": "Ashita e no Kodou",
+      "cut": 1661
+    },
+    "GfucGfdSucs": {
+      "name": "Blue Destination",
+      "cut": 2024
+    },
+    "IYRJyXapR3c": {
+      "name": "GENESIS BEYOND THE BEGINNING",
+      "cut": 1528
+    },
+    "PNH1B5V15t4": {
+      "name": "Inevitable Struggle",
+      "cut": 1605
+    },
+    "inILAdsA2MU": {
+      "name": "NORSE WIND",
+      "cut": 1599
+    },
+    "2fQRZY4x3l8": {
+      "name": "Silver Will",
+      "cut": 1518
+    },
+    "ruE9hMQ1pXQ": {
+      "name": "STEP AHEAD",
+      "cut": 1542
+    },
+    "1Yus1uhBuZg": {
+      "name": "SUNSHINE COASTLINE",
+      "cut": 1634
+    },
+    "0wnwVjykPfI": {
+      "name": "TO MAKE THE END OF BATTLE",
+      "cut": 1371
+    },
+    "wPDXGzKAJKM": {
+      "name": "To the Future.",
+      "cut": 1767
     }
   },
   "clearpass": {
