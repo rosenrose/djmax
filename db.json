@@ -1238,6 +1238,71 @@
         }
       },
       {
+        "title": "BlueWhite",
+        "artist": {
+          "compose": "HAYAKO",
+          "visualize": "Vanity"
+        },
+        "exclusive": "PC",
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 9,
+            "MX": 15,
+            "SC": 14
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 15,
+            "SC": 15
+          },
+          "6B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 15,
+            "SC": 15
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 15,
+            "SC": 15
+          }
+        },
+        "length": 0,
+        "bpm": "180",
+        "date": {
+          "PC": "2024-03-14"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
         "title": "Boom!",
         "artist": {
           "compose": "BEXTER",
@@ -37756,6 +37821,643 @@
         }
       }
     ],
+    "falcom": [
+      {
+        "title": "Ashita e no Kodou",
+        "artist": {
+          "compose": "Falcom Sound Team jdk",
+          "arrange": "Yukihiro Jindo",
+          "lyrics": ["Yukihiro Jindo", "Kyo Hifumi"],
+          "vocal": "Kanako Kotera"
+        },
+        "level": {
+          "4B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 8,
+            "SC": 6
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 10,
+            "SC": 6
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 6,
+            "MX": 9,
+            "SC": 5
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 8,
+            "MX": 10,
+            "SC": 9
+          }
+        },
+        "length": 0,
+        "bpm": "173",
+        "date": {
+          "PC": "2024-03-14"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Blue Destination",
+        "artist": {
+          "compose": "Falcom Sound Team jdk"
+        },
+        "level": {
+          "4B": {
+            "NM": 3,
+            "HD": 5,
+            "MX": 8,
+            "SC": 2
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 9,
+            "SC": 3
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 10,
+            "SC": 6
+          },
+          "8B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 7
+          }
+        },
+        "length": 0,
+        "bpm": "140",
+        "date": {
+          "PC": "2024-03-14"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "GENESIS BEYOND THE BEGINNING",
+        "artist": {
+          "compose": "Falcom Sound Team jdk"
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 9
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 12,
+            "SC": 9
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 9,
+            "MX": 13,
+            "SC": 10
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
+          }
+        },
+        "length": 0,
+        "bpm": "164",
+        "date": {
+          "PC": "2024-03-14"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Inevitable Struggle",
+        "artist": {
+          "compose": "Falcom Sound Team jdk",
+          "arrange": "Yukihiro Jindo"
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 12,
+            "SC": 9
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 12,
+            "SC": 9
+          },
+          "6B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 9
+          },
+          "8B": {
+            "NM": 6,
+            "HD": 8,
+            "MX": 13,
+            "SC": 12
+          }
+        },
+        "length": 0,
+        "bpm": "188",
+        "date": {
+          "PC": "2024-03-14"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "NORSE WIND",
+        "artist": {
+          "compose": "Falcom Sound Team jdk"
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 13,
+            "SC": 11
+          },
+          "5B": {
+            "NM": 6,
+            "HD": 10,
+            "MX": 14,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 7,
+            "HD": 10,
+            "MX": 14,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 7,
+            "HD": 12,
+            "MX": 14,
+            "SC": 14
+          }
+        },
+        "length": 0,
+        "bpm": "220",
+        "date": {
+          "PC": "2024-03-14"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "Silver Will",
+        "artist": {
+          "compose": "Falcom Sound Team jdk",
+          "arrange": "Toshiharu Okajima"
+        },
+        "level": {
+          "4B": {
+            "NM": 2,
+            "HD": 5,
+            "MX": 7,
+            "SC": 4
+          },
+          "5B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 10,
+            "SC": 4
+          },
+          "6B": {
+            "NM": 3,
+            "HD": 6,
+            "MX": 11,
+            "SC": 5
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 11,
+            "SC": 7
+          }
+        },
+        "length": 0,
+        "bpm": "143",
+        "date": {
+          "PC": "2024-03-14"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "STEP AHEAD",
+        "artist": {
+          "compose": "Falcom Sound Team jdk"
+        },
+        "level": {
+          "4B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 12,
+            "SC": 8
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 10,
+            "MX": 13,
+            "SC": 8
+          },
+          "6B": {
+            "NM": 6,
+            "HD": 9,
+            "MX": 12,
+            "SC": 9
+          },
+          "8B": {
+            "NM": 7,
+            "HD": 9,
+            "MX": 14,
+            "SC": 2
+          }
+        },
+        "length": 0,
+        "bpm": "200",
+        "date": {
+          "PC": "2024-03-14"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "SUNSHINE COASTLINE",
+        "artist": {
+          "compose": "Falcom Sound Team jdk"
+        },
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 6,
+            "MX": 13,
+            "SC": 12
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 13,
+            "SC": 12
+          },
+          "6B": {
+            "NM": 7,
+            "HD": 9,
+            "MX": 13,
+            "SC": 13
+          },
+          "8B": {
+            "NM": 7,
+            "HD": 8,
+            "MX": 14,
+            "SC": 14
+          }
+        },
+        "length": 0,
+        "bpm": "218",
+        "date": {
+          "PC": "2024-03-14"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "TO MAKE THE END OF BATTLE",
+        "artist": {
+          "compose": "Falcom Sound Team jdk"
+        },
+        "level": {
+          "4B": {
+            "NM": 4,
+            "HD": 10,
+            "MX": 14,
+            "SC": 13
+          },
+          "5B": {
+            "NM": 5,
+            "HD": 9,
+            "MX": 14,
+            "SC": 13
+          },
+          "6B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 12,
+            "SC": 12
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 8,
+            "MX": 14,
+            "SC": 12
+          }
+        },
+        "length": 0,
+        "bpm": "116.1",
+        "date": {
+          "PC": "2024-03-14"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      },
+      {
+        "title": "To the Future.",
+        "artist": {
+          "compose": "Falcom Sound Team jdk"
+        },
+        "level": {
+          "4B": {
+            "NM": 1,
+            "HD": 3,
+            "MX": 6,
+            "SC": 7
+          },
+          "5B": {
+            "NM": 4,
+            "HD": 7,
+            "MX": 10,
+            "SC": 5
+          },
+          "6B": {
+            "NM": 2,
+            "HD": 6,
+            "MX": 10,
+            "SC": 6
+          },
+          "8B": {
+            "NM": 5,
+            "HD": 7,
+            "MX": 11,
+            "SC": 9
+          }
+        },
+        "length": 0,
+        "bpm": "132",
+        "date": {
+          "PC": "2024-03-14"
+        },
+        "note": {
+          "4B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "5B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "6B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          },
+          "8B": {
+            "NM": 0,
+            "HD": 0,
+            "MX": 0,
+            "SC": 0
+          }
+        }
+      }
+    ],
     "clearpass": [
       {
         "title": "From Hell to Breakfast",
@@ -37900,7 +38602,8 @@
     "nexon",
     "musedash",
     "ez2on",
-    "maplestory"
+    "maplestory",
+    "falcom"
   ],
   "dlcKor": {
     "respect": "리스펙트",

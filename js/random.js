@@ -56,6 +56,7 @@ document.querySelector("#modeSelect").addEventListener("change", (event) => {
     document.querySelector("input[value='musedash']").parentNode,
     document.querySelector("input[value='ez2on']").parentNode,
     document.querySelector("input[value='maplestory']").parentNode,
+    document.querySelector("input[value='falcom']").parentNode,
     document.querySelector("input[value='clearpass']").parentNode
   );
 
@@ -75,6 +76,9 @@ document.querySelector("#modeSelect").addEventListener("change", (event) => {
     if (document.querySelector("input[value='maplestory']").checked) {
       dlcSelect.add("maplestory");
     }
+    if (document.querySelector("input[value='falcom']").checked) {
+      dlcSelect.add("falcom");
+    }
     if (document.querySelector("input[value='clearpass']").checked) {
       dlcSelect.add("clearpass");
     }
@@ -84,6 +88,7 @@ document.querySelector("#modeSelect").addEventListener("change", (event) => {
     dlcSelect.delete("musedash");
     dlcSelect.delete("ez2on");
     dlcSelect.delete("maplestory");
+    dlcSelect.delete("falcom");
     dlcSelect.delete("clearpass");
   }
 });
